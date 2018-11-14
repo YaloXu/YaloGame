@@ -14,12 +14,12 @@
 		021F3253219C1E940041A11A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3252219C1E940041A11A /* main.m */; };
 		021F3263219C24010041A11A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3262219C24010041A11A /* AppDelegate.m */; };
 		021F3266219C24490041A11A /* YGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3265219C24490041A11A /* YGTabBarController.m */; };
-		021F326B219C24A90041A11A /* YGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F326A219C24A90041A11A /* YGBaseViewController.m */; };
-		021F326E219C24C90041A11A /* YGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F326D219C24C90041A11A /* YGHomeViewController.m */; };
-		021F3271219C24E00041A11A /* YGDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3270219C24E00041A11A /* YGDiscoveryViewController.m */; };
-		021F3274219C24EE0041A11A /* YGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3273219C24EE0041A11A /* YGMessageViewController.m */; };
-		021F3277219C24FC0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3276219C24FC0041A11A /* YGMineViewController.m */; };
-		021F327A219C250C0041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3279219C250C0041A11A /* YGAccountViewController.m */; };
+		021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F327D219C298F0041A11A /* YGBaseViewController.m */; };
+		021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3282219C299C0041A11A /* YGHomeViewController.m */; };
+		021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3288219C29BA0041A11A /* YGDiscoveryViewController.m */; };
+		021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F328C219C29C20041A11A /* YGMessageViewController.m */; };
+		021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3291219C29CA0041A11A /* YGMineViewController.m */; };
+		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
 		493D7C1868E436525CE6F085 /* Pods_YaloGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,18 +36,18 @@
 		021F3262219C24010041A11A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		021F3264219C24490041A11A /* YGTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGTabBarController.h; sourceTree = "<group>"; };
 		021F3265219C24490041A11A /* YGTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGTabBarController.m; sourceTree = "<group>"; };
-		021F3269219C24A90041A11A /* YGBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBaseViewController.h; sourceTree = "<group>"; };
-		021F326A219C24A90041A11A /* YGBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBaseViewController.m; sourceTree = "<group>"; };
-		021F326C219C24C90041A11A /* YGHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGHomeViewController.h; sourceTree = "<group>"; };
-		021F326D219C24C90041A11A /* YGHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGHomeViewController.m; sourceTree = "<group>"; };
-		021F326F219C24E00041A11A /* YGDiscoveryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGDiscoveryViewController.h; sourceTree = "<group>"; };
-		021F3270219C24E00041A11A /* YGDiscoveryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGDiscoveryViewController.m; sourceTree = "<group>"; };
-		021F3272219C24EE0041A11A /* YGMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMessageViewController.h; sourceTree = "<group>"; };
-		021F3273219C24EE0041A11A /* YGMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMessageViewController.m; sourceTree = "<group>"; };
-		021F3275219C24FC0041A11A /* YGMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMineViewController.h; sourceTree = "<group>"; };
-		021F3276219C24FC0041A11A /* YGMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMineViewController.m; sourceTree = "<group>"; };
-		021F3278219C250C0041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
-		021F3279219C250C0041A11A /* YGAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGAccountViewController.m; sourceTree = "<group>"; };
+		021F327D219C298F0041A11A /* YGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGBaseViewController.m; sourceTree = "<group>"; };
+		021F327E219C298F0041A11A /* YGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGBaseViewController.h; sourceTree = "<group>"; };
+		021F3282219C299C0041A11A /* YGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGHomeViewController.m; sourceTree = "<group>"; };
+		021F3283219C299C0041A11A /* YGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGHomeViewController.h; sourceTree = "<group>"; };
+		021F3287219C29BA0041A11A /* YGDiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDiscoveryViewController.h; sourceTree = "<group>"; };
+		021F3288219C29BA0041A11A /* YGDiscoveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDiscoveryViewController.m; sourceTree = "<group>"; };
+		021F328C219C29C20041A11A /* YGMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMessageViewController.m; sourceTree = "<group>"; };
+		021F328D219C29C20041A11A /* YGMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMessageViewController.h; sourceTree = "<group>"; };
+		021F3290219C29CA0041A11A /* YGMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMineViewController.h; sourceTree = "<group>"; };
+		021F3291219C29CA0041A11A /* YGMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMineViewController.m; sourceTree = "<group>"; };
+		021F3296219C29D30041A11A /* YGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAccountViewController.m; sourceTree = "<group>"; };
+		021F3297219C29D30041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
 		369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.release.xcconfig"; sourceTree = "<group>"; };
 		86BE56C2497561B0FD853AA3 /* Pods-YaloGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaloGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +126,8 @@
 		021F325B219C23D30041A11A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				021F326C219C24C90041A11A /* YGHomeViewController.h */,
-				021F326D219C24C90041A11A /* YGHomeViewController.m */,
+				021F3281219C299C0041A11A /* Controller */,
+				021F3280219C299C0041A11A /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -135,8 +135,8 @@
 		021F325C219C23D30041A11A /* Discovery */ = {
 			isa = PBXGroup;
 			children = (
-				021F326F219C24E00041A11A /* YGDiscoveryViewController.h */,
-				021F3270219C24E00041A11A /* YGDiscoveryViewController.m */,
+				021F3286219C29BA0041A11A /* Controller */,
+				021F3285219C29BA0041A11A /* Views */,
 			);
 			path = Discovery;
 			sourceTree = "<group>";
@@ -144,8 +144,8 @@
 		021F325D219C23D30041A11A /* Message */ = {
 			isa = PBXGroup;
 			children = (
-				021F3272219C24EE0041A11A /* YGMessageViewController.h */,
-				021F3273219C24EE0041A11A /* YGMessageViewController.m */,
+				021F328B219C29C20041A11A /* Controller */,
+				021F328A219C29C20041A11A /* Views */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -153,8 +153,8 @@
 		021F325E219C23D30041A11A /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				021F3275219C24FC0041A11A /* YGMineViewController.h */,
-				021F3276219C24FC0041A11A /* YGMineViewController.m */,
+				021F328F219C29CA0041A11A /* Controller */,
+				021F3292219C29CA0041A11A /* Views */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -162,8 +162,8 @@
 		021F325F219C23D30041A11A /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				021F3278219C250C0041A11A /* YGAccountViewController.h */,
-				021F3279219C250C0041A11A /* YGAccountViewController.m */,
+				021F3295219C29D30041A11A /* Controller */,
+				021F3294219C29D30041A11A /* Views */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -180,8 +180,8 @@
 		021F3267219C24860041A11A /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				021F3269219C24A90041A11A /* YGBaseViewController.h */,
-				021F326A219C24A90041A11A /* YGBaseViewController.m */,
+				021F327C219C298F0041A11A /* Controller */,
+				021F327B219C298F0041A11A /* Views */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -191,6 +191,102 @@
 			children = (
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		021F327B219C298F0041A11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		021F327C219C298F0041A11A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				021F327D219C298F0041A11A /* YGBaseViewController.m */,
+				021F327E219C298F0041A11A /* YGBaseViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		021F3280219C299C0041A11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		021F3281219C299C0041A11A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				021F3282219C299C0041A11A /* YGHomeViewController.m */,
+				021F3283219C299C0041A11A /* YGHomeViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		021F3285219C29BA0041A11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		021F3286219C29BA0041A11A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				021F3287219C29BA0041A11A /* YGDiscoveryViewController.h */,
+				021F3288219C29BA0041A11A /* YGDiscoveryViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		021F328A219C29C20041A11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		021F328B219C29C20041A11A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				021F328C219C29C20041A11A /* YGMessageViewController.m */,
+				021F328D219C29C20041A11A /* YGMessageViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		021F328F219C29CA0041A11A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				021F3290219C29CA0041A11A /* YGMineViewController.h */,
+				021F3291219C29CA0041A11A /* YGMineViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		021F3292219C29CA0041A11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		021F3294219C29D30041A11A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		021F3295219C29D30041A11A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				021F3296219C29D30041A11A /* YGAccountViewController.m */,
+				021F3297219C29D30041A11A /* YGAccountViewController.h */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		36B9CA3A44E5FC61BC5B0111 /* Pods */ = {
@@ -331,15 +427,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021F3274219C24EE0041A11A /* YGMessageViewController.m in Sources */,
+				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
-				021F3277219C24FC0041A11A /* YGMineViewController.m in Sources */,
-				021F326E219C24C90041A11A /* YGHomeViewController.m in Sources */,
-				021F326B219C24A90041A11A /* YGBaseViewController.m in Sources */,
+				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
+				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
+				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
-				021F3271219C24E00041A11A /* YGDiscoveryViewController.m in Sources */,
+				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
-				021F327A219C250C0041A11A /* YGAccountViewController.m in Sources */,
+				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
