@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform:ios,’9.0’
+use_frameworks!
+targetsArray = ['YaloGame']
+targetsArray.each do |t|
+    target t do
+	pod 'Masonry'
+pod 'AFNetworking'
+
+  end
+end
