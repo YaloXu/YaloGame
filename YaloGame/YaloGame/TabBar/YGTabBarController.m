@@ -31,7 +31,7 @@
     homeNav.tabBarItem.title = @"首页";
     YGAccountViewController *accountVC = [YGAccountViewController new];
     UINavigationController *accountNav = [self navigationControllerWithRootController:accountVC];
-    accountNav.tabBarItem.title = @"账户";
+    accountNav.tabBarItem.title = @"金币";
     YGDiscoveryViewController *disconveryVC = [YGDiscoveryViewController new];
     UINavigationController *disconveryNav = [self navigationControllerWithRootController:disconveryVC];
     disconveryNav.tabBarItem.title = @"发现";
