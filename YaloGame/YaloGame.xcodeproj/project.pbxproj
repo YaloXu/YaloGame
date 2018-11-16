@@ -77,6 +77,11 @@
 		2EDDE5BF219D51430009DDC1 /* nav_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE589219D51430009DDC1 /* nav_back@3x.png */; };
 		2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */; };
 		2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */; };
+		2EDDE5D7219ED2CA0009DDC1 /* WechatIMG125.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D2219ED2CA0009DDC1 /* WechatIMG125.png */; };
+		2EDDE5D8219ED2CA0009DDC1 /* 《名门电竞》APP需求文档2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D3219ED2CA0009DDC1 /* 《名门电竞》APP需求文档2.pdf */; };
+		2EDDE5D9219ED2CA0009DDC1 /* 电竞UI.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D4219ED2CA0009DDC1 /* 电竞UI.zip */; };
+		2EDDE5DA219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D5219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf */; };
+		2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */; };
 		493D7C1868E436525CE6F085 /* Pods_YaloGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +172,11 @@
 		2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		2EDDE5CE219EBAB50009DDC1 /* YGBaseNavgationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBaseNavgationViewController.h; sourceTree = "<group>"; };
 		2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBaseNavgationViewController.m; sourceTree = "<group>"; };
+		2EDDE5D2219ED2CA0009DDC1 /* WechatIMG125.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG125.png; sourceTree = "<group>"; };
+		2EDDE5D3219ED2CA0009DDC1 /* 《名门电竞》APP需求文档2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "《名门电竞》APP需求文档2.pdf"; sourceTree = "<group>"; };
+		2EDDE5D4219ED2CA0009DDC1 /* 电竞UI.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "电竞UI.zip"; sourceTree = "<group>"; };
+		2EDDE5D5219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "《名门电竞》APP需求文档.pdf"; sourceTree = "<group>"; };
+		2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "电竞icon.zip"; sourceTree = "<group>"; };
 		369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.release.xcconfig"; sourceTree = "<group>"; };
 		86BE56C2497561B0FD853AA3 /* Pods-YaloGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaloGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +197,7 @@
 		021F3237219C1E910041A11A = {
 			isa = PBXGroup;
 			children = (
+				2EDDE5D1219ED2CA0009DDC1 /* 文档 */,
 				021F3242219C1E910041A11A /* YaloGame */,
 				021F3241219C1E910041A11A /* Products */,
 				36B9CA3A44E5FC61BC5B0111 /* Pods */,
@@ -510,6 +521,19 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		2EDDE5D1219ED2CA0009DDC1 /* 文档 */ = {
+			isa = PBXGroup;
+			children = (
+				2EDDE5D2219ED2CA0009DDC1 /* WechatIMG125.png */,
+				2EDDE5D3219ED2CA0009DDC1 /* 《名门电竞》APP需求文档2.pdf */,
+				2EDDE5D4219ED2CA0009DDC1 /* 电竞UI.zip */,
+				2EDDE5D5219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf */,
+				2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */,
+			);
+			name = "文档";
+			path = "YaloGame/文档";
+			sourceTree = "<group>";
+		};
 		36B9CA3A44E5FC61BC5B0111 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,9 +626,12 @@
 				2EDDE5B9219D51430009DDC1 /* tabbar_coin_selected@3x.png in Resources */,
 				2EDDE5AA219D51430009DDC1 /* tabbar_message@3x.png in Resources */,
 				2EDDE5BC219D51430009DDC1 /* eyes_unsecret@3x.png in Resources */,
+				2EDDE5DA219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf in Resources */,
+				2EDDE5D7219ED2CA0009DDC1 /* WechatIMG125.png in Resources */,
 				2EDDE5A0219D51430009DDC1 /* eyes_unsecret@2x.png in Resources */,
 				2EDDE5B1219D51430009DDC1 /* tabbar_message_selected@3x.png in Resources */,
 				2EDDE598219D51430009DDC1 /* mine_bankcard@2x.png in Resources */,
+				2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */,
 				2EDDE591219D51430009DDC1 /* tabbar_discovery@2x.png in Resources */,
 				2EDDE5AD219D51430009DDC1 /* rollout_selected@3x.png in Resources */,
 				2EDDE5BA219D51430009DDC1 /* mine_transaction@3x.png in Resources */,
@@ -615,6 +642,7 @@
 				2EDDE5A2219D51430009DDC1 /* mine_transaction@2x.png in Resources */,
 				2EDDE59C219D51430009DDC1 /* recharge_unselected@2x.png in Resources */,
 				2EDDE59E219D51430009DDC1 /* tabbar_discovery_selected@2x.png in Resources */,
+				2EDDE5D8219ED2CA0009DDC1 /* 《名门电竞》APP需求文档2.pdf in Resources */,
 				2EDDE594219D51430009DDC1 /* tabbar_message_selected@2x.png in Resources */,
 				2EDDE593219D51430009DDC1 /* mine_huodong@2x.png in Resources */,
 				021F324D219C1E940041A11A /* Assets.xcassets in Resources */,
@@ -626,6 +654,7 @@
 				2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */,
 				2EDDE5A6219D51430009DDC1 /* tabbar_home_selected@3x.png in Resources */,
 				2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */,
+				2EDDE5D9219ED2CA0009DDC1 /* 电竞UI.zip in Resources */,
 				2EDDE5A4219D51430009DDC1 /* tabbar_mine@2x.png in Resources */,
 				2EDDE5BB219D51430009DDC1 /* common_refresh@3x.png in Resources */,
 				2EDDE5B3219D51430009DDC1 /* mine_message@3x.png in Resources */,
