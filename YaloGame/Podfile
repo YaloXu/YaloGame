@@ -5,7 +5,8 @@ targetsArray = ['YaloGame']
 targetsArray.each do |t|
     target t do
 	pod 'Masonry'
-pod 'AFNetworking'
+    pod 'AFNetworking'
+    pod 'AxcAE_TabBar'
 
   end
 end
