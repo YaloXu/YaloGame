@@ -10,8 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YGTabBarController : UITabBarController
-
+@interface YGTabBarController : UITabBarController<UITabBarControllerDelegate,UITabBarDelegate>
 @end
 
 NS_ASSUME_NONNULL_END

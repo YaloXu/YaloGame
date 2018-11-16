@@ -74,6 +74,8 @@
 		2EDDE5BD219D51430009DDC1 /* tabbar_mine_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE587219D51430009DDC1 /* tabbar_mine_selected@3x.png */; };
 		2EDDE5BE219D51430009DDC1 /* tabbar_discovery_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE588219D51430009DDC1 /* tabbar_discovery_selected@3x.png */; };
 		2EDDE5BF219D51430009DDC1 /* nav_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE589219D51430009DDC1 /* nav_back@3x.png */; };
+		2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */; };
+		2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */; };
 		493D7C1868E436525CE6F085 /* Pods_YaloGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,8 +158,12 @@
 		2EDDE587219D51430009DDC1 /* tabbar_mine_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_mine_selected@3x.png"; sourceTree = "<group>"; };
 		2EDDE588219D51430009DDC1 /* tabbar_discovery_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_selected@3x.png"; sourceTree = "<group>"; };
 		2EDDE589219D51430009DDC1 /* nav_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@3x.png"; sourceTree = "<group>"; };
-		2EDDE5C1219D535A0009DDC1 /* Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		2EDDE5C2219D604D0009DDC1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2EDDE5C7219EB8EF0009DDC1 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		2EDDE5CB219EBA160009DDC1 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		2EDDE5CE219EBAB50009DDC1 /* YGBaseNavgationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBaseNavgationViewController.h; sourceTree = "<group>"; };
+		2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBaseNavgationViewController.m; sourceTree = "<group>"; };
 		369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.release.xcconfig"; sourceTree = "<group>"; };
 		86BE56C2497561B0FD853AA3 /* Pods-YaloGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaloGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +202,8 @@
 		021F3242219C1E910041A11A /* YaloGame */ = {
 			isa = PBXGroup;
 			children = (
-				2EDDE5C0219D53290009DDC1 /* Macro */,
+				2EDDE5C8219EB91B0009DDC1 /* Category */,
+				2EDDE5C6219EB8EF0009DDC1 /* Macro */,
 				2EDDE551219D11370009DDC1 /* Resource */,
 				021F3268219C24900041A11A /* Common */,
 				021F3260219C24010041A11A /* AppDelegate */,
@@ -318,6 +325,8 @@
 			children = (
 				021F327D219C298F0041A11A /* YGBaseViewController.m */,
 				021F327E219C298F0041A11A /* YGBaseViewController.h */,
+				2EDDE5CE219EBAB50009DDC1 /* YGBaseNavgationViewController.h */,
+				2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -479,12 +488,21 @@
 			path = 3x;
 			sourceTree = "<group>";
 		};
-		2EDDE5C0219D53290009DDC1 /* Macro */ = {
+		2EDDE5C6219EB8EF0009DDC1 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
-				2EDDE5C1219D535A0009DDC1 /* Theme.h */,
+				2EDDE5C7219EB8EF0009DDC1 /* Theme.h */,
 			);
 			path = Macro;
+			sourceTree = "<group>";
+		};
+		2EDDE5C8219EB91B0009DDC1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2EDDE5CB219EBA160009DDC1 /* UIImage+Color.h */,
+				2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		36B9CA3A44E5FC61BC5B0111 /* Pods */ = {
@@ -687,8 +705,10 @@
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
+				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
+				2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

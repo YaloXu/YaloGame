@@ -31,9 +31,13 @@
  */
 #define NavgationTitleColor UIColorFromRGBValue(0Xffffff)
 /**
- *  TabBar 标题颜色(有误)
+ *  TabBar 标题颜色未选中
  */
-#define TabBarTitleColor UIColorFromRGBValue(0Xe3c793)
+#define TabBarTitleColorUnSelected UIColorFromRGBValue(0X979aa1)
+/**
+ *  TabBar 标题颜色选中
+ */
+#define TabBarTitleColorSelected UIColorFromRGBValue(0X333333)
 
 /**
  *  分割线灰色等...
@@ -102,5 +106,8 @@
  */
 #define UIColorFromRGBValue(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
+
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 #endif /* Theme_h */

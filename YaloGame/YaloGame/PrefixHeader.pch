@@ -10,5 +10,5 @@
 #define PrefixHeader_pch
 
 #import "Theme.h"
-
+#import "UIImage+Color.h"
 #endif /* PrefixHeader_pch */
