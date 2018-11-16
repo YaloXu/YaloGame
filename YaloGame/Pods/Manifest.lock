@@ -14,21 +14,25 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AxcAE_TabBar (1.0.5)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - AxcAE_TabBar
   - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - AxcAE_TabBar
     - Masonry
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AxcAE_TabBar: 1d5bcf6c4921889dc38839b6ba2c584a9b55251a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: f7ea99212f10f17ee0202d8bd67b967022409298
+PODFILE CHECKSUM: 3582cee361423d3480d7d4ac179b63ebb60d03f2
 
 COCOAPODS: 1.5.3

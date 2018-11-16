@@ -20,6 +20,7 @@
 		021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F328C219C29C20041A11A /* YGMessageViewController.m */; };
 		021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3291219C29CA0041A11A /* YGMineViewController.m */; };
 		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
+		02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -102,6 +103,8 @@
 		021F3291219C29CA0041A11A /* YGMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMineViewController.m; sourceTree = "<group>"; };
 		021F3296219C29D30041A11A /* YGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAccountViewController.m; sourceTree = "<group>"; };
 		021F3297219C29D30041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
+		02AC5A88219EB1F30092BB46 /* YGHintTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGHintTabBar.h; sourceTree = "<group>"; };
+		02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGHintTabBar.m; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 			children = (
 				021F3264219C24490041A11A /* YGTabBarController.h */,
 				021F3265219C24490041A11A /* YGTabBarController.m */,
+				02AC5A88219EB1F30092BB46 /* YGHintTabBar.h */,
+				02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -658,6 +663,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/AxcAE_TabBar/AxcAE_TabBar.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -665,6 +671,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AxcAE_TabBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +693,7 @@
 				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
+				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
@@ -834,7 +842,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/shlpc1321/Desktop/毛亚恒私人/电子竞技/YaloGame/YaloGame/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -855,7 +863,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/shlpc1321/Desktop/毛亚恒私人/电子竞技/YaloGame/YaloGame/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
