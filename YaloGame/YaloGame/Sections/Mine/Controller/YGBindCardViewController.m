@@ -1,30 +1,30 @@
 //
-//  YGMineViewController.m
+//  YGBindCardViewController.m
 //  YaloGame
 //
-//  Created by C on 2018/11/14.
+//  Created by C on 2018/11/17.
 //  Copyright © 2018 C. All rights reserved.
 //
 
-#import "YGMineViewController.h"
 #import "YGBindCardViewController.h"
 
-@interface YGMineViewController ()
+@interface YGBindCardViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *cardUserNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *cardNumTF;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
 
 @end
 
-@implementation YGMineViewController
+@implementation YGBindCardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
+      self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
+}
+- (IBAction)next:(id)sender {
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController pushViewController:[YGBindCardViewController new] animated:YES];
-}
 /*
 #pragma mark - Navigation
 

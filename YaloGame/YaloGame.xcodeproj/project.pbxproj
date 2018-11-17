@@ -21,6 +21,8 @@
 		021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3291219C29CA0041A11A /* YGMineViewController.m */; };
 		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
 		02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */; };
+		02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */; };
+		02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -112,6 +114,9 @@
 		021F3297219C29D30041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
 		02AC5A88219EB1F30092BB46 /* YGHintTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGHintTabBar.h; sourceTree = "<group>"; };
 		02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGHintTabBar.m; sourceTree = "<group>"; };
+		02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardViewController.h; sourceTree = "<group>"; };
+		02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardViewController.m; sourceTree = "<group>"; };
+		02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardViewController.xib; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -400,6 +405,9 @@
 			children = (
 				021F3290219C29CA0041A11A /* YGMineViewController.h */,
 				021F3291219C29CA0041A11A /* YGMineViewController.m */,
+				02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */,
+				02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */,
+				02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -662,6 +670,7 @@
 				2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */,
 				2EDDE5AE219D51430009DDC1 /* mine_setting@3x.png in Resources */,
 				021F324B219C1E920041A11A /* Main.storyboard in Resources */,
+				02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */,
 				2EDDE5BD219D51430009DDC1 /* tabbar_mine_selected@3x.png in Resources */,
 				2EDDE58F219D51430009DDC1 /* tabbar_message@2x.png in Resources */,
 				2EDDE5B4219D51430009DDC1 /* recharge_selected@3x.png in Resources */,
@@ -744,6 +753,7 @@
 				021F3253219C1E940041A11A /* main.m in Sources */,
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
+				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
 				2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */,
 			);

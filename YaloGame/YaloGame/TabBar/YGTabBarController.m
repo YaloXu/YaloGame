@@ -13,9 +13,9 @@
 #import "YGMineViewController.h"
 #import "YGAccountViewController.h"
 #import "YGBaseNavgationViewController.h"
-#define ItemSize 60
-@interface YGTabBarController ()
-@property (nonatomic ,strong) UIImageView  * item2Image;
+//#define ItemSize 60
+//@interface YGTabBarController ()
+//@property (nonatomic ,strong) UIImageView  * item2Image;
 #import "AxcAE_TabBar.h"
 #import "YGHintTabBar.h"
 
