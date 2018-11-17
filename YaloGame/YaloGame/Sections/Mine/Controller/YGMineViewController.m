@@ -8,6 +8,7 @@
 
 #import "YGMineViewController.h"
 #import "YGBindCardViewController.h"
+#import "YGSettingViewController.h"
 
 @interface YGMineViewController ()
 
@@ -23,7 +24,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController pushViewController:[YGBindCardViewController new] animated:YES];
+    [self.navigationController pushViewController:[YGSettingViewController new] animated:YES];
 }
 /*
 #pragma mark - Navigation

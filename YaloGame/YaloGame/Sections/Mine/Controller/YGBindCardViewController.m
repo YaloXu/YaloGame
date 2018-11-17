@@ -7,6 +7,7 @@
 //
 
 #import "YGBindCardViewController.h"
+#import "YGBankCardValidateViewController.h"
 
 @interface YGBindCardViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *cardUserNameTF;
@@ -20,9 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"绑定银行卡";
       self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
 }
 - (IBAction)next:(id)sender {
+    [self.navigationController pushViewController:[YGBankCardValidateViewController new] animated:YES];
 }
 
 /*

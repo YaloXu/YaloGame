@@ -23,6 +23,17 @@
 		02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */; };
 		02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */; };
 		02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */; };
+		02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */; };
+		02AC5A9421A055200092BB46 /* YGBankCardValidateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A9221A055200092BB46 /* YGBankCardValidateViewController.xib */; };
+		02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A9F21A0601C0092BB46 /* YGUserInfoViewController.m */; };
+		02AC5AA221A0601C0092BB46 /* YGUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AA021A0601C0092BB46 /* YGUserInfoViewController.xib */; };
+		02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA421A062910092BB46 /* YGSettingViewController.m */; };
+		02AC5AA721A062910092BB46 /* YGSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AA521A062910092BB46 /* YGSettingViewController.xib */; };
+		02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AA921A068BB0092BB46 /* YGAuthTool.m */; };
+		02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AAC21A0693A0092BB46 /* YGAlertTool.m */; };
+		02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AAF21A06ACA0092BB46 /* YGUtils.m */; };
+		02AC5AB421A0712D0092BB46 /* YGModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AB221A0712D0092BB46 /* YGModifyViewController.m */; };
+		02AC5AB521A0712D0092BB46 /* YGModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AB321A0712D0092BB46 /* YGModifyViewController.xib */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -117,6 +128,24 @@
 		02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardViewController.h; sourceTree = "<group>"; };
 		02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardViewController.m; sourceTree = "<group>"; };
 		02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardViewController.xib; sourceTree = "<group>"; };
+		02AC5A9021A055200092BB46 /* YGBankCardValidateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBankCardValidateViewController.h; sourceTree = "<group>"; };
+		02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBankCardValidateViewController.m; sourceTree = "<group>"; };
+		02AC5A9221A055200092BB46 /* YGBankCardValidateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBankCardValidateViewController.xib; sourceTree = "<group>"; };
+		02AC5A9E21A0601C0092BB46 /* YGUserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGUserInfoViewController.h; sourceTree = "<group>"; };
+		02AC5A9F21A0601C0092BB46 /* YGUserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGUserInfoViewController.m; sourceTree = "<group>"; };
+		02AC5AA021A0601C0092BB46 /* YGUserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGUserInfoViewController.xib; sourceTree = "<group>"; };
+		02AC5AA321A062910092BB46 /* YGSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSettingViewController.h; sourceTree = "<group>"; };
+		02AC5AA421A062910092BB46 /* YGSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSettingViewController.m; sourceTree = "<group>"; };
+		02AC5AA521A062910092BB46 /* YGSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGSettingViewController.xib; sourceTree = "<group>"; };
+		02AC5AA821A068BB0092BB46 /* YGAuthTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAuthTool.h; sourceTree = "<group>"; };
+		02AC5AA921A068BB0092BB46 /* YGAuthTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGAuthTool.m; sourceTree = "<group>"; };
+		02AC5AAB21A0693A0092BB46 /* YGAlertTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAlertTool.h; sourceTree = "<group>"; };
+		02AC5AAC21A0693A0092BB46 /* YGAlertTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGAlertTool.m; sourceTree = "<group>"; };
+		02AC5AAE21A06ACA0092BB46 /* YGUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGUtils.h; sourceTree = "<group>"; };
+		02AC5AAF21A06ACA0092BB46 /* YGUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGUtils.m; sourceTree = "<group>"; };
+		02AC5AB121A0712D0092BB46 /* YGModifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGModifyViewController.h; sourceTree = "<group>"; };
+		02AC5AB221A0712D0092BB46 /* YGModifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGModifyViewController.m; sourceTree = "<group>"; };
+		02AC5AB321A0712D0092BB46 /* YGModifyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGModifyViewController.xib; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -330,6 +359,12 @@
 		021F3268219C24900041A11A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				02AC5AA821A068BB0092BB46 /* YGAuthTool.h */,
+				02AC5AA921A068BB0092BB46 /* YGAuthTool.m */,
+				02AC5AAB21A0693A0092BB46 /* YGAlertTool.h */,
+				02AC5AAC21A0693A0092BB46 /* YGAlertTool.m */,
+				02AC5AAE21A06ACA0092BB46 /* YGUtils.h */,
+				02AC5AAF21A06ACA0092BB46 /* YGUtils.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -407,7 +442,19 @@
 				021F3291219C29CA0041A11A /* YGMineViewController.m */,
 				02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */,
 				02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */,
+				02AC5A9021A055200092BB46 /* YGBankCardValidateViewController.h */,
+				02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */,
+				02AC5A9E21A0601C0092BB46 /* YGUserInfoViewController.h */,
+				02AC5A9F21A0601C0092BB46 /* YGUserInfoViewController.m */,
+				02AC5AA021A0601C0092BB46 /* YGUserInfoViewController.xib */,
+				02AC5A9221A055200092BB46 /* YGBankCardValidateViewController.xib */,
 				02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */,
+				02AC5AA321A062910092BB46 /* YGSettingViewController.h */,
+				02AC5AA421A062910092BB46 /* YGSettingViewController.m */,
+				02AC5AA521A062910092BB46 /* YGSettingViewController.xib */,
+				02AC5AB121A0712D0092BB46 /* YGModifyViewController.h */,
+				02AC5AB221A0712D0092BB46 /* YGModifyViewController.m */,
+				02AC5AB321A0712D0092BB46 /* YGModifyViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -638,6 +685,7 @@
 				2EDDE5D7219ED2CA0009DDC1 /* WechatIMG125.png in Resources */,
 				2EDDE5A0219D51430009DDC1 /* eyes_unsecret@2x.png in Resources */,
 				2EDDE5B1219D51430009DDC1 /* tabbar_message_selected@3x.png in Resources */,
+				02AC5A9421A055200092BB46 /* YGBankCardValidateViewController.xib in Resources */,
 				2EDDE598219D51430009DDC1 /* mine_bankcard@2x.png in Resources */,
 				2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */,
 				2EDDE591219D51430009DDC1 /* tabbar_discovery@2x.png in Resources */,
@@ -667,18 +715,21 @@
 				2EDDE5BB219D51430009DDC1 /* common_refresh@3x.png in Resources */,
 				2EDDE5B3219D51430009DDC1 /* mine_message@3x.png in Resources */,
 				2EDDE599219D51430009DDC1 /* recharge_selected@2x.png in Resources */,
+				02AC5AA221A0601C0092BB46 /* YGUserInfoViewController.xib in Resources */,
 				2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */,
 				2EDDE5AE219D51430009DDC1 /* mine_setting@3x.png in Resources */,
 				021F324B219C1E920041A11A /* Main.storyboard in Resources */,
 				02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */,
 				2EDDE5BD219D51430009DDC1 /* tabbar_mine_selected@3x.png in Resources */,
 				2EDDE58F219D51430009DDC1 /* tabbar_message@2x.png in Resources */,
+				02AC5AB521A0712D0092BB46 /* YGModifyViewController.xib in Resources */,
 				2EDDE5B4219D51430009DDC1 /* recharge_selected@3x.png in Resources */,
 				2EDDE58D219D51430009DDC1 /* tabbar_coin@2x.png in Resources */,
 				2EDDE597219D51430009DDC1 /* mine_recharge@2x.png in Resources */,
 				2EDDE5B5219D51430009DDC1 /* mine_rollout@3x.png in Resources */,
 				2EDDE590219D51430009DDC1 /* tabbar_home@2x.png in Resources */,
 				2EDDE5AC219D51430009DDC1 /* eyes_secret@3x.png in Resources */,
+				02AC5AA721A062910092BB46 /* YGSettingViewController.xib in Resources */,
 				2EDDE5A8219D51430009DDC1 /* tabbar_home@3x.png in Resources */,
 				2EDDE59D219D51430009DDC1 /* nav_back@2x.png in Resources */,
 			);
@@ -742,16 +793,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02AC5AB421A0712D0092BB46 /* YGModifyViewController.m in Sources */,
 				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
+				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
 				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
+				02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */,
+				02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
+				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
+				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
+				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
