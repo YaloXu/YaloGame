@@ -1,31 +1,24 @@
 //
-//  YGMineViewController.m
+//  YGContactUsViewController.m
 //  YaloGame
 //
-//  Created by C on 2018/11/14.
+//  Created by C on 2018/11/18.
 //  Copyright © 2018 C. All rights reserved.
 //
 
-#import "YGMineViewController.h"
-#import "YGBindCardViewController.h"
-#import "YGSettingViewController.h"
+#import "YGContactUsViewController.h"
 
-@interface YGMineViewController ()
+@interface YGContactUsViewController ()
 
 @end
 
-@implementation YGMineViewController
+@implementation YGContactUsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController pushViewController:[YGBindCardViewController new] animated:YES];
-}
 /*
 #pragma mark - Navigation
 

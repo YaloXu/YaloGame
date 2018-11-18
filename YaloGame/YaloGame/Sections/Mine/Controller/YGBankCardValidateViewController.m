@@ -7,6 +7,7 @@
 //
 
 #import "YGBankCardValidateViewController.h"
+#import "YGBankViewController.h"
 
 @interface YGBankCardValidateViewController () {
     
@@ -30,6 +31,7 @@
     
 }
 - (IBAction)next:(id)sender {
+    [self.navigationController pushViewController:[YGBankViewController new] animated:YES];
     
 }
 - (IBAction)sendCode:(id)sender {

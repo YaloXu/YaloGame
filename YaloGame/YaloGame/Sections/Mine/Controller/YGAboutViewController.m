@@ -7,6 +7,8 @@
 //
 
 #import "YGAboutViewController.h"
+#import "YGWebViewController.h"
+#import "YGContactUsViewController.h"
 
 @interface YGAboutLogoView : UIView {
     
@@ -86,6 +88,29 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *controller = nil;
+    switch (indexPath.row) {
+        case 0:
+        case 1:{
+            controller = [YGWebViewController new];
+            if (indexPath.row == 0) {
+                [controller setValue:@"https://www.baidu.com" forKey:@"loadUrl"];
+            } else {
+                [controller setValue:@"https://www.baidu.com" forKey:@"loadUrl"];
+            }
+        }
+            break;
+            
+        case 3: {
+            controller = [YGContactUsViewController new];
+        }
+            break;
+        default:
+            break;
+    }
+    if (controller) {
+         [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 /*
