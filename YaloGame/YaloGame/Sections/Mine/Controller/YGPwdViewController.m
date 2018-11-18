@@ -1,23 +1,24 @@
 //
-//  YGBaseViewController.m
+//  YGPwdViewController.m
 //  YaloGame
 //
-//  Created by C on 2018/11/14.
+//  Created by C on 2018/11/18.
 //  Copyright © 2018 C. All rights reserved.
 //
 
-#import "YGBaseViewController.h"
+#import "YGPwdViewController.h"
 
-@interface YGBaseViewController ()
+@interface YGPwdViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *confirmPwdTF;
+@property (weak, nonatomic) IBOutlet UITextField *pwdTF;
 
 @end
 
-@implementation YGBaseViewController
+@implementation YGPwdViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor whiteColor];
+    // Do any additional setup after loading the view from its nib.
 }
 
 /*
@@ -30,7 +31,4 @@
 }
 */
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
 @end

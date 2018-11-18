@@ -8,6 +8,8 @@
 
 #import "YGSettingViewController.h"
 #import "YGUserInfoViewController.h"
+#import "YGAboutViewController.h"
+#import "YGSafeViewController.h"
 
 @interface YGSettingViewController ()
 
@@ -26,6 +28,10 @@
     [self.userCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userInfo)]];
     [self.accountCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(account)]];
     [self.aboutCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(about)]];
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+    layer.frame = CGRectMake(0, 43, kScreenWidth - 30, 1);
+    [self.userCell.layer addSublayer:layer];
 }
 - (IBAction)logout:(id)sender {
 }
@@ -35,9 +41,11 @@
 }
 
 - (void)account {
+    [self.navigationController pushViewController:[YGSafeViewController new] animated:YES];
 }
 
 - (void)about {
+    [self.navigationController pushViewController:[YGAboutViewController new] animated:YES];
 }
 
 /*

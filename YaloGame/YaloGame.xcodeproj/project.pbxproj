@@ -34,6 +34,12 @@
 		02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AAF21A06ACA0092BB46 /* YGUtils.m */; };
 		02AC5AB421A0712D0092BB46 /* YGModifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AB221A0712D0092BB46 /* YGModifyViewController.m */; };
 		02AC5AB521A0712D0092BB46 /* YGModifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AB321A0712D0092BB46 /* YGModifyViewController.xib */; };
+		02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5ABF21A1153B0092BB46 /* YGSafeViewController.m */; };
+		02AC5AC221A1153B0092BB46 /* YGSafeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AC021A1153B0092BB46 /* YGSafeViewController.xib */; };
+		02AC5AC621A118990092BB46 /* YGPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AC421A118990092BB46 /* YGPwdViewController.m */; };
+		02AC5AC721A118990092BB46 /* YGPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AC521A118990092BB46 /* YGPwdViewController.xib */; };
+		02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AC921A11A700092BB46 /* YGAboutViewController.m */; };
+		02AC5ACC21A11A700092BB46 /* YGAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5ACA21A11A700092BB46 /* YGAboutViewController.xib */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -146,6 +152,15 @@
 		02AC5AB121A0712D0092BB46 /* YGModifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGModifyViewController.h; sourceTree = "<group>"; };
 		02AC5AB221A0712D0092BB46 /* YGModifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGModifyViewController.m; sourceTree = "<group>"; };
 		02AC5AB321A0712D0092BB46 /* YGModifyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGModifyViewController.xib; sourceTree = "<group>"; };
+		02AC5ABE21A1153B0092BB46 /* YGSafeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSafeViewController.h; sourceTree = "<group>"; };
+		02AC5ABF21A1153B0092BB46 /* YGSafeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSafeViewController.m; sourceTree = "<group>"; };
+		02AC5AC021A1153B0092BB46 /* YGSafeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGSafeViewController.xib; sourceTree = "<group>"; };
+		02AC5AC321A118990092BB46 /* YGPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGPwdViewController.h; sourceTree = "<group>"; };
+		02AC5AC421A118990092BB46 /* YGPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGPwdViewController.m; sourceTree = "<group>"; };
+		02AC5AC521A118990092BB46 /* YGPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGPwdViewController.xib; sourceTree = "<group>"; };
+		02AC5AC821A11A700092BB46 /* YGAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAboutViewController.h; sourceTree = "<group>"; };
+		02AC5AC921A11A700092BB46 /* YGAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGAboutViewController.m; sourceTree = "<group>"; };
+		02AC5ACA21A11A700092BB46 /* YGAboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGAboutViewController.xib; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -455,6 +470,15 @@
 				02AC5AB121A0712D0092BB46 /* YGModifyViewController.h */,
 				02AC5AB221A0712D0092BB46 /* YGModifyViewController.m */,
 				02AC5AB321A0712D0092BB46 /* YGModifyViewController.xib */,
+				02AC5ABE21A1153B0092BB46 /* YGSafeViewController.h */,
+				02AC5ABF21A1153B0092BB46 /* YGSafeViewController.m */,
+				02AC5AC021A1153B0092BB46 /* YGSafeViewController.xib */,
+				02AC5AC321A118990092BB46 /* YGPwdViewController.h */,
+				02AC5AC421A118990092BB46 /* YGPwdViewController.m */,
+				02AC5AC521A118990092BB46 /* YGPwdViewController.xib */,
+				02AC5AC821A11A700092BB46 /* YGAboutViewController.h */,
+				02AC5AC921A11A700092BB46 /* YGAboutViewController.m */,
+				02AC5ACA21A11A700092BB46 /* YGAboutViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -687,6 +711,7 @@
 				2EDDE5B1219D51430009DDC1 /* tabbar_message_selected@3x.png in Resources */,
 				02AC5A9421A055200092BB46 /* YGBankCardValidateViewController.xib in Resources */,
 				2EDDE598219D51430009DDC1 /* mine_bankcard@2x.png in Resources */,
+				02AC5ACC21A11A700092BB46 /* YGAboutViewController.xib in Resources */,
 				2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */,
 				2EDDE591219D51430009DDC1 /* tabbar_discovery@2x.png in Resources */,
 				2EDDE5AD219D51430009DDC1 /* rollout_selected@3x.png in Resources */,
@@ -698,6 +723,7 @@
 				2EDDE5A2219D51430009DDC1 /* mine_transaction@2x.png in Resources */,
 				2EDDE59C219D51430009DDC1 /* recharge_unselected@2x.png in Resources */,
 				2EDDE59E219D51430009DDC1 /* tabbar_discovery_selected@2x.png in Resources */,
+				02AC5AC721A118990092BB46 /* YGPwdViewController.xib in Resources */,
 				2EDDE5D8219ED2CA0009DDC1 /* 《名门电竞》APP需求文档2.pdf in Resources */,
 				2EDDE594219D51430009DDC1 /* tabbar_message_selected@2x.png in Resources */,
 				2EDDE593219D51430009DDC1 /* mine_huodong@2x.png in Resources */,
@@ -716,6 +742,7 @@
 				2EDDE5B3219D51430009DDC1 /* mine_message@3x.png in Resources */,
 				2EDDE599219D51430009DDC1 /* recharge_selected@2x.png in Resources */,
 				02AC5AA221A0601C0092BB46 /* YGUserInfoViewController.xib in Resources */,
+				02AC5AC221A1153B0092BB46 /* YGSafeViewController.xib in Resources */,
 				2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */,
 				2EDDE5AE219D51430009DDC1 /* mine_setting@3x.png in Resources */,
 				021F324B219C1E920041A11A /* Main.storyboard in Resources */,
@@ -797,8 +824,10 @@
 				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
 				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
+				02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */,
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
+				02AC5AC621A118990092BB46 /* YGPwdViewController.m in Sources */,
 				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
 				02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */,
@@ -810,6 +839,7 @@
 				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
 				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
+				02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
@@ -956,8 +986,9 @@
 			baseConfigurationReference = 86BE56C2497561B0FD853AA3 /* Pods-YaloGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M5TT6TZ89W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
@@ -977,8 +1008,9 @@
 			baseConfigurationReference = 369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M5TT6TZ89W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;

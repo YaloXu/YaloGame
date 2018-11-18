@@ -40,4 +40,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    UIViewController* topVC = self.topViewController;
+    return [topVC preferredStatusBarStyle];
+}
+
+
 @end
