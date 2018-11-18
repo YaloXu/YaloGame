@@ -16,6 +16,7 @@
 #import "YGBindCardViewController.h"
 #import "YGSettingViewController.h"
 #import "YGBankViewController.h"
+#import "YGOrderViewController.h"
 
 @interface YGMineViewController () <YGMineFooterDelegate>
 
@@ -78,6 +79,7 @@
         }
             break;
         case 2: {
+            controller = [YGOrderViewController new];
         }
             break;
         case 3: {
