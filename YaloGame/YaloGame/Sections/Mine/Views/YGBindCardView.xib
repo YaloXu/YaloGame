@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YGBindCardView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Et-Vn-feS">
+                    <rect key="frame" x="141" y="60" width="93" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="9KS-ZP-7Jg"/>
+                        <constraint firstAttribute="width" constant="93" id="qya-zj-XOw"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最多可以绑定五张银行卡（信用卡除外），持卡人姓名必须为同一人，如需解除绑定，请联系在线客服" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRX-i1-rgS">
+                    <rect key="frame" x="30" y="193" width="315" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqm-Pc-C5P">
+                    <rect key="frame" x="15" y="223" width="345" height="40"/>
+                    <color key="backgroundColor" red="0.78273075819015503" green="0.85625737905502319" blue="0.054304949939250946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="VgZ-yd-Svc"/>
+                    </constraints>
+                    <state key="normal" title="绑定银行卡"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqa-zU-Iyz">
+                    <rect key="frame" x="0.0" y="607" width="375" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="pzY-gP-HNf"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="在线客服">
+                            <attributes>
+                                <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定银行卡" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpP-wP-GQg">
+                    <rect key="frame" x="0.0" y="153" width="375" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="KM2-iJ-aiR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zpP-wP-GQg" firstAttribute="top" secondItem="4Et-Vn-feS" secondAttribute="bottom" constant="30" id="4Fu-J1-3UJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fRX-i1-rgS" secondAttribute="trailing" constant="30" id="9is-9Y-FEz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Dqa-zU-Iyz" secondAttribute="bottom" constant="40" id="EYH-iA-yjA"/>
+                <constraint firstItem="aqm-Pc-C5P" firstAttribute="firstBaseline" secondItem="fRX-i1-rgS" secondAttribute="baseline" constant="30" id="Hwc-UE-GNT"/>
+                <constraint firstItem="4Et-Vn-feS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="MCv-pj-9Ms"/>
+                <constraint firstItem="fRX-i1-rgS" firstAttribute="top" secondItem="zpP-wP-GQg" secondAttribute="bottom" constant="20" id="Pbt-6p-SS5"/>
+                <constraint firstItem="4Et-Vn-feS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QKe-sm-UGi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Dqa-zU-Iyz" secondAttribute="trailing" id="S3k-Rl-5mL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zpP-wP-GQg" secondAttribute="trailing" id="Tjn-Wr-gsQ"/>
+                <constraint firstItem="aqm-Pc-C5P" firstAttribute="top" secondItem="fRX-i1-rgS" secondAttribute="bottom" constant="20" id="YJW-TS-gLE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aqm-Pc-C5P" secondAttribute="trailing" constant="15" id="Ycf-hq-NGL"/>
+                <constraint firstItem="Dqa-zU-Iyz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fZn-Pg-j6D"/>
+                <constraint firstItem="aqm-Pc-C5P" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fRX-i1-rgS" secondAttribute="bottom" constant="40" id="fii-Yj-sEV"/>
+                <constraint firstItem="zpP-wP-GQg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kHV-Qq-DFV"/>
+                <constraint firstItem="aqm-Pc-C5P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="rV1-b5-LRB"/>
+                <constraint firstItem="fRX-i1-rgS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="wCW-kU-gOa"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="onlineLabel" destination="Dqa-zU-Iyz" id="qCP-9f-dSa"/>
+            </connections>
+        </view>
+    </objects>
+</document>

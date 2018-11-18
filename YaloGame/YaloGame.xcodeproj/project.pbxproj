@@ -48,6 +48,11 @@
 		02AC5ADB21A1690F0092BB46 /* YGBankViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AD921A1690F0092BB46 /* YGBankViewController.xib */; };
 		02AC5ADF21A169B30092BB46 /* YGBankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5ADD21A169B30092BB46 /* YGBankTableViewCell.m */; };
 		02AC5AE021A169B30092BB46 /* YGBankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5ADE21A169B30092BB46 /* YGBankTableViewCell.xib */; };
+		02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AE221A189590092BB46 /* YGChargeViewController.m */; };
+		02AC5AE621A189850092BB46 /* YGBindCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AE521A189850092BB46 /* YGBindCardView.m */; };
+		02AC5AE821A189980092BB46 /* YGBindCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AE721A189980092BB46 /* YGBindCardView.xib */; };
+		02AC5AEB21A198CE0092BB46 /* YGSegView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AEA21A198CE0092BB46 /* YGSegView.m */; };
+		02AC5AED21A198DD0092BB46 /* YGSegView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AEC21A198DD0092BB46 /* YGSegView.xib */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -181,6 +186,14 @@
 		02AC5ADC21A169B30092BB46 /* YGBankTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBankTableViewCell.h; sourceTree = "<group>"; };
 		02AC5ADD21A169B30092BB46 /* YGBankTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBankTableViewCell.m; sourceTree = "<group>"; };
 		02AC5ADE21A169B30092BB46 /* YGBankTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBankTableViewCell.xib; sourceTree = "<group>"; };
+		02AC5AE121A189590092BB46 /* YGChargeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGChargeViewController.h; sourceTree = "<group>"; };
+		02AC5AE221A189590092BB46 /* YGChargeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGChargeViewController.m; sourceTree = "<group>"; };
+		02AC5AE421A189850092BB46 /* YGBindCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardView.h; sourceTree = "<group>"; };
+		02AC5AE521A189850092BB46 /* YGBindCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardView.m; sourceTree = "<group>"; };
+		02AC5AE721A189980092BB46 /* YGBindCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardView.xib; sourceTree = "<group>"; };
+		02AC5AE921A198CE0092BB46 /* YGSegView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSegView.h; sourceTree = "<group>"; };
+		02AC5AEA21A198CE0092BB46 /* YGSegView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSegView.m; sourceTree = "<group>"; };
+		02AC5AEC21A198DD0092BB46 /* YGSegView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGSegView.xib; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -508,6 +521,8 @@
 				02AC5AD721A1690F0092BB46 /* YGBankViewController.h */,
 				02AC5AD821A1690F0092BB46 /* YGBankViewController.m */,
 				02AC5AD921A1690F0092BB46 /* YGBankViewController.xib */,
+				02AC5AE121A189590092BB46 /* YGChargeViewController.h */,
+				02AC5AE221A189590092BB46 /* YGChargeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -518,6 +533,12 @@
 				02AC5ADC21A169B30092BB46 /* YGBankTableViewCell.h */,
 				02AC5ADD21A169B30092BB46 /* YGBankTableViewCell.m */,
 				02AC5ADE21A169B30092BB46 /* YGBankTableViewCell.xib */,
+				02AC5AE421A189850092BB46 /* YGBindCardView.h */,
+				02AC5AE521A189850092BB46 /* YGBindCardView.m */,
+				02AC5AE721A189980092BB46 /* YGBindCardView.xib */,
+				02AC5AE921A198CE0092BB46 /* YGSegView.h */,
+				02AC5AEA21A198CE0092BB46 /* YGSegView.m */,
+				02AC5AEC21A198DD0092BB46 /* YGSegView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -743,6 +764,7 @@
 				2EDDE5A0219D51430009DDC1 /* eyes_unsecret@2x.png in Resources */,
 				2EDDE5B1219D51430009DDC1 /* tabbar_message_selected@3x.png in Resources */,
 				02AC5ADB21A1690F0092BB46 /* YGBankViewController.xib in Resources */,
+				02AC5AED21A198DD0092BB46 /* YGSegView.xib in Resources */,
 				02AC5A9421A055200092BB46 /* YGBankCardValidateViewController.xib in Resources */,
 				2EDDE598219D51430009DDC1 /* mine_bankcard@2x.png in Resources */,
 				02AC5ACC21A11A700092BB46 /* YGAboutViewController.xib in Resources */,
@@ -753,6 +775,7 @@
 				02AC5AE021A169B30092BB46 /* YGBankTableViewCell.xib in Resources */,
 				2EDDE5BF219D51430009DDC1 /* nav_back@3x.png in Resources */,
 				2EDDE5B7219D51430009DDC1 /* mine_recharge@3x.png in Resources */,
+				02AC5AE821A189980092BB46 /* YGBindCardView.xib in Resources */,
 				2EDDE595219D51430009DDC1 /* shared_icon@2x.png in Resources */,
 				2EDDE5A1219D51430009DDC1 /* common_refresh@2x.png in Resources */,
 				2EDDE5A2219D51430009DDC1 /* mine_transaction@2x.png in Resources */,
@@ -861,6 +884,7 @@
 				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
 				02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */,
+				02AC5AE621A189850092BB46 /* YGBindCardView.m in Sources */,
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
 				02AC5AC621A118990092BB46 /* YGPwdViewController.m in Sources */,
@@ -872,9 +896,11 @@
 				02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
+				02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */,
 				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
 				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
+				02AC5AEB21A198CE0092BB46 /* YGSegView.m in Sources */,
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
 				02AC5ADA21A1690F0092BB46 /* YGBankViewController.m in Sources */,
 				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
