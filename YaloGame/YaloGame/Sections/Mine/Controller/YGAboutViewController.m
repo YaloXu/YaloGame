@@ -66,6 +66,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"关于";
     _dataSource = @[@"服务条款",@"隐私政策",@"联系我们",@"更新日志",@"检查更新"];
     _tableView.tableHeaderView = [[YGAboutLogoView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 250)];
     _tableView.tableFooterView = [UIView new];
@@ -101,8 +102,11 @@
         }
             break;
             
-        case 3: {
+        case 2: {
             controller = [YGContactUsViewController new];
+        }
+            break;
+        case 3: {
         }
             break;
         default:
