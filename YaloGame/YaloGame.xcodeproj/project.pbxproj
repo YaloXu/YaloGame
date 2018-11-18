@@ -53,6 +53,11 @@
 		02AC5AE821A189980092BB46 /* YGBindCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AE721A189980092BB46 /* YGBindCardView.xib */; };
 		02AC5AEB21A198CE0092BB46 /* YGSegView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AEA21A198CE0092BB46 /* YGSegView.m */; };
 		02AC5AED21A198DD0092BB46 /* YGSegView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AEC21A198DD0092BB46 /* YGSegView.xib */; };
+		02AC5AF021A19FB60092BB46 /* YGMineHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AEF21A19FB60092BB46 /* YGMineHeaderView.m */; };
+		02AC5AF321A19FC90092BB46 /* YGMineFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AF221A19FC90092BB46 /* YGMineFooterView.m */; };
+		02AC5AF721A19FF00092BB46 /* YGMineFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AF621A19FF00092BB46 /* YGMineFooterView.xib */; };
+		02AC5AFB21A1A5BF0092BB46 /* YGCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5AF921A1A5BF0092BB46 /* YGCollectionViewCell.m */; };
+		02AC5AFC21A1A5BF0092BB46 /* YGCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -194,6 +199,14 @@
 		02AC5AE921A198CE0092BB46 /* YGSegView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSegView.h; sourceTree = "<group>"; };
 		02AC5AEA21A198CE0092BB46 /* YGSegView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSegView.m; sourceTree = "<group>"; };
 		02AC5AEC21A198DD0092BB46 /* YGSegView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGSegView.xib; sourceTree = "<group>"; };
+		02AC5AEE21A19FB60092BB46 /* YGMineHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMineHeaderView.h; sourceTree = "<group>"; };
+		02AC5AEF21A19FB60092BB46 /* YGMineHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMineHeaderView.m; sourceTree = "<group>"; };
+		02AC5AF121A19FC90092BB46 /* YGMineFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMineFooterView.h; sourceTree = "<group>"; };
+		02AC5AF221A19FC90092BB46 /* YGMineFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMineFooterView.m; sourceTree = "<group>"; };
+		02AC5AF621A19FF00092BB46 /* YGMineFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGMineFooterView.xib; sourceTree = "<group>"; };
+		02AC5AF821A1A5BF0092BB46 /* YGCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGCollectionViewCell.h; sourceTree = "<group>"; };
+		02AC5AF921A1A5BF0092BB46 /* YGCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGCollectionViewCell.m; sourceTree = "<group>"; };
+		02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGCollectionViewCell.xib; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -539,6 +552,14 @@
 				02AC5AE921A198CE0092BB46 /* YGSegView.h */,
 				02AC5AEA21A198CE0092BB46 /* YGSegView.m */,
 				02AC5AEC21A198DD0092BB46 /* YGSegView.xib */,
+				02AC5AEE21A19FB60092BB46 /* YGMineHeaderView.h */,
+				02AC5AEF21A19FB60092BB46 /* YGMineHeaderView.m */,
+				02AC5AF121A19FC90092BB46 /* YGMineFooterView.h */,
+				02AC5AF221A19FC90092BB46 /* YGMineFooterView.m */,
+				02AC5AF621A19FF00092BB46 /* YGMineFooterView.xib */,
+				02AC5AF821A1A5BF0092BB46 /* YGCollectionViewCell.h */,
+				02AC5AF921A1A5BF0092BB46 /* YGCollectionViewCell.m */,
+				02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -748,6 +769,7 @@
 				2EDDE5BE219D51430009DDC1 /* tabbar_discovery_selected@3x.png in Resources */,
 				2EDDE5A7219D51430009DDC1 /* tabbar_discovery@3x.png in Resources */,
 				021F3250219C1E940041A11A /* LaunchScreen.storyboard in Resources */,
+				02AC5AFC21A1A5BF0092BB46 /* YGCollectionViewCell.xib in Resources */,
 				2EDDE59F219D51430009DDC1 /* tabbar_mine_selected@2x.png in Resources */,
 				2EDDE58E219D51430009DDC1 /* home_im@2x.png in Resources */,
 				2EDDE5B8219D51430009DDC1 /* tabbar_mine@3x.png in Resources */,
@@ -815,6 +837,7 @@
 				2EDDE590219D51430009DDC1 /* tabbar_home@2x.png in Resources */,
 				2EDDE5AC219D51430009DDC1 /* eyes_secret@3x.png in Resources */,
 				02AC5AA721A062910092BB46 /* YGSettingViewController.xib in Resources */,
+				02AC5AF721A19FF00092BB46 /* YGMineFooterView.xib in Resources */,
 				2EDDE5A8219D51430009DDC1 /* tabbar_home@3x.png in Resources */,
 				2EDDE59D219D51430009DDC1 /* nav_back@2x.png in Resources */,
 				02AC5AD621A161B90092BB46 /* YGContactUsViewController.xib in Resources */,
@@ -857,6 +880,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AxcAE_TabBar/AxcAE_TabBar.framework",
+				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -865,6 +889,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AxcAE_TabBar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -884,6 +909,7 @@
 				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
 				02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */,
+				02AC5AF321A19FC90092BB46 /* YGMineFooterView.m in Sources */,
 				02AC5AE621A189850092BB46 /* YGBindCardView.m in Sources */,
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
@@ -905,8 +931,10 @@
 				02AC5ADA21A1690F0092BB46 /* YGBankViewController.m in Sources */,
 				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
 				02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */,
+				02AC5AF021A19FB60092BB46 /* YGMineHeaderView.m in Sources */,
 				02AC5ACF21A15E5F0092BB46 /* YGWebViewController.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
+				02AC5AFB21A1A5BF0092BB46 /* YGCollectionViewCell.m in Sources */,
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
 				2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */,

@@ -7,6 +7,7 @@ targetsArray.each do |t|
 	pod 'Masonry'
     pod 'AFNetworking'
     pod 'AxcAE_TabBar'
+    pod 'FDFullscreenPopGesture'
 
   end
 end

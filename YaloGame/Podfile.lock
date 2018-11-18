@@ -15,24 +15,28 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - AxcAE_TabBar (1.0.5)
+  - FDFullscreenPopGesture (1.1)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AFNetworking
   - AxcAE_TabBar
+  - FDFullscreenPopGesture
   - Masonry
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - AxcAE_TabBar
+    - FDFullscreenPopGesture
     - Masonry
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AxcAE_TabBar: 1d5bcf6c4921889dc38839b6ba2c584a9b55251a
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 3582cee361423d3480d7d4ac179b63ebb60d03f2
+PODFILE CHECKSUM: 0a6943fd90599163f0ca052324cccea4952cd103
 
 COCOAPODS: 1.5.3

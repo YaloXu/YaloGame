@@ -13,4 +13,5 @@
 #import "UIImage+Color.h"
 #import "Masonry.h"
 #import "YGUtils.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 #endif /* PrefixHeader_pch */
