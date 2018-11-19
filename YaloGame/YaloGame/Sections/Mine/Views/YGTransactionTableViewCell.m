@@ -7,11 +7,9 @@
 //
 
 #import "YGTransactionTableViewCell.h"
+#import "UITableViewCell+Arrow.h"
 
 @interface YGTransactionTableViewCell()
-
-
-
 @end
 
 @implementation YGTransactionTableViewCell
@@ -20,6 +18,7 @@
     [super awakeFromNib];
     // Initialization code
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    self.customArrow = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -104,6 +104,10 @@
 
 @implementation YGUserInfoViewController
 
+- (BOOL)fd_prefersNavigationBarHidden {
+    return YES;
+}
+
 - (UIImagePickerController *)imagePickerController {
     if (!_imagePickerController) {
         _imagePickerController = [[UIImagePickerController alloc] init];
@@ -116,11 +120,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    self.customNavColor = [UIColor clearColor];
+    self.titleLabel.text = @"个人资料";
+    [self addBackButton];
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(-88));
+        make.top.equalTo(@(0));
         make.left.right.bottom.equalTo(self.view);
     }];
-    self.navigationItem.title = @"个人资料";
+//    self.navigationItem.title = @"个人资料";
     YGUserHeaderView *headerView = [[YGUserHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 380)];
     headerView.delegate = self;
     _headerView = headerView;
@@ -205,30 +213,8 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    //设置导航栏背景图片为一个空的image，这样就透明了
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    
-    //去掉透明后导航栏下边的黑边
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:UIColorFromRGBValue(0x2e3039)] forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setShadowImage:nil];
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleDefault;
 }
 
 @end

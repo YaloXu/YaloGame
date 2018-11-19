@@ -12,6 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGBaseViewController : UIViewController
 
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) UIColor *customNavColor;
+
+- (void)addBackButton;
+
+- (void)back;
+
 @end
 
 NS_ASSUME_NONNULL_END

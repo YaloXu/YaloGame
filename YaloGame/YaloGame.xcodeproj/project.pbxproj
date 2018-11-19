@@ -62,6 +62,9 @@
 		02CC5A3521A1B2B600BFBCD6 /* YGOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */; };
 		02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */; };
 		02F2A4E721A2594A00454F8D /* YGTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */; };
+		02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */; };
+		02F2A4F121A2899300454F8D /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4F021A2899300454F8D /* arrow@2x.png */; };
+		02F2A4F321A2899D00454F8D /* arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4F221A2899D00454F8D /* arrow@3x.png */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -217,6 +220,10 @@
 		02F2A4E321A2594A00454F8D /* YGTransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGTransactionTableViewCell.h; sourceTree = "<group>"; };
 		02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGTransactionTableViewCell.m; sourceTree = "<group>"; };
 		02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGTransactionTableViewCell.xib; sourceTree = "<group>"; };
+		02F2A4ED21A287AC00454F8D /* UITableViewCell+Arrow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Arrow.h"; sourceTree = "<group>"; };
+		02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Arrow.m"; sourceTree = "<group>"; };
+		02F2A4F021A2899300454F8D /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		02F2A4F221A2899D00454F8D /* arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@3x.png"; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -608,6 +615,7 @@
 		2EDDE552219D51430009DDC1 /* 2x */ = {
 			isa = PBXGroup;
 			children = (
+				02F2A4F021A2899300454F8D /* arrow@2x.png */,
 				2EDDE553219D51430009DDC1 /* mine_setting@2x.png */,
 				2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */,
 				2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */,
@@ -642,6 +650,7 @@
 		2EDDE56E219D51430009DDC1 /* 3x */ = {
 			isa = PBXGroup;
 			children = (
+				02F2A4F221A2899D00454F8D /* arrow@3x.png */,
 				2EDDE56F219D51430009DDC1 /* mine_huodong@3x.png */,
 				2EDDE570219D51430009DDC1 /* tabbar_home_selected@3x.png */,
 				2EDDE571219D51430009DDC1 /* tabbar_discovery@3x.png */,
@@ -686,6 +695,8 @@
 			children = (
 				2EDDE5CB219EBA160009DDC1 /* UIImage+Color.h */,
 				2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */,
+				02F2A4ED21A287AC00454F8D /* UITableViewCell+Arrow.h */,
+				02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -816,6 +827,7 @@
 				2EDDE5B7219D51430009DDC1 /* mine_recharge@3x.png in Resources */,
 				02AC5AE821A189980092BB46 /* YGBindCardView.xib in Resources */,
 				2EDDE595219D51430009DDC1 /* shared_icon@2x.png in Resources */,
+				02F2A4F121A2899300454F8D /* arrow@2x.png in Resources */,
 				2EDDE5A1219D51430009DDC1 /* common_refresh@2x.png in Resources */,
 				2EDDE5A2219D51430009DDC1 /* mine_transaction@2x.png in Resources */,
 				2EDDE59C219D51430009DDC1 /* recharge_unselected@2x.png in Resources */,
@@ -832,6 +844,7 @@
 				2EDDE5A5219D51430009DDC1 /* mine_huodong@3x.png in Resources */,
 				2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */,
 				2EDDE5A6219D51430009DDC1 /* tabbar_home_selected@3x.png in Resources */,
+				02F2A4F321A2899D00454F8D /* arrow@3x.png in Resources */,
 				2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */,
 				2EDDE5D9219ED2CA0009DDC1 /* 电竞UI.zip in Resources */,
 				2EDDE5A4219D51430009DDC1 /* tabbar_mine@2x.png in Resources */,
@@ -925,6 +938,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02AC5AB421A0712D0092BB46 /* YGModifyViewController.m in Sources */,
+				02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */,
 				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
 				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
