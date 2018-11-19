@@ -60,13 +60,13 @@
 		02AC5AFC21A1A5BF0092BB46 /* YGCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */; };
 		02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CC5A3221A1B2B600BFBCD6 /* YGOrderViewController.m */; };
 		02CC5A3521A1B2B600BFBCD6 /* YGOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */; };
-		2E305EC721A2934200FCF123 /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305EC621A2934200FCF123 /* UIViewController+Custom.m */; };
-		2E305ECB21A2962B00FCF123 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */; };
 		02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */; };
 		02F2A4E721A2594A00454F8D /* YGTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */; };
 		02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */; };
 		02F2A4F121A2899300454F8D /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4F021A2899300454F8D /* arrow@2x.png */; };
 		02F2A4F321A2899D00454F8D /* arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4F221A2899D00454F8D /* arrow@3x.png */; };
+		2E305EC721A2934200FCF123 /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305EC621A2934200FCF123 /* UIViewController+Custom.m */; };
+		2E305ECB21A2962B00FCF123 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -219,10 +219,6 @@
 		02CC5A3121A1B2B600BFBCD6 /* YGOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGOrderViewController.h; sourceTree = "<group>"; };
 		02CC5A3221A1B2B600BFBCD6 /* YGOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGOrderViewController.m; sourceTree = "<group>"; };
 		02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGOrderViewController.xib; sourceTree = "<group>"; };
-		2E305EC521A2934200FCF123 /* UIViewController+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
-		2E305EC621A2934200FCF123 /* UIViewController+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
-		2E305EC921A2962B00FCF123 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
-		2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		02F2A4E321A2594A00454F8D /* YGTransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGTransactionTableViewCell.h; sourceTree = "<group>"; };
 		02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGTransactionTableViewCell.m; sourceTree = "<group>"; };
 		02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGTransactionTableViewCell.xib; sourceTree = "<group>"; };
@@ -230,6 +226,10 @@
 		02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Arrow.m"; sourceTree = "<group>"; };
 		02F2A4F021A2899300454F8D /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		02F2A4F221A2899D00454F8D /* arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@3x.png"; sourceTree = "<group>"; };
+		2E305EC521A2934200FCF123 /* UIViewController+Custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Custom.h"; sourceTree = "<group>"; };
+		2E305EC621A2934200FCF123 /* UIViewController+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
+		2E305EC921A2962B00FCF123 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -918,7 +918,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/AxcAE_TabBar/AxcAE_TabBar.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
@@ -941,7 +941,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

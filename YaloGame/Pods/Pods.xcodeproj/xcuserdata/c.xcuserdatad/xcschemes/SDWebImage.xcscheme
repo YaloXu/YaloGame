@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0DFB60404A14897F1E2D72E927A432D"
-               BlueprintName = "AxcAE_TabBar"
+               BlueprintIdentifier = "08D582203AAA5BE2F26347BB7560221B"
+               BlueprintName = "SDWebImage"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "AxcAE_TabBar.framework">
+               BuildableName = "SDWebImage.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

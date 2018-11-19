@@ -90,11 +90,6 @@
     }
     return _titleLabel;
 }
-
-- (void)back {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
