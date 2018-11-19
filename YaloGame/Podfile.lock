@@ -17,12 +17,14 @@ PODS:
   - AxcAE_TabBar (1.0.5)
   - FDFullscreenPopGesture (1.1)
   - Masonry (1.1.0)
+  - YYModel (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking
   - AxcAE_TabBar
   - FDFullscreenPopGesture
   - Masonry
+  - YYModel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,13 +32,15 @@ SPEC REPOS:
     - AxcAE_TabBar
     - FDFullscreenPopGesture
     - Masonry
+    - YYModel
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AxcAE_TabBar: 1d5bcf6c4921889dc38839b6ba2c584a9b55251a
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 0a6943fd90599163f0ca052324cccea4952cd103
+PODFILE CHECKSUM: 42b9735991cb86c3dd28804ec813f55b11569889
 
 COCOAPODS: 1.5.3
