@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YGBaseViewController : UIViewController
-
+@property (nonatomic , strong) NSString * headTitle;
+-(void)setRightBarItemWithImage:(NSString*)imageName;
+-(void)rightBarItemEvent;
 @end
 
 NS_ASSUME_NONNULL_END

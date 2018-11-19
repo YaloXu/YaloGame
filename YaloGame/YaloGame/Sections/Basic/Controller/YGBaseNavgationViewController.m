@@ -20,9 +20,11 @@
     dic[NSFontAttributeName]=TitleFontSize;
     dic[NSForegroundColorAttributeName]=NavgationTitleColor;
     [item setTitleTextAttributes:dic forState:UIControlStateNormal];
+    [item setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
     
     UINavigationBar *bar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[self]];
     [bar setBackgroundImage:[UIImage imageWithColor:NavgationBgColor] forBarMetrics:UIBarMetricsDefault];
+    [bar setTintColor:NavgationTitleColor];
     NSMutableDictionary *dicBar=[NSMutableDictionary dictionary];
     dicBar[NSFontAttributeName]=TitleFontSize;
     [bar setTitleTextAttributes:dic];

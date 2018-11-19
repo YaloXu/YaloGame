@@ -8,6 +8,6 @@ targetsArray.each do |t|
     pod 'AFNetworking'
     pod 'AxcAE_TabBar'
     pod 'FDFullscreenPopGesture'
-
+    pod 'SDCycleScrollView'
   end
 end

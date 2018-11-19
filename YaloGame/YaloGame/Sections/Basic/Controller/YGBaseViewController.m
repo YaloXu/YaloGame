@@ -16,20 +16,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.view.backgroundColor = [UIColor whiteColor];
+    [self backBarbuttonForWhite];
+     self.view.backgroundColor = DefaultBackGroundColor;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//导航栏左边按钮
+- (void)backBarbuttonForWhite{
+    if (self.parentViewController.childViewControllers.count>1) {
+        UIImage *image = [UIImage imageNamed:@"nav_back"];
+        image = [image imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+        UIBarButtonItem * leftBarbtn = [[UIBarButtonItem alloc]initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+        self.navigationItem.leftBarButtonItem = leftBarbtn;
+    }
+    
 }
-*/
-
+-(void)back{
+    if (![self isMemberOfClass:[YGBaseViewController class]]) {
+        if (self.parentViewController.childViewControllers.count>1) {
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }else{
+            if (self.presentingViewController) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        }
+    }
+}
+-(void)setHeadTitle:(NSString *)headTitle{
+    _headTitle = headTitle;
+    self.navigationItem.title = _headTitle;
+}
+-(void)setRightBarItemWithImage:(NSString *)imageName{
+    UIButton *rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0,0,30,30)];
+    [rightButton setImage:[UIImage imageNamed:imageName]forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(rightBarItemEvent)forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
+    self.navigationItem.rightBarButtonItem= rightItem;
+}
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }

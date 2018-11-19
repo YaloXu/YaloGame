@@ -17,12 +17,18 @@ PODS:
   - AxcAE_TabBar (1.0.5)
   - FDFullscreenPopGesture (1.1)
   - Masonry (1.1.0)
+  - SDCycleScrollView (1.75):
+    - SDWebImage (>= 4.0.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - AFNetworking
   - AxcAE_TabBar
   - FDFullscreenPopGesture
   - Masonry
+  - SDCycleScrollView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,13 +36,17 @@ SPEC REPOS:
     - AxcAE_TabBar
     - FDFullscreenPopGesture
     - Masonry
+    - SDCycleScrollView
+    - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AxcAE_TabBar: 1d5bcf6c4921889dc38839b6ba2c584a9b55251a
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 0a6943fd90599163f0ca052324cccea4952cd103
+PODFILE CHECKSUM: f12427fe3f4ef2a87f48d31198e76f68e087fa26
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2

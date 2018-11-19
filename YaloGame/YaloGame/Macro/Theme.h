@@ -80,7 +80,7 @@
 /**
  * 左右间距
  */
-#define kSpace 16
+#define kSpace 15
 #pragma mark -  * * * * * * * * * * * * * * set Button * * * * * * * * * * * * * *
 /**
  *  按钮的背景默认颜色
