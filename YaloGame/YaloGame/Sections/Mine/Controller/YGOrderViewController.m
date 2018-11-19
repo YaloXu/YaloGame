@@ -7,8 +7,9 @@
 //
 
 #import "YGOrderViewController.h"
+#import "YGTransactionTableViewCell.h"
 
-@interface YGOrderViewController ()
+@interface YGOrderViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -19,16 +20,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"交易记录";
+    [self.tableView registerNib:[UINib nibWithNibName:@"YGTransactionTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"transactionCell"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    YGTransactionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"transactionCell" forIndexPath:indexPath];
+    cell.nameLabel.text = @"xxxxxxxx";
+    if (indexPath.section % 2 == 0) {
+        cell.cardLabel.text = @"****  ****  **** 7654";
+        [cell updateLayout:NO];
+        
+    } else {
+        [cell updateLayout:YES];
+    }
+    
+    return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 15;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 4;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+
 
 @end

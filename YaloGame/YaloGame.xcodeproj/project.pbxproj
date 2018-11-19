@@ -60,6 +60,8 @@
 		02AC5AFC21A1A5BF0092BB46 /* YGCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */; };
 		02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CC5A3221A1B2B600BFBCD6 /* YGOrderViewController.m */; };
 		02CC5A3521A1B2B600BFBCD6 /* YGOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */; };
+		02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */; };
+		02F2A4E721A2594A00454F8D /* YGTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -212,6 +214,9 @@
 		02CC5A3121A1B2B600BFBCD6 /* YGOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGOrderViewController.h; sourceTree = "<group>"; };
 		02CC5A3221A1B2B600BFBCD6 /* YGOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGOrderViewController.m; sourceTree = "<group>"; };
 		02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGOrderViewController.xib; sourceTree = "<group>"; };
+		02F2A4E321A2594A00454F8D /* YGTransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGTransactionTableViewCell.h; sourceTree = "<group>"; };
+		02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGTransactionTableViewCell.m; sourceTree = "<group>"; };
+		02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGTransactionTableViewCell.xib; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -568,6 +573,9 @@
 				02AC5AF821A1A5BF0092BB46 /* YGCollectionViewCell.h */,
 				02AC5AF921A1A5BF0092BB46 /* YGCollectionViewCell.m */,
 				02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */,
+				02F2A4E321A2594A00454F8D /* YGTransactionTableViewCell.h */,
+				02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */,
+				02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -842,6 +850,7 @@
 				2EDDE5B4219D51430009DDC1 /* recharge_selected@3x.png in Resources */,
 				2EDDE58D219D51430009DDC1 /* tabbar_coin@2x.png in Resources */,
 				2EDDE597219D51430009DDC1 /* mine_recharge@2x.png in Resources */,
+				02F2A4E721A2594A00454F8D /* YGTransactionTableViewCell.xib in Resources */,
 				2EDDE5B5219D51430009DDC1 /* mine_rollout@3x.png in Resources */,
 				2EDDE590219D51430009DDC1 /* tabbar_home@2x.png in Resources */,
 				2EDDE5AC219D51430009DDC1 /* eyes_secret@3x.png in Resources */,
@@ -931,6 +940,7 @@
 				02AC5ADF21A169B30092BB46 /* YGBankTableViewCell.m in Sources */,
 				02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */,
 				02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */,
+				02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
 				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
