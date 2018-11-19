@@ -60,6 +60,13 @@
 		02AC5AFC21A1A5BF0092BB46 /* YGCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5AFA21A1A5BF0092BB46 /* YGCollectionViewCell.xib */; };
 		02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CC5A3221A1B2B600BFBCD6 /* YGOrderViewController.m */; };
 		02CC5A3521A1B2B600BFBCD6 /* YGOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */; };
+		02CD775B21A2DAA7009A9892 /* YGMessageDefaultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD775721A2DAA7009A9892 /* YGMessageDefaultView.m */; };
+		02CD775C21A2DAA7009A9892 /* YGMessageDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CD775821A2DAA7009A9892 /* YGMessageDefaultView.xib */; };
+		02CD775D21A2DAA7009A9892 /* YGMessageSegView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD775921A2DAA7009A9892 /* YGMessageSegView.m */; };
+		02CD776121A2E005009A9892 /* YGMessageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD775F21A2E005009A9892 /* YGMessageCollectionViewCell.m */; };
+		02CD776221A2E005009A9892 /* YGMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CD776021A2E005009A9892 /* YGMessageCollectionViewCell.xib */; };
+		02CD776621A2E323009A9892 /* YGMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CD776421A2E323009A9892 /* YGMessageTableViewCell.m */; };
+		02CD776721A2E323009A9892 /* YGMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CD776521A2E323009A9892 /* YGMessageTableViewCell.xib */; };
 		02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */; };
 		02F2A4E721A2594A00454F8D /* YGTransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */; };
 		02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */; };
@@ -219,6 +226,17 @@
 		02CC5A3121A1B2B600BFBCD6 /* YGOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGOrderViewController.h; sourceTree = "<group>"; };
 		02CC5A3221A1B2B600BFBCD6 /* YGOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGOrderViewController.m; sourceTree = "<group>"; };
 		02CC5A3321A1B2B600BFBCD6 /* YGOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGOrderViewController.xib; sourceTree = "<group>"; };
+		02CD775621A2DAA7009A9892 /* YGMessageDefaultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMessageDefaultView.h; sourceTree = "<group>"; };
+		02CD775721A2DAA7009A9892 /* YGMessageDefaultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMessageDefaultView.m; sourceTree = "<group>"; };
+		02CD775821A2DAA7009A9892 /* YGMessageDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YGMessageDefaultView.xib; sourceTree = "<group>"; };
+		02CD775921A2DAA7009A9892 /* YGMessageSegView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMessageSegView.m; sourceTree = "<group>"; };
+		02CD775A21A2DAA7009A9892 /* YGMessageSegView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMessageSegView.h; sourceTree = "<group>"; };
+		02CD775E21A2E005009A9892 /* YGMessageCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMessageCollectionViewCell.h; sourceTree = "<group>"; };
+		02CD775F21A2E005009A9892 /* YGMessageCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMessageCollectionViewCell.m; sourceTree = "<group>"; };
+		02CD776021A2E005009A9892 /* YGMessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		02CD776321A2E323009A9892 /* YGMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGMessageTableViewCell.h; sourceTree = "<group>"; };
+		02CD776421A2E323009A9892 /* YGMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGMessageTableViewCell.m; sourceTree = "<group>"; };
+		02CD776521A2E323009A9892 /* YGMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGMessageTableViewCell.xib; sourceTree = "<group>"; };
 		02F2A4E321A2594A00454F8D /* YGTransactionTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGTransactionTableViewCell.h; sourceTree = "<group>"; };
 		02F2A4E421A2594A00454F8D /* YGTransactionTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGTransactionTableViewCell.m; sourceTree = "<group>"; };
 		02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGTransactionTableViewCell.xib; sourceTree = "<group>"; };
@@ -500,6 +518,17 @@
 		021F328A219C29C20041A11A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				02CD775621A2DAA7009A9892 /* YGMessageDefaultView.h */,
+				02CD775721A2DAA7009A9892 /* YGMessageDefaultView.m */,
+				02CD775821A2DAA7009A9892 /* YGMessageDefaultView.xib */,
+				02CD775A21A2DAA7009A9892 /* YGMessageSegView.h */,
+				02CD775921A2DAA7009A9892 /* YGMessageSegView.m */,
+				02CD775E21A2E005009A9892 /* YGMessageCollectionViewCell.h */,
+				02CD775F21A2E005009A9892 /* YGMessageCollectionViewCell.m */,
+				02CD776021A2E005009A9892 /* YGMessageCollectionViewCell.xib */,
+				02CD776321A2E323009A9892 /* YGMessageTableViewCell.h */,
+				02CD776421A2E323009A9892 /* YGMessageTableViewCell.m */,
+				02CD776521A2E323009A9892 /* YGMessageTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -809,6 +838,7 @@
 				02AC5AFC21A1A5BF0092BB46 /* YGCollectionViewCell.xib in Resources */,
 				2EDDE59F219D51430009DDC1 /* tabbar_mine_selected@2x.png in Resources */,
 				2EDDE58E219D51430009DDC1 /* home_im@2x.png in Resources */,
+				02CD775C21A2DAA7009A9892 /* YGMessageDefaultView.xib in Resources */,
 				2EDDE5B8219D51430009DDC1 /* tabbar_mine@3x.png in Resources */,
 				2EDDE5AB219D51430009DDC1 /* tabbar_coin@3x.png in Resources */,
 				2EDDE596219D51430009DDC1 /* rollout_unselected@2x.png in Resources */,
@@ -827,6 +857,7 @@
 				02AC5AED21A198DD0092BB46 /* YGSegView.xib in Resources */,
 				02AC5A9421A055200092BB46 /* YGBankCardValidateViewController.xib in Resources */,
 				2EDDE598219D51430009DDC1 /* mine_bankcard@2x.png in Resources */,
+				02CD776221A2E005009A9892 /* YGMessageCollectionViewCell.xib in Resources */,
 				02AC5ACC21A11A700092BB46 /* YGAboutViewController.xib in Resources */,
 				2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */,
 				2EDDE591219D51430009DDC1 /* tabbar_discovery@2x.png in Resources */,
@@ -878,6 +909,7 @@
 				2EDDE590219D51430009DDC1 /* tabbar_home@2x.png in Resources */,
 				2EDDE5AC219D51430009DDC1 /* eyes_secret@3x.png in Resources */,
 				02AC5AA721A062910092BB46 /* YGSettingViewController.xib in Resources */,
+				02CD776721A2E323009A9892 /* YGMessageTableViewCell.xib in Resources */,
 				02AC5AF721A19FF00092BB46 /* YGMineFooterView.xib in Resources */,
 				2EDDE5A8219D51430009DDC1 /* tabbar_home@3x.png in Resources */,
 				2EDDE59D219D51430009DDC1 /* nav_back@2x.png in Resources */,
@@ -971,20 +1003,24 @@
 				2E305EC721A2934200FCF123 /* UIViewController+Custom.m in Sources */,
 				02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */,
 				02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */,
+				02CD775D21A2DAA7009A9892 /* YGMessageSegView.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
 				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
 				02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */,
 				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
+				02CD776621A2E323009A9892 /* YGMessageTableViewCell.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
 				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
 				02AC5AEB21A198CE0092BB46 /* YGSegView.m in Sources */,
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
 				02AC5ADA21A1690F0092BB46 /* YGBankViewController.m in Sources */,
+				02CD775B21A2DAA7009A9892 /* YGMessageDefaultView.m in Sources */,
 				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
 				02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */,
 				02AC5AF021A19FB60092BB46 /* YGMineHeaderView.m in Sources */,
 				02AC5ACF21A15E5F0092BB46 /* YGWebViewController.m in Sources */,
+				02CD776121A2E005009A9892 /* YGMessageCollectionViewCell.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				02AC5AFB21A1A5BF0092BB46 /* YGCollectionViewCell.m in Sources */,
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
