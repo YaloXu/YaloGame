@@ -11,6 +11,7 @@
 
 @interface YGMineFooterView() <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     NSArray <NSString *> *_dataSource;
+    NSArray <NSString *> *_imageNames;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end
@@ -25,12 +26,14 @@
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:@"YGCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
     _dataSource = @[@"充值",@"提现",@"交易明细",@"银行卡",@"消息日志",@"优惠活动",@"分享",@"设置"];
-    [self.collectionView reloadData];
+    _imageNames = @[@"mine_recharge",@"mine_rollout",@"mine_transaction",@"mine_bankcard",@"mine_message",@"mine_huodong",@"shared_icon",@"mine_setting"];
+//    [self.collectionView reloadData];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YGCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     cell.nameLabel.text = _dataSource[indexPath.item];
+    cell.imageView.image = [UIImage imageNamed:_imageNames[indexPath.item]];
     return cell;
     
 }

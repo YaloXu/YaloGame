@@ -94,7 +94,7 @@
     }];
     self.tableView.tableHeaderView = [UIView new];
     self.tableView.tableFooterView = [UIView new];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.managerType == YGBankManagerType_Add ? @"取消" : @"管理" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -114,6 +114,12 @@
 }
 
 - (void)cancelAction {
+    if (self.managerType == YGBankManagerType_Add) {
+        
+    } else {
+        
+    }
+    
 }
 
 /*

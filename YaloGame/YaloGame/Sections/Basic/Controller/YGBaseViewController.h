@@ -14,6 +14,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong) NSString * headTitle;
 -(void)setRightBarItemWithImage:(NSString*)imageName;
 -(void)rightBarItemEvent;
+
+
+@property (nonatomic, strong) UILabel *titleLabel;
+
+@property (nonatomic, strong) UIColor *customNavColor;
+
+- (void)addBackButton;
+
+- (void)back;
+
 @end
 
 NS_ASSUME_NONNULL_END

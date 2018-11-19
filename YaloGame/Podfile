@@ -9,5 +9,7 @@ targetsArray.each do |t|
     pod 'AxcAE_TabBar'
     pod 'FDFullscreenPopGesture'
     pod 'SDCycleScrollView'
+    pod 'YYModel'
+
   end
 end

@@ -13,6 +13,7 @@
 @interface YGChargeViewController () {
     
     UILabel *_line;
+    UIButton *_rechargeButton, *_rolloutButton, *_refreshButton;
 }
 
 
@@ -44,7 +45,9 @@
     [view addSubview:acountLabel];
     UIButton *refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [view addSubview:refreshButton];
-    refreshButton.backgroundColor = [UIColor redColor];
+    [refreshButton setBackgroundImage:[UIImage imageNamed:@"common_refresh"] forState:UIControlStateNormal];
+    _refreshButton = refreshButton;
+    [_refreshButton addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchUpInside];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);
         make.top.equalTo(@45);
@@ -90,8 +93,11 @@
     }];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [view addSubview:leftButton];
+    leftButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [view addSubview:rightButton];
+    rightButton.titleLabel.font = [UIFont systemFontOfSize:15];
     [leftButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -105,8 +111,12 @@
     }];
     [leftButton setTitle:@"充值" forState:UIControlStateNormal];
     [rightButton setTitle:@"提现" forState:UIControlStateNormal];
-    [leftButton setImage:[UIImage imageWithColor:[UIColor redColor]] forState:UIControlStateNormal];
-    [rightButton setImage:[UIImage imageWithColor:[UIColor redColor]] forState:UIControlStateNormal];
+    leftButton.imageView.contentMode = UIViewContentModeCenter;
+    rightButton.imageView.contentMode = UIViewContentModeCenter;
+    [leftButton setImage:[UIImage imageNamed:@"recharge_unselected"] forState:UIControlStateNormal];
+    [leftButton setImage:[UIImage imageNamed:@"recharge_selected"] forState:UIControlStateSelected];
+    [rightButton setImage:[UIImage imageNamed:@"rollout_unselected"] forState:UIControlStateNormal];
+    [rightButton setImage:[UIImage imageNamed:@"rollout_selected"] forState:UIControlStateSelected];
     leftButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     [leftButton addTarget:self action:@selector(chargeMoney:) forControlEvents:UIControlEventTouchUpInside];
     [rightButton addTarget:self action:@selector(rolloutMoney:) forControlEvents:UIControlEventTouchUpInside];
@@ -119,6 +129,9 @@
         make.height.mas_equalTo(1);
         make.width.mas_equalTo(60);
     }];
+    _rechargeButton = leftButton;
+    _rolloutButton = rightButton;
+    leftButton.selected = YES;
 }
 
 - (void)addDefaultView {
@@ -134,6 +147,8 @@
 }
 
 - (void)chargeMoney:(UIButton *)button {
+    _rechargeButton.selected = YES;
+    _rolloutButton.selected = NO;
     [_line mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button.mas_centerX);
         make.bottom.equalTo(button.superview);
@@ -146,6 +161,8 @@
 }
 
 - (void)rolloutMoney:(UIButton *)button {
+    _rechargeButton.selected = NO;
+    _rolloutButton.selected = YES;
     [_line mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button.mas_centerX);
         make.bottom.equalTo(button.superview);
@@ -157,14 +174,26 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)startAnimation {
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI * 2.0];
+    
+    rotationAnimation.duration = 1;
+    
+    rotationAnimation.cumulative = YES;
+    
+    rotationAnimation.repeatCount = CGFLOAT_MAX;
+    [_refreshButton.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
 }
-*/
+
+- (void)stopAnimation {
+    [_refreshButton.layer removeAnimationForKey:@"rotationAnimation"];
+}
+
+- (void)refresh {
+    [self startAnimation];
+    [self performSelector:@selector(stopAnimation) withObject:nil afterDelay:5];
+}
 
 @end
