@@ -62,7 +62,7 @@
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(80, 30));
         make.left.equalTo(@16);
-        make.top.equalTo(self.view).with.offset(20);
+        make.top.equalTo(self.view).with.offset(kNavHeight - 30-5);
     }];
 }
 

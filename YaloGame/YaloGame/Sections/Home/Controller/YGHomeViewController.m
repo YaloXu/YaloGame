@@ -77,7 +77,7 @@
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _mainTableView.backgroundColor = [UIColor clearColor];
         [_mainTableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:HomeTableViewCellId];
-        _mainTableView.rowHeight = (kScreenWidth - 2*kSpace)/4;
+        _mainTableView.rowHeight = (kScreenWidth - kSpace)/4;
         _mainTableView.sectionHeaderHeight = 5;
         _mainTableView.sectionFooterHeight = 5;
         [self autoLayoutSizeContentView:_mainTableView];
@@ -86,14 +86,14 @@
 }
 -(UIView *)HeaderView{
     if (!_HeaderView) {
-        _HeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 190)];
+        _HeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2 + 50)];
         _HeaderView.backgroundColor = [UIColor lightGrayColor];
     }
     return _HeaderView;
 }
 - (SDCycleScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 150) delegate:self placeholderImage:[UIImage imageNamed:@""]];
+        _scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2) delegate:self placeholderImage:[UIImage imageNamed:@""]];
         _scrollView.localizationImageNamesGroup = @[[UIImage imageWithColor:[UIColor blackColor]],[UIImage imageWithColor:[UIColor grayColor]],[UIImage imageWithColor:[UIColor lightGrayColor]],[UIImage imageWithColor:[UIColor greenColor]],[UIImage imageWithColor:[UIColor redColor]]];
         _scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
     }
