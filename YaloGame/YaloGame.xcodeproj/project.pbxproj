@@ -20,7 +20,6 @@
 		021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F328C219C29C20041A11A /* YGMessageViewController.m */; };
 		021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3291219C29CA0041A11A /* YGMineViewController.m */; };
 		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
-		02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */; };
 		02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */; };
 		02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */; };
 		02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */; };
@@ -164,8 +163,6 @@
 		021F3291219C29CA0041A11A /* YGMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMineViewController.m; sourceTree = "<group>"; };
 		021F3296219C29D30041A11A /* YGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAccountViewController.m; sourceTree = "<group>"; };
 		021F3297219C29D30041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
-		02AC5A88219EB1F30092BB46 /* YGHintTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGHintTabBar.h; sourceTree = "<group>"; };
-		02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGHintTabBar.m; sourceTree = "<group>"; };
 		02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardViewController.h; sourceTree = "<group>"; };
 		02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardViewController.m; sourceTree = "<group>"; };
 		02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardViewController.xib; sourceTree = "<group>"; };
@@ -380,8 +377,6 @@
 			children = (
 				021F3264219C24490041A11A /* YGTabBarController.h */,
 				021F3265219C24490041A11A /* YGTabBarController.m */,
-				02AC5A88219EB1F30092BB46 /* YGHintTabBar.h */,
-				02AC5A89219EB1F30092BB46 /* YGHintTabBar.m */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -1011,7 +1006,6 @@
 				02CD775D21A2DAA7009A9892 /* YGMessageSegView.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
-				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
 				2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */,
 				02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */,
 				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
