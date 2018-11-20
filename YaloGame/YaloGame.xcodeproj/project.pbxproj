@@ -74,6 +74,7 @@
 		02F2A4F321A2899D00454F8D /* arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02F2A4F221A2899D00454F8D /* arrow@3x.png */; };
 		2E305EC721A2934200FCF123 /* UIViewController+Custom.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305EC621A2934200FCF123 /* UIViewController+Custom.m */; };
 		2E305ECB21A2962B00FCF123 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */; };
+		2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */; };
 		2EDDE58A219D51430009DDC1 /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE553219D51430009DDC1 /* mine_setting@2x.png */; };
 		2EDDE58B219D51430009DDC1 /* rollout_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */; };
 		2EDDE58C219D51430009DDC1 /* eyes_secret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */; };
@@ -248,6 +249,8 @@
 		2E305EC621A2934200FCF123 /* UIViewController+Custom.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Custom.m"; sourceTree = "<group>"; };
 		2E305EC921A2962B00FCF123 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		2E9EA73A21A2F904002EF478 /* GoodsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsCollectionViewCell.h; sourceTree = "<group>"; };
+		2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCollectionViewCell.m; sourceTree = "<group>"; };
 		2EDDE553219D51430009DDC1 /* mine_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mine_setting@2x.png"; sourceTree = "<group>"; };
 		2EDDE554219D51430009DDC1 /* rollout_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rollout_selected@2x.png"; sourceTree = "<group>"; };
 		2EDDE555219D51430009DDC1 /* eyes_secret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eyes_secret@2x.png"; sourceTree = "<group>"; };
@@ -435,8 +438,8 @@
 		021F325F219C23D30041A11A /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				2E9EA73921A2F889002EF478 /* Views */,
 				021F3295219C29D30041A11A /* Controller */,
-				021F3294219C29D30041A11A /* Views */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -615,13 +618,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		021F3294219C29D30041A11A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		021F3295219C29D30041A11A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +632,15 @@
 			children = (
 				2E305EC921A2962B00FCF123 /* HomeTableViewCell.h */,
 				2E305ECA21A2962B00FCF123 /* HomeTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2E9EA73921A2F889002EF478 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E9EA73A21A2F904002EF478 /* GoodsCollectionViewCell.h */,
+				2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1007,6 +1012,7 @@
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
 				02AC5A8A219EB1F30092BB46 /* YGHintTabBar.m in Sources */,
+				2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */,
 				02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */,
 				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
 				02CD776621A2E323009A9892 /* YGMessageTableViewCell.m in Sources */,

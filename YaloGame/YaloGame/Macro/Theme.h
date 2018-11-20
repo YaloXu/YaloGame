@@ -75,7 +75,6 @@
  */
 #define ButtonFontSize [UIFont systemFontOfSize:15]
 
-#pragma mark -  * * * * * * * * * * * * * * set Button * * * * * * * * * * * * * *
 
 /**
  * 左右间距
