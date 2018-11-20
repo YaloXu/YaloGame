@@ -28,6 +28,7 @@
     self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
     self.navigationItem.title = @"充值/提现";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"交易记录" style:UIBarButtonItemStylePlain target:self action:@selector(record)];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
 //    [self addDefaultView];
     [self segView];
     [self setUp];

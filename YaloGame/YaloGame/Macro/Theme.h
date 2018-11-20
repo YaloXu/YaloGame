@@ -111,10 +111,12 @@
 
 
 
-#define kNavHeight 64
+#define kNavHeight (self.navigationController.navigationBar.frame.size.height + kStatusBarHeight)
 
-#define kStatusBarHeight 20
+#define kStatusBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height)
 
+
+#define kTabBarHeight [[UITabBarController alloc] init].tabBar.frame.size.height
 
 
 #endif /* Theme_h */

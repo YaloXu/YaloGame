@@ -25,7 +25,7 @@
 - (UICollectionView *)mainCollectionView {
     if (!_mainCollectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight - kNavHeight - 40 - 49);
+        layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight - kNavHeight - 60 - kTabBarHeight);
         layout.minimumLineSpacing = CGFLOAT_MIN;
         layout.minimumInteritemSpacing = CGFLOAT_MIN;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -41,7 +41,6 @@
     return _mainCollectionView;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"消息";
@@ -49,7 +48,7 @@
     [self.view addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self.view);
-        make.top.equalTo(@55);
+        make.top.equalTo(self.view).with.offset(55);
     }];
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"YGMessageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
 }
