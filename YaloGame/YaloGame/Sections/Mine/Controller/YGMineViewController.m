@@ -45,7 +45,7 @@
     [super viewDidLoad];
   
     // Do any additional setup after loading the view.
-    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];

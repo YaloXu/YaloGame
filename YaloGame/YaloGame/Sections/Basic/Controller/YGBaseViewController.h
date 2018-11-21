@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIColor *customNavColor;
 
+- (void)autoLayoutSizeContentView:(UIScrollView *)scrollView;
+
 - (void)addBackButton;
 
 - (void)back;
