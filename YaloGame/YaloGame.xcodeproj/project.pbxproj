@@ -20,6 +20,8 @@
 		021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F328C219C29C20041A11A /* YGMessageViewController.m */; };
 		021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3291219C29CA0041A11A /* YGMineViewController.m */; };
 		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
+		025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F24A921A54874001FDBB1 /* YGShareViewController.m */; };
+		025F24AD21A54874001FDBB1 /* YGShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 025F24AA21A54874001FDBB1 /* YGShareViewController.xib */; };
 		02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */; };
 		02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */; };
 		02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */; };
@@ -172,6 +174,9 @@
 		021F3291219C29CA0041A11A /* YGMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMineViewController.m; sourceTree = "<group>"; };
 		021F3296219C29D30041A11A /* YGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAccountViewController.m; sourceTree = "<group>"; };
 		021F3297219C29D30041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
+		025F24A921A54874001FDBB1 /* YGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGShareViewController.m; sourceTree = "<group>"; };
+		025F24AA21A54874001FDBB1 /* YGShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YGShareViewController.xib; sourceTree = "<group>"; };
+		025F24AB21A54874001FDBB1 /* YGShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGShareViewController.h; sourceTree = "<group>"; };
 		02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardViewController.h; sourceTree = "<group>"; };
 		02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardViewController.m; sourceTree = "<group>"; };
 		02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardViewController.xib; sourceTree = "<group>"; };
@@ -567,6 +572,9 @@
 		021F328F219C29CA0041A11A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				025F24AB21A54874001FDBB1 /* YGShareViewController.h */,
+				025F24A921A54874001FDBB1 /* YGShareViewController.m */,
+				025F24AA21A54874001FDBB1 /* YGShareViewController.xib */,
 				021F3290219C29CA0041A11A /* YGMineViewController.h */,
 				021F3291219C29CA0041A11A /* YGMineViewController.m */,
 				02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */,
@@ -950,6 +958,9 @@
 				2E305F2D21A5355A00FCF123 /* arrow@2x.png in Resources */,
 				2E305F1D21A5355A00FCF123 /* rollout_selected@2x.png in Resources */,
 				02AC5AF721A19FF00092BB46 /* YGMineFooterView.xib in Resources */,
+				2EDDE5A8219D51430009DDC1 /* tabbar_home@3x.png in Resources */,
+				025F24AD21A54874001FDBB1 /* YGShareViewController.xib in Resources */,
+				2EDDE59D219D51430009DDC1 /* nav_back@2x.png in Resources */,
 				02AC5AD621A161B90092BB46 /* YGContactUsViewController.xib in Resources */,
 				2E305F4521A5355A00FCF123 /* mine_message@3x.png in Resources */,
 				2E305F4321A5355A00FCF123 /* home_notice_bg@3x.png in Resources */,
@@ -1058,6 +1069,7 @@
 				02CD775B21A2DAA7009A9892 /* YGMessageDefaultView.m in Sources */,
 				2E305ED321A4033300FCF123 /* MSWeakTimer.m in Sources */,
 				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
+				025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */,
 				02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */,
 				02AC5AF021A19FB60092BB46 /* YGMineHeaderView.m in Sources */,
 				02AC5ACF21A15E5F0092BB46 /* YGWebViewController.m in Sources */,
@@ -1216,6 +1228,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1238,6 +1251,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

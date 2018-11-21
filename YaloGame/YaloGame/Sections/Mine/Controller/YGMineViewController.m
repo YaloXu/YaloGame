@@ -17,6 +17,7 @@
 #import "YGSettingViewController.h"
 #import "YGBankViewController.h"
 #import "YGOrderViewController.h"
+#import "YGShareViewController.h"
 
 @interface YGMineViewController () <YGMineFooterDelegate>
 
@@ -45,10 +46,9 @@
     [super viewDidLoad];
   
     // Do any additional setup after loading the view.
-    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 250)];
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 300)];
     footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -94,6 +94,7 @@
         }
             break;
         case 6: {
+            controller = [YGShareViewController new];
         }
             break;
         case 7: {

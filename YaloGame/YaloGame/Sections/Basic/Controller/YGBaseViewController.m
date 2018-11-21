@@ -17,6 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self backBarbuttonForWhite];
+    if (@available(iOS 11.0, *)) {
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
      self.view.backgroundColor = DefaultBackGroundColor;
 }
 //导航栏左边按钮
@@ -93,4 +97,17 @@
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
 }
+
+- (void)autoLayoutSizeContentView:(UIScrollView *)scrollView {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_11_0
+    if (@available(iOS 11.0, *)) {
+        scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        if ([scrollView isKindOfClass:[UITableView class]]) {
+            ((UITableView *)scrollView).estimatedSectionHeaderHeight = 0;
+            ((UITableView *)scrollView).estimatedSectionFooterHeight = 0;
+        }
+    }
+#endif
+}
+
 @end
