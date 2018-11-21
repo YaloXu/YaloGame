@@ -78,5 +78,6 @@
     YGBaseNavgationViewController *nav = [[YGBaseNavgationViewController alloc] initWithRootViewController:controller];
     return nav;
 }
+
 @end
 

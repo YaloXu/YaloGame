@@ -31,8 +31,8 @@
     if (!_myImage) {
         _myImage = [[UIImageView alloc]init];
         _myImage.layer.masksToBounds = YES;
-        _myImage.layer.cornerRadius = 5.0f;
-        _myImage.image = [UIImage imageWithColor:[UIColor grayColor]];
+        _myImage.layer.cornerRadius = 10.0f;
+        _myImage.image = [UIImage imageWithColor:[UIColor lightGrayColor]];
     }
     return _myImage;
 }
