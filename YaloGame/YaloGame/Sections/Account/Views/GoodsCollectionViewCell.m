@@ -62,7 +62,7 @@
 -(UIImageView *)goodsImg{
     if (!_goodsImg) {
         _goodsImg = [[UIImageView alloc]init];
-        _goodsImg.image = [UIImage imageWithColor:[UIColor whiteColor]];
+        _goodsImg.image = [UIImage imageWithColor:[UIColor lightGrayColor]];
     }
     return _goodsImg;
 }
