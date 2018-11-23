@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const HomeTableViewCellId = @"HomeTableViewCell_identifier";
 @interface HomeTableViewCell : UITableViewCell
+@property (nonatomic , strong) UIImageView *myImage;
 
 @end
 

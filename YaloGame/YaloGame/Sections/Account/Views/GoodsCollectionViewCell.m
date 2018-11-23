@@ -8,7 +8,6 @@
 
 #import "GoodsCollectionViewCell.h"
 @interface GoodsCollectionViewCell()
-@property (nonatomic , strong) UIImageView *goodsImg;
 @property (nonatomic , strong) UILabel     *goodsName;
 @property (nonatomic , strong) UILabel     *goodsPrice;
 @property (nonatomic , strong) UILabel     *goodsVipPrice;

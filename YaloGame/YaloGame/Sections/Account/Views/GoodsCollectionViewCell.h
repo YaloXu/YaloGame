@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 static NSString *const GoodsCollectionViewCellId = @"GoodsCollectionViewCellIdentifier";
 @interface GoodsCollectionViewCell : UICollectionViewCell
+@property (nonatomic , strong) UIImageView *goodsImg;
 
 @end
 

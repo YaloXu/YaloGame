@@ -15,6 +15,8 @@
 @property (nonatomic ,strong) UILabel * accountLabel;
 @property (nonatomic ,strong) UIButton* accountRecord;
 @property (nonatomic ,strong) UIButton* accountHelp;
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 @end
 
 @implementation YGAccountViewController
@@ -22,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
+    self.dataSource = [NSMutableArray arrayWithObjects:@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09", nil];
 }
 -(void)setUI{
     self.headTitle = @"金币";
@@ -63,7 +66,9 @@
         make.top.equalTo(self.segmentControl.mas_bottom).with.mas_offset(10);
     }];
 }
-
+-(void)rightBarItemEvent{
+    
+}
 -(void)howGetmoney{
     
 }
@@ -101,11 +106,12 @@
     return 1;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 16;
+    return self.dataSource.count;
 }
 -  (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GoodsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:GoodsCollectionViewCellId forIndexPath:indexPath];
+    cell.goodsImg.image = [UIImage imageNamed:self.dataSource[indexPath.item]];
     return cell;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section { 

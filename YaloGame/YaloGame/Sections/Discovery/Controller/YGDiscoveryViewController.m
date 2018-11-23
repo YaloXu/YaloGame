@@ -11,6 +11,8 @@
 #import "YGWebViewController.h"
 @interface YGDiscoveryViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView * mainTableView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
+
 @end
 
 @implementation YGDiscoveryViewController
@@ -18,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.dataSource = [NSMutableArray arrayWithObjects:@"discovery_list01",@"discovery_list02",@"discovery_list03",@"discovery_list04", nil];
     // Do any additional setup after loading the view.
 }
 -(void)setUI{
@@ -29,18 +33,20 @@
     }];
 }
 -(void)rightBarItemEvent{
+    
 }
 
 
 #pragma mark == tableViewDelegate ==
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
+    return self.dataSource.count;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeTableViewCellId];
+    cell.myImage.image = [UIImage imageNamed:self.dataSource[indexPath.section]];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -50,10 +56,10 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return kSpace;
+    return kTopSpace;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return section == 0 ?kSpace :CGFLOAT_MIN;
+    return section == 0 ?kTopSpace :CGFLOAT_MIN;
 }
 -(UITableView *)mainTableView{
     if(!_mainTableView){
@@ -63,7 +69,7 @@
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _mainTableView.backgroundColor = [UIColor clearColor];
         [_mainTableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:HomeTableViewCellId];
-        _mainTableView.rowHeight = (kScreenWidth - 2*kSpace)/3;
+        _mainTableView.rowHeight = 120*kHeightRatio;
         _mainTableView.sectionHeaderHeight = 5;
         _mainTableView.sectionFooterHeight = 5;
         [self autoLayoutSizeContentView:_mainTableView];

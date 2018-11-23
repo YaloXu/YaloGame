@@ -79,7 +79,8 @@
 /**
  * 左右间距
  */
-#define kSpace 15
+#define kSpace 16
+#define kTopSpace 10
 #pragma mark -  * * * * * * * * * * * * * * set Button * * * * * * * * * * * * * *
 /**
  *  按钮的背景默认颜色
@@ -108,7 +109,8 @@
 
 #define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
-
+#define kWidthRatio (kScreenWidth / 375)
+#define kHeightRatio (kScreenHeight / 667)
 
 
 #define kNavHeight (self.navigationController.navigationBar.frame.size.height + kStatusBarHeight)
