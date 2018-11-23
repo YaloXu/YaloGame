@@ -47,7 +47,7 @@
     self.activityView.timeIntervalPerScroll = 3.0f;
     self.activityView.timeDurationPerScroll = 1.0f;
     self.activityView.touchEnabled = YES;
-    [self.HeaderView addSubview:self.activityView];
+    
     [self.HeaderView addSubview:self.scrollView];
     self.mainTableView.tableHeaderView = self.HeaderView;
     
@@ -64,6 +64,7 @@
     imageBg.layer.shadowOpacity = 1;//不透明度
     imageBg.layer.shadowRadius = 10.0;//半径
     [self.HeaderView addSubview:imageBg];
+    [self.HeaderView addSubview:self.activityView];
     [self.HeaderView addSubview:noticeLabel];
     [self.HeaderView addSubview:line];
     [imageBg mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -119,7 +120,7 @@
 
 - (void)createItemView:(UIView *)itemView forMarqueeView:(UUMarqueeView *)marqueeView {
     itemView.backgroundColor = [UIColor clearColor];
-    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth-100, 40)];
+    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth-100, 40*kHeightRatio)];
     contentLabel.font = [UIFont systemFontOfSize:8.0f];
     contentLabel.tag = 1001;
     contentLabel.textColor = UIColorFromRGBValue(0x000000);
