@@ -12,6 +12,7 @@ targetsArray.each do |t|
     pod 'YYModel'
     pod 'MJRefresh'
     pod 'MBProgressHUD'
+    pod 'DMProgressHUD'
 
   end
 end

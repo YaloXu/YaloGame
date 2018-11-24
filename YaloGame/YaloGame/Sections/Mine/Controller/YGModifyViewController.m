@@ -21,6 +21,7 @@
     self.navigationItem.title = self.modifyStyle == ModifyStyle_NickName ? @"设置昵称" : @"设置签名";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(complete)];
+    [self adjustFont];
 }
 
 - (void)cancel {
@@ -28,7 +29,15 @@
 }
 
 - (void)complete {
-    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)adjustFont {
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:UIColorFromRGBValue(0xE9A400)} forState:UIControlStateNormal];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14],NSForegroundColorAttributeName:UIColorFromRGBValue(0xE9A400)} forState:UIControlStateSelected];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} forState:UIControlStateNormal];
+    [self.navigationItem.leftBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} forState:UIControlStateSelected];
+
 }
 
 /*

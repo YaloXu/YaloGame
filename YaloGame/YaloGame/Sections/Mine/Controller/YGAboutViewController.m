@@ -9,6 +9,8 @@
 #import "YGAboutViewController.h"
 #import "YGWebViewController.h"
 #import "YGContactUsViewController.h"
+#import "UITableViewCell+Arrow.h"
+#import "DMProgressHUD.h"
 
 @interface YGAboutLogoView : UIView {
     
@@ -37,16 +39,18 @@
     _versionLabel.textAlignment = NSTextAlignmentCenter;
     [_logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(60, 60));
-        make.top.equalTo(@30);
+        make.size.mas_equalTo(CGSizeMake(55, 55));
+        make.top.equalTo(@25);
     }];
     [_versionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
-        make.height.mas_equalTo(20);
-        make.top.equalTo(_logoImageView.mas_bottom).offset(20);
+        make.height.mas_equalTo(22);
+        make.top.equalTo(_logoImageView.mas_bottom).offset(11);
     }];
    NSString *version = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     _versionLabel.text = version;
+    _versionLabel.font = [UIFont systemFontOfSize:16.0];
+    _versionLabel.textColor = UIColorFromRGBValue(0x333333);
     _logoImageView.backgroundColor = [UIColor redColor];
 }
 
@@ -68,8 +72,9 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"关于";
     _dataSource = @[@"服务条款",@"隐私政策",@"联系我们",@"更新日志",@"检查更新"];
-    _tableView.tableHeaderView = [[YGAboutLogoView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 250)];
+    _tableView.tableHeaderView = [[YGAboutLogoView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 136)];
     _tableView.tableFooterView = [UIView new];
+    self.tableView.backgroundColor = DefaultBackGroundColor;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,7 +82,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.customArrow = YES;
+        cell.textLabel.textColor = UIColorFromRGBValue(0x333333);
+        cell.textLabel.font = [UIFont systemFontOfSize:12];
     }
     cell.textLabel.text = _dataSource[indexPath.row];
     return cell;
@@ -85,6 +92,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _dataSource.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 36;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,6 +118,11 @@
         }
             break;
         case 3: {
+            [DMProgressHUD showLoadingHUDAddedTo:self.view];
+        }
+            break;
+        case 4: {
+            [DMProgressHUD showLoadingHUDAddedTo:self.view];
         }
             break;
         default:
@@ -117,14 +133,6 @@
     }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

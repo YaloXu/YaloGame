@@ -9,9 +9,11 @@
 #import "YGMessageViewController.h"
 #import "YGMessageSegView.h"
 #import "YGMessageCollectionViewCell.h"
+#import "YGMessageModel.h"
 
 @interface YGMessageViewController ()<UICollectionViewDelegate, UICollectionViewDataSource> {
     NSInteger _lastIndex;
+    NSMutableArray *datas;
 }
 
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
@@ -41,14 +43,22 @@
     return _mainCollectionView;
 }
 
+- (void)datas {
+    datas = [NSMutableArray new];
+    for (int i = 0; i < 16; i ++) {
+        [datas addObject:[YGMessageModel new]];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"消息";
     [self addSegView];
+    [self datas];
     [self.view addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self.view);
-        make.top.equalTo(self.view).with.offset(55);
+        make.top.equalTo(self.view).with.offset(54);
     }];
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"YGMessageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
 }
@@ -57,22 +67,34 @@
     YGMessageSegView *segView = [YGMessageSegView new];
     [self.view addSubview:segView];
     [segView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@10);
-        make.left.equalTo(@40);
-        make.right.equalTo(@(-40));
-        make.height.mas_equalTo(40);
+        make.top.equalTo(@11);
+        make.left.equalTo(@38);
+        make.right.equalTo(@(-38));
+        make.height.mas_equalTo(30);
     }];
     [segView setSegDidSelctedHandler:^(NSInteger index){
         if (_lastIndex == index) {
             return ;
         }
+        if (index == 0) {
+            self.navigationItem.title = @"站内信";
+        } else if (index == 1) {
+            self.navigationItem.title = @"公告";
+        } else {
+            self.navigationItem.title = @"新闻";
+        }
         _lastIndex = index;
-        [self.mainCollectionView selectItemAtIndexPath:[NSIndexPath indexPathWithIndex:index] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
     }];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YGMessageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    if (indexPath.item == 1) {
+        cell.dataSource = datas;
+    } else {
+        cell.dataSource = @[];
+    }
     return cell;
 }
 

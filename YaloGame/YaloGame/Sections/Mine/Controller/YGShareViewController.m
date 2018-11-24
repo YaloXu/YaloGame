@@ -12,6 +12,17 @@
 @property (weak, nonatomic) IBOutlet UILabel *registerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rechargeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *inviteCodeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *qrImageView;
+@property (weak, nonatomic) IBOutlet UILabel *linkLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *LinkButton;
+@property (weak, nonatomic) IBOutlet UIButton *modifyButton;
+@property (weak, nonatomic) IBOutlet UIButton *inviteButton;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
 @end
 
@@ -20,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"推广/分享";
     
 }
 - (IBAction)copyAction:(id)sender {

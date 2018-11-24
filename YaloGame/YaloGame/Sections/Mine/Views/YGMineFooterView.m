@@ -62,3 +62,77 @@
 }
 
 @end
+
+@interface YGUnLoginView()
+
+@end
+
+@implementation YGUnLoginView
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
+        [self setUp];
+    }
+    return self;
+}
+
+- (void)setUp {
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_header_bg"]];
+    [self addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.right.equalTo(self);
+        make.height.mas_equalTo(226);
+    }];
+    UIView *view = [UIView new];
+    [self addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(140, 30));
+        make.bottom.equalTo(@(-40));
+        make.centerX.equalTo(self);
+    }];
+    UIButton *loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [view addSubview:loginButton];
+    UIButton *registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [view addSubview:registerButton];
+    loginButton.titleLabel.font = registerButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    [loginButton setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+    [registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    loginButton.backgroundColor = [UIColor clearColor];
+    [loginButton setTitle:@"登录" forState:UIControlStateNormal];
+    [registerButton setTitle:@"注册" forState:UIControlStateNormal];
+    [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.equalTo(view);
+        make.width.mas_equalTo(70);
+    }];
+    [registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.top.bottom.equalTo(view);
+        make.width.mas_equalTo(70);
+    }];
+    view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.3];
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = 15;
+    [loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
+    [registerButton addTarget:self action:@selector(registerUser) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)login {
+    if (self.loginHandler) {
+        self.loginHandler();
+    }
+}
+
+- (void)registerUser{
+    if (self.registerHandler) {
+        self.registerHandler();
+    }
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CALayer *layer = [CALayer layer];
+    [self.layer addSublayer:layer];
+    layer.backgroundColor = UIColor.whiteColor.CGColor;
+    layer.frame = CGRectMake(kScreenWidth / 2 - 1, CGRectGetHeight(self.frame) - 40 - 30, 1, 30);
+}
+
+@end

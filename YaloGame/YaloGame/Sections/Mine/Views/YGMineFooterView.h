@@ -22,4 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface YGUnLoginView : UIView
+
+@property (nonatomic, copy) void (^(loginHandler))(void);
+
+@property (nonatomic, copy) void (^(registerHandler))(void);
+
+@end
+
 NS_ASSUME_NONNULL_END

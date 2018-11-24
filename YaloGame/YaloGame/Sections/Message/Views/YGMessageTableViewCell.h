@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YGMessageTableViewCell : UITableViewCell
+@property (nonatomic, strong) YGMessageModel *model;
 
 @end
 

@@ -7,8 +7,6 @@
 //
 
 #import "YGMineViewController.h"
-#import "YGBindCardViewController.h"
-#import "YGSettingViewController.h"
 #import "YGChargeViewController.h"
 #import "YGMineHeaderView.h"
 #import "YGMineFooterView.h"
@@ -18,6 +16,8 @@
 #import "YGBankViewController.h"
 #import "YGOrderViewController.h"
 #import "YGShareViewController.h"
+#import "YGLoginViewController.h"
+#import "YGRegisterViewController.h"
 
 @interface YGMineViewController () <YGMineFooterDelegate>
 
@@ -34,8 +34,8 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.backgroundView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-        
+        _tableView.backgroundView.backgroundColor = DefaultBackGroundColor;
+        _tableView.backgroundColor = DefaultBackGroundColor;
 //        _tableView.dataSource = self;
 //        _tableView.delegate = self;
     }
@@ -48,20 +48,52 @@
     // Do any additional setup after loading the view.
     [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 296)];
-    footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = DefaultBackGroundColor;
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 480)];
+    //已登录
+    if (@"".length > 0) {
+        footerView.frame = CGRectMake(0, 0, kScreenWidth, 296);
+        self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
+    }
+    
+    
+    footerView.backgroundColor = DefaultBackGroundColor;
+    
+    
     YGMineFooterView *view = [[NSBundle mainBundle] loadNibNamed:@"YGMineFooterView" owner:nil options:nil].firstObject;
     [footerView addSubview:view];
     view.backgroundColor = [UIColor whiteColor];
     view.delegate = self;
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@16);
-        make.bottom.equalTo(footerView);
-        make.left.equalTo(@16);
-        make.right.equalTo(@(-16));
-    }];
+    //已登录
+    if (@"".length > 0) {
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@16);
+            make.bottom.equalTo(footerView);
+            make.left.equalTo(@16);
+            make.right.equalTo(@(-16));
+        }];
+    } else {
+        YGUnLoginView *loginView = [[YGUnLoginView alloc] init];
+        [footerView addSubview:loginView];
+        [loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.equalTo(footerView);
+            make.height.mas_equalTo(226);
+        }];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(footerView);
+            make.left.equalTo(@16);
+            make.right.equalTo(@(-16));
+            make.height.mas_equalTo(280);
+        }];
+        [loginView setLoginHandler:^{
+            [self.navigationController pushViewController:[YGLoginViewController new] animated:YES];
+        }];
+        [loginView setRegisterHandler:^{
+            [self.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
+        }];
+        [footerView bringSubviewToFront:view];
+    }
+    
     self.tableView.tableFooterView = footerView;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);

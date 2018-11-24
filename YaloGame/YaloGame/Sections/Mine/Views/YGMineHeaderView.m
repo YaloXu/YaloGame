@@ -22,7 +22,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = kBackDefaultGrayColor;
+        self.backgroundColor = DefaultBackGroundColor;
         [self setUp];
     }
     return self;

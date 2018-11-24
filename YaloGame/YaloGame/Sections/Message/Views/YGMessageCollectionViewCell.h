@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGMessageCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) NSArray *dataSource;
+
 @end
 
 NS_ASSUME_NONNULL_END

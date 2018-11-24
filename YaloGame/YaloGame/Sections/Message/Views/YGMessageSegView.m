@@ -52,11 +52,11 @@
         if (self.selectedIndex == i) {
             button.selected = YES;
         }
-        button.titleLabel.font = [UIFont systemFontOfSize:14];
+        button.titleLabel.font = [UIFont systemFontOfSize:12];
         [buttons addObject:button];
         [button setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateSelected];
-        [button setTitleColor:NavgationBgColor forState:UIControlStateNormal];
-        [button setTitleColor:NavgationBgColor forState:UIControlStateHighlighted];
+        [button setTitleColor:UIColorFromRGBValue(0x333333) forState:UIControlStateNormal];
+        [button setTitleColor:UIColorFromRGBValue(0x333333) forState:UIControlStateHighlighted];
         [button setBackgroundImage:[UIImage imageWithColor:[UIColor groupTableViewBackgroundColor]] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageWithColor:NavgationBgColor] forState:UIControlStateSelected];
          [button setBackgroundImage:[UIImage imageWithColor:NavgationBgColor] forState:UIControlStateHighlighted];

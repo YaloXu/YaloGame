@@ -19,16 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"设置账户密码";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)pwdAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    self.pwdTF.secureTextEntry = sender.selected;
+    
 }
-*/
+- (IBAction)pwdConfirmAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    self.confirmPwdTF.secureTextEntry = sender.selected;
+}
+
 
 @end

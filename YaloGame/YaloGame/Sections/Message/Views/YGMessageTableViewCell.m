@@ -22,8 +22,13 @@
     [super awakeFromNib];
     // Initialization code
     self.dateLabel.text = @"2018-11-11";
-    self.titleLabel.text = @"ssssssssss";
-    self.contentLabel.text = @"jsjjsjsjsjjsjssjsj";
+    
+}
+
+- (void)setModel:(YGMessageModel *)model {
+    _model = model;
+    self.titleLabel.text = _model.title;
+    self.contentLabel.text = _model.content;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

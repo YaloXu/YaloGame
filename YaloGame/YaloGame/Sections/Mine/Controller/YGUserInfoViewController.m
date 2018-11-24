@@ -127,15 +127,27 @@
     self.customNavColor = [UIColor clearColor];
     self.titleLabel.text = @"个人资料";
     [self addBackButton];
-//    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(@(0));
-//        make.left.right.bottom.equalTo(self.view);
-//    }];
+    [self addRight];
     YGUserHeaderView *headerView = [[YGUserHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 315)];
     headerView.delegate = self;
     _headerView = headerView;
     self.tableView.tableHeaderView = headerView;
     self.tableView.tableFooterView = [UIView new];
+    self.tableView.backgroundColor = DefaultBackGroundColor;
+    self.tableView.backgroundView.backgroundColor = DefaultBackGroundColor;
+}
+
+- (void)addRight {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:button];
+    [button setTitle:@"交易记录" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:12];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(@(-16));
+        make.size.mas_equalTo(CGSizeMake(50, kNavHeight - kStatusBarHeight));
+        make.top.equalTo(@(kStatusBarHeight));
+    }];
+    [button addTarget:self action:@selector(record) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,6 +179,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return CGFLOAT_MIN;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [UIView new];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -224,6 +240,10 @@
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
     _headerView.avaImageView.image = selectedImage;
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)record {
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

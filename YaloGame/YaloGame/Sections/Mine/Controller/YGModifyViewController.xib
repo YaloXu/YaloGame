@@ -26,8 +26,8 @@
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ddd" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIk-wd-yXD">
                             <rect key="frame" x="15" y="0.0" width="345" height="40"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>

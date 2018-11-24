@@ -6,11 +6,11 @@
 //  Copyright © 2018 C. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YGBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface YGShareViewController : UIViewController
+@interface YGShareViewController : YGBaseViewController
 
 @end
 
