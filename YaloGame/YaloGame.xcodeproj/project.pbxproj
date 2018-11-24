@@ -60,6 +60,17 @@
 		028553EF21A9833B00E7DDBC /* YGMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 028553EE21A9833B00E7DDBC /* YGMessageModel.m */; };
 		028553F221A990B900E7DDBC /* YGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 028553F121A990B900E7DDBC /* YGLoginViewController.m */; };
 		028553F521A990D300E7DDBC /* YGRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 028553F421A990D300E7DDBC /* YGRegisterViewController.m */; };
+		028553FE21A991E900E7DDBC /* protocol_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553F621A991E800E7DDBC /* protocol_selected@3x.png */; };
+		028553FF21A991E900E7DDBC /* protocol_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553F721A991E800E7DDBC /* protocol_selected@2x.png */; };
+		0285540021A991E900E7DDBC /* protocol_unselected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553F821A991E800E7DDBC /* protocol_unselected@3x.png */; };
+		0285540121A991E900E7DDBC /* protocol_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553F921A991E800E7DDBC /* protocol_unselected@2x.png */; };
+		0285540221A991E900E7DDBC /* login_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553FA21A991E800E7DDBC /* login_logo@2x.png */; };
+		0285540321A991E900E7DDBC /* login_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553FB21A991E800E7DDBC /* login_logo@3x.png */; };
+		0285540421A991E900E7DDBC /* login_pwd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553FC21A991E800E7DDBC /* login_pwd@3x.png */; };
+		0285540521A991E900E7DDBC /* login_pwd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 028553FD21A991E900E7DDBC /* login_pwd@2x.png */; };
+		0285540821A9969100E7DDBC /* login_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0285540621A9969000E7DDBC /* login_phone@3x.png */; };
+		0285540921A9969100E7DDBC /* login_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0285540721A9969100E7DDBC /* login_phone@2x.png */; };
+		0285540C21A9983800E7DDBC /* YGLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0285540B21A9983800E7DDBC /* YGLoginView.m */; };
 		02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */; };
 		02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */; };
 		02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */; };
@@ -281,6 +292,18 @@
 		028553F121A990B900E7DDBC /* YGLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGLoginViewController.m; sourceTree = "<group>"; };
 		028553F321A990D300E7DDBC /* YGRegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGRegisterViewController.h; sourceTree = "<group>"; };
 		028553F421A990D300E7DDBC /* YGRegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGRegisterViewController.m; sourceTree = "<group>"; };
+		028553F621A991E800E7DDBC /* protocol_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_selected@3x.png"; sourceTree = "<group>"; };
+		028553F721A991E800E7DDBC /* protocol_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_selected@2x.png"; sourceTree = "<group>"; };
+		028553F821A991E800E7DDBC /* protocol_unselected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_unselected@3x.png"; sourceTree = "<group>"; };
+		028553F921A991E800E7DDBC /* protocol_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "protocol_unselected@2x.png"; sourceTree = "<group>"; };
+		028553FA21A991E800E7DDBC /* login_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_logo@2x.png"; sourceTree = "<group>"; };
+		028553FB21A991E800E7DDBC /* login_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_logo@3x.png"; sourceTree = "<group>"; };
+		028553FC21A991E800E7DDBC /* login_pwd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_pwd@3x.png"; sourceTree = "<group>"; };
+		028553FD21A991E900E7DDBC /* login_pwd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_pwd@2x.png"; sourceTree = "<group>"; };
+		0285540621A9969000E7DDBC /* login_phone@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_phone@3x.png"; sourceTree = "<group>"; };
+		0285540721A9969100E7DDBC /* login_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_phone@2x.png"; sourceTree = "<group>"; };
+		0285540A21A9983800E7DDBC /* YGLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGLoginView.h; sourceTree = "<group>"; };
+		0285540B21A9983800E7DDBC /* YGLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGLoginView.m; sourceTree = "<group>"; };
 		02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardViewController.h; sourceTree = "<group>"; };
 		02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardViewController.m; sourceTree = "<group>"; };
 		02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardViewController.xib; sourceTree = "<group>"; };
@@ -782,6 +805,8 @@
 				02F2A4E521A2594A00454F8D /* YGTransactionTableViewCell.xib */,
 				025F24CF21A9221A001FDBB1 /* YGQRView.h */,
 				025F24D021A9221A001FDBB1 /* YGQRView.m */,
+				0285540A21A9983800E7DDBC /* YGLoginView.h */,
+				0285540B21A9983800E7DDBC /* YGLoginView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -864,6 +889,16 @@
 		2EDDE551219D11370009DDC1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				0285540721A9969100E7DDBC /* login_phone@2x.png */,
+				0285540621A9969000E7DDBC /* login_phone@3x.png */,
+				028553FA21A991E800E7DDBC /* login_logo@2x.png */,
+				028553FB21A991E800E7DDBC /* login_logo@3x.png */,
+				028553FD21A991E900E7DDBC /* login_pwd@2x.png */,
+				028553FC21A991E800E7DDBC /* login_pwd@3x.png */,
+				028553F721A991E800E7DDBC /* protocol_selected@2x.png */,
+				028553F621A991E800E7DDBC /* protocol_selected@3x.png */,
+				028553F921A991E800E7DDBC /* protocol_unselected@2x.png */,
+				028553F821A991E800E7DDBC /* protocol_unselected@3x.png */,
 				028553E421A97B2700E7DDBC /* eyes_secret@2x.png */,
 				028553E521A97B2700E7DDBC /* eyes_secret@3x.png */,
 				028553E721A97B2800E7DDBC /* eyes_unsecret@2x.png */,
@@ -1091,12 +1126,15 @@
 				025F24F021A93B86001FDBB1 /* message_add@2x.png in Resources */,
 				02CD775C21A2DAA7009A9892 /* YGMessageDefaultView.xib in Resources */,
 				028553E821A97B2800E7DDBC /* eyes_secret@2x.png in Resources */,
+				0285540321A991E900E7DDBC /* login_logo@3x.png in Resources */,
 				028553E121A97B0E00E7DDBC /* share_QR@2x.png in Resources */,
 				2E305F7421A7A4B400FCF123 /* discovery_list02.png in Resources */,
+				0285540021A991E900E7DDBC /* protocol_unselected@3x.png in Resources */,
 				2E305F1521A5355A00FCF123 /* home_notice_bg@2x.png in Resources */,
 				025F24EF21A93B86001FDBB1 /* message_add@3x.png in Resources */,
 				2E305F4021A5355A00FCF123 /* common_refresh@3x.png in Resources */,
 				2E305F3821A5355A00FCF123 /* tabbar_discovery_selected@3x.png in Resources */,
+				028553FF21A991E900E7DDBC /* protocol_selected@2x.png in Resources */,
 				2E305F2821A5355A00FCF123 /* common_refresh@2x.png in Resources */,
 				2E305F3121A5355A00FCF123 /* tabbar_message@3x.png in Resources */,
 				025F24DC21A92E35001FDBB1 /* bankCard@3x.png in Resources */,
@@ -1104,6 +1142,7 @@
 				2E305F4821A5355A00FCF123 /* recharge_unselected@2x.png in Resources */,
 				025F24C621A91068001FDBB1 /* recharge_right@3x.png in Resources */,
 				2E305F3A21A5355A00FCF123 /* recharge_selected@2x.png in Resources */,
+				0285540921A9969100E7DDBC /* login_phone@2x.png in Resources */,
 				2E305F4221A5355A00FCF123 /* tabbar_discovery_selected@2x.png in Resources */,
 				2EDDE5D7219ED2CA0009DDC1 /* WechatIMG125.png in Resources */,
 				2E305F1E21A5355A00FCF123 /* rollout_unselected@2x.png in Resources */,
@@ -1117,6 +1156,7 @@
 				2E305F4D21A5355A00FCF123 /* recharge_selected@3x.png in Resources */,
 				02CC5A3521A1B2B600BFBCD6 /* YGOrderViewController.xib in Resources */,
 				025F24C521A91068001FDBB1 /* recharge_right@2x.png in Resources */,
+				0285540121A991E900E7DDBC /* protocol_unselected@2x.png in Resources */,
 				02AC5ADB21A1690F0092BB46 /* YGBankViewController.xib in Resources */,
 				025F24E221A931A5001FDBB1 /* YGBindCardSecondViewController.xib in Resources */,
 				2E305F1A21A5355A00FCF123 /* tabbar_home@3x.png in Resources */,
@@ -1136,6 +1176,7 @@
 				2E305F1421A5355A00FCF123 /* mine_recharge@2x.png in Resources */,
 				02AC5A9421A055200092BB46 /* YGBankCardValidateViewController.xib in Resources */,
 				028553E221A97B0E00E7DDBC /* share_bg@2x.png in Resources */,
+				028553FE21A991E900E7DDBC /* protocol_selected@3x.png in Resources */,
 				2E305F4A21A5355A00FCF123 /* mine_huodong@2x.png in Resources */,
 				025F24D621A92962001FDBB1 /* qr_alipay@2x.png in Resources */,
 				02CD776221A2E005009A9892 /* YGMessageCollectionViewCell.xib in Resources */,
@@ -1152,6 +1193,8 @@
 				2E305F1B21A5355A00FCF123 /* tabbar_message_selected@3x.png in Resources */,
 				2E305F7621A7A4B400FCF123 /* home_list03.png in Resources */,
 				2E305F3321A5355A00FCF123 /* mine_bankcard@2x.png in Resources */,
+				0285540421A991E900E7DDBC /* login_pwd@3x.png in Resources */,
+				0285540821A9969100E7DDBC /* login_phone@3x.png in Resources */,
 				2E305F6E21A7A4B400FCF123 /* home_list02.png in Resources */,
 				025F24E721A9368E001FDBB1 /* YGBindCardSuccessViewController.xib in Resources */,
 				02AC5AC721A118990092BB46 /* YGPwdViewController.xib in Resources */,
@@ -1163,6 +1206,7 @@
 				021F324D219C1E940041A11A /* Assets.xcassets in Resources */,
 				2E305F6921A7A4B400FCF123 /* good_list07.png in Resources */,
 				2E305F2E21A5355A00FCF123 /* mine_rollout@2x.png in Resources */,
+				0285540221A991E900E7DDBC /* login_logo@2x.png in Resources */,
 				2EDDE5D9219ED2CA0009DDC1 /* 电竞UI.zip in Resources */,
 				025F24DD21A92E35001FDBB1 /* bankCard@2x.png in Resources */,
 				2E305F4621A5355A00FCF123 /* shared_icon@2x.png in Resources */,
@@ -1195,6 +1239,7 @@
 				025F24D721A92962001FDBB1 /* qr_close@2x.png in Resources */,
 				2E305F3021A5355A00FCF123 /* tabbar_coin_selected@3x.png in Resources */,
 				025F24D921A92962001FDBB1 /* qr_alipay@3x.png in Resources */,
+				0285540521A991E900E7DDBC /* login_pwd@2x.png in Resources */,
 				02F2A4E721A2594A00454F8D /* YGTransactionTableViewCell.xib in Resources */,
 				2E305F7021A7A4B400FCF123 /* good_list04.png in Resources */,
 				025F24F121A93B86001FDBB1 /* message_rel@2x.png in Resources */,
@@ -1327,6 +1372,7 @@
 				2E305ED221A4033300FCF123 /* UUMarqueeView.m in Sources */,
 				028553F521A990D300E7DDBC /* YGRegisterViewController.m in Sources */,
 				02AC5ADA21A1690F0092BB46 /* YGBankViewController.m in Sources */,
+				0285540C21A9983800E7DDBC /* YGLoginView.m in Sources */,
 				02CD775B21A2DAA7009A9892 /* YGMessageDefaultView.m in Sources */,
 				2E305ED321A4033300FCF123 /* MSWeakTimer.m in Sources */,
 				028553EF21A9833B00E7DDBC /* YGMessageModel.m in Sources */,
