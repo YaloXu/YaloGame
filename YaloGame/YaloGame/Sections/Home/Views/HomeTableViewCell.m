@@ -8,7 +8,7 @@
 
 #import "HomeTableViewCell.h"
 @interface HomeTableViewCell ()
-@property (nonatomic , strong) UIImageView *myImage;
+//@property (nonatomic , strong) UIImageView *myImage;
 @end
 @implementation HomeTableViewCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -32,7 +32,9 @@
         _myImage = [[UIImageView alloc]init];
         _myImage.layer.masksToBounds = YES;
         _myImage.layer.cornerRadius = 10.0f;
-        _myImage.image = [UIImage imageWithColor:[UIColor lightGrayColor]];
+        _myImage.contentMode = UIViewContentModeScaleToFill;
+//        _myImage.clipsToBounds = YES;
+//        _myImage.image = [UIImage imageWithColor:[UIColor lightGrayColor]];
     }
     return _myImage;
 }
