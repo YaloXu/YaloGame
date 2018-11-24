@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8113E97CB15BC6A6141CEEDC1DF8B7CB"
-               BlueprintName = "Pods-YaloGame"
+               BlueprintIdentifier = "AD408BAB384B6DDA88A50A16FB158B66"
+               BlueprintName = "MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-YaloGame.framework">
+               BuildableName = "MBProgressHUD.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

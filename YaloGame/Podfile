@@ -11,6 +11,7 @@ targetsArray.each do |t|
     pod 'SDCycleScrollView'
     pod 'YYModel'
     pod 'MJRefresh'
+    pod 'MBProgressHUD'
 
   end
 end
