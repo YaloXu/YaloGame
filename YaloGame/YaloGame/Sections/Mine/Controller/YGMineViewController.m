@@ -49,18 +49,18 @@
     [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 250)];
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 300)];
+    self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 296)];
     footerView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     YGMineFooterView *view = [[NSBundle mainBundle] loadNibNamed:@"YGMineFooterView" owner:nil options:nil].firstObject;
     [footerView addSubview:view];
     view.backgroundColor = [UIColor whiteColor];
     view.delegate = self;
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@20);
+        make.top.equalTo(@16);
         make.bottom.equalTo(footerView);
-        make.left.equalTo(@15);
-        make.right.equalTo(@(-15));
+        make.left.equalTo(@16);
+        make.right.equalTo(@(-16));
     }];
     self.tableView.tableFooterView = footerView;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -77,6 +77,7 @@
             break;
         case 1: {
             controller = [YGChargeViewController new];
+            [controller setValue:@(1) forKey:@"selectedIndex"];
         }
             break;
         case 2: {

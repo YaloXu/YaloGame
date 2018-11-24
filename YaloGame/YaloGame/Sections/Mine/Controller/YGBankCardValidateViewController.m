@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"绑定银行卡";
-    
+    [self.validateTF setValue:UIColorFromRGBValue(0x333333) forKeyPath:@"_placeholderLabel.textColor"];
     [self startTimer];
     
 }
@@ -46,7 +46,7 @@
         [self.sendCodeButotn setTitle:@"重新获取验证码" forState:UIControlStateNormal];
         _sendCodeButotn.enabled = YES;
     } else {
-        [self.sendCodeButotn setTitle:[NSString stringWithFormat:@"%ld秒后重新发送",_repeatCount] forState:UIControlStateNormal];
+        [self.sendCodeButotn setTitle:[NSString stringWithFormat:@"%ld秒后发送",_repeatCount] forState:UIControlStateNormal];
     }
 }
 

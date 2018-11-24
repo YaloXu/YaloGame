@@ -22,18 +22,25 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = kBackDefaultGrayColor;
         [self setUp];
     }
     return self;
 }
 
 - (void)setUp {
-    _bgImageView = [UIImageView new];
+    _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_header_bg"]];
     [self addSubview:_bgImageView];
     _avaImageView = [UIImageView new];
+    _avaImageView.layer.masksToBounds = YES;
+    _avaImageView.layer.cornerRadius = 30;
     [self addSubview:_avaImageView];
     _IDLabel = [UILabel new];
+    _IDLabel.textColor = UIColorFromRGBValue(0xffffff);
     _signlabel = [UILabel new];
+    _signlabel.textColor = UIColorFromRGBValue(0xffffff);
+    _IDLabel.font = [UIFont systemFontOfSize:16];
+    _signlabel.font = [UIFont systemFontOfSize:12];
     _editButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _moneyLaebl = [UILabel new];
     _acountLabel = [UILabel new];
@@ -46,49 +53,54 @@
     [view addSubview:_acountLabel];
     [_bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self);
-        make.bottom.equalTo(@(-50));
+        make.height.mas_equalTo(226);
     }];
     [_avaImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.left.equalTo(@30);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
+        make.top.equalTo(@93);
+        make.left.equalTo(@28);
+        make.size.mas_equalTo(CGSizeMake(60, 60));
     }];
     [_IDLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_avaImageView.mas_right).with.offset(10);
-        make.top.equalTo(_avaImageView).with.offset(5);
+        make.left.equalTo(_avaImageView.mas_right).with.offset(15);
+        make.top.equalTo(_avaImageView).with.offset(9);
         make.right.equalTo(self);
-        make.height.mas_equalTo(20);
+        make.height.mas_equalTo(22);
     }];
     [_signlabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(_IDLabel);
-        make.top.equalTo(_IDLabel.mas_bottom).with.offset(5);
-        make.height.mas_equalTo(20);
+        make.top.equalTo(_IDLabel.mas_bottom).with.offset(3);
+        make.height.mas_equalTo(17);
     }];
     [_editButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(_avaImageView.mas_centerY);
-        make.right.equalTo(@(-15));
-        make.size.mas_equalTo(CGSizeMake(50, 30));
+        make.right.equalTo(@(-22));
+        make.size.mas_equalTo(CGSizeMake(40, 22));
     }];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);
-        make.left.equalTo(@(15));
-        make.right.equalTo(@(-15));
-        make.height.mas_equalTo(90);
+        make.left.equalTo(@(16));
+        make.right.equalTo(@(-16));
+        make.height.mas_equalTo(72);
     }];
     [_moneyLaebl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(view);
-        make.top.equalTo(@10);
-        make.height.mas_equalTo(30);
+        make.top.equalTo(@13);
+        make.height.mas_equalTo(26);
     }];
     [_acountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(view);
-        make.height.equalTo(@30);
-        make.bottom.equalTo(@(-10));
+        make.height.equalTo(@16);
+        make.top.equalTo(_moneyLaebl.mas_bottom).offset(11);
     }];
     _acountLabel.textAlignment = _moneyLaebl.textAlignment = NSTextAlignmentCenter;
     _acountLabel.text = @"主账户余额（¥）";
+    _acountLabel.font = [UIFont systemFontOfSize:11];
+    _acountLabel.textColor = UIColorFromRGBValue(0x333333);
+    _moneyLaebl.font = [UIFont systemFontOfSize:17];
+    _moneyLaebl.textColor = UIColorFromRGBValue(0xECB728);
     _moneyLaebl.text = @"0.00";
     [_editButton setTitle:@"编辑" forState:UIControlStateNormal];
+    _editButton.titleLabel.font = [UIFont systemFontOfSize:16];
     _IDLabel.text = @"a12121212";
     _signlabel.text = @"暂无签名";
     _avaImageView.backgroundColor = [UIColor redColor];

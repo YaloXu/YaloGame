@@ -23,14 +23,26 @@
     // Drawing code
 }
 */
+- (IBAction)bindCard:(id)sender {
+    if (self.addBankCardHandler) {
+        self.addBankCardHandler();
+    }
+}
+
+- (void)onlineGes {
+    if (self.onlineHandler) {
+        self.onlineHandler();
+    }
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.backgroundColor = DefaultBackGroundColor;
     
+    self.onlineLabel.userInteractionEnabled = YES;
+    [self.onlineLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onlineGes)]];
     
-    
-    
-    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"在线客服" attributes:@{NSForegroundColorAttributeName:[UIColor yellowColor],NSFontAttributeName:[UIFont systemFontOfSize:14],NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]}];
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:@"在线客服" attributes:@{NSForegroundColorAttributeName:UIColorFromRGBValue(0xE9A400),NSFontAttributeName:[UIFont systemFontOfSize:12],NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]}];
     [self.onlineLabel setAttributedText:attString];
     
 }

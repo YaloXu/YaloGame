@@ -1,31 +1,29 @@
 //
-//  YGBindCardViewController.m
+//  YGBindCardSecondViewController.m
 //  YaloGame
 //
-//  Created by C on 2018/11/17.
+//  Created by C on 2018/11/24.
 //  Copyright © 2018 C. All rights reserved.
 //
 
-#import "YGBindCardViewController.h"
 #import "YGBindCardSecondViewController.h"
+#import "YGBankCardValidateViewController.h"
 
-@interface YGBindCardViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *cardUserNameTF;
-@property (weak, nonatomic) IBOutlet UITextField *cardNumTF;
-@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@interface YGBindCardSecondViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *cardType;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumLaebl;
 
 @end
 
-@implementation YGBindCardViewController
+@implementation YGBindCardSecondViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"绑定银行卡";
-      self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
 }
 - (IBAction)next:(id)sender {
-    [self.navigationController pushViewController:[YGBindCardSecondViewController new] animated:YES];
+    [self.navigationController pushViewController:[YGBankCardValidateViewController new] animated:YES];
 }
 
 /*

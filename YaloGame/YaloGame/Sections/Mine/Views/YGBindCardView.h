@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGBindCardView : UIView
 
+@property (nonatomic, copy) void (^addBankCardHandler)(void);
+
+@property (nonatomic, copy) void (^onlineHandler)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END
