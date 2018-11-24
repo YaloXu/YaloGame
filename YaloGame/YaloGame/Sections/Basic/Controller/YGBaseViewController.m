@@ -80,6 +80,8 @@
     }];
     UILabel *label = [UILabel new];
     [navView addSubview:label];
+    label.font = [UIFont systemFontOfSize:16];
+    label.textColor = self.customTextColor ? self.customTextColor:UIColorFromRGBValue(0x333333);
     label.textAlignment = NSTextAlignmentCenter;
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(navView);

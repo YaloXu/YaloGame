@@ -21,8 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bRE-AV-uyL">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bRE-AV-uyL">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="gUz-Dp-Gxu"/>
@@ -31,12 +32,6 @@
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="bRE-AV-uyL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="1Gz-rW-s3T"/>
-                <constraint firstItem="bRE-AV-uyL" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="4WH-lG-Iq6"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="bRE-AV-uyL" secondAttribute="bottom" id="6mJ-F8-tZm"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bRE-AV-uyL" secondAttribute="trailing" id="sRH-aH-GOJ"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>
     </objects>

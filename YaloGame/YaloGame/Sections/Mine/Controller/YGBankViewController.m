@@ -11,11 +11,10 @@
 
 @interface YGBankAddCardView : UIView {
     
-    UIImageView *_addImageView;
-    
-    UILabel *_addLabel;
+    UIButton *_addButton;
     
     UIView *_borderView;
+    
 }
 
 @end
@@ -24,6 +23,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor whiteColor];
         [self setUp];
     }
     return self;
@@ -32,43 +32,46 @@
 - (void)setUp {
     
     _borderView = [UIView new];
+    _borderView.backgroundColor = [UIColor whiteColor];
     [self addSubview:_borderView];
-    _addImageView = [UIImageView new];
-    _addLabel = [UILabel new];
-    [self addSubview:_addImageView];
-    [self addSubview:_addLabel];
+    _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_addButton setImage:[UIImage imageNamed:@"bankCard_add"] forState:UIControlStateNormal];
+    [self addSubview:_addButton];
+    _borderView.layer.masksToBounds = YES;
+    _borderView.layer.borderWidth = .5;
+    _borderView.layer.cornerRadius = 5;
     [_borderView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).offset(10);
-        make.left.equalTo(self).offset(15);
-        make.bottom.equalTo(self.mas_bottom).with.offset(-15);
-        make.right.equalTo(@(-15));
+        make.top.equalTo(self).offset(8);
+        make.left.equalTo(self).offset(16);
+        make.bottom.equalTo(self.mas_bottom).with.offset(-8);
+        make.right.equalTo(@(-16));
     }];
-    [_addImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(20, 20));
-        make.centerX.equalTo(self.mas_centerX).with.offset(-30);
+    [_addButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(90, 20));
     }];
-    [_addLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self); make.left.equalTo(_addImageView.mas_right).with.offset(5);
-        make.size.mas_equalTo(CGSizeMake(100, 20));
-    }];
-    _addImageView.backgroundColor = [UIColor redColor];
-    _addLabel.text = @"添加银行卡";
-    _addLabel.font = [UIFont systemFontOfSize:13];
+    [_addButton setTitle:@"添加银行卡" forState:UIControlStateNormal];
+    _addButton.titleLabel.font = [UIFont systemFontOfSize:12];
+    _addButton.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, 0);
+    [_addButton setTitleColor:UIColorFromRGBValue(0x979AA1) forState:UIControlStateNormal];
+   
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _borderView.layer.masksToBounds = YES;
-    _borderView.layer.borderWidth = .5;
-    _borderView.layer.borderColor = UIColor.grayColor.CGColor;
-    _borderView.layer.cornerRadius = 5;
+   _borderView.layer.borderColor = UIColorFromRGBValue(0x979AA1).CGColor;
+}
+
+- (void)updateView:(BOOL)update {
+    _addButton.titleLabel.font = [UIFont systemFontOfSize:update ? 11 : 12];
 }
 
 @end
 
 @interface YGBankViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) YGBankAddCardView *cardView;
 
 @end
 
@@ -78,23 +81,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"银行卡";
+    self.tableView.backgroundColor = DefaultBackGroundColor;
     YGBankAddCardView *addView = [[YGBankAddCardView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:addView];
+    _cardView = addView;
     addView.userInteractionEnabled = YES;
     [addView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addBankCard)]];
     [addView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self.view);
-        make.height.mas_equalTo(65);
+        make.height.mas_equalTo(44);
     }];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"YGBankTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
-    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
-        make.top.equalTo(@70);
+        make.top.equalTo(addView.mas_bottom);
     }];
     self.tableView.tableHeaderView = [UIView new];
     self.tableView.tableFooterView = [UIView new];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.managerType == YGBankManagerType_Add ? @"取消" : @"管理" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.managerType == YGBankManagerType_Add ? @"管理" : @"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
+    [self adjustFont];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -107,29 +113,47 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 90;
+    return 82;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 16;
 }
 
 - (void)addBankCard {
 }
 
+- (void)setManagerType:(YGBankManagerType)managerType {
+    _managerType = managerType;
+    if (_managerType == YGBankManagerType_Add) {
+        self.navigationItem.rightBarButtonItem.title = @"管理";
+    } else {
+        self.navigationItem.rightBarButtonItem.title = @"取消";
+    }
+    [self adjustFont];
+}
+
+- (void)adjustFont {
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
+    [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
+}
+
 - (void)cancelAction {
     if (self.managerType == YGBankManagerType_Add) {
-        
+        self.managerType = YGBankManagerType_Cancel;
+        [self.cardView updateView:YES];
     } else {
-        
+        self.managerType = YGBankManagerType_Add;
+        [self.cardView updateView:NO];
     }
+    
     
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

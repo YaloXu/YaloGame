@@ -9,6 +9,7 @@
 #import "YGBindCardSuccessViewController.h"
 
 @interface YGBindCardSuccessViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *reviewBankCardButton;
 
 @end
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationItem.title = @"绑定银行卡成功";
+}
+- (IBAction)reviewBankCardActin:(id)sender {
+}
+- (IBAction)continueBindCard:(id)sender {
 }
 
 /*

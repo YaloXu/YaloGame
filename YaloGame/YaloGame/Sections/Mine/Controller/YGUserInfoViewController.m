@@ -10,6 +10,7 @@
 #import "YGAlertTool.h"
 #import "YGAuthTool.h"
 #import "YGModifyViewController.h"
+#import "UITableViewCell+Arrow.h"
 
 @protocol YGUserHeaderDelegate <NSObject>
 
@@ -41,45 +42,45 @@
 }
 
 - (void)config {
-    _bgImageView = [UIImageView new];
+    _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_header_bg"]];
     _avaImageView = [UIImageView new];
     _dateLabel = [UILabel new];
     _IDLabel = [UILabel new];
     [self addSubview:self.bgImageView];
     [self addSubview:self.avaImageView];
     self.avaImageView.layer.masksToBounds = YES;
-    self.avaImageView.layer.cornerRadius = 30;
+    self.avaImageView.layer.cornerRadius = 50;
     [self addSubview:self.IDLabel];
     [self addSubview:self.dateLabel];
-    self.dateLabel.font = [UIFont systemFontOfSize:14];
-    self.dateLabel.textColor = UIColor.lightGrayColor;
+    self.dateLabel.font = [UIFont systemFontOfSize:12];
+    self.IDLabel.font = [UIFont systemFontOfSize:16];
+    self.IDLabel.textColor = self.dateLabel.textColor = UIColorFromRGBValue(0x333333);
     self.dateLabel.textAlignment = self.IDLabel.textAlignment = NSTextAlignmentCenter;
     [self.bgImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.equalTo(self);
-        make.height.mas_equalTo(120);
+        make.height.mas_equalTo(175);
     }];
     [self.avaImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self);
-        make.centerY.equalTo(self).with.offset(-30);
-        make.size.mas_equalTo(CGSizeMake(60, 60));
+        make.top.equalTo(@125); make.centerX.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(100, 100));
     }];
     [self.IDLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
-        make.top.equalTo(self.avaImageView.mas_bottom).with.offset(10);
-        make.height.mas_equalTo(20);
+        make.top.equalTo(self.avaImageView.mas_bottom).with.offset(6);
+        make.height.mas_equalTo(22);
     }];
     [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.top.equalTo(self.IDLabel.mas_bottom).with.offset(5);
-        make.height.mas_equalTo(20);
+        make.height.mas_equalTo(17);
     }];
     self.avaImageView.userInteractionEnabled = YES;
     [self.avaImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)]];
 }
 
 - (void)setDatas {
-    self.avaImageView.backgroundColor = [UIColor redColor];
-    self.bgImageView.backgroundColor = [UIColor yellowColor];
+    self.avaImageView.backgroundColor = [UIColor yellowColor];
     self.IDLabel.text = @"ID:a1212121212";
     self.dateLabel.text = @"2018-11-19";
 }
@@ -119,17 +120,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view from its nib.
     [self autoLayoutSizeContentView:self.tableView];
+    self.customTextColor = [UIColor whiteColor];
     self.customNavColor = [UIColor clearColor];
     self.titleLabel.text = @"个人资料";
     [self addBackButton];
-    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(0));
-        make.left.right.bottom.equalTo(self.view);
-    }];
-//    self.navigationItem.title = @"个人资料";
-    YGUserHeaderView *headerView = [[YGUserHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 380)];
+//    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(@(0));
+//        make.left.right.bottom.equalTo(self.view);
+//    }];
+    YGUserHeaderView *headerView = [[YGUserHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 315)];
     headerView.delegate = self;
     _headerView = headerView;
     self.tableView.tableHeaderView = headerView;
@@ -140,13 +142,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
-        cell.textLabel.font = [UIFont systemFontOfSize:15];
+        cell.textLabel.font = [UIFont systemFontOfSize:12];
+        cell.textLabel.textColor = UIColorFromRGBValue(0x333333);
+        cell.detailTextLabel.font = [UIFont systemFontOfSize:12.0];
+        cell.detailTextLabel.textColor = UIColorFromRGBValue(0x979AA1);
         cell.backgroundColor = UIColor.whiteColor;
+        cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        cell.customArrow = YES;
     }
     if (indexPath.row == 0) {
         cell.textLabel.text = @"昵称";
+        cell.detailTextLabel.text = @"a123123123";
     } else if (indexPath.row == 1) {
         cell.textLabel.text = @"个性签名";
+        cell.detailTextLabel.text = @"未设置";
     }
     
     return cell;
@@ -154,6 +163,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -214,7 +227,7 @@
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleDefault;
+    return UIStatusBarStyleLightContent;
 }
 
 @end

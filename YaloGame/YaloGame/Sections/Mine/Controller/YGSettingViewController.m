@@ -10,6 +10,7 @@
 #import "YGUserInfoViewController.h"
 #import "YGAboutViewController.h"
 #import "YGSafeViewController.h"
+#import "UITableViewCell+Arrow.h"
 
 @interface YGSettingViewController ()
 
@@ -25,6 +26,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"设置";
+    self.userCell.customArrow = YES;
+    self.accountCell.customArrow = YES;
+    self.aboutCell.customArrow = YES;
     [self.userCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(userInfo)]];
     [self.accountCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(account)]];
     [self.aboutCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(about)]];
@@ -48,14 +52,12 @@
     [self.navigationController pushViewController:[YGAboutViewController new] animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    CALayer *layer = [CALayer layer];
+    layer.backgroundColor = DefaultBackGroundColor.CGColor;
+    layer.frame = CGRectMake(16, 12 + 36, kScreenWidth - 32, 1);
+    [self.view.layer addSublayer:layer];
 }
-*/
 
 @end

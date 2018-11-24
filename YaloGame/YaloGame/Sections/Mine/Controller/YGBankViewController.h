@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, YGBankManagerType) {
     YGBankManagerType_Add,
-    YGBankManagerType_Manager
+    YGBankManagerType_Cancel
 };
 
 @interface YGBankViewController : YGBaseViewController

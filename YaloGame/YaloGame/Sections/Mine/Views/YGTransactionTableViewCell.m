@@ -17,8 +17,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    self.customArrow = YES;
+//    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    self.customArrow = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,6 +29,7 @@
 
 - (void)updateLayout:(BOOL)update {
     if (update) {
+        self.iconImageView.image = [UIImage imageNamed:@"message_add"];
         [self.nameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.iconImageView.mas_right).with.offset(10);
             make.top.bottom.equalTo(self);
@@ -36,18 +37,19 @@
         }];
         self.cardLabel.hidden = YES;
     } else {
+        self.iconImageView.image = [UIImage imageNamed:@"message_rel"];
         self.cardLabel.hidden = NO;
         [self.nameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.iconImageView.mas_right).with.offset(10);
-            make.top.equalTo(@(10));
-            make.right.equalTo(@(-15));
-            make.bottom.equalTo(self.cardLabel.mas_top).with.offset(-10);
+            make.top.equalTo(@(5));
+            make.right.equalTo(@(-16));
+            make.bottom.equalTo(self.cardLabel.mas_top).offset(5);
         }];
         [self.cardLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.nameLabel);
-            make.bottom.equalTo(@(-10));
+            make.bottom.equalTo(@(-5));
             make.right.equalTo(@(-10));
-            make.height.mas_greaterThanOrEqualTo(10);
+
         }];
     }
 }

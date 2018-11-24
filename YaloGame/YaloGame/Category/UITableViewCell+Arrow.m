@@ -22,7 +22,7 @@
 }
 
 - (void)configCustomView {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"recharge_right"]];
     self.accessoryView = imageView;
 }
 
