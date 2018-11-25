@@ -146,7 +146,7 @@
     [leftButton addTarget:self action:@selector(chargeMoney:) forControlEvents:UIControlEventTouchUpInside];
     [rightButton addTarget:self action:@selector(rolloutMoney:) forControlEvents:UIControlEventTouchUpInside];
     _line = [UILabel new];
-    _line.backgroundColor = [UIColor blackColor];
+    _line.backgroundColor = UIColorFromRGBValue(0x333333);
     [view addSubview:_line];
     [_line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.selectedIndex == 0 ? leftButton.mas_centerX : rightButton.mas_centerX);

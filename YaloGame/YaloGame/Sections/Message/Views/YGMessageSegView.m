@@ -19,7 +19,7 @@
         self.backgroundColor = DefaultBackGroundColor;
         [self setUp];
         self.layer.masksToBounds = YES;
-        self.layer.borderColor = [UIColor blueColor].CGColor;
+        self.layer.borderColor = UIColorFromRGBValue(0x333333).CGColor;
         self.layer.borderWidth = .5f;
     }
     return self;
