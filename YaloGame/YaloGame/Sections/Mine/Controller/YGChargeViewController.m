@@ -21,7 +21,7 @@
 
 @property (nonatomic, strong) UIView *rollView;
 
-@property (nonatomic, strong) UIView *rechargeView;
+@property (nonatomic, strong) UIView *rechargeView, *refreshView;
 
 @end
 
@@ -48,6 +48,7 @@
     
     UIView *view = [UIView new];
     view.backgroundColor = NavgationBgColor;
+    _refreshView = view;
     [self.view addSubview:view];
     UILabel *moneyLabel = [UILabel new];
     [view addSubview:moneyLabel];
@@ -198,6 +199,7 @@
     }];
     self.rollView.hidden = YES;
     self.rechargeView.hidden = NO;
+    self.refreshView.hidden = NO;
     if (!self.rechargeView) {
         [self setUp];
     }
@@ -211,15 +213,16 @@
     }
     self.rollView.hidden = NO;
     self.rechargeView.hidden = YES;
+    self.refreshView.hidden = YES;
     [_line mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(button.mas_centerX);
         make.bottom.equalTo(button.superview);
         make.height.mas_equalTo(1);
         make.width.mas_equalTo(60);
     }];
-    [UIView animateWithDuration:.3 animations:^{
-        [self.view layoutIfNeeded];
-    }];
+//    [UIView animateWithDuration:.3 animations:^{
+//        [self.view layoutIfNeeded];
+//    }];
 }
 
 - (void)startAnimation {
