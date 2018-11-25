@@ -16,7 +16,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        self.backgroundColor = DefaultBackGroundColor;
         [self setUp];
         self.layer.masksToBounds = YES;
         self.layer.borderColor = [UIColor blueColor].CGColor;
@@ -54,10 +54,10 @@
         }
         button.titleLabel.font = [UIFont systemFontOfSize:12];
         [buttons addObject:button];
-        [button setTitleColor:[UIColor groupTableViewBackgroundColor] forState:UIControlStateSelected];
+        [button setTitleColor:DefaultBackGroundColor forState:UIControlStateSelected];
         [button setTitleColor:UIColorFromRGBValue(0x333333) forState:UIControlStateNormal];
         [button setTitleColor:UIColorFromRGBValue(0x333333) forState:UIControlStateHighlighted];
-        [button setBackgroundImage:[UIImage imageWithColor:[UIColor groupTableViewBackgroundColor]] forState:UIControlStateNormal];
+        [button setBackgroundImage:[UIImage imageWithColor:DefaultBackGroundColor] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageWithColor:NavgationBgColor] forState:UIControlStateSelected];
          [button setBackgroundImage:[UIImage imageWithColor:NavgationBgColor] forState:UIControlStateHighlighted];
         [self addSubview:button];

@@ -71,6 +71,7 @@
 		0285540821A9969100E7DDBC /* login_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0285540621A9969000E7DDBC /* login_phone@3x.png */; };
 		0285540921A9969100E7DDBC /* login_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0285540721A9969100E7DDBC /* login_phone@2x.png */; };
 		0285540C21A9983800E7DDBC /* YGLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0285540B21A9983800E7DDBC /* YGLoginView.m */; };
+		0285540F21AA5E1C00E7DDBC /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0285540E21AA5E1C00E7DDBC /* UIButton+Badge.m */; };
 		02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */; };
 		02AC5A8F219FB1200092BB46 /* YGBindCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */; };
 		02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AC5A9121A055200092BB46 /* YGBankCardValidateViewController.m */; };
@@ -304,6 +305,8 @@
 		0285540721A9969100E7DDBC /* login_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_phone@2x.png"; sourceTree = "<group>"; };
 		0285540A21A9983800E7DDBC /* YGLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGLoginView.h; sourceTree = "<group>"; };
 		0285540B21A9983800E7DDBC /* YGLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGLoginView.m; sourceTree = "<group>"; };
+		0285540D21AA5E1C00E7DDBC /* UIButton+Badge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badge.h"; sourceTree = "<group>"; };
+		0285540E21AA5E1C00E7DDBC /* UIButton+Badge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
 		02AC5A8B219FB1200092BB46 /* YGBindCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBindCardViewController.h; sourceTree = "<group>"; };
 		02AC5A8C219FB1200092BB46 /* YGBindCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBindCardViewController.m; sourceTree = "<group>"; };
 		02AC5A8D219FB1200092BB46 /* YGBindCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGBindCardViewController.xib; sourceTree = "<group>"; };
@@ -1021,6 +1024,8 @@
 				02F2A4EE21A287AC00454F8D /* UITableViewCell+Arrow.m */,
 				025F24E821A9391D001FDBB1 /* CALayer+Border.h */,
 				025F24E921A9391D001FDBB1 /* CALayer+Border.m */,
+				0285540D21AA5E1C00E7DDBC /* UIButton+Badge.h */,
+				0285540E21AA5E1C00E7DDBC /* UIButton+Badge.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1339,6 +1344,7 @@
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
 				02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */,
 				02AC5AF321A19FC90092BB46 /* YGMineFooterView.m in Sources */,
+				0285540F21AA5E1C00E7DDBC /* UIButton+Badge.m in Sources */,
 				02AC5AE621A189850092BB46 /* YGBindCardView.m in Sources */,
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,

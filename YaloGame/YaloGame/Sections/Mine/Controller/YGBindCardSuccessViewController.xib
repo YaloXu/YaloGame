@@ -64,15 +64,16 @@
                         <color key="titleColor" red="0.9137254901960784" green="0.64313725490196072" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderUIColor">
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
                             <color key="value" red="0.9137254901960784" green="0.64313725490196072" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderUIWidth">
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderUIWidth">
                             <integer key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="continueBindCard:" destination="-1" eventType="touchUpInside" id="aWG-I2-XNs"/>

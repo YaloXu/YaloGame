@@ -25,14 +25,14 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = UIColor.groupTableViewBackgroundColor;
+        self.backgroundColor = DefaultBackGroundColor;
         [self config];
     }
     return self;
 }
 
 - (void)config {
-    _logoImageView = [UIImageView new];
+    _logoImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"login_logo"]];
     [self addSubview:_logoImageView];
     _versionLabel = [UILabel new];
     [self addSubview:_versionLabel];
@@ -51,7 +51,6 @@
     _versionLabel.text = version;
     _versionLabel.font = [UIFont systemFontOfSize:16.0];
     _versionLabel.textColor = UIColorFromRGBValue(0x333333);
-    _logoImageView.backgroundColor = [UIColor redColor];
 }
 
 @end

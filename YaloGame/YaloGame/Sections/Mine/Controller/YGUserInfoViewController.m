@@ -34,7 +34,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = UIColor.groupTableViewBackgroundColor;
+        self.backgroundColor = DefaultBackGroundColor;
         [self config];
         [self setDatas];
     }
@@ -44,6 +44,7 @@
 - (void)config {
     _bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mine_header_bg"]];
     _avaImageView = [UIImageView new];
+    _avaImageView.image = [UIImage imageNamed:@"user_ava"];
     _dateLabel = [UILabel new];
     _IDLabel = [UILabel new];
     [self addSubview:self.bgImageView];

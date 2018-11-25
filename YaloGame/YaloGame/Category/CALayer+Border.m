@@ -15,7 +15,16 @@
 }
 
 - (void)setBorderUIWidth:(CGFloat)width {
-    self.self.borderWidth = width;
+    self.borderWidth = width;
 }
+
+- (UIColor*)borderUIColor {
+    return [UIColor colorWithCGColor:self.borderColor];
+}
+
+- (CGFloat)borderUIWidth {
+    return self.borderWidth;
+}
+
 
 @end

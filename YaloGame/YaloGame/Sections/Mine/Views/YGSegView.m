@@ -33,11 +33,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     CALayer *layer = [CALayer layer];
-    layer.backgroundColor = UIColorFromRGBValue(0x000000).CGColor;
+    layer.backgroundColor = DefaultBackGroundColor.CGColor;
     layer.frame = CGRectMake(0, 36, kScreenWidth, 1);
     [self.layer addSublayer:layer];
     CALayer *layer1 = [CALayer layer];
-    layer1.backgroundColor = UIColorFromRGBValue(0x000000).CGColor;
+    layer1.backgroundColor = DefaultBackGroundColor.CGColor;
     layer1.frame = CGRectMake(0, 36 * 2, kScreenWidth, 1);
     [self.layer addSublayer:layer1];
     self.zhifubaoLabel.userInteractionEnabled = YES;

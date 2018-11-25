@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"绑定银行卡";
-      self.view.backgroundColor = UIColor.groupTableViewBackgroundColor;
+      self.view.backgroundColor = DefaultBackGroundColor;
 }
 - (IBAction)next:(id)sender {
     [self.navigationController pushViewController:[YGBindCardSecondViewController new] animated:YES];
