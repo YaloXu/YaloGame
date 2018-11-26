@@ -222,6 +222,8 @@
 		2E305FBC21AC0AB000FCF123 /* UIViewController+YCPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FB921AC0AB000FCF123 /* UIViewController+YCPopover.m */; };
 		2E305FC221AC10A500FCF123 /* YGPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FC121AC10A500FCF123 /* YGPopViewController.m */; };
 		2E305FC521AC1EB200FCF123 /* YGIMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FC421AC1EB200FCF123 /* YGIMTableViewCell.m */; };
+		2E35485521AC79A700C1BA66 /* FSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485421AC79A700C1BA66 /* FSTextView.m */; };
+		2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */; };
 		2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */; };
 		2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */; };
 		2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */; };
@@ -515,6 +517,10 @@
 		2E305FC121AC10A500FCF123 /* YGPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGPopViewController.m; sourceTree = "<group>"; };
 		2E305FC321AC1EB200FCF123 /* YGIMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGIMTableViewCell.h; sourceTree = "<group>"; };
 		2E305FC421AC1EB200FCF123 /* YGIMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGIMTableViewCell.m; sourceTree = "<group>"; };
+		2E35485321AC79A700C1BA66 /* FSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSTextView.h; path = YGTextView/FSTextView.h; sourceTree = "<group>"; };
+		2E35485421AC79A700C1BA66 /* FSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSTextView.m; path = YGTextView/FSTextView.m; sourceTree = "<group>"; };
+		2E35485621AC934900C1BA66 /* YGAlertSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAlertSelectedViewController.h; sourceTree = "<group>"; };
+		2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGAlertSelectedViewController.m; sourceTree = "<group>"; };
 		2E9EA73A21A2F904002EF478 /* GoodsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsCollectionViewCell.h; sourceTree = "<group>"; };
 		2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCollectionViewCell.m; sourceTree = "<group>"; };
 		2EDDE5C2219D604D0009DDC1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -718,6 +724,8 @@
 				021F3283219C299C0041A11A /* YGHomeViewController.h */,
 				2E305FC021AC10A500FCF123 /* YGPopViewController.h */,
 				2E305FC121AC10A500FCF123 /* YGPopViewController.m */,
+				2E35485621AC934900C1BA66 /* YGAlertSelectedViewController.h */,
+				2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -912,6 +920,8 @@
 		2E305ECC21A4033300FCF123 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				2E35485321AC79A700C1BA66 /* FSTextView.h */,
+				2E35485421AC79A700C1BA66 /* FSTextView.m */,
 				2E305FB221AC0A1600FCF123 /* YGPopver */,
 				2E305ECD21A4033300FCF123 /* UUMarueeView */,
 			);
@@ -1392,6 +1402,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DMProgressHUD/DMProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1406,6 +1417,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DMProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDFullscreenPopGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1430,6 +1442,7 @@
 				2E305FC521AC1EB200FCF123 /* YGIMTableViewCell.m in Sources */,
 				02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */,
 				025F24D121A9221A001FDBB1 /* YGQRView.m in Sources */,
+				2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */,
 				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
 				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
 				028553DB21A95E5900E7DDBC /* YGAlertToast.m in Sources */,
@@ -1481,6 +1494,7 @@
 				025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */,
 				02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */,
 				025F24E621A9368E001FDBB1 /* YGBindCardSuccessViewController.m in Sources */,
+				2E35485521AC79A700C1BA66 /* FSTextView.m in Sources */,
 				02AC5AF021A19FB60092BB46 /* YGMineHeaderView.m in Sources */,
 				02AC5ACF21A15E5F0092BB46 /* YGWebViewController.m in Sources */,
 				02CD776121A2E005009A9892 /* YGMessageCollectionViewCell.m in Sources */,

@@ -42,7 +42,7 @@
 /**
  *  分割线灰色等...
  */
-#define kBackDefaultGrayColor UIColorFromRGBValue(0Xdbdfe8)
+#define kLineColor kRGB_alpha(51,51,51,0.1)
 /**
  *  主要字体颜色
  */

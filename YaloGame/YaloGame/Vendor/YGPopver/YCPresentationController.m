@@ -19,9 +19,9 @@
         self.presentedView.frame = CGRectMake(0, self.containerView.bounds.size.height - self.presentedHeight, self.containerView.bounds.size.width, self.presentedHeight);
     }
     //添加蒙版
+    
     [self.containerView insertSubview:self.coverView atIndex:0];
 }
-
 - (UIView *)coverView{
     if (!_coverView) {
         _coverView = [[UIView alloc] initWithFrame:self.containerView.bounds];

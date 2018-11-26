@@ -12,6 +12,7 @@
 #import "SDCycleScrollView.h"
 #import "UUMarqueeView.h"
 #import "YGPopViewController.h"
+#import "YGAlertSelectedViewController.h"
 
 @interface YGHomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,UUMarqueeViewDelegate>
 @property (nonatomic ,strong) UITableView * mainTableView;
@@ -98,15 +99,24 @@
 }
 -(void)rightBarItemEvent{
     YGPopViewController *vc = [YGPopViewController new];
-    [self yc_bottomPresentController:vc presentedHeight:235 completeHandle:^(BOOL presented) {
+    [self yc_bottomPresentController:vc presentedHeight:440 completeHandle:^(BOOL presented) {
         if (presented) {
-            NSLog(@"弹出了");
+            
         }else{
             NSLog(@"消失了");
         }
     }];
+    
+    vc.callPhone = ^{
+        [self callPhoneEvent];
+    };
 }
-
+-(void)callPhoneEvent{
+    YGAlertSelectedViewController *alertVC = [YGAlertSelectedViewController new];
+    [self yc_centerPresentController:alertVC presentedSize:CGSizeMake(kScreenWidth - 2*48*kWidthRatio, 220) completeHandle:^(BOOL presented) {
+        
+    }];
+}
 #pragma mark ======== SDCycleScrollViewDelegate ========
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     YGWebViewController *controller = [YGWebViewController new];

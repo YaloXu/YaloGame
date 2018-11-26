@@ -7,11 +7,11 @@
 //
 
 #import "YGBaseViewController.h"
-
+typedef void (^callBackPhone) ();
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YGPopViewController : YGBaseViewController
-
+@property (nonatomic , copy) callBackPhone callPhone;
 @end
 
 NS_ASSUME_NONNULL_END

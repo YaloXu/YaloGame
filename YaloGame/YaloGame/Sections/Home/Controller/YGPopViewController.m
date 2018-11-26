@@ -7,11 +7,13 @@
 //
 
 #import "YGPopViewController.h"
-#define CellID @"CellIdentifier"
+#import "YGIMTableViewCell.h"
+
 @interface YGPopViewController ()<UITableViewDelegate , UITableViewDataSource>
 @property (nonatomic, strong) UITableView *mainTable;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, strong) UIImageView *arrowImg;
+
 @end
 
 @implementation YGPopViewController
@@ -48,10 +50,39 @@
     return 4;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellID];
+    YGIMTableViewCell *cell;
+    
+    if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:YGIMTitleCellId];
+        NSArray *titles = @[@"在线客服",@"免费回拨"];
+        cell.boldLabel.text = titles[indexPath.row];
+        cell.callBackPhone = ^{
+            [self dismissViewControllerAnimated:YES completion:^{
+                if (self.callPhone) {
+                    self.callPhone();
+                }
+            }];
+            
+        };
+    }else{
+        cell = [tableView dequeueReusableCellWithIdentifier:YGIMImgCellId];
+        NSArray *images = @[@"im_wechat",@"im_QQ",@"im_phone",@"im_message"];
+        NSArray *titles = @[@"mingmencs",@"751229212",@"+86 152-2100-2154",@"mingmen94168@gmail.com",];
+        cell.themeImg.image =[UIImage imageNamed:images[indexPath.row]];
+        cell.themeLabel.text = titles[indexPath.row];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.backgroundColor = [UIColor whiteColor];
-    cell.textLabel.text = @"234455666";
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if (indexPath.section == 0 && indexPath.row == 1) {
+        YGIMTableViewCell *cell = (YGIMTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+        [cell updateSection];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -72,8 +103,9 @@
     if (!_mainTable) {
         _mainTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _mainTable.backgroundColor = [UIColor clearColor];
-//        [_mainTable setSeparatorColor:kCellLineSeparatorColor];
-        [_mainTable registerClass:[UITableViewCell class] forCellReuseIdentifier:CellID];
+        [_mainTable setSeparatorColor:kLineColor];
+        [_mainTable registerClass:[YGIMTableViewCell class] forCellReuseIdentifier:YGIMTitleCellId];
+        [_mainTable registerClass:[YGIMTableViewCell class] forCellReuseIdentifier:YGIMImgCellId];
         _mainTable.delegate = self;
         _mainTable.dataSource = self;
         _mainTable.scrollEnabled = NO;
