@@ -11,6 +11,7 @@
 #import "YGWebViewController.h"
 #import "SDCycleScrollView.h"
 #import "UUMarqueeView.h"
+#import "YGPopViewController.h"
 
 @interface YGHomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,UUMarqueeViewDelegate>
 @property (nonatomic ,strong) UITableView * mainTableView;
@@ -96,7 +97,14 @@
     
 }
 -(void)rightBarItemEvent{
-   
+    YGPopViewController *vc = [YGPopViewController new];
+    [self yc_bottomPresentController:vc presentedHeight:235 completeHandle:^(BOOL presented) {
+        if (presented) {
+            NSLog(@"弹出了");
+        }else{
+            NSLog(@"消失了");
+        }
+    }];
 }
 
 #pragma mark ======== SDCycleScrollViewDelegate ========

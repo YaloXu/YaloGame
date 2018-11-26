@@ -75,6 +75,9 @@
     }
 }
 -(void)btnClick:(UIButton*)btn{
+    if (self.parentViewController.childViewControllers.count>1) {
+        return;
+    }
     if (self.tabBarController.selectedIndex !=2) {
         self.selectedViewController = self.disconveryNav;
         [self.ygTabbar.centerBtn setImage:[[UIImage imageNamed:@"tabbar_discovery_selected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];

@@ -27,14 +27,16 @@
     
 }
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    UIView *view = [super hitTest:point withEvent:event];
-    if (view == nil){
-        CGPoint tempPoint = [self.centerBtn convertPoint:point fromView:self];
-        if (CGRectContainsPoint(self.centerBtn.bounds, tempPoint)){
-            return _centerBtn;
+    if (self.isHidden == NO) {
+        CGPoint newP = [self convertPoint:point toView:self.centerBtn];
+        if ( [self.centerBtn pointInside:newP withEvent:event]) {
+            return self.centerBtn;
+        }else{
+            return [super hitTest:point withEvent:event];
         }
+    }else{
+        return [super hitTest:point withEvent:event];
     }
-    return view;
 }
     
 
