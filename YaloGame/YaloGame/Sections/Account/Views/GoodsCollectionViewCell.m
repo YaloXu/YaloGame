@@ -56,7 +56,9 @@
     return self;
 }
 -(void)chooseGoodsEvent{
-    
+    if (self.selectedGood) {
+        self.selectedGood();
+    }
 }
 -(UIImageView *)goodsImg{
     if (!_goodsImg) {

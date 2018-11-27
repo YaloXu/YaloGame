@@ -19,4 +19,6 @@
 #import "UIViewController+YCPopover.h"
 #import "YGNetworkCommon.h"
 #import "IQKeyboardManager.h"
+#import "YGStringUtils.h"
+
 #endif /* PrefixHeader_pch */

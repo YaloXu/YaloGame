@@ -222,6 +222,10 @@
 		2E305FBC21AC0AB000FCF123 /* UIViewController+YCPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FB921AC0AB000FCF123 /* UIViewController+YCPopover.m */; };
 		2E305FC221AC10A500FCF123 /* YGPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FC121AC10A500FCF123 /* YGPopViewController.m */; };
 		2E305FC521AC1EB200FCF123 /* YGIMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FC421AC1EB200FCF123 /* YGIMTableViewCell.m */; };
+		2E305FC821ACD0EB00FCF123 /* YGCoinHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FC721ACD0EB00FCF123 /* YGCoinHelpViewController.m */; };
+		2E305FD121ACDB7900FCF123 /* CoinCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD021ACDB7900FCF123 /* CoinCommonCell.m */; };
+		2E305FD421ACE42100FCF123 /* YGVipConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD321ACE42100FCF123 /* YGVipConvertViewController.m */; };
+		2E305FD721ACEB5C00FCF123 /* YGStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD621ACEB5C00FCF123 /* YGStringUtils.m */; };
 		2E35485521AC79A700C1BA66 /* FSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485421AC79A700C1BA66 /* FSTextView.m */; };
 		2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */; };
 		2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */; };
@@ -517,6 +521,14 @@
 		2E305FC121AC10A500FCF123 /* YGPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGPopViewController.m; sourceTree = "<group>"; };
 		2E305FC321AC1EB200FCF123 /* YGIMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGIMTableViewCell.h; sourceTree = "<group>"; };
 		2E305FC421AC1EB200FCF123 /* YGIMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGIMTableViewCell.m; sourceTree = "<group>"; };
+		2E305FC621ACD0EB00FCF123 /* YGCoinHelpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGCoinHelpViewController.h; sourceTree = "<group>"; };
+		2E305FC721ACD0EB00FCF123 /* YGCoinHelpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGCoinHelpViewController.m; sourceTree = "<group>"; };
+		2E305FCF21ACDB7900FCF123 /* CoinCommonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoinCommonCell.h; sourceTree = "<group>"; };
+		2E305FD021ACDB7900FCF123 /* CoinCommonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinCommonCell.m; sourceTree = "<group>"; };
+		2E305FD221ACE42100FCF123 /* YGVipConvertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGVipConvertViewController.h; sourceTree = "<group>"; };
+		2E305FD321ACE42100FCF123 /* YGVipConvertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGVipConvertViewController.m; sourceTree = "<group>"; };
+		2E305FD521ACEB5C00FCF123 /* YGStringUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGStringUtils.h; sourceTree = "<group>"; };
+		2E305FD621ACEB5C00FCF123 /* YGStringUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGStringUtils.m; sourceTree = "<group>"; };
 		2E35485321AC79A700C1BA66 /* FSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSTextView.h; path = YGTextView/FSTextView.h; sourceTree = "<group>"; };
 		2E35485421AC79A700C1BA66 /* FSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSTextView.m; path = YGTextView/FSTextView.m; sourceTree = "<group>"; };
 		2E35485621AC934900C1BA66 /* YGAlertSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAlertSelectedViewController.h; sourceTree = "<group>"; };
@@ -695,6 +707,8 @@
 				02AC5AAF21A06ACA0092BB46 /* YGUtils.m */,
 				028553D921A95E5900E7DDBC /* YGAlertToast.h */,
 				028553DA21A95E5900E7DDBC /* YGAlertToast.m */,
+				2E305FD521ACEB5C00FCF123 /* YGStringUtils.h */,
+				2E305FD621ACEB5C00FCF123 /* YGStringUtils.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -871,8 +885,12 @@
 		021F3295219C29D30041A11A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				021F3296219C29D30041A11A /* YGAccountViewController.m */,
 				021F3297219C29D30041A11A /* YGAccountViewController.h */,
+				021F3296219C29D30041A11A /* YGAccountViewController.m */,
+				2E305FC621ACD0EB00FCF123 /* YGCoinHelpViewController.h */,
+				2E305FC721ACD0EB00FCF123 /* YGCoinHelpViewController.m */,
+				2E305FD221ACE42100FCF123 /* YGVipConvertViewController.h */,
+				2E305FD321ACE42100FCF123 /* YGVipConvertViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -958,6 +976,8 @@
 			children = (
 				2E9EA73A21A2F904002EF478 /* GoodsCollectionViewCell.h */,
 				2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */,
+				2E305FCF21ACDB7900FCF123 /* CoinCommonCell.h */,
+				2E305FD021ACDB7900FCF123 /* CoinCommonCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1440,11 +1460,13 @@
 				025F24CA21A916EC001FDBB1 /* YGBandRechargeViewController.m in Sources */,
 				02AC5AB421A0712D0092BB46 /* YGModifyViewController.m in Sources */,
 				2E305FC521AC1EB200FCF123 /* YGIMTableViewCell.m in Sources */,
+				2E305FD721ACEB5C00FCF123 /* YGStringUtils.m in Sources */,
 				02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */,
 				025F24D121A9221A001FDBB1 /* YGQRView.m in Sources */,
 				2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */,
 				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
 				02AC5AB021A06ACA0092BB46 /* YGUtils.m in Sources */,
+				2E305FC821ACD0EB00FCF123 /* YGCoinHelpViewController.m in Sources */,
 				028553DB21A95E5900E7DDBC /* YGAlertToast.m in Sources */,
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
 				02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */,
@@ -1459,12 +1481,14 @@
 				025F24F621A93C73001FDBB1 /* YGTransactionModel.m in Sources */,
 				2E305FC221AC10A500FCF123 /* YGPopViewController.m in Sources */,
 				2E305ECB21A2962B00FCF123 /* HomeTableViewCell.m in Sources */,
+				2E305FD121ACDB7900FCF123 /* CoinCommonCell.m in Sources */,
 				02AC5AD521A161B90092BB46 /* YGContactUsViewController.m in Sources */,
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
 				025F24C121A7D55A001FDBB1 /* YGNetworkCommon.m in Sources */,
 				025F24EA21A9391D001FDBB1 /* CALayer+Border.m in Sources */,
 				02AC5ADF21A169B30092BB46 /* YGBankTableViewCell.m in Sources */,
 				02AC5A9321A055200092BB46 /* YGBankCardValidateViewController.m in Sources */,
+				2E305FD421ACE42100FCF123 /* YGVipConvertViewController.m in Sources */,
 				2E305EC721A2934200FCF123 /* UIViewController+Custom.m in Sources */,
 				025F24E121A931A5001FDBB1 /* YGBindCardSecondViewController.m in Sources */,
 				02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */,
@@ -1649,8 +1673,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M5TT6TZ89W;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
@@ -1659,7 +1683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = c.YaloGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.louislsm.YaloGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1671,9 +1695,9 @@
 			baseConfigurationReference = 369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M5TT6TZ89W;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = DN78C49SVR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
@@ -1682,9 +1706,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = c.YaloGame;
+				PRODUCT_BUNDLE_IDENTIFIER = com.louislsm.YaloGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = YaloGameADH;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

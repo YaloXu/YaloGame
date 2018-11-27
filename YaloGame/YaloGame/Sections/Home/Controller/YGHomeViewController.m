@@ -139,7 +139,7 @@
 - (void)createItemView:(UIView *)itemView forMarqueeView:(UUMarqueeView *)marqueeView {
     itemView.backgroundColor = [UIColor clearColor];
     UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth-100, 40*kHeightRatio)];
-    contentLabel.font = [UIFont systemFontOfSize:8.0f];
+    contentLabel.font = [UIFont systemFontOfSize:10.0f];
     contentLabel.tag = 1001;
     contentLabel.textColor = UIColorFromRGBValue(0x000000);
     contentLabel.numberOfLines = 0;
@@ -201,7 +201,7 @@
 - (SDCycleScrollView *)scrollView {
     if (!_scrollView) {
         _scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 150*kHeightRatio) delegate:self placeholderImage:[UIImage imageNamed:@""]];
-        _scrollView.localizationImageNamesGroup = @[[UIImage imageNamed:@"home_banner"]];
+        _scrollView.localizationImageNamesGroup = @[[UIImage imageNamed:@"home_banner"],[UIImage imageNamed:@"home_banner"],[UIImage imageNamed:@"home_banner"]];
         _scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
     }
     return _scrollView;

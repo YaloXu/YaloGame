@@ -8,6 +8,9 @@
 
 #import "YGAccountViewController.h"
 #import "GoodsCollectionViewCell.h"
+#import "YGCoinHelpViewController.h"
+#import "YGVipConvertViewController.h"
+
 @interface YGAccountViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic ,strong) UICollectionView  *mainCollectionView;
 @property (nonatomic ,strong) UIView *infoBgView;
@@ -70,7 +73,10 @@
     
 }
 -(void)howGetmoney{
-    
+    YGCoinHelpViewController *alertVC = [YGCoinHelpViewController new];
+    [self yc_centerPresentController:alertVC presentedSize:CGSizeMake(kScreenWidth - 2*48*kWidthRatio, 267) completeHandle:^(BOOL presented) {
+        
+    }];
 }
 -(void)scanAccountRecord{
     
@@ -101,6 +107,12 @@
             break;
     }
 }
+-(void)convertGood{
+    YGVipConvertViewController *alertVC = [YGVipConvertViewController new];
+    [self yc_centerPresentController:alertVC presentedSize:CGSizeMake(kScreenWidth - 2*48*kWidthRatio, 230) completeHandle:^(BOOL presented) {
+        
+    }];
+}
 #pragma  mark  ==== UICollectionViewDelegate ====
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
@@ -111,6 +123,9 @@
 -  (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     GoodsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:GoodsCollectionViewCellId forIndexPath:indexPath];
+    cell.selectedGood = ^{
+        [self convertGood];
+    };
     cell.goodsImg.image = [UIImage imageNamed:self.dataSource[indexPath.item]];
     return cell;
 }
