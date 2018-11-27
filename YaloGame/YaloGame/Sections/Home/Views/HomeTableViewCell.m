@@ -32,7 +32,7 @@
         _myImage = [[UIImageView alloc]init];
         _myImage.layer.masksToBounds = YES;
         _myImage.layer.cornerRadius = 10.0f;
-        _myImage.contentMode = UIViewContentModeScaleToFill;
+        _myImage.contentMode = UIViewContentModeScaleAspectFit;
 //        _myImage.clipsToBounds = YES;
 //        _myImage.image = [UIImage imageWithColor:[UIColor lightGrayColor]];
     }

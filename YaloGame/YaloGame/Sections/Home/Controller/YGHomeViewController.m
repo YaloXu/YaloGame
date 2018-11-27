@@ -77,7 +77,7 @@
     [noticeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(imageBg.mas_centerY);
         make.left.equalTo(self.HeaderView.mas_left).with.mas_offset(kSpace);
-        make.size.mas_equalTo(CGSizeMake(40, 40*kHeightRatio));
+        make.size.mas_equalTo(CGSizeMake(40, 40));
         
     }];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -90,7 +90,7 @@
         make.centerY.equalTo(imageBg.mas_centerY);
         make.left.equalTo(line.mas_left).with.mas_offset(10);
         make.right.equalTo(self.HeaderView.mas_right);
-        make.height.mas_equalTo(40*kHeightRatio);
+        make.height.mas_equalTo(40);
     }];
     [self.activityView start];
     [self.activityView reloadData];
@@ -138,7 +138,7 @@
 
 - (void)createItemView:(UIView *)itemView forMarqueeView:(UUMarqueeView *)marqueeView {
     itemView.backgroundColor = [UIColor clearColor];
-    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth-100, 40*kHeightRatio)];
+    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, kScreenWidth-100, 40)];
     contentLabel.font = [UIFont systemFontOfSize:10.0f];
     contentLabel.tag = 1001;
     contentLabel.textColor = UIColorFromRGBValue(0x000000);
@@ -182,7 +182,7 @@
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _mainTableView.backgroundColor = [UIColor whiteColor];
         [_mainTableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:HomeTableViewCellId];
-        _mainTableView.rowHeight = 90*kHeightRatio;
+        _mainTableView.rowHeight = (kScreenWidth-kSpace)/4;
         _mainTableView.sectionHeaderHeight = 5;
         _mainTableView.sectionFooterHeight = 5;
         [self autoLayoutSizeContentView:_mainTableView];
@@ -191,7 +191,7 @@
 }
 -(UIView *)HeaderView{
     if (!_HeaderView) {
-        _HeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 202*kHeightRatio)];
+        _HeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 70+kScreenWidth/2.5)];
 //        [_HeaderView addShadowToView:_HeaderView withColor:UIColorFromRGBValue(0xE8DEB2)];
 //        _HeaderView.backgroundColor =UIColorFromRGBValue(0xFFFBE9);
         
@@ -200,9 +200,12 @@
 }
 - (SDCycleScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, 150*kHeightRatio) delegate:self placeholderImage:[UIImage imageNamed:@""]];
+        _scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2.5) delegate:self placeholderImage:[UIImage imageNamed:@""]];
         _scrollView.localizationImageNamesGroup = @[[UIImage imageNamed:@"home_banner"],[UIImage imageNamed:@"home_banner"],[UIImage imageNamed:@"home_banner"]];
-        _scrollView.pageControlStyle = SDCycleScrollViewPageContolStyleNone;
+        _scrollView.currentPageDotColor = UIColorFromRGBValue(0xE9A400);
+        _scrollView.pageDotColor = UIColorFromRGBValue(0xFFFFFF);
+        _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
+        _scrollView.pageControlDotSize = CGSizeMake(10, 10);
     }
     return _scrollView;
 }

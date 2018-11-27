@@ -21,7 +21,7 @@
     [super viewDidLoad];
     [self setUI];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.dataSource = [NSMutableArray arrayWithObjects:@"discovery_list01",@"discovery_list02",@"discovery_list03",@"discovery_list04", nil];
+    self.dataSource = [NSMutableArray arrayWithObjects:@"discovery_list01",@"discovery_list02",@"discovery_list03",@"discovery_list04",@"discovery_list01",@"discovery_list02",@"discovery_list03",@"discovery_list04", nil];
     // Do any additional setup after loading the view.
 }
 -(void)setUI{
@@ -56,10 +56,10 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
-    return kTopSpace;
+    return 2*kTopSpace;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return section == 0 ?kTopSpace :CGFLOAT_MIN;
+    return section == 0 ?2*kTopSpace :CGFLOAT_MIN;
 }
 -(UITableView *)mainTableView{
     if(!_mainTableView){
@@ -69,7 +69,7 @@
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _mainTableView.backgroundColor = [UIColor clearColor];
         [_mainTableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:HomeTableViewCellId];
-        _mainTableView.rowHeight = 120*kHeightRatio;
+        _mainTableView.rowHeight = (kScreenWidth-kSpace)/3;
         _mainTableView.sectionHeaderHeight = 5;
         _mainTableView.sectionFooterHeight = 5;
         [self autoLayoutSizeContentView:_mainTableView];

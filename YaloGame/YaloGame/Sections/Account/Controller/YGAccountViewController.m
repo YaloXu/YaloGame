@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
-    self.dataSource = [NSMutableArray arrayWithObjects:@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09", nil];
+    self.dataSource = [NSMutableArray arrayWithObjects:@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09",@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09", nil];
 }
 -(void)setUI{
     self.headTitle = @"金币";
