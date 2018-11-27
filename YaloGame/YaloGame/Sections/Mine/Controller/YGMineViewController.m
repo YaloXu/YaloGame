@@ -49,10 +49,10 @@
     [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
     self.view.backgroundColor = DefaultBackGroundColor;
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 480)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500)];
     //已登录
     if (@"".length > 0) {
-        footerView.frame = CGRectMake(0, 0, kScreenWidth, 296);
+        footerView.frame = CGRectMake(0, 0, kScreenWidth, 316);
         self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
     }
     
@@ -83,7 +83,7 @@
             make.bottom.equalTo(footerView);
             make.left.equalTo(@16);
             make.right.equalTo(@(-16));
-            make.height.mas_equalTo(280);
+            make.height.mas_equalTo(308);
         }];
         [loginView setLoginHandler:^{
             [self.navigationController pushViewController:[YGLoginViewController new] animated:YES];

@@ -24,7 +24,13 @@
     self.layer.cornerRadius = 5;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    layout.headerReferenceSize = CGSizeZero;
+    layout.footerReferenceSize = CGSizeMake(kScreenWidth - 32, 20);
+    self.collectionView.scrollEnabled = NO;
     [self.collectionView registerNib:[UINib nibWithNibName:@"YGCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footerView"];
     _dataSource = @[@"充值",@"提现",@"交易明细",@"银行卡",@"消息日志",@"优惠活动",@"分享",@"设置"];
     _imageNames = @[@"mine_recharge",@"mine_rollout",@"mine_transaction",@"mine_bankcard",@"mine_message",@"mine_huodong",@"shared_icon",@"mine_setting"];
 //    [self.collectionView reloadData];
@@ -52,6 +58,15 @@
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return CGFLOAT_MIN;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
+        UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"footerView" forIndexPath:indexPath];
+        footer.backgroundColor = UIColor.whiteColor;
+        return footer;
+    }
+    return nil;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

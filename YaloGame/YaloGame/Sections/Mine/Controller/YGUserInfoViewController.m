@@ -124,6 +124,7 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     // Do any additional setup after loading the view from its nib.
     [self autoLayoutSizeContentView:self.tableView];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.customTextColor = [UIColor whiteColor];
     self.customNavColor = [UIColor clearColor];
     self.titleLabel.text = @"个人资料";
