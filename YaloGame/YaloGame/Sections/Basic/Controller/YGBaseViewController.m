@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self backBarbuttonForWhite];
+    if (!self.fd_prefersNavigationBarHidden) {
+        [self backBarbuttonForWhite];
+    }
     if (@available(iOS 11.0, *)) {
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
