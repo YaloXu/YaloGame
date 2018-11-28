@@ -27,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.dataSource = [NSMutableArray arrayWithObjects:@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09",@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09", nil];
 }
 -(void)setUI{
@@ -65,8 +66,9 @@
         make.height.mas_equalTo(40);
     }];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
+        make.left.right.equalTo(self.view);
         make.top.equalTo(self.segmentControl.mas_bottom).with.mas_offset(10);
+        make.bottom.equalTo(self.view.mas_bottom).with.mas_offset(-20);
     }];
 }
 -(void)rightBarItemEvent{
@@ -130,7 +132,7 @@
     return cell;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section { 
-    return UIEdgeInsetsMake(0, 15, 0, 15); 
+    return UIEdgeInsetsMake(0, 15, 0, 15);
     
 }
 //设置每个item水平间距 
@@ -141,7 +143,7 @@
 } 
 //设置每个item垂直间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 20; 
+    return 10;
     
 }
 -(UICollectionView *)mainCollectionView{
@@ -150,7 +152,7 @@
         //设置collectionView滚动方向 
         [layout setScrollDirection:UICollectionViewScrollDirectionVertical]; 
         CGFloat ItemWidth = (kScreenWidth - 2*kSpace -2*20)/3;
-        layout.itemSize =CGSizeMake(ItemWidth, 1.6*ItemWidth);
+        layout.itemSize =CGSizeMake(ItemWidth, 3*ItemWidth/4+97);
         _mainCollectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
         [_mainCollectionView registerClass:[GoodsCollectionViewCell class] forCellWithReuseIdentifier:GoodsCollectionViewCellId];
         _mainCollectionView.backgroundColor = [UIColor whiteColor];
