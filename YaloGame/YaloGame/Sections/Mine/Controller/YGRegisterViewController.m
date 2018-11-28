@@ -76,7 +76,7 @@
 - (void)bottomView {
     UILabel *protocolLabel = [UILabel new];
     protocolLabel.font = [UIFont systemFontOfSize:10];
-    NSString *string = @"登录时即代表同意《名门电竞服务协议》";
+    NSString *string = @"登录时即代表同意《悠拟电竞服务协议》";
     [self.view addSubview:protocolLabel];
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{NSForegroundColorAttributeName:UIColorFromRGBValue(0x979AA1),NSFontAttributeName:[UIFont systemFontOfSize:10]}];
     [attString addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(8, string.length - 8)];
@@ -103,7 +103,7 @@
     [self.view addSubview:nameLabel];
     nameLabel.font = [UIFont systemFontOfSize:20];
     nameLabel.textColor = UIColor.whiteColor;
-    nameLabel.text = @"名门电竞";
+    nameLabel.text = @"悠拟电竞";
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.view);

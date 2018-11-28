@@ -78,7 +78,7 @@
         _contentLabel.font = [UIFont systemFontOfSize:16];
         _contentLabel.textAlignment = NSTextAlignmentCenter;
         _contentLabel.numberOfLines = 0;
-        _contentLabel.text = @"非常感谢您对名门电竞的支持，已通知电话客服联系您请，稍等！";
+        _contentLabel.text = @"非常感谢您对悠拟电竞的支持，已通知电话客服联系您请，稍等！";
     }
     return _contentLabel;
 }

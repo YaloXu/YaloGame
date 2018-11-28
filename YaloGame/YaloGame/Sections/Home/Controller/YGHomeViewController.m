@@ -33,7 +33,7 @@
     // Do any additional setup after loading the view.
 }
 -(void)setUI{
-    self.headTitle = @"名门电竞";
+    self.headTitle = @"悠拟电竞";
     [self setRightBarItemWithImage:@"home_im"];
     [self.view addSubview:self.mainTableView];
     [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {

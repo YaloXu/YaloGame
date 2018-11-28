@@ -1695,9 +1695,9 @@
 			baseConfigurationReference = 369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = DN78C49SVR;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/YaloGame/PrefixHeader.pch";
 				INFOPLIST_FILE = YaloGame/Info.plist;
@@ -1708,7 +1708,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.louislsm.YaloGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = YaloGameADH;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
