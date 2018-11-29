@@ -48,41 +48,46 @@ static inline NSSet *acceptableContentTypes() {
 }
 
 - (void)get:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)faild {
-    [self.manager GET:url parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        faild(error);
+    [self.manager GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        BLOCK(success,responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        BLOCK(faild,error);
     }];
 }
 
 - (void)post:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [self.manager POST:url parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        failed(error);
+    [self.manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        BLOCK(success,responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        BLOCK(failed,error);
     }];
 }
 
 - (void)get:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)faild {
-    if (block) {
-        block(self.manager);
-    }
-    [self.manager GET:url parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        faild(error);
-    }];
+    BLOCK(block,self.manager);
+    [self get:url parameters:parameters success:success failed:faild];
 }
 
 
 - (void)post:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
-    if (block) {
-        block(self.manager);
-    }
-    [self.manager POST:url parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-        success(responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        failed(error);
+    BLOCK(block,self.manager);
+    [self post:url parameters:parameters success:success failed:failed];
+}
+
+- (void)upload:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
+    BLOCK(block,self.manager);
+    [self upload:url parameters:parameters success:success failed:failed];
+}
+
+- (void)upload:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [self.manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
     }];
 }
 

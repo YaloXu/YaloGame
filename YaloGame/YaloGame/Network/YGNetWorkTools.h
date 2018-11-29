@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+#define BLOCK(block, ...) if (block) { block(__VA_ARGS__); };
+
 
 typedef void(^SuccessBlock)(id responseObject);
 
