@@ -11,13 +11,13 @@
 @interface YGLoginView()
 
 
-@property (nonatomic, strong) UITextField *nameTF,*pwdTF,*codeTF;
+@property (nonatomic, strong) UITextField *nameTF,*pwdTF,*codeTF, *regPwdTF, *regConPwdTF;
 
 @property (nonatomic, strong) UIButton *loginButton,*registerButton,*selectedButton, *codeButton;
 
 @property (nonatomic, strong) UILabel *stateLabel, *forgetPwdLabel;
 
-@property (nonatomic, strong) UIView *line1, *line2, *line3;
+@property (nonatomic, strong) UIView *line1, *line2, *line3, *line4,*line5;
 
 @end
 
@@ -43,6 +43,28 @@
     [self addSubview:self.line1];
     [self addSubview:self.line2];
     [self addSubview:self.line3];
+    [self addSubview:self.regConPwdTF];
+    [self addSubview:self.regPwdTF];
+    [self addSubview:self.line4];
+    [self addSubview:self.line5];
+}
+
+- (UIView *)line5 {
+    if (!_line5) {
+        _line5 = [UIView new];
+        _line5.hidden = YES;
+        _line5.backgroundColor = DefaultBackGroundColor;
+    }
+    return _line5;
+}
+
+- (UIView *)line4 {
+    if (!_line4) {
+        _line4 = [UIView new];
+        _line4.hidden = YES;
+        _line4.backgroundColor = DefaultBackGroundColor;
+    }
+    return _line4;
 }
 
 - (UIView *)line3 {
@@ -128,6 +150,30 @@
          [_nameTF setValue:UIColorFromRGBValue(0x979AA1) forKeyPath:@"_placeholderLabel.textColor"];
     }
     return _nameTF;
+}
+
+- (UITextField *)regPwdTF {
+    if (!_regPwdTF) {
+        _regPwdTF = [UITextField new];
+        _regPwdTF.placeholder = @"请设置您的登录密码";
+        _regPwdTF.font = [UIFont systemFontOfSize:12];
+        _regPwdTF.hidden = YES;
+        _regPwdTF.textColor = UIColorFromRGBValue(0x979AA1);
+        [_regPwdTF setValue:UIColorFromRGBValue(0x979AA1) forKeyPath:@"_placeholderLabel.textColor"];
+    }
+    return _regPwdTF;
+}
+
+- (UITextField *)regConPwdTF {
+    if (!_regConPwdTF) {
+        _regConPwdTF = [UITextField new];
+        _regConPwdTF.placeholder = @"请确认您的登录密码";
+        _regConPwdTF.hidden = YES;
+        _regConPwdTF.font = [UIFont systemFontOfSize:12];
+        _regConPwdTF.textColor = UIColorFromRGBValue(0x979AA1);
+        [_regConPwdTF setValue:UIColorFromRGBValue(0x979AA1) forKeyPath:@"_placeholderLabel.textColor"];
+    }
+    return _regConPwdTF;
 }
 
 - (UITextField *)pwdTF {
@@ -255,6 +301,10 @@
         case YGViewType_Register: {
             _codeTF.hidden = NO;
             _line3.hidden = NO;
+            _line4.hidden = NO;
+            _line5.hidden = NO;
+            _regConPwdTF.hidden = NO;
+            _regPwdTF.hidden = NO;
             self.nameTF.placeholder = @"请输入您的手机号码";
             self.pwdTF.placeholder = @"请输入短信验证码";
             [self.registerButton setTitle:@"返回登录" forState:UIControlStateNormal];
@@ -287,10 +337,32 @@
                 make.height.mas_equalTo(.5);
                 make.top.equalTo(self.codeTF.mas_bottom).with.offset(10);
             }];
+            [self.regPwdTF mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.height.equalTo(self.nameTF);
+                make.right.equalTo(@(-16));
+                make.top.equalTo(self.codeTF.mas_bottom).offset(25);
+            }];
+            [self.line4 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(@16);
+                make.right.equalTo(@(-16));
+                make.height.mas_equalTo(.5);
+                make.top.equalTo(self.regPwdTF.mas_bottom).with.offset(10);
+            }];
+            [self.regConPwdTF mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.height.equalTo(self.nameTF);
+                make.right.equalTo(@(-16));
+                make.top.equalTo(self.regPwdTF.mas_bottom).offset(25);
+            }];
+            [self.line5 mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(@16);
+                make.right.equalTo(@(-16));
+                make.height.mas_equalTo(.5);
+                make.top.equalTo(self.regConPwdTF.mas_bottom).with.offset(10);
+            }];
             [self.selectedButton mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(@16);
                 make.size.mas_equalTo(CGSizeMake(16, 16));
-                make.top.equalTo(self.codeTF.mas_bottom).with.offset(20);
+                make.top.equalTo(self.regConPwdTF.mas_bottom).with.offset(20);
             }];
             [self.stateLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.left.equalTo(self.selectedButton.mas_right).with.offset(5);
