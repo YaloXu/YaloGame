@@ -15,6 +15,8 @@
     // 设置弹出视图尺寸
     if (_popoverType == YCPopoverTypeAlert) {
         self.presentedView.frame = CGRectMake(self.containerView.center.x - self.presentedSize.width * 0.5, self.containerView.center.y - self.presentedSize.height * 0.5, self.presentedSize.width, self.presentedSize.height);
+        self.presentedView.layer.masksToBounds = YES;
+        self.presentedView.layer.cornerRadius  = 5;
     }else{
         self.presentedView.frame = CGRectMake(0, self.containerView.bounds.size.height - self.presentedHeight, self.containerView.bounds.size.width, self.presentedHeight);
     }

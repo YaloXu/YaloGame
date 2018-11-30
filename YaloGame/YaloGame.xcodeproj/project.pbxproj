@@ -226,6 +226,8 @@
 		2E305FD121ACDB7900FCF123 /* CoinCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD021ACDB7900FCF123 /* CoinCommonCell.m */; };
 		2E305FD421ACE42100FCF123 /* YGVipConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD321ACE42100FCF123 /* YGVipConvertViewController.m */; };
 		2E305FD721ACEB5C00FCF123 /* YGStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD621ACEB5C00FCF123 /* YGStringUtils.m */; };
+		2E305FDA21AFE2E200FCF123 /* YGGoodsConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FD921AFE2E200FCF123 /* YGGoodsConvertViewController.m */; };
+		2E305FDD21AFE69900FCF123 /* YGGoodsConvertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E305FDC21AFE69900FCF123 /* YGGoodsConvertCell.m */; };
 		2E35485521AC79A700C1BA66 /* FSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485421AC79A700C1BA66 /* FSTextView.m */; };
 		2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */; };
 		2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */; };
@@ -529,6 +531,10 @@
 		2E305FD321ACE42100FCF123 /* YGVipConvertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGVipConvertViewController.m; sourceTree = "<group>"; };
 		2E305FD521ACEB5C00FCF123 /* YGStringUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGStringUtils.h; sourceTree = "<group>"; };
 		2E305FD621ACEB5C00FCF123 /* YGStringUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGStringUtils.m; sourceTree = "<group>"; };
+		2E305FD821AFE2E200FCF123 /* YGGoodsConvertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGGoodsConvertViewController.h; sourceTree = "<group>"; };
+		2E305FD921AFE2E200FCF123 /* YGGoodsConvertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGGoodsConvertViewController.m; sourceTree = "<group>"; };
+		2E305FDB21AFE69900FCF123 /* YGGoodsConvertCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGGoodsConvertCell.h; sourceTree = "<group>"; };
+		2E305FDC21AFE69900FCF123 /* YGGoodsConvertCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGGoodsConvertCell.m; sourceTree = "<group>"; };
 		2E35485321AC79A700C1BA66 /* FSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSTextView.h; path = YGTextView/FSTextView.h; sourceTree = "<group>"; };
 		2E35485421AC79A700C1BA66 /* FSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSTextView.m; path = YGTextView/FSTextView.m; sourceTree = "<group>"; };
 		2E35485621AC934900C1BA66 /* YGAlertSelectedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGAlertSelectedViewController.h; sourceTree = "<group>"; };
@@ -891,6 +897,8 @@
 				2E305FC721ACD0EB00FCF123 /* YGCoinHelpViewController.m */,
 				2E305FD221ACE42100FCF123 /* YGVipConvertViewController.h */,
 				2E305FD321ACE42100FCF123 /* YGVipConvertViewController.m */,
+				2E305FD821AFE2E200FCF123 /* YGGoodsConvertViewController.h */,
+				2E305FD921AFE2E200FCF123 /* YGGoodsConvertViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -978,6 +986,8 @@
 				2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */,
 				2E305FCF21ACDB7900FCF123 /* CoinCommonCell.h */,
 				2E305FD021ACDB7900FCF123 /* CoinCommonCell.m */,
+				2E305FDB21AFE69900FCF123 /* YGGoodsConvertCell.h */,
+				2E305FDC21AFE69900FCF123 /* YGGoodsConvertCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1513,6 +1523,7 @@
 				02CD775B21A2DAA7009A9892 /* YGMessageDefaultView.m in Sources */,
 				2E305ED321A4033300FCF123 /* MSWeakTimer.m in Sources */,
 				028553EF21A9833B00E7DDBC /* YGMessageModel.m in Sources */,
+				2E305FDD21AFE69900FCF123 /* YGGoodsConvertCell.m in Sources */,
 				2E305FBB21AC0AB000FCF123 /* YCPresentationController.m in Sources */,
 				02AC5AAA21A068BB0092BB46 /* YGAuthTool.m in Sources */,
 				025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */,
@@ -1524,6 +1535,7 @@
 				02CD776121A2E005009A9892 /* YGMessageCollectionViewCell.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				02AC5AFB21A1A5BF0092BB46 /* YGCollectionViewCell.m in Sources */,
+				2E305FDA21AFE2E200FCF123 /* YGGoodsConvertViewController.m in Sources */,
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				025F24C221A7D55A001FDBB1 /* YGNetWorkTools.m in Sources */,
 				2E305F5521A53CF900FCF123 /* YGTabBar.m in Sources */,
