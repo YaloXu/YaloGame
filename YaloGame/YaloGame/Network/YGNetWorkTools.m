@@ -74,14 +74,17 @@ static inline NSSet *acceptableContentTypes() {
     [self post:url parameters:parameters success:success failed:failed];
 }
 
-- (void)upload:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
+- (void)upload:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
     BLOCK(block,self.manager);
-    [self upload:url parameters:parameters success:success failed:failed];
+    [self upload:url parameters:parameters data:data success:success failed:failed];
 }
 
-- (void)upload:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
+- (void)upload:(NSString *)url parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
     [self.manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        
+        [formData appendPartWithFileData:data
+                                    name:@"image"
+                                fileName:@""
+                                mimeType:@"image/jpeg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

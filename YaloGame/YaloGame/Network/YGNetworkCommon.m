@@ -21,7 +21,36 @@
 }
 
 + (void)userInfo:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] get:@"" parameters:nil success:success failed:failed];
+    [[YGNetWorkTools sharedTools] get:@"" parameters:@{} success:success failed:failed];
 }
+
++ (void)getBankCards:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] get:@"" parameters:@{} success:success failed:failed];
+}
+
++ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
+}
+
++ (void)getVerifyCode:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
+}
+
++ (void)updateNickName:(NSString *)nickName success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
+}
+
++ (void)updateSign:(NSString *)sign success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
+}
+
++ (void)uploadImage:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] upload:@"" parameters:@{} data:data success:success failed:failed];
+}
+
++ (void)getTransactionInfo:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] get:@"" parameters:@{} success:success failed:failed];
+}
+
 
 @end

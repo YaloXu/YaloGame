@@ -50,6 +50,12 @@ sessionConfig:(SessionBlock)block
      success:(SuccessBlock)success
       failed:(FailedBlock)failed;
 
+- (void)upload:(NSString *)url
+    parameters:(NSDictionary *)parameters
+          data:(NSData *)data
+       success:(SuccessBlock)success
+        failed:(FailedBlock)failed;
+
 @end
 
 NS_ASSUME_NONNULL_END
