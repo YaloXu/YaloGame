@@ -9,6 +9,7 @@
 #import "YGOrderViewController.h"
 #import "YGTransactionTableViewCell.h"
 #import "YGTransactionModel.h"
+#import "YGWebViewController.h"
 
 @interface YGOrderViewController () <UITableViewDelegate, UITableViewDataSource> {
     NSMutableArray <YGTransactionModel *>*_dataSource;
@@ -67,6 +68,11 @@
     return 1;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    YGWebViewController *controller = [YGWebViewController new];
+    controller.loadUrl = _dataSource[indexPath.section].url;;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 @end

@@ -27,7 +27,7 @@
 - (UICollectionView *)mainCollectionView {
     if (!_mainCollectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight - kNavHeight - 60 - kTabBarHeight);
+        layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight - kNavHeight - 54 - kTabBarHeight);
         layout.minimumLineSpacing = CGFLOAT_MIN;
         layout.minimumInteritemSpacing = CGFLOAT_MIN;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -38,7 +38,7 @@
         _mainCollectionView.pagingEnabled = YES;
         _mainCollectionView.scrollEnabled = NO;
         _mainCollectionView.bounces = NO;
-        _mainCollectionView.showsHorizontalScrollIndicator = NO;
+        [self autoLayoutSizeContentView:_mainCollectionView]; _mainCollectionView.showsHorizontalScrollIndicator = NO;
     }
     return _mainCollectionView;
 }
@@ -67,7 +67,7 @@
     YGMessageSegView *segView = [YGMessageSegView new];
     [self.view addSubview:segView];
     [segView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@11);
+        make.top.equalTo(@12);
         make.left.equalTo(@38);
         make.right.equalTo(@(-38));
         make.height.mas_equalTo(30);
@@ -101,5 +101,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 3;
 }
+
+
 
 @end

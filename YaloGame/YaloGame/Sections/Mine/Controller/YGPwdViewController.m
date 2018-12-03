@@ -20,6 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"设置账户密码";
+    self.confirmPwdTF.secureTextEntry = YES;
 }
 
 - (IBAction)pwdAction:(UIButton *)sender {
@@ -29,7 +30,7 @@
 }
 - (IBAction)pwdConfirmAction:(UIButton *)sender {
     sender.selected = !sender.selected;
-    self.confirmPwdTF.secureTextEntry = sender.selected;
+    self.confirmPwdTF.secureTextEntry = !sender.selected;
 }
 
 

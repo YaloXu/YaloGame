@@ -10,7 +10,7 @@
 #import "YGMessageTableViewCell.h"
 #import "YGMessageDefaultView.h"
 #import "YGUtils.h"
-#import "YGMessageModel.h"
+
 @interface YGMessageCollectionViewCell() <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,6 +31,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"YGMessageTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"messageCell"];
@@ -55,15 +58,19 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 10;
+    return CGFLOAT_MIN;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return CGFLOAT_MIN;
+    if (section == 0) {
+        return CGFLOAT_MIN;
+    }
+    return 10;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BLOCK(self.didSelected,self.dataSource[indexPath.section]);
 }
 
 - (void)setDataSource:(NSArray *)dataSource {

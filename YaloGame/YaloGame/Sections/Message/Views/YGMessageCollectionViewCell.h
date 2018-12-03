@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGMessageModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YGMessageCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) NSArray *dataSource;
+
+@property (nonatomic, copy) void (^(didSelected))(YGMessageModel *model);
 
 @end
 

@@ -22,18 +22,14 @@
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="web-Iv-u6d">
                         <rect key="frame" x="0.0" y="0.0" width="226" height="201"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <connections>
-                            <outlet property="dataSource" destination="-1" id="2Yp-QI-fID"/>
-                            <outlet property="delegate" destination="-1" id="t09-tn-f4k"/>
-                        </connections>
                     </tableView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="web-Iv-u6d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1O7-r4-4D5"/>
-                <constraint firstAttribute="bottom" secondItem="web-Iv-u6d" secondAttribute="bottom" id="DSU-G3-EDU"/>
-                <constraint firstAttribute="trailing" secondItem="web-Iv-u6d" secondAttribute="trailing" id="ikZ-KF-YTr"/>
-                <constraint firstItem="web-Iv-u6d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kkG-3Z-aEk"/>
+                <constraint firstItem="web-Iv-u6d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5As-l6-vjQ"/>
+                <constraint firstAttribute="trailing" secondItem="web-Iv-u6d" secondAttribute="trailing" id="EbP-8i-zPl"/>
+                <constraint firstItem="web-Iv-u6d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aCa-To-uaF"/>
+                <constraint firstAttribute="bottom" secondItem="web-Iv-u6d" secondAttribute="bottom" id="pGg-y7-92z"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="226" height="201"/>

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL style;
 
+@property (nonatomic, copy) NSString *url;
+
 
 @end
 
