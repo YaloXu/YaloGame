@@ -112,6 +112,6 @@ static inline NSSet *acceptableContentTypes() {
         BLOCK(failed,oj[@"ret_data"]);
         return;
     }
-    BLOCK(success,oj[@"ret_data"]);
+    BLOCK(success,oj);
 }
 @end
