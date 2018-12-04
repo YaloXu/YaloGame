@@ -35,7 +35,9 @@ static inline NSSet *acceptableContentTypes() {
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
         _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        _manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+        _manager.requestSerializer.HTTPShouldUsePipelining = YES;
+        _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         _manager.requestSerializer.timeoutInterval = 30;
         _manager.responseSerializer.acceptableContentTypes = acceptableContentTypes();
     }
@@ -49,17 +51,17 @@ static inline NSSet *acceptableContentTypes() {
 
 - (void)get:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)faild {
     [self.manager GET:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BLOCK(success,responseObject);
+        [self parseResponse:responseObject success:success failed:faild];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        BLOCK(faild,error);
+        [self parseError:error failed:faild];
     }];
 }
 
 - (void)post:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
     [self.manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        BLOCK(success,responseObject);
+        [self parseResponse:responseObject success:success failed:failed];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        BLOCK(failed,error);
+        [self parseError:error failed:failed];
     }];
 }
 
@@ -94,5 +96,22 @@ static inline NSSet *acceptableContentTypes() {
     }];
 }
 
+- (void)parseError:(NSError *)error failed:(FailedBlock)faied {
+        id data = error.userInfo[@"com.alamofire.serialization.response.error.data"];
+    if (!data || ![data isKindOfClass:[NSData class]]) {
+        BLOCK(faied,@{@"message":@"失败"});
+        return;
+    }
+        id oj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
+    BLOCK(faied,oj);
+}
 
+- (void)parseResponse:(id)response success:(SuccessBlock)success failed:(FailedBlock)failed{
+    id oj = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
+    if ([oj[@"code"] integerValue] != 200) {
+        BLOCK(failed,oj[@"ret_data"]);
+        return;
+    }
+    BLOCK(success,oj[@"ret_data"]);
+}
 @end

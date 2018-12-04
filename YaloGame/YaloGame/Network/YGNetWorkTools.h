@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^SuccessBlock)(id responseObject);
 
-typedef void(^FailedBlock)(NSError *error);
+typedef void(^FailedBlock)(NSDictionary *errorInfo);
 
 typedef void(^SessionBlock)(AFHTTPSessionManager *manager);
 

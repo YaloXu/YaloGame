@@ -16,8 +16,8 @@
     [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
 }
 
-+ (void)registerUser:(NSString *)userName password:(NSString *)password success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
++ (void)registerUser:(NSString *)userName password:(NSString *)password confirmPwd:(NSString *)confirmPwd code:(NSString *)code inviteCode:(NSString *)inviteCode success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=register" parameters:@{@"mobile":userName,@"password":password,@"surepassword":confirmPwd,@"code":code,@"invitecode":inviteCode} success:success failed:failed];
 }
 
 + (void)userInfo:(SuccessBlock)success failed:(FailedBlock)failed {
@@ -32,8 +32,8 @@
     [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
 }
 
-+ (void)getVerifyCode:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
++ (void)getVerifyCode:(NSString *)phone type:(NSString *)type success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=verify" parameters:@{@"mobile":phone,@"type":type} success:success failed:failed];
 }
 
 + (void)updateNickName:(NSString *)nickName success:(SuccessBlock)success failed:(FailedBlock)failed {

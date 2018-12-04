@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)login:(NSString *)userName password:(NSString *)password success:(SuccessBlock)success failed:(FailedBlock)failed;
 
-+ (void)registerUser:(NSString *)userName password:(NSString *)password success:(SuccessBlock)success failed:(FailedBlock)failed;
++ (void)registerUser:(NSString *)userName password:(NSString *)password confirmPwd:(NSString *)confirmPwd code:(NSString *)code inviteCode:(NSString *)inviteCode success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 + (void)userInfo:(SuccessBlock)success failed:(FailedBlock)failed;
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed;
 
-+ (void)getVerifyCode:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed;
++ (void)getVerifyCode:(NSString *)phone type:(NSString *)type success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 + (void)updateNickName:(NSString *)nickName success:(SuccessBlock)success failed:(FailedBlock)failed;
 

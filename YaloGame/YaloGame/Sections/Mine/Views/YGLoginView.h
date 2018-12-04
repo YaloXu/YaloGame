@@ -23,11 +23,11 @@ typedef NS_ENUM(NSInteger, YGViewType) {
 
 @property (nonatomic, copy) void (^(loginHandler))(void);
 
-@property (nonatomic, copy) void (^(registerHandler))(void);
+@property (nonatomic, copy) void (^(registerHandler))(NSString *userName,NSString *pwd,NSString *confirmPwd,NSString *code, NSString *inviteCode);
 
 @property (nonatomic, copy) void (^(forgetPwdHandler))(void);
 
-@property (nonatomic, copy) void (^(sendCodeHandler))(void);
+@property (nonatomic, copy) void (^(sendCodeHandler))(NSString *phone);
 
 @property (nonatomic, copy) void (^(backLoginHandler))(void);
 

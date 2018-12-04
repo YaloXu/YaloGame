@@ -41,10 +41,10 @@
         make.bottom.equalTo(@(-110));
         make.top.equalTo(@130);
     }];
-    [self.loginView setRegisterHandler:^{
-        [self.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
-    }];
-    [self.loginView setSendCodeHandler:^{
+//    [self.loginView setRegisterHandler:^{
+//        [self.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
+//    }];
+    [self.loginView setSendCodeHandler:^(NSString *phone){
         
     }];
     [self.loginView setForgetPwdHandler:^{

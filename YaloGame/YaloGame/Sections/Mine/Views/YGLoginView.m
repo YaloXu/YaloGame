@@ -230,9 +230,7 @@
         }
         return;
     }
-    if (self.registerHandler) {
-        self.registerHandler();
-    }
+    BLOCK(self.registerHandler,self.nameTF.text,self.pwdTF.text,self.regPwdTF.text,self.codeTF.text,self.regConPwdTF.text);
 }
 
 - (void)selected {
@@ -241,9 +239,10 @@
 
 - (void)login {
     if (self.viewType == YGViewType_Register) {
-        if (self.registerHandler) {
-            self.registerHandler();
-        }
+        BLOCK(self.registerHandler,self.nameTF.text,self.pwdTF.text,self.regPwdTF.text,self.codeTF.text,self.regConPwdTF.text);
+//        if (self.registerHandler) {
+//            self.registerHandler(self.nameTF.text,sel);
+//        }
         return;
     }
     if (self.loginHandler) {
@@ -252,9 +251,7 @@
 }
 
 - (void)getCode {
-    if (self.sendCodeHandler) {
-        self.sendCodeHandler();
-    }
+    BLOCK(self.sendCodeHandler,self.nameTF.text);
 }
 
 - (void)setViewType:(YGViewType)viewType {
@@ -299,6 +296,7 @@
         }
             break;
         case YGViewType_Register: {
+            _nameTF.keyboardType = UIKeyboardTypeNumberPad;
             _codeTF.hidden = NO;
             _line3.hidden = NO;
             _line4.hidden = NO;
