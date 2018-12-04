@@ -34,7 +34,7 @@ static inline NSSet *acceptableContentTypes() {
 - (instancetype)init {
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
-        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
         _manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _manager.requestSerializer.HTTPShouldUsePipelining = YES;
         _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
