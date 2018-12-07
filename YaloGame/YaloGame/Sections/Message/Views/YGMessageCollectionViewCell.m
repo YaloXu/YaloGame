@@ -37,6 +37,17 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"YGMessageTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"messageCell"];
+    [self configRefresh];
+}
+
+- (void)configRefresh {
+    kWeakSelf;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        BLOCK(weakSelf.refreshHeaderHandler,weakSelf.tableView.mj_header);
+    }];
+    self.tableView.mj_footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+        BLOCK(weakSelf.refreshFooterHandler,weakSelf.tableView.mj_footer);
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,6 +88,9 @@
     _dataSource = dataSource;
     if (!YGUtils.validArray(_dataSource)) {
         self.tableView.hidden = YES;
+        if (!self.firstShow) {
+            return;
+        }
         if (self.defaultView.superview) {
             self.defaultView.hidden = NO;
         } else{
@@ -90,6 +104,10 @@
         self.tableView.hidden = NO;
         [self.tableView reloadData];
     }
+}
+
+- (void)scrollTop {
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 @end
