@@ -8,8 +8,11 @@
 
 #import "YGLoginView.h"
 
-@interface YGLoginView()
+@interface YGLoginView() {
+    NSInteger count;
+}
 
+@property (nonatomic, strong) NSTimer *timer;
 
 @property (nonatomic, strong) UITextField *nameTF,*pwdTF,*codeTF, *regPwdTF, *regConPwdTF;
 
@@ -230,7 +233,7 @@
         }
         return;
     }
-    BLOCK(self.registerHandler,self.nameTF.text,self.pwdTF.text,self.regPwdTF.text,self.codeTF.text,self.regConPwdTF.text);
+    BLOCK(self.registerPushHandler);
 }
 
 - (void)selected {
@@ -238,20 +241,22 @@
 }
 
 - (void)login {
+    /*
+     NSString *userName,NSString *pwd,NSString *confirmPwd,NSString *code, NSString *inviteCode
+     */
     if (self.viewType == YGViewType_Register) {
-        BLOCK(self.registerHandler,self.nameTF.text,self.pwdTF.text,self.regPwdTF.text,self.codeTF.text,self.regConPwdTF.text);
-//        if (self.registerHandler) {
-//            self.registerHandler(self.nameTF.text,sel);
-//        }
+        BLOCK(self.registerHandler,self.nameTF.text,self.pwdTF.text,self.codeTF.text,self.regPwdTF.text,self.regConPwdTF.text);
+
         return;
     }
-    if (self.loginHandler) {
-        self.loginHandler();
-    }
+    BLOCK(self.loginHandler,self.nameTF.text,self.pwdTF.text,self.codeTF.text, self.viewType);
 }
 
 - (void)getCode {
     BLOCK(self.sendCodeHandler,self.nameTF.text);
+    self.codeButton.userInteractionEnabled = NO;
+    [self.codeButton setTitle:@"发送中..." forState:UIControlStateNormal];
+    [self.codeButton setTitleColor:kButtonBackColorForDisabled forState:UIControlStateNormal];
 }
 
 - (void)setViewType:(YGViewType)viewType {
@@ -450,6 +455,35 @@
     layer.frame = CGRectMake(32, 0, 1, 20);
     self.nameTF.leftView = view;
     self.nameTF.leftViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)startTimer {
+    [self stopTimer];
+    _codeButton.enabled = NO;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeButtonState) userInfo:nil repeats:YES];
+}
+
+- (void)changeButtonState {
+    count --;
+    if (count <= 0) {
+        [self resetTimer];
+        return;
+    }
+    [_codeButton setTitle:[NSString stringWithFormat:@"%lds重新发送",count] forState:UIControlStateNormal];
+}
+
+- (void)stopTimer {
+    if (self.timer && [self.timer isValid]) {
+        [self.timer invalidate];
+    }
+    self.timer = nil;
+    count = 60;
+}
+
+- (void)resetTimer {
+    _codeButton.userInteractionEnabled = YES;
+    [_codeButton setTitleColor:UIColorFromRGBValue(0x979AA1) forState:UIControlStateNormal];
+    [_codeButton setTitle:@"重新获取验证码" forState:UIControlStateNormal];
 }
 
 @end

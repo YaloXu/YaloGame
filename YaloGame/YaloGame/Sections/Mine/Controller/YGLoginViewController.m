@@ -41,12 +41,26 @@
         make.bottom.equalTo(@(-110));
         make.top.equalTo(@130);
     }];
-//    [self.loginView setRegisterHandler:^{
-//        [self.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
-//    }];
-    [self.loginView setSendCodeHandler:^(NSString *phone){
-        
+    kWeakSelf;
+    [self.loginView setRegisterPushHandler:^{
+        kStrongSelfAutoReturn;
+        [strongSelf.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
     }];
+    [self.loginView setLoginHandler:^(NSString *name,NSString *pwd,NSString *code, YGViewType type){
+        [YGNetworkCommon login:name password:pwd code:code type:type == YGViewType_Pwd_Login ? 0 : 1 success:^(id  _Nonnull responseObject) {
+            
+        } failed:^(NSDictionary * _Nonnull errorInfo) {
+            
+        }];
+    }];
+    [self.loginView setSendCodeHandler:^(NSString *phone){
+        [YGNetworkCommon getVerifyCode:phone type:@"0" success:^(id  _Nonnull responseObject) {
+            
+        } failed:^(NSDictionary * _Nonnull errorInfo) {
+            
+        }];
+    }];
+    
     [self.loginView setForgetPwdHandler:^{
         
     }];

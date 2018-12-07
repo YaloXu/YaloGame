@@ -39,7 +39,8 @@
         make.bottom.equalTo(@(-110));
         make.top.equalTo(@130);
     }];
-    [self.loginView setRegisterHandler:^(NSString *userName,NSString *pwd,NSString *confirmPwd,NSString *code, NSString *inviteCode){
+    kWeakSelf;
+    [self.loginView setRegisterHandler:^(NSString *userName,NSString *code,NSString *inviteCode,NSString *pwd, NSString *confirmPwd){
         [YGNetworkCommon registerUser:userName password:pwd confirmPwd:confirmPwd code:code inviteCode:inviteCode success:^(id  _Nonnull responseObject) {
             NSLog(@"===");
         } failed:^(NSDictionary * _Nonnull errorInfo) {
@@ -47,10 +48,12 @@
         }];
     }];
     [self.loginView setSendCodeHandler:^(NSString *phone){
+        kStrongSelfAutoReturn;
         [YGNetworkCommon getVerifyCode:phone type:@"1" success:^(id  _Nonnull responseObject) {
-            NSLog(@"");
+            [strongSelf.loginView startTimer];
         } failed:^(NSDictionary * errorInfo) {
             NSLog(@"");
+            [strongSelf.loginView resetTimer];
         }];
     }];
     [self.loginView setBackLoginHandler:^{
