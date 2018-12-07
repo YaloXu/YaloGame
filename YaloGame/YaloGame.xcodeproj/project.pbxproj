@@ -20,6 +20,7 @@
 		021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F328C219C29C20041A11A /* YGMessageViewController.m */; };
 		021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3291219C29CA0041A11A /* YGMineViewController.m */; };
 		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
+		0221BB6021BA608B008B2F14 /* YGUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB5F21BA608B008B2F14 /* YGUserInfo.m */; };
 		022DF36F21B3EDC5002F298A /* user_ava@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36D21B3EDC5002F298A /* user_ava@3x.png */; };
 		022DF37021B3EDC5002F298A /* user_ava@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36E21B3EDC5002F298A /* user_ava@2x.png */; };
 		025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F24A921A54874001FDBB1 /* YGShareViewController.m */; };
@@ -268,6 +269,8 @@
 		021F3291219C29CA0041A11A /* YGMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMineViewController.m; sourceTree = "<group>"; };
 		021F3296219C29D30041A11A /* YGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAccountViewController.m; sourceTree = "<group>"; };
 		021F3297219C29D30041A11A /* YGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAccountViewController.h; sourceTree = "<group>"; };
+		0221BB5E21BA608B008B2F14 /* YGUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGUserInfo.h; sourceTree = "<group>"; };
+		0221BB5F21BA608B008B2F14 /* YGUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGUserInfo.m; sourceTree = "<group>"; };
 		022DF36D21B3EDC5002F298A /* user_ava@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@3x.png"; sourceTree = "<group>"; };
 		022DF36E21B3EDC5002F298A /* user_ava@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@2x.png"; sourceTree = "<group>"; };
 		025F24A921A54874001FDBB1 /* YGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGShareViewController.m; sourceTree = "<group>"; };
@@ -596,6 +599,7 @@
 		021F3242219C1E910041A11A /* YaloGame */ = {
 			isa = PBXGroup;
 			children = (
+				0221BB6121BA611E008B2F14 /* Manager */,
 				025F24BC21A7D559001FDBB1 /* Network */,
 				2E305ECC21A4033300FCF123 /* Vendor */,
 				2EDDE5C8219EB91B0009DDC1 /* Category */,
@@ -682,6 +686,7 @@
 		021F325F219C23D30041A11A /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				0221BB5D21BA6069008B2F14 /* UserInfo */,
 				2E9EA73921A2F889002EF478 /* Views */,
 				021F3295219C29D30041A11A /* Controller */,
 			);
@@ -905,6 +910,22 @@
 				2E305FD921AFE2E200FCF123 /* YGGoodsConvertViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0221BB5D21BA6069008B2F14 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0221BB5E21BA608B008B2F14 /* YGUserInfo.h */,
+				0221BB5F21BA608B008B2F14 /* YGUserInfo.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		0221BB6121BA611E008B2F14 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		025F24BC21A7D559001FDBB1 /* Network */ = {
@@ -1446,6 +1467,7 @@
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1461,6 +1483,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1489,6 +1512,7 @@
 				021F3263219C24010041A11A /* AppDelegate.m in Sources */,
 				02AC5ACB21A11A700092BB46 /* YGAboutViewController.m in Sources */,
 				02AC5AF321A19FC90092BB46 /* YGMineFooterView.m in Sources */,
+				0221BB6021BA608B008B2F14 /* YGUserInfo.m in Sources */,
 				0285540F21AA5E1C00E7DDBC /* UIButton+Badge.m in Sources */,
 				02AC5AE621A189850092BB46 /* YGBindCardView.m in Sources */,
 				2E305FBA21AC0AB000FCF123 /* YCPopoverAnimator.m in Sources */,
