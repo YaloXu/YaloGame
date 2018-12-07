@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YGPwdViewController">
             <connections>
+                <outlet property="confirmPwdLabel" destination="0RF-nn-J7v" id="lHg-gZ-AiE"/>
                 <outlet property="confirmPwdTF" destination="jCp-xx-RBr" id="bXS-Ef-K8S"/>
+                <outlet property="pwdLabel" destination="cUF-4s-OFm" id="sxK-s2-P8K"/>
                 <outlet property="pwdTF" destination="el1-UC-4Aj" id="WLq-wd-ryG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -105,11 +107,31 @@
                         <constraint firstItem="dMr-yF-uCG" firstAttribute="top" secondItem="RjA-v9-CIL" secondAttribute="top" id="x24-GH-zS3"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G95-d6-8Ui">
+                    <rect key="frame" x="16" y="127" width="343" height="40"/>
+                    <color key="backgroundColor" red="0.91764705882352937" green="0.68235294117647061" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="BYr-zQ-V5K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="确认"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="confirmClick:" destination="-1" eventType="touchUpInside" id="dN8-9W-i7O"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
+                <constraint firstItem="G95-d6-8Ui" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="2iy-Rd-CMU"/>
                 <constraint firstItem="RjA-v9-CIL" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="15" id="BXz-4t-Pgq"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="G95-d6-8Ui" secondAttribute="trailing" constant="16" id="HGG-FW-OLp"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="RjA-v9-CIL" secondAttribute="trailing" id="XNO-E7-DI8"/>
+                <constraint firstItem="G95-d6-8Ui" firstAttribute="top" secondItem="RjA-v9-CIL" secondAttribute="bottom" constant="20" id="dlC-Sv-yQa"/>
                 <constraint firstItem="RjA-v9-CIL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="tSy-e4-e0J"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>

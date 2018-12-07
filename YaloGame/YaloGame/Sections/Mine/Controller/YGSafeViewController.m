@@ -12,7 +12,9 @@
 #import "DMProgressHUD.h"
 #import "YGAlertToast.h"
 
-@interface YGSafeViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface YGSafeViewController () <UITableViewDelegate, UITableViewDataSource> {
+    NSArray <NSString *> *_dataSource;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -23,6 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"账户与安全";
+    [self autoLayoutSizeContentView:self.tableView];
+    _dataSource = @[@"账号密码",@"交易密码",@"绑定手机号"];
     self.tableView.tableFooterView = [UIView new];
     self.tableView.backgroundColor = DefaultBackGroundColor;
 }
@@ -37,8 +41,14 @@
         cell.textLabel.textColor = UIColorFromRGBValue(0x333333);
         cell.detailTextLabel.textColor = UIColorFromRGBValue(0x979AA1);
     }
-    cell.textLabel.text = indexPath.row == 0 ? @"账号密码" : @"绑定手机号";
-    cell.detailTextLabel.text = indexPath.row == 0 ? @"未保护" : @"*******8976";
+    cell.textLabel.text = _dataSource[indexPath.row];
+    if (indexPath.row == 0) {
+        cell.detailTextLabel.text = @"";
+    } else if (indexPath.row == 2) {
+        cell.detailTextLabel.text = @"*******8976";
+    } else {
+        cell.detailTextLabel.text = @"";
+    }
     return cell;
 }
 
@@ -47,7 +57,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return _dataSource.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -56,10 +66,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0 || indexPath.row == 1) {
         [self.navigationController pushViewController:[YGPwdViewController new] animated:YES];
-    } else {
+    } else if (indexPath.row == 2){
         [YGAlertToast showMessage:@"您已经绑定过手机号"];
+    } else {
+        
     }
 }
 

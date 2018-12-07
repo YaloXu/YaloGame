@@ -10,7 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, YGSetPwdType) {
+    YGSetPwdType_login      = 0,
+    YGSetPwdType_Pay
+    
+};
+
 @interface YGPwdViewController : YGBaseViewController
+
+@property (nonatomic, assign) YGSetPwdType pwdType;
 
 @end
 

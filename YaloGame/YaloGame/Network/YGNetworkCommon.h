@@ -13,19 +13,93 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGNetworkCommon : NSObject
 
-+ (void)login:(NSString *)userName password:(NSString *)password success:(SuccessBlock)success failed:(FailedBlock)failed;
+/**
+ 登录
 
-+ (void)registerUser:(NSString *)userName password:(NSString *)password confirmPwd:(NSString *)confirmPwd code:(NSString *)code inviteCode:(NSString *)inviteCode success:(SuccessBlock)success failed:(FailedBlock)failed;
+ @param userName 用户名
+ @param password 密码
+ @param code 验证码
+ @param type 登录类型（1普通，2快捷）
+ @param success success
+ @param failed failed
+ */
++ (void)login:(NSString *)userName
+     password:(NSString *)password
+         code:(NSString *)code
+         type:(NSInteger)type
+      success:(SuccessBlock)success
+       failed:(FailedBlock)failed;
 
-+ (void)userInfo:(SuccessBlock)success failed:(FailedBlock)failed;
+/**
+ 注册
+
+ @param userName 手机号
+ @param password 密码
+ @param confirmPwd 确认密码
+ @param code 验证码
+ @param inviteCode 邀请码
+ @param success success
+ @param failed failed
+ */
++ (void)registerUser:(NSString *)userName
+            password:(NSString *)password
+          confirmPwd:(NSString *)confirmPwd
+                code:(NSString *)code
+          inviteCode:(NSString *)inviteCode
+             success:(SuccessBlock)success
+              failed:(FailedBlock)failed;
+
+/**
+ 获取用户信息
+
+ @param success success
+ @param failed failed
+ */
++ (void)userInfo:(SuccessBlock)success
+          failed:(FailedBlock)failed;
 
 + (void)getBankCards:(SuccessBlock)success failed:(FailedBlock)failed;
 
 + (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed;
 
-+ (void)getVerifyCode:(NSString *)phone type:(NSString *)type success:(SuccessBlock)success failed:(FailedBlock)failed;
+/**
+ 发送验证码
 
-+ (void)updateNickName:(NSString *)nickName success:(SuccessBlock)success failed:(FailedBlock)failed;
+ @param phone 手机号
+ @param type 类型（1注册，2绑定手机，0快捷）
+ @param success success
+ @param failed failed
+ */
++ (void)getVerifyCode:(NSString *)phone
+                 type:(NSString *)type
+              success:(SuccessBlock)success
+               failed:(FailedBlock)failed;
+
+/**
+ 更新交易密码
+
+ @param uid 用户标识
+ @param password 密码
+ @param surePassword 确认密码
+ @param success success
+ @param failed failed
+ */
++ (void)updatePayPassword:(NSString *)uid
+                 password:(NSString *)password
+             surePassword:(NSString *)surePassword
+                  success:(SuccessBlock)success
+                   failed:(FailedBlock)failed;
+
+/**
+ 更新昵称
+
+ @param nickName 昵称
+ @param success success
+ @param failed failed
+ */
++ (void)updateNickName:(NSString *)nickName
+               success:(SuccessBlock)success
+                failed:(FailedBlock)failed;
 
 + (void)uploadImage:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed;
 

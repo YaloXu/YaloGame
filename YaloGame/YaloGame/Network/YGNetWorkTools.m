@@ -76,6 +76,19 @@ static inline NSSet *acceptableContentTypes() {
     [self post:url parameters:parameters success:success failed:failed];
 }
 
+- (void)put:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
+    BLOCK(block,self.manager);
+    [self put:url parameters:parameters success:success failed:failed];
+}
+
+- (void)put:(NSString *)url parameters:(NSDictionary *)parameters success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [self.manager PUT:url parameters:parameters success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self parseResponse:responseObject success:success failed:failed];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [self parseError:error failed:failed];
+    }];
+}
+
 - (void)upload:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
     BLOCK(block,self.manager);
     [self upload:url parameters:parameters data:data success:success failed:failed];
