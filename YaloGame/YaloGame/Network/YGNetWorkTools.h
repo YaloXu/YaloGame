@@ -56,6 +56,17 @@ sessionConfig:(SessionBlock)block
        success:(SuccessBlock)success
         failed:(FailedBlock)failed;
 
+- (void)put:(NSString *)url
+sessionConfig:(SessionBlock)block
+ parameters:(NSDictionary *)parameters
+    success:(SuccessBlock)success
+     failed:(FailedBlock)failed;
+
+- (void)put:(NSString *)url
+ parameters:(NSDictionary *)parameters
+    success:(SuccessBlock)success
+     failed:(FailedBlock)failed;
+
 @end
 
 NS_ASSUME_NONNULL_END
