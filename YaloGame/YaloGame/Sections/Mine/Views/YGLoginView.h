@@ -21,15 +21,21 @@ typedef NS_ENUM(NSInteger, YGViewType) {
 
 @property (nonatomic, assign) YGViewType viewType;
 
-@property (nonatomic, copy) void (^(loginHandler))(void);
+@property (nonatomic, copy) void (^(loginHandler))(NSString *usname, NSString *password, NSString *code, YGViewType type);
 
-@property (nonatomic, copy) void (^(registerHandler))(NSString *userName,NSString *pwd,NSString *confirmPwd,NSString *code, NSString *inviteCode);
+@property (nonatomic, copy) void (^(registerHandler))(NSString *userName,NSString *code,NSString *inviteCode,NSString *pwd, NSString *confirmCode);
 
 @property (nonatomic, copy) void (^(forgetPwdHandler))(void);
 
 @property (nonatomic, copy) void (^(sendCodeHandler))(NSString *phone);
 
 @property (nonatomic, copy) void (^(backLoginHandler))(void);
+
+@property (nonatomic, copy) void (^(registerPushHandler))(void);
+
+- (void)startTimer;
+
+- (void)resetTimer;
 
 @end
 

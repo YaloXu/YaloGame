@@ -105,6 +105,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)getTransactionInfo:(SuccessBlock)success failed:(FailedBlock)failed;
 
+
+/**
+ 获取消息
+
+ @param catid 消息类型
+ @param page 页数
+ @param total 数量
+ @param success success
+ @param failed failed
+ */
++ (void)getMessage:(NSInteger)catid
+              page:(NSInteger)page
+             total:(NSInteger)total
+           success:(SuccessBlock)success
+            failed:(FailedBlock)failed;
+
 @end
 
 NS_ASSUME_NONNULL_END

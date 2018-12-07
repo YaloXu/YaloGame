@@ -74,6 +74,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>YYCache.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>YYModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>

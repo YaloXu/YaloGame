@@ -10,11 +10,18 @@
 #import "YGMessageSegView.h"
 #import "YGMessageCollectionViewCell.h"
 #import "YGMessageModel.h"
-
+#import "YGWebViewController.h"
+#import "YYModel.h"
 @interface YGMessageViewController ()<UICollectionViewDelegate, UICollectionViewDataSource> {
     NSInteger _lastIndex;
-    NSMutableArray *datas;
+    NSMutableArray *mails, *messages, *notices;
+    BOOL loadMa,loadM, loadN;
+    NSInteger mailPage, messagePage, noticePage;
 }
+
+@property (nonatomic, strong) MJRefreshFooter *MJFooter;
+
+@property (nonatomic, strong) MJRefreshHeader *MJHeader;
 
 @property (nonatomic, strong) UICollectionView *mainCollectionView;
 
@@ -43,24 +50,94 @@
     return _mainCollectionView;
 }
 
-- (void)datas {
-    datas = [NSMutableArray new];
-    for (int i = 0; i < 16; i ++) {
-        [datas addObject:[YGMessageModel new]];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    noticePage = -1;
+    mailPage = -1;
+    mailPage = -1;
+    [self loadData:0 loadMore:NO];
     self.navigationItem.title = @"消息";
     [self addSegView];
-    [self datas];
     [self.view addSubview:self.mainCollectionView];
     [self.mainCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.right.equalTo(self.view);
         make.top.equalTo(self.view).with.offset(54);
     }];
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"YGMessageCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"cell"];
+}
+
+- (void)loadData:(NSInteger)index loadMore:(BOOL)loadMore {
+    NSInteger catid = 0;
+    NSInteger currentPage = 0;
+    if (index == 0) {
+        catid = 7;
+        mailPage ++;
+        currentPage = mailPage;
+    } else if (index == 1) {
+        catid = 9;
+        noticePage ++;
+        currentPage = noticePage;
+    } else if (index == 2) {
+        catid = 8;
+        messagePage ++;
+        currentPage = messagePage;
+    } else {
+        return;
+    }
+    kWeakSelf;
+    [YGNetworkCommon getMessage:catid page:currentPage total:10 success:^(id  _Nonnull responseObject) {
+        kStrongSelfAutoReturn;
+        NSArray *list = [NSArray yy_modelArrayWithClass:[YGMessageModel class] json:responseObject[@"data"]].copy;
+        if (index == 0) {
+            strongSelf->loadMa = YES;
+            if (!strongSelf->mails) {
+                strongSelf->mails = [NSMutableArray new];
+            }
+            if (!loadMore) {
+                [strongSelf->mails removeAllObjects];
+            }
+            [strongSelf->mails addObjectsFromArray:list];
+        } else if (index == 1) {
+            strongSelf->loadN = YES;
+            if (!strongSelf->notices) {
+                strongSelf->notices = [NSMutableArray new];
+            }
+            if (!loadMore) {
+                [strongSelf->notices removeAllObjects];
+            }
+            [strongSelf->notices addObjectsFromArray:list];
+        } else if (index == 2) {
+            strongSelf->loadM = YES;
+            if (!strongSelf->messages) {
+                strongSelf->messages = [NSMutableArray new];
+            }
+            if (!loadMore) {
+                [strongSelf->messages removeAllObjects];
+            }
+            [strongSelf->messages addObjectsFromArray:list];
+        }
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+        if (!loadMore && strongSelf.MJHeader) {
+            YGMessageCollectionViewCell *cell = (YGMessageCollectionViewCell *)[strongSelf.mainCollectionView cellForItemAtIndexPath:indexPath];
+            [cell scrollTop];
+        }
+        [self endRefresh];
+        [strongSelf.mainCollectionView reloadItemsAtIndexPaths:@[indexPath]];
+    } failed:^(NSDictionary * _Nonnull errorInfo) {
+        NSLog(@"====");
+        [self endRefresh];
+    }];
+}
+
+- (void)endRefresh {
+    if (self.MJFooter && self.MJFooter.refreshing) {
+        [self.MJFooter endRefreshing];
+        self.MJFooter = nil;
+    }
+    if (self.MJHeader && self.MJHeader.refreshing) {
+        [self.MJHeader endRefreshing];
+        self.MJHeader = nil;
+    }
 }
 
 - (void)addSegView {
@@ -72,29 +149,65 @@
         make.right.equalTo(@(-38));
         make.height.mas_equalTo(30);
     }];
+    kWeakSelf;
     [segView setSegDidSelctedHandler:^(NSInteger index){
-        if (_lastIndex == index) {
+        kStrongSelfAutoReturn;
+        if (strongSelf->_lastIndex == index) {
             return ;
         }
         if (index == 0) {
-            self.navigationItem.title = @"站内信";
+            strongSelf.navigationItem.title = @"站内信";
         } else if (index == 1) {
-            self.navigationItem.title = @"公告";
+            strongSelf.navigationItem.title = @"公告";
+            if (!strongSelf->loadN) {
+                [strongSelf loadData:index loadMore:NO];
+            }
         } else {
-            self.navigationItem.title = @"新闻";
+            strongSelf.navigationItem.title = @"新闻";
+            if (!strongSelf->loadM) {
+                [strongSelf loadData:index loadMore:NO];
+            }
         }
-        _lastIndex = index;
-        [self.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+        strongSelf->_lastIndex = index;
+        [strongSelf.mainCollectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0] atScrollPosition:UICollectionViewScrollPositionNone animated:YES];
     }];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YGMessageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     if (indexPath.item == 1) {
-        cell.dataSource = datas;
+        cell.firstShow = loadN;
+        cell.dataSource = notices;
+    } else if (indexPath.item == 2){
+        cell.firstShow = loadM;
+        cell.dataSource = messages;
     } else {
-        cell.dataSource = @[];
+        cell.firstShow = loadMa;
+        cell.dataSource = mails;
     }
+    kWeakSelf;
+    [cell setDidSelected:^(YGMessageModel *model){
+        YGWebViewController *webController = [YGWebViewController new];
+        webController.loadUrl = model.url;
+        [weakSelf.navigationController pushViewController:webController animated:YES];
+    }];
+    [cell setRefreshFooterHandler:^(MJRefreshFooter *refreshFooter){
+        kStrongSelfAutoReturn;
+        strongSelf.MJFooter = refreshFooter;
+        [strongSelf loadData:strongSelf->_lastIndex loadMore:YES];
+    }];
+    [cell setRefreshHeaderHandler:^(MJRefreshHeader *refreshHeader){
+        kStrongSelfAutoReturn;
+        strongSelf.MJHeader = refreshHeader;
+        if (strongSelf->_lastIndex == 0) {
+            strongSelf->mailPage = -1;
+        } else if (strongSelf->_lastIndex == 1) {
+            strongSelf->noticePage = -1;
+        } else {
+            strongSelf->messagePage = -1;
+        }
+        [strongSelf loadData:strongSelf->_lastIndex loadMore:NO];
+    }];
     return cell;
 }
 

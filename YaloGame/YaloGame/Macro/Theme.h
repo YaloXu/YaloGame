@@ -120,5 +120,11 @@
 
 #define kTabBarHeight [[UITabBarController alloc] init].tabBar.frame.size.height
 
+#define kWeakSelf   __weak typeof(self)weakSelf = self;
 
+
+#define kStrongSelf   __strong typeof(weakSelf)strongSelf = weakSelf;
+
+#define kStrongSelfAutoReturn   __strong typeof(weakSelf)strongSelf = weakSelf;\
+if (!strongSelf) { return ;}
 #endif /* Theme_h */

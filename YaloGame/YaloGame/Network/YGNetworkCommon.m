@@ -66,5 +66,8 @@
     [manager.requestSerializer setValue:@"" forHTTPHeaderField:@"Authentication"];
 }
 
++ (void)getMessage:(NSInteger)catid page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] get:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=news" parameters:@{@"catid":@(catid),@"page":@(page),@"total":@(total)} success:success failed:failed];
+}
 
 @end
