@@ -244,6 +244,7 @@
 		2EDDE5D9219ED2CA0009DDC1 /* 电竞UI.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D4219ED2CA0009DDC1 /* 电竞UI.zip */; };
 		2EDDE5DA219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D5219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf */; };
 		2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */; };
+		2EF75A3821BA5DD200AFB380 /* YGConvertFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A3721BA5DD200AFB380 /* YGConvertFooter.m */; };
 		493D7C1868E436525CE6F085 /* Pods_YaloGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -568,6 +569,8 @@
 		2EDDE5D4219ED2CA0009DDC1 /* 电竞UI.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "电竞UI.zip"; sourceTree = "<group>"; };
 		2EDDE5D5219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "《名门电竞》APP需求文档.pdf"; sourceTree = "<group>"; };
 		2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "电竞icon.zip"; sourceTree = "<group>"; };
+		2EF75A3621BA5DD200AFB380 /* YGConvertFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGConvertFooter.h; sourceTree = "<group>"; };
+		2EF75A3721BA5DD200AFB380 /* YGConvertFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGConvertFooter.m; sourceTree = "<group>"; };
 		369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.release.xcconfig"; sourceTree = "<group>"; };
 		86BE56C2497561B0FD853AA3 /* Pods-YaloGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaloGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1006,6 +1009,8 @@
 				2E305FD021ACDB7900FCF123 /* CoinCommonCell.m */,
 				2E305FDB21AFE69900FCF123 /* YGGoodsConvertCell.h */,
 				2E305FDC21AFE69900FCF123 /* YGGoodsConvertCell.m */,
+				2EF75A3621BA5DD200AFB380 /* YGConvertFooter.h */,
+				2EF75A3721BA5DD200AFB380 /* YGConvertFooter.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1587,6 +1592,7 @@
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				025F24C221A7D55A001FDBB1 /* YGNetWorkTools.m in Sources */,
 				2E305F5521A53CF900FCF123 /* YGTabBar.m in Sources */,
+				2EF75A3821BA5DD200AFB380 /* YGConvertFooter.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
 				2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */,
 				2E305FBC21AC0AB000FCF123 /* UIViewController+YCPopover.m in Sources */,

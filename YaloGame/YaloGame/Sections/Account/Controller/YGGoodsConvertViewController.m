@@ -7,7 +7,8 @@
 //
 
 #import "YGGoodsConvertViewController.h"
-
+#import "YGConvertFooter.h"
+#import "CoinCommonCell.h"
 @interface YGGoodsConvertViewController ()<UITableViewDelegate , UITableViewDataSource>
 @property (nonatomic, strong) UITableView *mainTable;
 @property (nonatomic, strong) NSArray *dataSource;
@@ -15,7 +16,7 @@
 @property (nonatomic , strong) UILabel  *alertTitleLabel;
 @property (nonatomic ,strong)  UIView   *line;
 @property (nonatomic ,strong)  UIButton *convertBtn;
-
+@property (nonatomic , strong) YGConvertFooter *convertFooter;
 
 @end
 
@@ -31,6 +32,7 @@
     [self.view addSubview:self.line];
     [self.view addSubview:self.closeImgBtn];
     [self.view addSubview:self.mainTable];
+    [self.view addSubview:self.convertFooter];
     [self.view addSubview:self.convertBtn];
     [self.alertTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
@@ -51,10 +53,15 @@
         make.right.left.bottom.equalTo(self.view);
         make.height.mas_equalTo(40);
     }];
+    [self.convertFooter mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.left.equalTo(self.view);
+        make.bottom.equalTo(self.convertBtn.mas_top);
+        make.height.mas_equalTo(54);
+    }];
     [self.mainTable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(40*kWidthRatio);
         make.right.mas_equalTo(-40*kWidthRatio);
-        make.bottom.equalTo(self.view.mas_bottom).with.mas_equalTo(-20);
+        make.bottom.equalTo(self.convertFooter.mas_top).with.mas_equalTo(-10);
         make.top.equalTo(self.line.mas_bottom).with.mas_equalTo(20);
     }];
 }
@@ -66,6 +73,12 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataSource.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CoinCommonCell *cell = [tableView dequeueReusableCellWithIdentifier:CoinCommonOnlyLabelId];
+    cell.contentLabel.text = self.dataSource[indexPath.row];
+    cell.verticalStyle = VerticalAlignmentMiddle;
+    return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
@@ -83,7 +96,7 @@
         _mainTable.backgroundColor = [UIColor clearColor];
         _mainTable.separatorStyle = UITableViewCellSeparatorStyleNone;
 //        [_mainTable registerClass:[CoinCommonCell class] forCellReuseIdentifier:CoinCommonLabelAndTextViewId];
-//        [_mainTable registerClass:[CoinCommonCell class] forCellReuseIdentifier:CoinCommonOnlyLabelId];
+        [_mainTable registerClass:[CoinCommonCell class] forCellReuseIdentifier:CoinCommonOnlyLabelId];
         
         _mainTable.delegate = self;
         _mainTable.dataSource = self;
@@ -130,6 +143,13 @@
         [_convertBtn addTarget:self action:@selector(closeEvent) forControlEvents:UIControlEventTouchUpInside];
     }
     return _convertBtn;
+}
+-(YGConvertFooter *)convertFooter{
+    if (!_convertFooter) {
+        _convertFooter = [[YGConvertFooter alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 54)];
+        _convertFooter.backgroundColor = [UIColor whiteColor];
+    }
+    return _convertFooter;
 }
 /*
 #pragma mark - Navigation
