@@ -233,6 +233,10 @@
 		2E35485521AC79A700C1BA66 /* FSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485421AC79A700C1BA66 /* FSTextView.m */; };
 		2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */; };
 		2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */; };
+		2EBAE33821B67E9E0087DA38 /* YGNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAE33721B67E9E0087DA38 /* YGNewsModel.m */; };
+		2EBAE33E21B67FDE0087DA38 /* YTGBasicModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAE33A21B67FDE0087DA38 /* YTGBasicModels.m */; };
+		2EBAE33F21B67FDE0087DA38 /* YTGBasicEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAE33B21B67FDE0087DA38 /* YTGBasicEncode.m */; };
+		2EBAE34221B6826F0087DA38 /* YGDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBAE34121B6826F0087DA38 /* YGDataModel.m */; };
 		2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CC219EBA160009DDC1 /* UIImage+Color.m */; };
 		2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EDDE5CF219EBAB50009DDC1 /* YGBaseNavgationViewController.m */; };
 		2EDDE5D7219ED2CA0009DDC1 /* WechatIMG125.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D2219ED2CA0009DDC1 /* WechatIMG125.png */; };
@@ -545,6 +549,14 @@
 		2E35485721AC934900C1BA66 /* YGAlertSelectedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGAlertSelectedViewController.m; sourceTree = "<group>"; };
 		2E9EA73A21A2F904002EF478 /* GoodsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsCollectionViewCell.h; sourceTree = "<group>"; };
 		2E9EA73B21A2F904002EF478 /* GoodsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCollectionViewCell.m; sourceTree = "<group>"; };
+		2EBAE33621B67E9E0087DA38 /* YGNewsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGNewsModel.h; sourceTree = "<group>"; };
+		2EBAE33721B67E9E0087DA38 /* YGNewsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGNewsModel.m; sourceTree = "<group>"; };
+		2EBAE33A21B67FDE0087DA38 /* YTGBasicModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTGBasicModels.m; sourceTree = "<group>"; };
+		2EBAE33B21B67FDE0087DA38 /* YTGBasicEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTGBasicEncode.m; sourceTree = "<group>"; };
+		2EBAE33C21B67FDE0087DA38 /* YTGBasicModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTGBasicModels.h; sourceTree = "<group>"; };
+		2EBAE33D21B67FDE0087DA38 /* YTGBasicEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTGBasicEncode.h; sourceTree = "<group>"; };
+		2EBAE34021B6826F0087DA38 /* YGDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGDataModel.h; sourceTree = "<group>"; };
+		2EBAE34121B6826F0087DA38 /* YGDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGDataModel.m; sourceTree = "<group>"; };
 		2EDDE5C2219D604D0009DDC1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2EDDE5C7219EB8EF0009DDC1 /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		2EDDE5CB219EBA160009DDC1 /* UIImage+Color.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
@@ -644,6 +656,7 @@
 		021F325B219C23D30041A11A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2EBAE33521B67E7A0087DA38 /* Models */,
 				2E305EC821A2960800FCF123 /* Views */,
 				021F3281219C299C0041A11A /* Controller */,
 			);
@@ -700,6 +713,7 @@
 		021F3267219C24860041A11A /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				2EBAE33921B67FDE0087DA38 /* Models */,
 				021F327C219C298F0041A11A /* Controller */,
 				021F327B219C298F0041A11A /* Views */,
 			);
@@ -994,6 +1008,28 @@
 				2E305FDC21AFE69900FCF123 /* YGGoodsConvertCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2EBAE33521B67E7A0087DA38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EBAE33621B67E9E0087DA38 /* YGNewsModel.h */,
+				2EBAE33721B67E9E0087DA38 /* YGNewsModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2EBAE33921B67FDE0087DA38 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EBAE33A21B67FDE0087DA38 /* YTGBasicModels.m */,
+				2EBAE33B21B67FDE0087DA38 /* YTGBasicEncode.m */,
+				2EBAE33C21B67FDE0087DA38 /* YTGBasicModels.h */,
+				2EBAE33D21B67FDE0087DA38 /* YTGBasicEncode.h */,
+				2EBAE34021B6826F0087DA38 /* YGDataModel.h */,
+				2EBAE34121B6826F0087DA38 /* YGDataModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2EDDE551219D11370009DDC1 /* Resource */ = {
@@ -1493,6 +1529,7 @@
 				02AC5AE621A189850092BB46 /* YGBindCardView.m in Sources */,
 				2E305FBA21AC0AB000FCF123 /* YCPopoverAnimator.m in Sources */,
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
+				2EBAE33821B67E9E0087DA38 /* YGNewsModel.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
 				02AC5AC621A118990092BB46 /* YGPwdViewController.m in Sources */,
 				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
@@ -1519,6 +1556,7 @@
 				02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */,
 				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
 				028553F221A990B900E7DDBC /* YGLoginViewController.m in Sources */,
+				2EBAE33F21B67FDE0087DA38 /* YTGBasicEncode.m in Sources */,
 				02CD776621A2E323009A9892 /* YGMessageTableViewCell.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
 				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
@@ -1537,9 +1575,11 @@
 				025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */,
 				02AC5AC121A1153B0092BB46 /* YGSafeViewController.m in Sources */,
 				025F24E621A9368E001FDBB1 /* YGBindCardSuccessViewController.m in Sources */,
+				2EBAE33E21B67FDE0087DA38 /* YTGBasicModels.m in Sources */,
 				2E35485521AC79A700C1BA66 /* FSTextView.m in Sources */,
 				02AC5AF021A19FB60092BB46 /* YGMineHeaderView.m in Sources */,
 				02AC5ACF21A15E5F0092BB46 /* YGWebViewController.m in Sources */,
+				2EBAE34221B6826F0087DA38 /* YGDataModel.m in Sources */,
 				02CD776121A2E005009A9892 /* YGMessageCollectionViewCell.m in Sources */,
 				021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */,
 				02AC5AFB21A1A5BF0092BB46 /* YGCollectionViewCell.m in Sources */,
