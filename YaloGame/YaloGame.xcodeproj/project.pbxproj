@@ -22,6 +22,8 @@
 		021F3298219C29D30041A11A /* YGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 021F3296219C29D30041A11A /* YGAccountViewController.m */; };
 		0221BB6021BA608B008B2F14 /* YGUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB5F21BA608B008B2F14 /* YGUserInfo.m */; };
 		0221BB6421BA63E2008B2F14 /* YGCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6321BA63E2008B2F14 /* YGCacheManager.m */; };
+		0221BB6721BCE2B0008B2F14 /* YGRolloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */; };
+		0221BB6921BCE2C4008B2F14 /* YGRolloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */; };
 		022DF36F21B3EDC5002F298A /* user_ava@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36D21B3EDC5002F298A /* user_ava@3x.png */; };
 		022DF37021B3EDC5002F298A /* user_ava@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36E21B3EDC5002F298A /* user_ava@2x.png */; };
 		025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F24A921A54874001FDBB1 /* YGShareViewController.m */; };
@@ -279,6 +281,9 @@
 		0221BB5F21BA608B008B2F14 /* YGUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGUserInfo.m; sourceTree = "<group>"; };
 		0221BB6221BA63E2008B2F14 /* YGCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGCacheManager.h; sourceTree = "<group>"; };
 		0221BB6321BA63E2008B2F14 /* YGCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGCacheManager.m; sourceTree = "<group>"; };
+		0221BB6521BCE2B0008B2F14 /* YGRolloutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGRolloutView.h; sourceTree = "<group>"; };
+		0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGRolloutView.m; sourceTree = "<group>"; };
+		0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGRolloutView.xib; sourceTree = "<group>"; };
 		022DF36D21B3EDC5002F298A /* user_ava@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@3x.png"; sourceTree = "<group>"; };
 		022DF36E21B3EDC5002F298A /* user_ava@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@2x.png"; sourceTree = "<group>"; };
 		025F24A921A54874001FDBB1 /* YGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGShareViewController.m; sourceTree = "<group>"; };
@@ -913,6 +918,9 @@
 				025F24D021A9221A001FDBB1 /* YGQRView.m */,
 				0285540A21A9983800E7DDBC /* YGLoginView.h */,
 				0285540B21A9983800E7DDBC /* YGLoginView.m */,
+				0221BB6521BCE2B0008B2F14 /* YGRolloutView.h */,
+				0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */,
+				0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1400,6 +1408,7 @@
 				0285540421A991E900E7DDBC /* login_pwd@3x.png in Resources */,
 				0285540821A9969100E7DDBC /* login_phone@3x.png in Resources */,
 				2E305F6E21A7A4B400FCF123 /* home_list02.png in Resources */,
+				0221BB6921BCE2C4008B2F14 /* YGRolloutView.xib in Resources */,
 				025F24E721A9368E001FDBB1 /* YGBindCardSuccessViewController.xib in Resources */,
 				02AC5AC721A118990092BB46 /* YGPwdViewController.xib in Resources */,
 				025F24CB21A916EC001FDBB1 /* YGBandRechargeViewController.xib in Resources */,
@@ -1570,6 +1579,7 @@
 				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
 				025F24F621A93C73001FDBB1 /* YGTransactionModel.m in Sources */,
 				2E305FC221AC10A500FCF123 /* YGPopViewController.m in Sources */,
+				0221BB6721BCE2B0008B2F14 /* YGRolloutView.m in Sources */,
 				2E305ECB21A2962B00FCF123 /* HomeTableViewCell.m in Sources */,
 				2E305FD121ACDB7900FCF123 /* CoinCommonCell.m in Sources */,
 				02AC5AD521A161B90092BB46 /* YGContactUsViewController.m in Sources */,
