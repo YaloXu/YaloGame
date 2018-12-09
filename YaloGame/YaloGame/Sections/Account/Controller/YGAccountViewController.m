@@ -10,6 +10,7 @@
 #import "GoodsCollectionViewCell.h"
 #import "YGCoinHelpViewController.h"
 #import "YGVipConvertViewController.h"
+#import "YGGoodsConvertViewController.h"
 
 @interface YGAccountViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic ,strong) UICollectionView  *mainCollectionView;
@@ -81,7 +82,10 @@
     }];
 }
 -(void)scanAccountRecord{
-    
+    YGGoodsConvertViewController *alertVC = [YGGoodsConvertViewController new];
+    [self yc_centerPresentController:alertVC presentedSize:CGSizeMake(kScreenWidth - 2*48*kWidthRatio, 239) completeHandle:^(BOOL presented) {
+        
+    }];
 }
 -(void)change:(UISegmentedControl*)sender{
     switch (sender.selectedSegmentIndex) {

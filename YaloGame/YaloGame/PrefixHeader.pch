@@ -20,5 +20,6 @@
 #import "YGNetworkCommon.h"
 #import "IQKeyboardManager.h"
 #import "YGStringUtils.h"
-
+#import "YTGBasicModels.h"
+#import "YTGBasicEncode.h"
 #endif /* PrefixHeader_pch */

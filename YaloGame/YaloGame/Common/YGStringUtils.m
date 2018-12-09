@@ -9,6 +9,13 @@
 #import "YGStringUtils.h"
 
 @implementation YGStringUtils
++ (CGSize)sizeWithText:(NSString *)text withFont:(UIFont *)font{
+    
+    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName:font}];
+    
+    return size;
+    
+}
 + (NSMutableAttributedString *)setAttributedString:(NSString *)totalString lineSpace:(CGFloat)lineSpace attributes1:(NSDictionary <NSString *, id>*)attributes1 range1:(NSRange)range1 attributes2:(NSDictionary <NSString *, id>*)attributes2 range2:(NSRange)range2 attributes3:(NSDictionary <NSString *, id>*)attributes3 range3:(NSRange)range3 attributes4:(NSDictionary <NSString *, id>*)attributes4 range4:(NSRange)range4 attributes5:(NSDictionary <NSString *, id>*)attributes5 range5:(NSRange)range5 {
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:totalString];
     if (lineSpace > 0) {
