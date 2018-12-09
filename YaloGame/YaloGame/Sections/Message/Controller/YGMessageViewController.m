@@ -124,7 +124,6 @@
         [self endRefresh];
         [strongSelf.mainCollectionView reloadItemsAtIndexPaths:@[indexPath]];
     } failed:^(NSDictionary * _Nonnull errorInfo) {
-        NSLog(@"====");
         [self endRefresh];
     }];
 }

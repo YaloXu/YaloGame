@@ -35,53 +35,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YaloGame/Sections/Mine/Controller/YGRegisterViewController.m"
-            timestampString = "565869895.111014"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[YGRegisterViewController viewDidLoad]_block_invoke.39"
-                  moduleName = "YaloGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/c/Desktop/work/YaloGame/YaloGame/YaloGame/Sections/Mine/Controller/YGRegisterViewController.m"
-                  timestampString = "565869895.50016"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "208">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__39-[YGRegisterViewController viewDidLoad]_block_invoke_2"
-                  moduleName = "YaloGame"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/c/Desktop/work/YaloGame/YaloGame/YaloGame/Sections/Mine/Controller/YGRegisterViewController.m"
-                  timestampString = "565869895.503364"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
