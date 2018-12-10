@@ -25,6 +25,9 @@
 		0221BB6721BCE2B0008B2F14 /* YGRolloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */; };
 		0221BB6921BCE2C4008B2F14 /* YGRolloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */; };
 		022C651F21BE371700CBF12C /* YGEncryptTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C651E21BE371700CBF12C /* YGEncryptTool.m */; };
+		022C652221BE3F3A00CBF12C /* BRCity.json in Resources */ = {isa = PBXBuildFile; fileRef = 022C652121BE3F3A00CBF12C /* BRCity.json */; };
+		022C652D21BE5B0E00CBF12C /* YGAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C652B21BE5B0E00CBF12C /* YGAreaPickerView.m */; };
+		022C653021BE5B1A00CBF12C /* YGProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C652E21BE5B1A00CBF12C /* YGProvince.m */; };
 		022DF36F21B3EDC5002F298A /* user_ava@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36D21B3EDC5002F298A /* user_ava@3x.png */; };
 		022DF37021B3EDC5002F298A /* user_ava@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36E21B3EDC5002F298A /* user_ava@2x.png */; };
 		025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F24A921A54874001FDBB1 /* YGShareViewController.m */; };
@@ -287,6 +290,11 @@
 		0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGRolloutView.xib; sourceTree = "<group>"; };
 		022C651D21BE371700CBF12C /* YGEncryptTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGEncryptTool.h; sourceTree = "<group>"; };
 		022C651E21BE371700CBF12C /* YGEncryptTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGEncryptTool.m; sourceTree = "<group>"; };
+		022C652121BE3F3A00CBF12C /* BRCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BRCity.json; sourceTree = "<group>"; };
+		022C652B21BE5B0E00CBF12C /* YGAreaPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAreaPickerView.m; sourceTree = "<group>"; };
+		022C652C21BE5B0E00CBF12C /* YGAreaPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAreaPickerView.h; sourceTree = "<group>"; };
+		022C652E21BE5B1A00CBF12C /* YGProvince.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGProvince.m; sourceTree = "<group>"; };
+		022C652F21BE5B1A00CBF12C /* YGProvince.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGProvince.h; sourceTree = "<group>"; };
 		022DF36D21B3EDC5002F298A /* user_ava@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@3x.png"; sourceTree = "<group>"; };
 		022DF36E21B3EDC5002F298A /* user_ava@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@2x.png"; sourceTree = "<group>"; };
 		025F24A921A54874001FDBB1 /* YGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGShareViewController.m; sourceTree = "<group>"; };
@@ -897,6 +905,8 @@
 		021F3292219C29CA0041A11A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				022C652C21BE5B0E00CBF12C /* YGAreaPickerView.h */,
+				022C652B21BE5B0E00CBF12C /* YGAreaPickerView.m */,
 				02AC5ADC21A169B30092BB46 /* YGBankTableViewCell.h */,
 				02AC5ADD21A169B30092BB46 /* YGBankTableViewCell.m */,
 				02AC5ADE21A169B30092BB46 /* YGBankTableViewCell.xib */,
@@ -970,6 +980,14 @@
 			path = Encrypt;
 			sourceTree = "<group>";
 		};
+		022C652021BE3F2200CBF12C /* json */ = {
+			isa = PBXGroup;
+			children = (
+				022C652121BE3F3A00CBF12C /* BRCity.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		025F24BC21A7D559001FDBB1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,6 +1003,8 @@
 		025F24F321A93C5B001FDBB1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				022C652F21BE5B1A00CBF12C /* YGProvince.h */,
+				022C652E21BE5B1A00CBF12C /* YGProvince.m */,
 				025F24F421A93C73001FDBB1 /* YGTransactionModel.h */,
 				025F24F521A93C73001FDBB1 /* YGTransactionModel.m */,
 			);
@@ -1087,6 +1107,7 @@
 		2EDDE551219D11370009DDC1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				022C652021BE3F2200CBF12C /* json */,
 				022DF36E21B3EDC5002F298A /* user_ava@2x.png */,
 				022DF36D21B3EDC5002F298A /* user_ava@3x.png */,
 				2E305FA321AC089A00FCF123 /* change_add@2x.png */,
@@ -1367,6 +1388,7 @@
 				0285540921A9969100E7DDBC /* login_phone@2x.png in Resources */,
 				2E305F4221A5355A00FCF123 /* tabbar_discovery_selected@2x.png in Resources */,
 				2EDDE5D7219ED2CA0009DDC1 /* WechatIMG125.png in Resources */,
+				022C652221BE3F3A00CBF12C /* BRCity.json in Resources */,
 				2E305F1E21A5355A00FCF123 /* rollout_unselected@2x.png in Resources */,
 				2E305F7921A7A4B400FCF123 /* good_list08.png in Resources */,
 				2E305F3F21A5355A00FCF123 /* tabbar_mine@2x.png in Resources */,
@@ -1607,6 +1629,7 @@
 				025F24E121A931A5001FDBB1 /* YGBindCardSecondViewController.m in Sources */,
 				02AC5AAD21A0693A0092BB46 /* YGAlertTool.m in Sources */,
 				02F2A4E621A2594A00454F8D /* YGTransactionTableViewCell.m in Sources */,
+				022C653021BE5B1A00CBF12C /* YGProvince.m in Sources */,
 				02CD775D21A2DAA7009A9892 /* YGMessageSegView.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
@@ -1618,6 +1641,7 @@
 				2EBAE33F21B67FDE0087DA38 /* YTGBasicEncode.m in Sources */,
 				02CD776621A2E323009A9892 /* YGMessageTableViewCell.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
+				022C652D21BE5B0E00CBF12C /* YGAreaPickerView.m in Sources */,
 				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
 				02AC5AEB21A198CE0092BB46 /* YGSegView.m in Sources */,
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "YGEncryptTool.h"
 
-static NSString *const pubKey = @"";
+static NSString *const pubKey = @"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo/D1w0wHDb8LHPQ0G+gj8oi0kosr7CZpyaSmCqiL9W2y3GVKOVVVHDtaatf0g++ffkCq9NOLnHfhNOz9unINRS7nOIkH7SlAOFLQ/kci24KVTJdhg/s4cdPq0uTVsbpd284un1r6RkA5HT8Yn5Jr+kk5kbo4s+a6il3ULrJejvpu24q/3keiopMU5O+GHnrY+QQ1+Qr4ugdOG0cTy6Try7+fcVHg7ZCJbYqYTShUCmogonbtlQUrAk9VaEUTvhG+fwQKt4wa8HMrNRWKO+cIaDxtirvbL6lWxWMAXmf1Vrt6psZigYHmGl7v+atiwXh1VO3SL0vqq5vpEXBvT52gQQIDAQAB";
 
 inline static NSString *base64_encode_data(NSData *data){
     data = [data base64EncodedDataWithOptions:0];
