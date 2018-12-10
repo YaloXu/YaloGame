@@ -7,7 +7,7 @@
 //
 
 #import "YGNetworkCommon.h"
-
+#import "YGEncryptTool.h"
 
 
 @implementation YGNetworkCommon
