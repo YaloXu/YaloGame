@@ -20,7 +20,7 @@
 }
 
 + (void)registerUser:(NSString *)userName password:(NSString *)password confirmPwd:(NSString *)confirmPwd code:(NSString *)code inviteCode:(NSString *)inviteCode success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] post:kRequestUrlFormat(@"reg.do") parameters:@{@"phone":userName,@"password":[YGEncryptTool rsaEncrypt:password],@"loginname":@"a12345",@"code":code,@"referer":inviteCode} success:success failed:failed];
+    [[YGNetWorkTools sharedTools] post:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=register" parameters:@{@"mobile":userName,@"password":password,@"surepassword":confirmPwd,@"code":code,@"invitecode":inviteCode} success:success failed:failed];
 }
 
 + (void)userInfo:(SuccessBlock)success failed:(FailedBlock)failed {
