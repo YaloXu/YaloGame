@@ -28,6 +28,7 @@
 		022C652221BE3F3A00CBF12C /* BRCity.json in Resources */ = {isa = PBXBuildFile; fileRef = 022C652121BE3F3A00CBF12C /* BRCity.json */; };
 		022C652D21BE5B0E00CBF12C /* YGAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C652B21BE5B0E00CBF12C /* YGAreaPickerView.m */; };
 		022C653021BE5B1A00CBF12C /* YGProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C652E21BE5B1A00CBF12C /* YGProvince.m */; };
+		022C653321BF589F00CBF12C /* YGLoadingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C653221BF589F00CBF12C /* YGLoadingTools.m */; };
 		022DF36F21B3EDC5002F298A /* user_ava@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36D21B3EDC5002F298A /* user_ava@3x.png */; };
 		022DF37021B3EDC5002F298A /* user_ava@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36E21B3EDC5002F298A /* user_ava@2x.png */; };
 		025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F24A921A54874001FDBB1 /* YGShareViewController.m */; };
@@ -295,6 +296,8 @@
 		022C652C21BE5B0E00CBF12C /* YGAreaPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAreaPickerView.h; sourceTree = "<group>"; };
 		022C652E21BE5B1A00CBF12C /* YGProvince.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGProvince.m; sourceTree = "<group>"; };
 		022C652F21BE5B1A00CBF12C /* YGProvince.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGProvince.h; sourceTree = "<group>"; };
+		022C653121BF589F00CBF12C /* YGLoadingTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGLoadingTools.h; sourceTree = "<group>"; };
+		022C653221BF589F00CBF12C /* YGLoadingTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGLoadingTools.m; sourceTree = "<group>"; };
 		022DF36D21B3EDC5002F298A /* user_ava@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@3x.png"; sourceTree = "<group>"; };
 		022DF36E21B3EDC5002F298A /* user_ava@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@2x.png"; sourceTree = "<group>"; };
 		025F24A921A54874001FDBB1 /* YGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGShareViewController.m; sourceTree = "<group>"; };
@@ -760,6 +763,8 @@
 				028553DA21A95E5900E7DDBC /* YGAlertToast.m */,
 				2E305FD521ACEB5C00FCF123 /* YGStringUtils.h */,
 				2E305FD621ACEB5C00FCF123 /* YGStringUtils.m */,
+				022C653121BF589F00CBF12C /* YGLoadingTools.h */,
+				022C653221BF589F00CBF12C /* YGLoadingTools.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1618,6 +1623,7 @@
 				0221BB6721BCE2B0008B2F14 /* YGRolloutView.m in Sources */,
 				2E305ECB21A2962B00FCF123 /* HomeTableViewCell.m in Sources */,
 				2E305FD121ACDB7900FCF123 /* CoinCommonCell.m in Sources */,
+				022C653321BF589F00CBF12C /* YGLoadingTools.m in Sources */,
 				02AC5AD521A161B90092BB46 /* YGContactUsViewController.m in Sources */,
 				021F3248219C1E910041A11A /* ViewController.m in Sources */,
 				025F24C121A7D55A001FDBB1 /* YGNetworkCommon.m in Sources */,

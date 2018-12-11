@@ -44,7 +44,7 @@
         [YGNetworkCommon registerUser:userName password:pwd confirmPwd:confirmPwd code:code inviteCode:inviteCode success:^(id  _Nonnull responseObject) {
             NSLog(@"===");
         } failed:^(NSDictionary * _Nonnull errorInfo) {
-            NSLog(@"====");
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
         }];
     }];
     [self.loginView setSendCodeHandler:^(NSString *phone){

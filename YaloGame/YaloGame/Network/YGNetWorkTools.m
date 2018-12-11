@@ -110,6 +110,10 @@ static inline NSSet *acceptableContentTypes() {
 }
 
 - (void)parseError:(NSError *)error failed:(FailedBlock)faied {
+    if (error.code == NSURLErrorTimedOut) {
+        BLOCK(faied,@{@"message":@"请检查网络状态..."});
+        return;
+    }
         id data = error.userInfo[@"com.alamofire.serialization.response.error.data"];
     if (!data || ![data isKindOfClass:[NSData class]]) {
         BLOCK(faied,@{@"message":@"失败"});

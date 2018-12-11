@@ -15,6 +15,7 @@
 #import "YGUtils.h"
 #import "YGAuthTool.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
+#import "YGAlertToast.h"
 #import "UIViewController+Custom.h"
 #import "UIViewController+YCPopover.h"
 #import "YGNetworkCommon.h"

@@ -7,6 +7,7 @@
 //
 
 #import "YGAreaPickerView.h"
+#import "YYModel.h"
 
 @interface YGAreaPickerView() <UIPickerViewDelegate, UIPickerViewDataSource> {
     NSArray <YGProvince *>*_dataSource;

@@ -28,5 +28,7 @@ typedef struct _YGUtils_t {
 } YGUtils_t;
 OBJC_EXTERN YGUtils_t YGUtils;
 
-
+@interface YGCommon : NSObject
++ (UIViewController *)topViewController;
+@end
 NS_ASSUME_NONNULL_END

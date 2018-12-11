@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YGAlertToast : NSObject
 + (void)showMessage:(NSString *)message;
 
++ (void)showHUDMessage:(NSString *)message;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -35,3 +35,25 @@ YGUtils_t YGUtils = {
     URLFromString
 };
 
+@implementation YGCommon
+
++ (UIViewController *)topViewController {
+    UIViewController *resultVC;
+    resultVC = [self topViewController:[[UIApplication sharedApplication].delegate.window rootViewController]];
+    while (resultVC.presentedViewController) {
+        resultVC = [self topViewController:resultVC.presentedViewController];
+    }
+    
+    return resultVC;
+}
++ (UIViewController *)topViewController:(UIViewController *)vc {
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self topViewController:[(UINavigationController *)vc topViewController]];
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        return [self topViewController:[(UITabBarController *)vc selectedViewController]];
+    } else {
+        return vc;
+    }
+}
+
+@end
