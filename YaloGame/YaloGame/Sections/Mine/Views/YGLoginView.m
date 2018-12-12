@@ -7,6 +7,7 @@
 //
 
 #import "YGLoginView.h"
+#import "NSString+Regular.h"
 
 @interface YGLoginView() {
     NSInteger count;
@@ -302,6 +303,9 @@
             break;
         case YGViewType_Register: {
             _nameTF.keyboardType = UIKeyboardTypeNumberPad;
+            self.pwdTF.keyboardType = UIKeyboardTypeNumberPad;
+            self.regPwdTF.secureTextEntry = YES;
+            self.regConPwdTF.secureTextEntry = YES;
             _codeTF.hidden = NO;
             _line3.hidden = NO;
             _line4.hidden = NO;

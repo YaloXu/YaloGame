@@ -85,6 +85,7 @@
         return;
     }
     kWeakSelf;
+    [YGLoadingTools beginLoading];
     [YGNetworkCommon getMessage:catid page:currentPage total:10 success:^(id  _Nonnull responseObject) {
         kStrongSelfAutoReturn;
         NSArray *list = [NSArray yy_modelArrayWithClass:[YGMessageModel class] json:responseObject[@"data"]].copy;
@@ -129,6 +130,7 @@
 }
 
 - (void)endRefresh {
+    [YGLoadingTools endLoading];
     if (self.MJFooter && self.MJFooter.refreshing) {
         [self.MJFooter endRefreshing];
         self.MJFooter = nil;

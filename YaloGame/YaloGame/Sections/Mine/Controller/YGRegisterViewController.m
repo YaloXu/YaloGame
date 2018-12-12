@@ -9,6 +9,7 @@
 #import "YGRegisterViewController.h"
 #import "YGLoginView.h"
 #import "YGLoginViewController.h"
+#import "NSString+Regular.h"
 
 @interface YGRegisterViewController ()
 
@@ -41,27 +42,67 @@
     }];
     kWeakSelf;
     [self.loginView setRegisterHandler:^(NSString *userName,NSString *code,NSString *inviteCode,NSString *pwd, NSString *confirmPwd){
+        if (!YGUtils.validString(userName)) {
+            [YGAlertToast showHUDMessage:@"请输入注册手机号"];
+            return ;
+        }
+        if (![userName validatePhoneNumber]) {
+            [YGAlertToast showHUDMessage:@"注册手机号不合法"];
+            return;
+        }
+        if (!YGUtils.validString(code)) {
+            [YGAlertToast showHUDMessage:@"请输入手机验证码"];
+            return;
+        }
+        if (!YGUtils.validString(pwd)) {
+            [YGAlertToast showHUDMessage:@"请输入密码"];
+            return;
+        }
+        if (!YGUtils.validString(confirmPwd)) {
+            [YGAlertToast showHUDMessage:@"请输入确认密码"];
+            return;
+        }
+        if (![pwd isEqualToString:confirmPwd]) {
+            [YGAlertToast showHUDMessage:@"两次密码输入不一致，请重新输入"];
+            return;
+        }
+        [YGLoadingTools beginLoading];
         [YGNetworkCommon registerUser:userName password:pwd confirmPwd:confirmPwd code:code inviteCode:inviteCode success:^(id  _Nonnull responseObject) {
-            NSLog(@"===");
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:@"注册成功"];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
+            [YGLoadingTools endLoading];
             [YGAlertToast showHUDMessage:errorInfo[@"message"]];
         }];
     }];
     [self.loginView setSendCodeHandler:^(NSString *phone){
+        if (!YGUtils.validString(phone)) {
+            [YGAlertToast showHUDMessage:@"请输入注册手机号"];
+            return ;
+        }
+        if (![phone validatePhoneNumber]) {
+            [YGAlertToast showHUDMessage:@"注册手机号不合法"];
+            return;
+        }
         kStrongSelfAutoReturn;
+        [YGLoadingTools beginLoading];
         [YGNetworkCommon getVerifyCode:phone type:@"1" success:^(id  _Nonnull responseObject) {
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
             [strongSelf.loginView startTimer];
         } failed:^(NSDictionary * errorInfo) {
-            NSLog(@"");
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:@"验证码发送失败"];
             [strongSelf.loginView resetTimer];
         }];
     }];
     [self.loginView setBackLoginHandler:^{
-        if (self.navigationController.viewControllers.count > 2) {
-            [self.navigationController popViewControllerAnimated:YES];
+        kStrongSelf;
+        if (strongSelf.navigationController.viewControllers.count > 2) {
+            [strongSelf.navigationController popViewControllerAnimated:YES];
             return ;
         }
-        [self.navigationController pushViewController:[YGLoginViewController new] animated:YES];
+        [strongSelf.navigationController pushViewController:[YGLoginViewController new] animated:YES];
     }];
 }
 
