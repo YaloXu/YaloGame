@@ -33,9 +33,13 @@ typedef NS_ENUM(NSInteger, YGViewType) {
 
 @property (nonatomic, copy) void (^(registerPushHandler))(void);
 
+- (void)sending;
+
 - (void)startTimer;
 
 - (void)resetTimer;
+
+- (BOOL)loginStateKeep;
 
 @end
 

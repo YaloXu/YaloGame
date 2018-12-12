@@ -255,9 +255,6 @@
 
 - (void)getCode {
     BLOCK(self.sendCodeHandler,self.nameTF.text);
-    self.codeButton.userInteractionEnabled = NO;
-    [self.codeButton setTitle:@"发送中..." forState:UIControlStateNormal];
-    [self.codeButton setTitleColor:kButtonBackColorForDisabled forState:UIControlStateNormal];
 }
 
 - (void)setViewType:(YGViewType)viewType {
@@ -484,10 +481,20 @@
     count = 60;
 }
 
+- (void)sending {
+    self.codeButton.userInteractionEnabled = NO;
+    [self.codeButton setTitle:@"发送中..." forState:UIControlStateNormal];
+    [self.codeButton setTitleColor:kButtonBackColorForDisabled forState:UIControlStateNormal];
+}
+
 - (void)resetTimer {
     _codeButton.userInteractionEnabled = YES;
     [_codeButton setTitleColor:UIColorFromRGBValue(0x979AA1) forState:UIControlStateNormal];
     [_codeButton setTitle:@"重新获取验证码" forState:UIControlStateNormal];
+}
+
+- (BOOL)loginStateKeep {
+    return !self.selectedButton.selected;
 }
 
 @end

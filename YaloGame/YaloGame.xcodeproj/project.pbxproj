@@ -30,6 +30,7 @@
 		022C653021BE5B1A00CBF12C /* YGProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C652E21BE5B1A00CBF12C /* YGProvince.m */; };
 		022C653321BF589F00CBF12C /* YGLoadingTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C653221BF589F00CBF12C /* YGLoadingTools.m */; };
 		022C656E21C0E89F00CBF12C /* NSString+Regular.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C656D21C0E89E00CBF12C /* NSString+Regular.m */; };
+		022C657021C0EFCB00CBF12C /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 022C656F21C0EFCB00CBF12C /* login.jpg */; };
 		022DF36F21B3EDC5002F298A /* user_ava@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36D21B3EDC5002F298A /* user_ava@3x.png */; };
 		022DF37021B3EDC5002F298A /* user_ava@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022DF36E21B3EDC5002F298A /* user_ava@2x.png */; };
 		025F24AC21A54874001FDBB1 /* YGShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025F24A921A54874001FDBB1 /* YGShareViewController.m */; };
@@ -301,6 +302,7 @@
 		022C653221BF589F00CBF12C /* YGLoadingTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGLoadingTools.m; sourceTree = "<group>"; };
 		022C656C21C0E89E00CBF12C /* NSString+Regular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Regular.h"; sourceTree = "<group>"; };
 		022C656D21C0E89E00CBF12C /* NSString+Regular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regular.m"; sourceTree = "<group>"; };
+		022C656F21C0EFCB00CBF12C /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
 		022DF36D21B3EDC5002F298A /* user_ava@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@3x.png"; sourceTree = "<group>"; };
 		022DF36E21B3EDC5002F298A /* user_ava@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_ava@2x.png"; sourceTree = "<group>"; };
 		025F24A921A54874001FDBB1 /* YGShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGShareViewController.m; sourceTree = "<group>"; };
@@ -1115,6 +1117,7 @@
 		2EDDE551219D11370009DDC1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				022C656F21C0EFCB00CBF12C /* login.jpg */,
 				022C652021BE3F2200CBF12C /* json */,
 				022DF36E21B3EDC5002F298A /* user_ava@2x.png */,
 				022DF36D21B3EDC5002F298A /* user_ava@3x.png */,
@@ -1443,6 +1446,7 @@
 				02AC5AE821A189980092BB46 /* YGBindCardView.xib in Resources */,
 				2E305F1F21A5355A00FCF123 /* tabbar_discovery@2x.png in Resources */,
 				2E305F2B21A5355A00FCF123 /* mine_transaction@2x.png in Resources */,
+				022C657021C0EFCB00CBF12C /* login.jpg in Resources */,
 				2E305F2721A5355A00FCF123 /* mine_message@2x.png in Resources */,
 				2E305F4421A5355A00FCF123 /* tabbar_coin@2x.png in Resources */,
 				2E305F4121A5355A00FCF123 /* mine_header_bg@3x.png in Resources */,

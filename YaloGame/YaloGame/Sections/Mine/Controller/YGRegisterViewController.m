@@ -66,6 +66,9 @@
             [YGAlertToast showHUDMessage:@"两次密码输入不一致，请重新输入"];
             return;
         }
+        if ([weakSelf.loginView loginStateKeep]) {
+#warning -------
+        }
         [YGLoadingTools beginLoading];
         [YGNetworkCommon registerUser:userName password:pwd confirmPwd:confirmPwd code:code inviteCode:inviteCode success:^(id  _Nonnull responseObject) {
             [YGLoadingTools endLoading];
@@ -85,6 +88,7 @@
             return;
         }
         kStrongSelfAutoReturn;
+        [strongSelf.loginView sending];
         [YGLoadingTools beginLoading];
         [YGNetworkCommon getVerifyCode:phone type:@"1" success:^(id  _Nonnull responseObject) {
             [YGLoadingTools endLoading];
