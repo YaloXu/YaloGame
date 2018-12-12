@@ -48,9 +48,9 @@
     }];
     [self.loginView setLoginHandler:^(NSString *name,NSString *pwd,NSString *code, YGViewType type){
         [YGNetworkCommon login:name password:pwd code:code type:type == YGViewType_Pwd_Login ? 0 : 1 success:^(id  _Nonnull responseObject) {
-            
+            NSLog(@"====");
         } failed:^(NSDictionary * _Nonnull errorInfo) {
-            
+            NSLog(@"===");
         }];
     }];
     [self.loginView setSendCodeHandler:^(NSString *phone){

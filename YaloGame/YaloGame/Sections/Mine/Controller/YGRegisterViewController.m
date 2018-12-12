@@ -72,7 +72,7 @@
         [YGLoadingTools beginLoading];
         [YGNetworkCommon registerUser:userName password:pwd confirmPwd:confirmPwd code:code inviteCode:inviteCode success:^(id  _Nonnull responseObject) {
             [YGLoadingTools endLoading];
-            [YGAlertToast showHUDMessage:@"注册成功"];
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
             [YGLoadingTools endLoading];
             [YGAlertToast showHUDMessage:errorInfo[@"message"]];

@@ -126,7 +126,7 @@ static inline NSSet *acceptableContentTypes() {
 - (void)parseResponse:(id)response success:(SuccessBlock)success failed:(FailedBlock)failed{
     id oj = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
     if ([oj[@"code"] integerValue] != 200) {
-        BLOCK(failed,oj[@"ret_data"]);
+        BLOCK(failed,oj);
         return;
     }
     if ([((NSDictionary *)oj).allKeys containsObject:@"ret_data"]) {

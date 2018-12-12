@@ -8,24 +8,33 @@
 
 #import "YGEncryptTool.h"
 
-static NSString *const pubKey = @"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo/D1w0wHDb8LHPQ0G+gj8oi0kosr7CZpyaSmCqiL9W2y3GVKOVVVHDtaatf0g++ffkCq9NOLnHfhNOz9unINRS7nOIkH7SlAOFLQ/kci24KVTJdhg/s4cdPq0uTVsbpd284un1r6RkA5HT8Yn5Jr+kk5kbo4s+a6il3ULrJejvpu24q/3keiopMU5O+GHnrY+QQ1+Qr4ugdOG0cTy6Try7+fcVHg7ZCJbYqYTShUCmogonbtlQUrAk9VaEUTvhG+fwQKt4wa8HMrNRWKO+cIaDxtirvbL6lWxWMAXmf1Vrt6psZigYHmGl7v+atiwXh1VO3SL0vqq5vpEXBvT52gQQIDAQAB";
-
-inline static NSString *base64_encode_data(NSData *data){
+static NSString *base64_encode_data(NSData *data){
     data = [data base64EncodedDataWithOptions:0];
     NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return ret;
 }
 
-inline static NSData *base64_decode(NSString *str){
+static NSData *base64_decode(NSString *str){
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
     return data;
+}
+
+static NSString *publicKey(void) {
+    static NSString *key = nil;
+    if (key) {
+        return key;
+    }
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"rsa_public_key" ofType:@"pem"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    key = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return key;
 }
 
 
 @implementation YGEncryptTool
 
 + (NSString *)rsaEncrypt:(NSString *)source {
-    return [self encryptString:source publicKey:pubKey];
+    return [self encryptString:source publicKey:publicKey()];
 }
 
 + (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey{
@@ -97,6 +106,15 @@ inline static NSData *base64_decode(NSString *str){
 
 
 + (SecKeyRef)addPublicKey:(NSString *)key{
+    NSRange spos = [key rangeOfString:@"-----BEGIN PUBLIC KEY-----"];
+    NSRange epos = [key rangeOfString:@"-----END PUBLIC KEY-----"];
+    if(spos.location != NSNotFound && epos.location != NSNotFound){
+        NSUInteger s = spos.location + spos.length;
+        NSUInteger e = epos.location;
+        NSRange range = NSMakeRange(s, e-s);
+        key = [key substringWithRange:range];
+    }
+    
     key = [key stringByReplacingOccurrencesOfString:@"\r" withString:@""];
     key = [key stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     key = [key stringByReplacingOccurrencesOfString:@"\t" withString:@""];
