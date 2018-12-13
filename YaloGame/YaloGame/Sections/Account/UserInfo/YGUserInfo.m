@@ -19,4 +19,9 @@
     return userInfo;
 }
 
+- (void)parseToken:(NSDictionary *)dict {
+    self.token = dict[@"token"];
+    self.uid = [dict[@"uid"] integerValue];
+}
+
 @end

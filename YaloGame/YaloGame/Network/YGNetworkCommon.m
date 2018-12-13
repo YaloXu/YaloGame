@@ -26,7 +26,7 @@
 + (void)userInfo:(SuccessBlock)success failed:(FailedBlock)failed {
     [[YGNetWorkTools sharedTools] get:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
         [self setRequestHeaderInfo:manager];
-    } parameters:@{@"uid":@""} success:success failed:failed];
+    } parameters:@{@"uid":@([YGUserInfo sharedInstance].uid)} success:success failed:failed];
 }
 
 + (void)updatePayPassword:(NSString *)uid password:(NSString *)password surePassword:(NSString *)surePassword success:(SuccessBlock)success failed:(FailedBlock)failed {
@@ -66,7 +66,7 @@
 }
 
 + (void)setRequestHeaderInfo:(AFHTTPSessionManager *)manager {
-    [manager.requestSerializer setValue:@"" forHTTPHeaderField:@"Authentication"];
+    [manager.requestSerializer setValue:[YGUserInfo sharedInstance].token forHTTPHeaderField:@"Authentication"];
 }
 
 + (void)getMessage:(NSInteger)catid page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed {

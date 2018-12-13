@@ -12,6 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGUserInfo : NSObject
 
+
+@property (nonatomic, copy) NSString *token;
+
+@property (nonatomic, assign)NSInteger uid;
+
++ (instancetype)sharedInstance;
+
+- (void)parseToken:(NSDictionary *)dict;
+
 @end
 
 NS_ASSUME_NONNULL_END

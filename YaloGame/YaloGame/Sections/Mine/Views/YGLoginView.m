@@ -250,7 +250,12 @@
 
         return;
     }
-    BLOCK(self.loginHandler,self.nameTF.text,self.pwdTF.text,self.codeTF.text, self.viewType);
+   
+    if (self.viewType == YGViewType_Pwd_Login) {
+        BLOCK(self.loginHandler,self.nameTF.text,self.pwdTF.text,self.codeTF.text, self.viewType);
+    } else {
+        BLOCK(self.loginHandler,self.nameTF.text,@"",self.pwdTF.text, self.viewType);
+    }
 }
 
 - (void)getCode {
@@ -259,6 +264,8 @@
 
 - (void)setViewType:(YGViewType)viewType {
     _viewType = viewType;
+    self.pwdTF.text = @"";
+    _nameTF.keyboardType = UIKeyboardTypeNumberPad;
     switch (_viewType) {
         case YGViewType_Pwd_Login: {
             self.nameTF.placeholder = @"请输入您的账号 ";
@@ -299,7 +306,6 @@
         }
             break;
         case YGViewType_Register: {
-            _nameTF.keyboardType = UIKeyboardTypeNumberPad;
             self.pwdTF.keyboardType = UIKeyboardTypeNumberPad;
             self.regPwdTF.secureTextEntry = YES;
             self.regConPwdTF.secureTextEntry = YES;
@@ -384,6 +390,7 @@
         }
             break;
         case YGViewType_Phone_login: {
+            self.pwdTF.keyboardType = UIKeyboardTypeNumberPad;
             self.nameTF.placeholder = @"请输入您的手机号码";
             self.pwdTF.placeholder = @"请输入短信验证码";
             [self areaPhone];

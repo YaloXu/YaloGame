@@ -47,17 +47,27 @@
         [strongSelf.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
     }];
     [self.loginView setLoginHandler:^(NSString *name,NSString *pwd,NSString *code, YGViewType type){
-        [YGNetworkCommon login:name password:pwd code:code type:type == YGViewType_Pwd_Login ? 0 : 1 success:^(id  _Nonnull responseObject) {
-            NSLog(@"====");
+        [YGLoadingTools beginLoading];
+        [YGNetworkCommon login:name password:pwd code:code type:type == YGViewType_Pwd_Login ? 1 : 0 success:^(id  _Nonnull responseObject) {
+            [[YGUserInfo sharedInstance] parseToken:responseObject];
+            [YGNetworkCommon userInfo:^(id  _Nonnull responseObject) {
+                NSLog(@"====");
+                [YGLoadingTools endLoading];
+            } failed:^(NSDictionary * _Nonnull errorInfo) {
+                NSLog(@"===");
+                [YGLoadingTools endLoading];
+            }];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
-            NSLog(@"===");
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
         }];
     }];
     [self.loginView setSendCodeHandler:^(NSString *phone){
+        [YGLoadingTools beginLoading];
         [YGNetworkCommon getVerifyCode:phone type:@"0" success:^(id  _Nonnull responseObject) {
-            
+            [YGLoadingTools endLoading];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
-            
+            [YGLoadingTools endLoading];
         }];
     }];
     
