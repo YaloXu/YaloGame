@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGCacheManager : NSObject
 
-+ (instancetype)sharedInstance;
+@property (nonatomic, strong, readonly, class) YGCacheManager *sharedInstance;
+
+- (void)saveUserInfo;
+
+- (void)loadUserInfo;
 
 @end
 

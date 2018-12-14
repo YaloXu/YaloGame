@@ -19,7 +19,9 @@
 #import "YGLoginViewController.h"
 #import "YGRegisterViewController.h"
 
-@interface YGMineViewController () <YGMineFooterDelegate>
+@interface YGMineViewController () <YGMineFooterDelegate> {
+    
+}
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -48,53 +50,10 @@
     // Do any additional setup after loading the view.
     [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
+    [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"token" options:NSKeyValueObservingOptionNew context:nil];
     self.view.backgroundColor = DefaultBackGroundColor;
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500)];
-    //已登录
-    if (@"".length > 0) {
-        footerView.frame = CGRectMake(0, 0, kScreenWidth, 316);
-        self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
-    }
+    [self setFooterView];
     
-    
-    footerView.backgroundColor = DefaultBackGroundColor;
-    
-    
-    YGMineFooterView *view = [[NSBundle mainBundle] loadNibNamed:@"YGMineFooterView" owner:nil options:nil].firstObject;
-    [footerView addSubview:view];
-    view.backgroundColor = [UIColor whiteColor];
-    view.delegate = self;
-    //已登录
-    if (@"".length > 0) {
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(@16);
-            make.bottom.equalTo(footerView);
-            make.left.equalTo(@16);
-            make.right.equalTo(@(-16));
-        }];
-    } else {
-        YGUnLoginView *loginView = [[YGUnLoginView alloc] init];
-        [footerView addSubview:loginView];
-        [loginView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.right.equalTo(footerView);
-            make.height.mas_equalTo(226);
-        }];
-        [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(footerView);
-            make.left.equalTo(@16);
-            make.right.equalTo(@(-16));
-            make.height.mas_equalTo(308);
-        }];
-        [loginView setLoginHandler:^{
-            [self.navigationController pushViewController:[YGLoginViewController new] animated:YES];
-        }];
-        [loginView setRegisterHandler:^{
-            [self.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
-        }];
-        [footerView bringSubviewToFront:view];
-    }
-    
-    self.tableView.tableFooterView = footerView;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -146,14 +105,53 @@
     return UIStatusBarStyleLightContent;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"token"]) {
+        [self setFooterView];
+    }
 }
-*/
+
+- (void)setFooterView {
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500)];
+    if (YGUserInfo.defaultInstance.login) {
+        footerView.frame = CGRectMake(0, 0, kScreenWidth, 316);
+        self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
+    }
+    YGMineFooterView *view = [[NSBundle mainBundle] loadNibNamed:@"YGMineFooterView" owner:nil options:nil].firstObject;
+    [footerView addSubview:view];
+    view.backgroundColor = [UIColor whiteColor];
+    view.delegate = self;
+    //已登录
+    if (YGUserInfo.defaultInstance.login) {
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@16);
+            make.bottom.equalTo(footerView);
+            make.left.equalTo(@16);
+            make.right.equalTo(@(-16));
+        }];
+    } else {
+        YGUnLoginView *loginView = [[YGUnLoginView alloc] init];
+        [footerView addSubview:loginView];
+        [loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.equalTo(footerView);
+            make.height.mas_equalTo(226);
+        }];
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(footerView);
+            make.left.equalTo(@16);
+            make.right.equalTo(@(-16));
+            make.height.mas_equalTo(308);
+        }];
+        [loginView setLoginHandler:^{
+            [self.navigationController pushViewController:[YGLoginViewController new] animated:YES];
+        }];
+        [loginView setRegisterHandler:^{
+            [self.navigationController pushViewController:[YGRegisterViewController new] animated:YES];
+        }];
+        [footerView bringSubviewToFront:view];
+    }
+    
+    self.tableView.tableFooterView = footerView;
+}
 
 @end

@@ -9,6 +9,7 @@
 #import "YGLoginViewController.h"
 #import "YGLoginView.h"
 #import "YGRegisterViewController.h"
+#import "YGCacheManager.h"
 
 @interface YGLoginViewController ()
 
@@ -49,12 +50,15 @@
     [self.loginView setLoginHandler:^(NSString *name,NSString *pwd,NSString *code, YGViewType type){
         [YGLoadingTools beginLoading];
         [YGNetworkCommon login:name password:pwd code:code type:type == YGViewType_Pwd_Login ? 1 : 0 success:^(id  _Nonnull responseObject) {
-            [[YGUserInfo sharedInstance] parseToken:responseObject];
+            [YGUserInfo.defaultInstance parseToken:responseObject];
             [YGNetworkCommon userInfo:^(id  _Nonnull responseObject) {
-                NSLog(@"====");
+                [YGUserInfo.defaultInstance parseUserInfo:responseObject];
                 [YGLoadingTools endLoading];
+                [YGCacheManager.sharedInstance saveUserInfo];
+                [YGAlertToast showHUDMessage:@"登录成功"];
+                [weakSelf popToRoot];
             } failed:^(NSDictionary * _Nonnull errorInfo) {
-                NSLog(@"===");
+                [YGAlertToast showHUDMessage:errorInfo[@"message"]];
                 [YGLoadingTools endLoading];
             }];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
@@ -66,8 +70,10 @@
         [YGLoadingTools beginLoading];
         [YGNetworkCommon getVerifyCode:phone type:@"0" success:^(id  _Nonnull responseObject) {
             [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
             [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
         }];
     }];
     
@@ -168,6 +174,10 @@
         make.top.equalTo(imageView.mas_bottom).offset(5);
         make.height.mas_equalTo(20);
     }];
+}
+
+- (void)popToRoot {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

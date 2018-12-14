@@ -8,6 +8,7 @@
 
 #import "YGCacheManager.h"
 #import <YYCache/YYCache.h>
+#import <YYModel/YYModel.h>
 
 
 @interface YGCacheManager()
@@ -32,6 +33,16 @@
         _cache = [YYCache cacheWithName:@"YaloGame"];
     }
     return _cache;
+}
+
+- (void)saveUserInfo {
+    [self.cache setObject:YGUserInfo.defaultInstance.userInfo forKey:@"YGUserInfo"];
+}
+
+- (void)loadUserInfo {
+   NSDictionary *dict = (NSDictionary *)[self.cache objectForKey:@"YGUserInfo"];
+    [YGUserInfo.defaultInstance parseToken:dict];
+    [YGUserInfo.defaultInstance parseUserInfo:dict];
 }
 
 @end

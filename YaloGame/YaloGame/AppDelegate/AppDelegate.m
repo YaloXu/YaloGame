@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "YGTabBarController.h"
+#import "YGCacheManager.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [YGCacheManager.sharedInstance loadUserInfo];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     [self.window makeKeyAndVisible];
     [self setBarButtonAttributed];
