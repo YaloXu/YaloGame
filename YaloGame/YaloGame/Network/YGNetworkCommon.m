@@ -35,8 +35,10 @@
     } parameters:@{@"uid":uid,@"password":password,@"surepassword":surePassword} success:success failed:failed];
 }
 
-+ (void)getBankCards:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] get:@"" parameters:@{} success:success failed:failed];
++ (void)getBankCardsWithPage:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] get:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=bankcard" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:@{@"page":@(page),@"total":@(total)} success:success failed:failed];
 }
 
 + (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed {

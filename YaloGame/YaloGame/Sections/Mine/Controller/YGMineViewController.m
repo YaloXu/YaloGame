@@ -25,6 +25,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
+@property (nonatomic, strong) YGMineHeaderView *headerView;
 @end
 
 @implementation YGMineViewController
@@ -50,6 +51,8 @@
     // Do any additional setup after loading the view.
     [self autoLayoutSizeContentView:self.tableView];
     [self.view addSubview:self.tableView];
+    self.customTextColor = [UIColor whiteColor];
+    self.customNavColor = [UIColor clearColor];
     [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"token" options:NSKeyValueObservingOptionNew context:nil];
     self.view.backgroundColor = DefaultBackGroundColor;
     [self setFooterView];
@@ -112,10 +115,19 @@
 }
 
 - (void)setFooterView {
+    if (YGUserInfo.defaultInstance.login) {
+        self.titleLabel.text = @"我的";
+    } else {
+        self.titleLabel.text = @"";
+    }
+    
+    
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 500)];
     if (YGUserInfo.defaultInstance.login) {
         footerView.frame = CGRectMake(0, 0, kScreenWidth, 316);
-        self.tableView.tableHeaderView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
+        _headerView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
+        self.tableView.tableHeaderView = _headerView;
+        [_headerView refreshData];
     }
     YGMineFooterView *view = [[NSBundle mainBundle] loadNibNamed:@"YGMineFooterView" owner:nil options:nil].firstObject;
     [footerView addSubview:view];

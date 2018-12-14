@@ -59,6 +59,7 @@
                 [weakSelf popToRoot];
             } failed:^(NSDictionary * _Nonnull errorInfo) {
                 [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+                [YGUserInfo.defaultInstance clearData];
                 [YGLoadingTools endLoading];
             }];
         } failed:^(NSDictionary * _Nonnull errorInfo) {

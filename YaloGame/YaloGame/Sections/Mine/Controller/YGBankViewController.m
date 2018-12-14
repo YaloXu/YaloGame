@@ -81,6 +81,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"银行卡";
+    [self loadData];
     self.tableView.backgroundColor = DefaultBackGroundColor;
     YGBankAddCardView *addView = [[YGBankAddCardView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:addView];
@@ -101,6 +102,16 @@
     self.tableView.tableFooterView = [UIView new];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:self.managerType == YGBankManagerType_Add ? @"管理" : @"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancelAction)];
     [self adjustFont];
+}
+
+- (void)loadData {
+    [YGLoadingTools beginLoading];
+    [YGNetworkCommon getBankCardsWithPage:0 total:10 success:^(id  _Nonnull responseObject) {
+        [YGLoadingTools endLoading];
+    } failed:^(NSDictionary * _Nonnull errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

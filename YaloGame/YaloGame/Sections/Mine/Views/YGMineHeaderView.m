@@ -7,6 +7,7 @@
 //
 
 #import "YGMineHeaderView.h"
+#import "UIImageView+WebCache.h"
 
 @interface YGMineHeaderView() {
     
@@ -117,12 +118,9 @@
     }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)refreshData {
+    _moneyLaebl.text = YGUserInfo.defaultInstance.money;
+    [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] completed:nil];
+    _IDLabel.text = YGUserInfo.defaultInstance.userName;
 }
-*/
-
 @end

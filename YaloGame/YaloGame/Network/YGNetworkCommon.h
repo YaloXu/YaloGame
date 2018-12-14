@@ -58,7 +58,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)userInfo:(SuccessBlock)success
           failed:(FailedBlock)failed;
 
-+ (void)getBankCards:(SuccessBlock)success failed:(FailedBlock)failed;
+/**
+ 获取银行卡
+
+ @param page page
+ @param total total
+ @param success success
+ @param failed failed
+ */
++ (void)getBankCardsWithPage:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 + (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed;
 

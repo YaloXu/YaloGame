@@ -71,7 +71,7 @@
 
 - (NSString *)money {
     if (_money || [_money isKindOfClass:[NSNull class]]) {
-        _money = @"";
+        _money = @"0.00";
     }
     return _money;
 }
