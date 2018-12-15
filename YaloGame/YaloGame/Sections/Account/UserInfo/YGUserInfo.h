@@ -51,7 +51,7 @@
 
 @property (nonatomic, assign)NSInteger uid;
 
-
+@property (nonatomic, assign) BOOL autoLogin;
 @property (class,nonatomic,readonly,strong) YGUserInfo *defaultInstance;
 
 - (BOOL)login;

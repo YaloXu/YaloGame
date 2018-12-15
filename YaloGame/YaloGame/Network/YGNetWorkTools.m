@@ -129,10 +129,20 @@ static inline NSSet *acceptableContentTypes() {
         BLOCK(failed,oj);
         return;
     }
+    if ([oj[@"code"] integerValue] == 401) {
+        YGUserInfo.defaultInstance.autoLogin = YES;
+        [YGUserInfo.defaultInstance clearData];
+        BLOCK(failed,oj);
+        return;
+    }
+    
     if ([((NSDictionary *)oj).allKeys containsObject:@"ret_data"]) {
          BLOCK(success,oj[@"ret_data"]);
     } else {
          BLOCK(success,oj);
+    }
+    if ([((NSDictionary *)oj).allKeys containsObject:@"token"]) {
+        YGUserInfo.defaultInstance.token = oj[@"token"];
     }
 }
 @end

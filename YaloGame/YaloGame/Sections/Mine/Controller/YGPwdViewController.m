@@ -56,12 +56,14 @@
     if (self.pwdType == YGSetPwdType_Pay) {
         [YGNetworkCommon updatePayPassword:@(YGUserInfo.defaultInstance.uid).stringValue password:self.pwdTF.text surePassword:self.confirmPwdTF.text success:^(id responseObject) {
             [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
         } failed:^(NSDictionary *errorInfo) {
             [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
         }];
         return;
     }
-    [YGNetworkCommon updateLoginWithOldPwd:@"" newPwd:self.pwdTF.text sureNewPwd:self.confirmPwdTF.text success:^(id responseObject) {
+    [YGNetworkCommon updateLoginWithOldPwd:nil newPwd:self.pwdTF.text sureNewPwd:self.confirmPwdTF.text success:^(id responseObject) {
         [YGLoadingTools endLoading];
         [YGAlertToast showHUDMessage:responseObject[@"message"]];
     } failed:^(NSDictionary *errorInfo) {

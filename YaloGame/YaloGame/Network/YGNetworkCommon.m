@@ -58,21 +58,26 @@
 }
 
 + (void)updateNickName:(NSString *)nickName success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] post:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member&uid=%@",@(YGUserInfo.defaultInstance.uid)] sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
         [self setRequestHeaderInfo:manager];
-    } parameters:@{@"uid":@"",@"name":nickName} success:success failed:failed];
+    } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"name":YGUserInfo.defaultInstance.userName,@"nickname":nickName} success:success failed:failed];
 }
 
 + (void)updateSign:(NSString *)sign success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
+    [[YGNetWorkTools sharedTools] put:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"name":YGUserInfo.defaultInstance.userName,@"gxqm":sign} success:success failed:failed];
 }
 
 + (void)uploadImage:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
     [[YGNetWorkTools sharedTools] upload:@"" parameters:@{} data:data success:success failed:failed];
 }
 
-+ (void)getTransactionInfo:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] get:@"" parameters:@{} success:success failed:failed];
++ (void)getTransactionsWithType:(NSInteger)type page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] get:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=finace"] sessionConfig:^(AFHTTPSessionManager *manager) {
+        [self setRequestHeaderInfo:manager];
+    }
+parameters:@{@"type":@(type),@"page":@(page),@"total":@(total)} success:success failed:failed];
 }
 
 + (void)setRequestHeaderInfo:(AFHTTPSessionManager *)manager {
@@ -90,15 +95,21 @@
 }
 
 + (void)bindPhone:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member&uid=%@&type=2",@(YGUserInfo.defaultInstance.uid)] sessionConfig:^(AFHTTPSessionManager *manager) {
+    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member"] sessionConfig:^(AFHTTPSessionManager *manager) {
         [self setRequestHeaderInfo:manager];
-    } parameters:nil success:success failed:failed];
+    } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"type":@(2)} success:success failed:failed];
 }
 
 + (void)updateLoginWithOldPwd:(NSString *)oldPwd newPwd:(NSString *)newPwd sureNewPwd:(NSString *)sureNewPwd success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member&uid=%@&type=1",@(YGUserInfo.defaultInstance.uid)] sessionConfig:^(AFHTTPSessionManager *manager) {
+    NSDictionary *p = nil;
+    if (YGUtils.validString(oldPwd)) {
+        p = @{@"oldpassword":oldPwd,@"newpassword":newPwd,@"surepassword":sureNewPwd,@"uid":@(YGUserInfo.defaultInstance.uid),@"type":@(1)};
+    } else {
+        p = @{@"newpassword":[YGEncryptTool rsaEncrypt:newPwd],@"surepassword":[YGEncryptTool rsaEncrypt:sureNewPwd],@"uid":@(YGUserInfo.defaultInstance.uid),@"type":@(1)};
+    }
+    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member"] sessionConfig:^(AFHTTPSessionManager *manager) {
         [self setRequestHeaderInfo:manager];
-    } parameters:@{@"oldpassword":oldPwd,@"newpassword":newPwd,@"surepassword":sureNewPwd} success:success failed:failed];
+    } parameters:p success:success failed:failed];
 }
 
 @end

@@ -29,7 +29,32 @@
 }
 
 - (void)complete {
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    if (!YGUtils.validString(self.inputTF.text)) {
+        [YGAlertToast showHUDMessage:@"输入不合法"];
+        return;
+    }
+    [YGLoadingTools beginLoading];
+    if (self.modifyStyle == ModifyStyle_NickName) {
+        [YGNetworkCommon updateNickName:self.inputTF.text success:^(id responseObject) {
+            [YGLoadingTools endLoading];
+            YGUserInfo.defaultInstance.userName = self.inputTF.text;
+            [self.navigationController popViewControllerAnimated:YES];
+        } failed:^(NSDictionary *errorInfo) {
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+        }];
+    } else {
+        [YGNetworkCommon updateSign:self.inputTF.text success:^(id responseObject) {
+            [YGLoadingTools endLoading];
+            YGUserInfo.defaultInstance.userName = self.inputTF.text;
+            [self.navigationController popViewControllerAnimated:YES];
+        } failed:^(NSDictionary *errorInfo) {
+            [YGLoadingTools endLoading];
+             [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+        }];
+    }
+    
 }
 
 - (void)adjustFont {
@@ -40,14 +65,5 @@
 
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -92,6 +92,7 @@
     self.paySalt = dict[@"paysalt"];
     self.phone = dict[@"phone"];
     self.userName = dict[@"username"];
+    self.autoLogin = NO;
 }
 
 - (BOOL)login {

@@ -126,9 +126,18 @@
                success:(SuccessBlock)success
                 failed:(FailedBlock)failed;
 
+/**
+ 更新签名
+
+ @param sign 签名
+ @param success success
+ @param failed failed
+ */
++ (void)updateSign:(NSString *)sign success:(SuccessBlock)success failed:(FailedBlock)failed;
+
 + (void)uploadImage:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed;
 
-+ (void)getTransactionInfo:(SuccessBlock)success failed:(FailedBlock)failed;
++ (void)getTransactionsWithType:(NSInteger)type page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 
 /**

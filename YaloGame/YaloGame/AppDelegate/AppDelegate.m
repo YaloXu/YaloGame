@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "YGTabBarController.h"
 #import "YGCacheManager.h"
+#import "YGLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -29,6 +30,20 @@
     
     return YES;
 }
+
+- (void)addObserver {
+    [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"autoLogin" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"autoLogin"]) {
+        BOOL value = change[@"new"];
+        if (value) {
+            [[YGCommon topViewController].navigationController pushViewController:[YGLoginViewController new] animated:YES];
+        }
+    }
+}
+
 -(void)setKeyBoardManager{
     IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
     manager.enable = YES; // 控制整个功能是否启用。

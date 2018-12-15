@@ -25,7 +25,17 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"交易记录";
     [self getData];
+    [self loadData];
     [self.tableView registerNib:[UINib nibWithNibName:@"YGTransactionTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"transactionCell"];
+}
+
+- (void)loadData {
+    [YGLoadingTools beginLoading];
+    [YGNetworkCommon getTransactionsWithType:0 page:0 total:10 success:^(id responseObject) {
+        [YGLoadingTools endLoading];
+    } failed:^(NSDictionary *errorInfo) {
+        [YGLoadingTools endLoading];
+    }];
 }
 
 - (void)getData {
