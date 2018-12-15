@@ -120,6 +120,10 @@ static inline NSSet *acceptableContentTypes() {
         return;
     }
         id oj = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
+    if ([oj[@"code"] integerValue] == 401) {
+        YGUserInfo.defaultInstance.autoLogin = YES;
+        [YGUserInfo.defaultInstance clearData];
+    }
     BLOCK(faied,oj);
 }
 
