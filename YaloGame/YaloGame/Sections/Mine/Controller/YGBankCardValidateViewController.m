@@ -27,17 +27,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"绑定银行卡";
+    NSString *phone = [NSString stringWithFormat:@"%@******%@",[YGUserInfo.defaultInstance.userName substringToIndex:2],[YGUserInfo.defaultInstance.userName substringFromIndex:YGUserInfo.defaultInstance.userName.length - 2]];
+    self.promptLabel.text = [NSString stringWithFormat:@"本次操作需要简讯确认，请输入%@收到的简讯验证码",phone];
     [self.validateTF setValue:UIColorFromRGBValue(0x333333) forKeyPath:@"_placeholderLabel.textColor"];
     [self startTimer];
     
 }
 - (IBAction)next:(id)sender {
-    [self.navigationController pushViewController:[YGBindCardSuccessViewController new] animated:YES];
-    
+    [YGLoadingTools beginLoading];
+    [YGNetworkCommon addBankCardWithCardName:self.cardName cardNo:self.cardType bankDescription:self.cardType success:^(id  _Nonnull responseObject) {
+        [self.navigationController pushViewController:[YGBindCardSuccessViewController new] animated:YES];
+        [YGLoadingTools endLoading];
+    } failed:^(NSDictionary * _Nonnull errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
 }
 - (IBAction)sendCode:(id)sender {
     //success
-    [self startTimer];
+    kWeakSelf;
+    [YGLoadingTools beginLoading];
+    [YGNetworkCommon getVerifyCode:@"" type:@"" success:^(id  _Nonnull responseObject) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:responseObject[@"message"]];
+        [weakSelf startTimer];
+    } failed:^(NSDictionary * _Nonnull errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
 }
 
 - (void)changeButtonContent {

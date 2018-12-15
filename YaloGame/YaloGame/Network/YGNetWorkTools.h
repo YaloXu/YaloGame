@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
 #define BLOCK(block, ...) if (block) { block(__VA_ARGS__); };
 
@@ -69,4 +68,3 @@ sessionConfig:(SessionBlock)block
 
 @end
 
-NS_ASSUME_NONNULL_END

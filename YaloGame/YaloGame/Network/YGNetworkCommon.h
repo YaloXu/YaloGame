@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "YGNetWorkTools.h"
 
-NS_ASSUME_NONNULL_BEGIN
 
 @interface YGNetworkCommon : NSObject
 
@@ -68,7 +67,25 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)getBankCardsWithPage:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed;
 
-+ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed;
+/**
+ 查看银行卡详情
+
+ @param cardId cardId
+ @param success success
+ @param failed failed
+ */
++ (void)bankCardInfo:(NSInteger)cardId success:(SuccessBlock)success failed:(FailedBlock)failed;
+
+/**
+ 添加银行卡
+
+ @param cardName 卡名
+ @param cardNo 卡号
+ @param bankDescription 开户行
+ @param success success
+ @param failed failed
+ */
++ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo bankDescription:(NSString *)bankDescription success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 /**
  发送验证码
@@ -129,8 +146,24 @@ NS_ASSUME_NONNULL_BEGIN
            success:(SuccessBlock)success
             failed:(FailedBlock)failed;
 
+/**
+ 退出
 
+ @param success success
+ @param failed failed
+ */
++ (void)logout:(SuccessBlock)success failed:(FailedBlock)failed;
+
+/**
+ 绑定手机号
+
+ @param phone phone
+ @param success success
+ @param failed failed
+ */
++ (void)bindPhone:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed;
+
++ (void)updateLoginWithOldPwd:(NSString *)oldPwd newPwd:(NSString *)newPwd sureNewPwd:(NSString *)sureNewPwd success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 @end
 
-NS_ASSUME_NONNULL_END

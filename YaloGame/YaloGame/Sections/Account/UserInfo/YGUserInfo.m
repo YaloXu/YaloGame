@@ -42,35 +42,35 @@
 }
 
 - (NSString *)phone {
-    if (_phone || [_phone isKindOfClass:[NSNull class]]) {
+    if (!_phone || [_phone isKindOfClass:[NSNull class]]) {
         _phone = @"";
     }
     return _phone;
 }
 
 - (NSString *)paySalt {
-    if (_paySalt || [_paySalt isKindOfClass:[NSNull class]]) {
+    if (!_paySalt || [_paySalt isKindOfClass:[NSNull class]]) {
         _paySalt = @"";
     }
     return _paySalt;
 }
 
 - (NSString *)payPwd {
-    if (_payPwd || [_payPwd isKindOfClass:[NSNull class]]) {
+    if (!_payPwd || [_payPwd isKindOfClass:[NSNull class]]) {
         _payPwd = @"";
     }
     return _payPwd;
 }
 
 - (NSString *)freeze {
-    if (_freeze || [_freeze isKindOfClass:[NSNull class]]) {
+    if (!_freeze || [_freeze isKindOfClass:[NSNull class]]) {
         _freeze = @"";
     }
     return _freeze;
 }
 
 - (NSString *)money {
-    if (_money || [_money isKindOfClass:[NSNull class]]) {
+    if (!_money || [_money isKindOfClass:[NSNull class]] || !YGUtils.validString(_money)) {
         _money = @"0.00";
     }
     return _money;

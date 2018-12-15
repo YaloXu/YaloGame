@@ -38,6 +38,18 @@
     [self.userCell.layer addSublayer:layer];
 }
 - (IBAction)logout:(id)sender {
+    [YGLoadingTools beginLoading];
+    [YGNetworkCommon logout:^(id responseObject) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:@"退出成功"];
+        [YGUserInfo.defaultInstance clearData];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } failed:^(NSDictionary *errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:@"退出成功"];
+        [YGUserInfo.defaultInstance clearData];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }];
 }
 
 - (void)userInfo {

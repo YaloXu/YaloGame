@@ -21,9 +21,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"绑定银行卡";
+    NSString *name = YGUserInfo.defaultInstance.userName;
+    self.phoneNumLaebl.text = [NSString stringWithFormat:@"%@******%@",[name substringToIndex:2],[name substringFromIndex:name.length - 2]];
+    self.cardType.text = @"中国建设银行储蓄卡";
 }
 - (IBAction)next:(id)sender {
-    [self.navigationController pushViewController:[YGBankCardValidateViewController new] animated:YES];
+    YGBankCardValidateViewController *controller = [YGBankCardValidateViewController new];
+    controller.cardName = self.cardName;
+    controller.cardNo = self.cardNo;
+    controller.cardType = self.cardType.text;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 /*

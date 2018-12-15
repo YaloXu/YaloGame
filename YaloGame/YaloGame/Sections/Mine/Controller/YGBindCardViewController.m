@@ -25,7 +25,20 @@
       self.view.backgroundColor = DefaultBackGroundColor;
 }
 - (IBAction)next:(id)sender {
-    [self.navigationController pushViewController:[YGBindCardSecondViewController new] animated:YES];
+    if (!YGUtils.validString(self.cardUserNameTF.text)) {
+        [YGAlertToast showHUDMessage:@"请输入持卡人姓名"];
+        return;
+    }
+    if (!YGUtils.validString(self.cardNumTF.text)) {
+        [YGAlertToast showHUDMessage:@"请输入卡号"];
+        return;
+    }
+    
+    YGBindCardSecondViewController *controller = [YGBindCardSecondViewController new];
+    
+    controller.cardName = self.cardUserNameTF.text;
+    controller.cardNo = self.cardNumTF.text;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 /*

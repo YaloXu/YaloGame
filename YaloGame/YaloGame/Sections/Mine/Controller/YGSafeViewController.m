@@ -67,9 +67,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0 || indexPath.row == 1) {
-        [self.navigationController pushViewController:[YGPwdViewController new] animated:YES];
+        YGPwdViewController *controller = [YGPwdViewController new];
+        controller.pwdType = indexPath.row == 0 ? YGSetPwdType_login : YGSetPwdType_Pay;
+        [self.navigationController pushViewController:controller animated:YES];
     } else if (indexPath.row == 2){
-        [YGAlertToast showMessage:@"您已经绑定过手机号"];
+        if (YGUtils.validString(YGUserInfo.defaultInstance.phone)) {
+             [YGAlertToast showMessage:@"您已经绑定过手机号"];
+        } else {
+            [YGLoadingTools beginLoading];
+            [YGNetworkCommon bindPhone:nil success:^(id responseObject) {
+                [YGNetworkCommon userInfo:^(id responseObject) {
+                    [YGUserInfo.defaultInstance parseUserInfo:responseObject];
+                    [YGAlertToast showHUDMessage:@"绑定完成"];
+                    [YGLoadingTools endLoading];
+                } failed:^(NSDictionary *errorInfo) {
+                    [YGLoadingTools endLoading];
+                }];
+            } failed:^(NSDictionary *errorInfo) {
+                [YGLoadingTools endLoading];
+                [YGAlertToast showHUDMessage:errorInfo[@"message"]];            }];
+        }
     } else {
         
     }

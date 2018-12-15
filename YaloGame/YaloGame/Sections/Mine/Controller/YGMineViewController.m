@@ -128,6 +128,8 @@
         _headerView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
         self.tableView.tableHeaderView = _headerView;
         [_headerView refreshData];
+    } else {
+        self.tableView.tableHeaderView = nil;
     }
     YGMineFooterView *view = [[NSBundle mainBundle] loadNibNamed:@"YGMineFooterView" owner:nil options:nil].firstObject;
     [footerView addSubview:view];

@@ -41,8 +41,16 @@
     } parameters:@{@"page":@(page),@"total":@(total)} success:success failed:failed];
 }
 
-+ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] post:@"" parameters:@{} success:success failed:failed];
++ (void)bankCardInfo:(NSInteger)cardId success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] get:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=bankcard" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:@{@"id":@(cardId)} success:success failed:failed];
+}
+
++ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo bankDescription:(NSString *)bankDescription success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=bankcard" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:@{@"title":cardNo,@"keywords":cardNo,@"description":bankDescription} success:success failed:failed];
 }
 
 + (void)getVerifyCode:(NSString *)phone type:(NSString *)type success:(SuccessBlock)success failed:(FailedBlock)failed {
@@ -73,6 +81,24 @@
 
 + (void)getMessage:(NSInteger)catid page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed {
     [[YGNetWorkTools sharedTools] get:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=news" parameters:@{@"catid":@(catid),@"page":@(page),@"total":@(total)} success:success failed:failed];
+}
+
++ (void)logout:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] post:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=logout" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:nil success:success failed:failed];
+}
+
++ (void)bindPhone:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member&uid=%@&type=2",@(YGUserInfo.defaultInstance.uid)] sessionConfig:^(AFHTTPSessionManager *manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:nil success:success failed:failed];
+}
+
++ (void)updateLoginWithOldPwd:(NSString *)oldPwd newPwd:(NSString *)newPwd sureNewPwd:(NSString *)sureNewPwd success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member&uid=%@&type=1",@(YGUserInfo.defaultInstance.uid)] sessionConfig:^(AFHTTPSessionManager *manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:@{@"oldpassword":oldPwd,@"newpassword":newPwd,@"surepassword":sureNewPwd} success:success failed:failed];
 }
 
 @end

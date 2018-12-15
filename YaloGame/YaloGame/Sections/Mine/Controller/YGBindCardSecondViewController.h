@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YGBindCardSecondViewController : YGBaseViewController
 
+@property (nonatomic, copy) NSString *cardName;
+
+@property (nonatomic, copy) NSString *cardNo;
+
 @end
 
 NS_ASSUME_NONNULL_END

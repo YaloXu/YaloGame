@@ -40,10 +40,34 @@
 }
 
 - (IBAction)confirmClick:(id)sender {
-    if (self.pwdType == YGSetPwdType_Pay) {
+    if (!YGUtils.validString(self.pwdTF.text)) {
+        [YGAlertToast showHUDMessage:@"密码不合法"];
         return;
     }
-    
+    if (!YGUtils.validString(self.confirmPwdTF.text)) {
+        [YGAlertToast showHUDMessage:@"密码不合法"];
+        return;
+    }
+    if (![self.confirmPwdTF.text isEqualToString:self.pwdTF.text]) {
+        [YGAlertToast showHUDMessage:@"密码不一致"];
+        return;
+    }
+    [YGLoadingTools beginLoading];
+    if (self.pwdType == YGSetPwdType_Pay) {
+        [YGNetworkCommon updatePayPassword:@(YGUserInfo.defaultInstance.uid).stringValue password:self.pwdTF.text surePassword:self.confirmPwdTF.text success:^(id responseObject) {
+            [YGLoadingTools endLoading];
+        } failed:^(NSDictionary *errorInfo) {
+            [YGLoadingTools endLoading];
+        }];
+        return;
+    }
+    [YGNetworkCommon updateLoginWithOldPwd:@"" newPwd:self.pwdTF.text sureNewPwd:self.confirmPwdTF.text success:^(id responseObject) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:responseObject[@"message"]];
+    } failed:^(NSDictionary *errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
     
 }
 
