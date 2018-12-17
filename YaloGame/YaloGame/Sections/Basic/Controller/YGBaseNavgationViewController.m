@@ -8,7 +8,9 @@
 
 #import "YGBaseNavgationViewController.h"
 
-@interface YGBaseNavgationViewController ()
+@interface YGBaseNavgationViewController () <UINavigationControllerDelegate> {
+    BOOL _flag;
+}
 
 @end
 
@@ -30,16 +32,18 @@
     [bar setTitleTextAttributes:dic];
     
 }
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    if (self.viewControllers.count > 0) {
-        viewController.hidesBottomBarWhenPushed = YES;
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (_flag || !viewController) {
+        return;
     }
+    _flag = YES;
+    viewController.hidesBottomBarWhenPushed = self.childViewControllers.count;
     return [super pushViewController:viewController animated:animated];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.delegate = self;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -47,5 +51,8 @@
     return [topVC preferredStatusBarStyle];
 }
 
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    _flag = NO;
+}
 
 @end
