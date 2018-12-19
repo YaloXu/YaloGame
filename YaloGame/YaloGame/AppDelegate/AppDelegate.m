@@ -22,6 +22,7 @@
     // Override point for customization after application launch.
     
     [YGCacheManager.sharedInstance loadUserInfo];
+    [self addObserver];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     [self.window makeKeyAndVisible];
     [self setBarButtonAttributed];

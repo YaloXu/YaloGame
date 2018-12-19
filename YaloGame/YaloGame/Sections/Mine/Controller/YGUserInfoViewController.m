@@ -11,6 +11,8 @@
 #import "YGAuthTool.h"
 #import "YGModifyViewController.h"
 #import "UITableViewCell+Arrow.h"
+#import "UIImageView+WebCache.h"
+#import "YGDateTools.h"
 
 @protocol YGUserHeaderDelegate <NSObject>
 
@@ -81,9 +83,13 @@
 }
 
 - (void)setDatas {
-    self.avaImageView.backgroundColor = [UIColor yellowColor];
-    self.IDLabel.text = @"ID:a1212121212";
-    self.dateLabel.text = @"2018-11-19";
+    if (YGUtils.validString(YGUserInfo.defaultInstance.avatar_url)) {
+        [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] placeholderImage:[UIImage imageNamed:@"user_ava"]];
+    } else {
+        _avaImageView.image = [UIImage imageNamed:@"user_ava"];
+    }
+    self.IDLabel.text = [NSString stringWithFormat:@"ID:%@",YGUserInfo.defaultInstance.nickName];
+    self.dateLabel.text = [YGDateTools formatDateTimeInterval:YGUserInfo.defaultInstance.regtime formatString:@"YYYY-MM-dd"];;
 }
 
 - (void)tap {
@@ -240,8 +246,21 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
-    _headerView.avaImageView.image = selectedImage;
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    kWeakSelf;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [YGLoadingTools beginLoading];
+        [YGNetworkCommon uploadImage:UIImagePNGRepresentation(selectedImage) fileName:@"aaaa.jpg" success:^(id responseObject) {
+            weakSelf.headerView.avaImageView.image = selectedImage;
+            NSString *url = responseObject[@"url"];
+            YGUserInfo.defaultInstance.avatar_url = url;
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
+            
+        } failed:^(NSDictionary *errorInfo) {
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+        }];
+    }];
 }
 
 - (void)record {

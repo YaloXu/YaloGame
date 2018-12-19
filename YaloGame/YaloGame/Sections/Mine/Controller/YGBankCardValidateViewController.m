@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"绑定银行卡";
-    NSString *phone = [NSString stringWithFormat:@"%@******%@",[YGUserInfo.defaultInstance.userName substringToIndex:2],[YGUserInfo.defaultInstance.userName substringFromIndex:YGUserInfo.defaultInstance.userName.length - 2]];
+    NSString *phone = [NSString stringWithFormat:@"%@******%@",[YGUserInfo.defaultInstance.phone substringToIndex:2],[YGUserInfo.defaultInstance.phone substringFromIndex:YGUserInfo.defaultInstance.phone.length - 2]];
     self.promptLabel.text = [NSString stringWithFormat:@"本次操作需要简讯确认，请输入%@收到的简讯验证码",phone];
     [self.validateTF setValue:UIColorFromRGBValue(0x333333) forKeyPath:@"_placeholderLabel.textColor"];
     [self startTimer];

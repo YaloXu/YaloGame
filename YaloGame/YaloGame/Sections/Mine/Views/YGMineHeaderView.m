@@ -120,7 +120,7 @@
 
 - (void)refreshData {
     _moneyLaebl.text = YGUserInfo.defaultInstance.money;
-    [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] completed:nil];
-    _IDLabel.text = YGUserInfo.defaultInstance.userName;
+    [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] placeholderImage:[UIImage imageNamed:@"user_ava"]];
+    _IDLabel.text = YGUserInfo.defaultInstance.nickName;
 }
 @end

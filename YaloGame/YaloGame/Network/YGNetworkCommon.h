@@ -135,7 +135,24 @@
  */
 + (void)updateSign:(NSString *)sign success:(SuccessBlock)success failed:(FailedBlock)failed;
 
-+ (void)uploadImage:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed;
+/**
+ <#Description#>
+
+ @param data <#data description#>
+ @param fileName <#fileName description#>
+ @param success <#success description#>
+ @param failed <#failed description#>
+ */
++ (void)uploadImage:(NSData *)data fileName:(NSString *)fileName success:(SuccessBlock)success failed:(FailedBlock)failed;
+
+/**
+ <#Description#>
+
+ @param avaUrl <#avaUrl description#>
+ @param success <#success description#>
+ @param failed <#failed description#>
+ */
++ (void)updateAvaImage:(NSString *)avaUrl success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 + (void)getTransactionsWithType:(NSInteger)type page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed;
 

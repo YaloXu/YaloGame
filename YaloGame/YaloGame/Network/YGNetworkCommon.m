@@ -63,14 +63,24 @@
     } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"name":YGUserInfo.defaultInstance.userName,@"nickname":nickName} success:success failed:failed];
 }
 
++ (void)updateAvaImage:(NSString *)avaUrl success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] put:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member&uid=%@",@(YGUserInfo.defaultInstance.uid)] sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
+        [self setRequestHeaderInfo:manager];
+    } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"name":YGUserInfo.defaultInstance.userName,@"nickname":avaUrl} success:success failed:failed];
+}
+
 + (void)updateSign:(NSString *)sign success:(SuccessBlock)success failed:(FailedBlock)failed {
     [[YGNetWorkTools sharedTools] put:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=member" sessionConfig:^(AFHTTPSessionManager * _Nonnull manager) {
         [self setRequestHeaderInfo:manager];
     } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"name":YGUserInfo.defaultInstance.userName,@"gxqm":sign} success:success failed:failed];
 }
 
-+ (void)uploadImage:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
-    [[YGNetWorkTools sharedTools] upload:@"" parameters:@{} data:data success:success failed:failed];
++ (void)uploadImage:(NSData *)data fileName:(NSString *)fileName success:(SuccessBlock)success failed:(FailedBlock)failed {
+    [[YGNetWorkTools sharedTools] upload:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=api" fileName:fileName sessionConfig:^(AFHTTPSessionManager *manager) {
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"application/json", @"text/html", @"image/jpeg", @"image/png", @"application/octet-stream", @"text/json", nil];
+        [self setRequestHeaderInfo:manager];
+        [manager.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    } parameters:@{@"uid":@(YGUserInfo.defaultInstance.uid),@"file":fileName} data:data success:success failed:failed];
 }
 
 + (void)getTransactionsWithType:(NSInteger)type page:(NSInteger)page total:(NSInteger)total success:(SuccessBlock)success failed:(FailedBlock)failed {

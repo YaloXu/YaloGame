@@ -38,7 +38,8 @@
     if (self.modifyStyle == ModifyStyle_NickName) {
         [YGNetworkCommon updateNickName:self.inputTF.text success:^(id responseObject) {
             [YGLoadingTools endLoading];
-            YGUserInfo.defaultInstance.userName = self.inputTF.text;
+            YGUserInfo.defaultInstance.nickName = self.inputTF.text;
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
             [self.navigationController popViewControllerAnimated:YES];
         } failed:^(NSDictionary *errorInfo) {
             [YGLoadingTools endLoading];
@@ -47,7 +48,8 @@
     } else {
         [YGNetworkCommon updateSign:self.inputTF.text success:^(id responseObject) {
             [YGLoadingTools endLoading];
-            YGUserInfo.defaultInstance.userName = self.inputTF.text;
+            YGUserInfo.defaultInstance.gxqm = self.inputTF.text;
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
             [self.navigationController popViewControllerAnimated:YES];
         } failed:^(NSDictionary *errorInfo) {
             [YGLoadingTools endLoading];
