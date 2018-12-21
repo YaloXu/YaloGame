@@ -24,6 +24,7 @@
 		0221BB6421BA63E2008B2F14 /* YGCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6321BA63E2008B2F14 /* YGCacheManager.m */; };
 		0221BB6721BCE2B0008B2F14 /* YGRolloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */; };
 		0221BB6921BCE2C4008B2F14 /* YGRolloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */; };
+		022AD24921CCC8CF00ED158E /* checkbankcard.json in Resources */ = {isa = PBXBuildFile; fileRef = 022AD24821CCC8CF00ED158E /* checkbankcard.json */; };
 		022C651F21BE371700CBF12C /* YGEncryptTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C651E21BE371700CBF12C /* YGEncryptTool.m */; };
 		022C652221BE3F3A00CBF12C /* BRCity.json in Resources */ = {isa = PBXBuildFile; fileRef = 022C652121BE3F3A00CBF12C /* BRCity.json */; };
 		022C652D21BE5B0E00CBF12C /* YGAreaPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C652B21BE5B0E00CBF12C /* YGAreaPickerView.m */; };
@@ -293,6 +294,7 @@
 		0221BB6521BCE2B0008B2F14 /* YGRolloutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGRolloutView.h; sourceTree = "<group>"; };
 		0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGRolloutView.m; sourceTree = "<group>"; };
 		0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGRolloutView.xib; sourceTree = "<group>"; };
+		022AD24821CCC8CF00ED158E /* checkbankcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkbankcard.json; sourceTree = "<group>"; };
 		022C651D21BE371700CBF12C /* YGEncryptTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGEncryptTool.h; sourceTree = "<group>"; };
 		022C651E21BE371700CBF12C /* YGEncryptTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGEncryptTool.m; sourceTree = "<group>"; };
 		022C652121BE3F3A00CBF12C /* BRCity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BRCity.json; sourceTree = "<group>"; };
@@ -1000,6 +1002,7 @@
 		022C652021BE3F2200CBF12C /* json */ = {
 			isa = PBXGroup;
 			children = (
+				022AD24821CCC8CF00ED158E /* checkbankcard.json */,
 				022C652121BE3F3A00CBF12C /* BRCity.json */,
 			);
 			path = json;
@@ -1459,6 +1462,7 @@
 				2E305F2721A5355A00FCF123 /* mine_message@2x.png in Resources */,
 				2E305F4421A5355A00FCF123 /* tabbar_coin@2x.png in Resources */,
 				2E305F4121A5355A00FCF123 /* mine_header_bg@3x.png in Resources */,
+				022AD24921CCC8CF00ED158E /* checkbankcard.json in Resources */,
 				2E305F1B21A5355A00FCF123 /* tabbar_message_selected@3x.png in Resources */,
 				2E305F7621A7A4B400FCF123 /* home_list03.png in Resources */,
 				2E305F3321A5355A00FCF123 /* mine_bankcard@2x.png in Resources */,

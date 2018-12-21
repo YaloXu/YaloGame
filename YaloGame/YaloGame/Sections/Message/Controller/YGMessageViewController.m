@@ -125,7 +125,16 @@
         [self endRefresh];
         [strongSelf.mainCollectionView reloadItemsAtIndexPaths:@[indexPath]];
     } failed:^(NSDictionary * _Nonnull errorInfo) {
+        kStrongSelf;
+        if (index == 0) {
+            strongSelf->loadMa = YES;
+        } else if (index == 1) {
+            strongSelf->loadN = YES;
+        } else {
+            strongSelf->loadM = YES;
+        }
         [self endRefresh];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
     }];
 }
 

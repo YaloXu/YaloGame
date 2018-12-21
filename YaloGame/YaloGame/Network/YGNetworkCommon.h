@@ -85,7 +85,7 @@
  @param success success
  @param failed failed
  */
-+ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo bankDescription:(NSString *)bankDescription success:(SuccessBlock)success failed:(FailedBlock)failed;
++ (void)addBankCardWithCardName:(NSString *)cardName cardNo:(NSString *)cardNo bankDescription:(NSString *)bankDescription type:(NSInteger)type code:(NSString *)code success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 /**
  发送验证码

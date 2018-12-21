@@ -34,21 +34,21 @@
         return;
     }
     
+    if (YGUtils.validString(self.cardNumTF.text) && _cardNumTF.text.length < 15) {
+        [YGAlertToast showHUDMessage:@"卡号非法"];
+        return;
+    }
+    NSDictionary *cardInfo = [YGCommon findCardInfoWithCardBin:self.cardNumTF.text];
+    if (!YGUtils.validDictionary(cardInfo)) {
+        [YGAlertToast showHUDMessage:@"卡号不支持"];
+        return;
+    }
     YGBindCardSecondViewController *controller = [YGBindCardSecondViewController new];
-    
+    controller.cardInfo = cardInfo;
     controller.cardName = self.cardUserNameTF.text;
     controller.cardNo = self.cardNumTF.text;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

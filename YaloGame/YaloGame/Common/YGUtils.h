@@ -29,6 +29,11 @@ typedef struct _YGUtils_t {
 OBJC_EXTERN YGUtils_t YGUtils;
 
 @interface YGCommon : NSObject
+
+@property (nonatomic, strong, class, readonly) NSArray *cardBins;
+
 + (UIViewController *)topViewController;
+
++ (NSDictionary *)findCardInfoWithCardBin:(NSString *)cardbin;
 @end
 NS_ASSUME_NONNULL_END

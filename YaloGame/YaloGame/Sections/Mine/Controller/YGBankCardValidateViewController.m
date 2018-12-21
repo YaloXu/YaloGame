@@ -29,15 +29,24 @@
     self.navigationItem.title = @"绑定银行卡";
     NSString *phone = [NSString stringWithFormat:@"%@******%@",[YGUserInfo.defaultInstance.phone substringToIndex:2],[YGUserInfo.defaultInstance.phone substringFromIndex:YGUserInfo.defaultInstance.phone.length - 2]];
     self.promptLabel.text = [NSString stringWithFormat:@"本次操作需要简讯确认，请输入%@收到的简讯验证码",phone];
-    [self.validateTF setValue:UIColorFromRGBValue(0x333333) forKeyPath:@"_placeholderLabel.textColor"];
-    [self startTimer];
+    [self.validateTF setValue:UIColorFromRGBValue(0x666666) forKeyPath:@"_placeholderLabel.textColor"];
+    kWeakSelf;
+    [YGLoadingTools beginLoading];
+    [YGNetworkCommon getVerifyCode:YGUserInfo.defaultInstance.phone type:@"3" success:^(id responseObject) {
+         [weakSelf startTimer];
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:responseObject[@"message"]];
+    } failed:^(NSDictionary *errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
     
 }
 - (IBAction)next:(id)sender {
     [YGLoadingTools beginLoading];
-    [YGNetworkCommon addBankCardWithCardName:self.cardName cardNo:self.cardType bankDescription:self.cardType success:^(id  _Nonnull responseObject) {
-        [self.navigationController pushViewController:[YGBindCardSuccessViewController new] animated:YES];
+    [YGNetworkCommon addBankCardWithCardName:self.cardName cardNo:self.cardNo bankDescription:self.cardType type:3 code:self.validateTF.text success:^(id  _Nonnull responseObject) {
         [YGLoadingTools endLoading];
+        [self.navigationController pushViewController:[YGBindCardSuccessViewController new] animated:YES];
     } failed:^(NSDictionary * _Nonnull errorInfo) {
         [YGLoadingTools endLoading];
         [YGAlertToast showHUDMessage:errorInfo[@"message"]];
@@ -47,7 +56,7 @@
     //success
     kWeakSelf;
     [YGLoadingTools beginLoading];
-    [YGNetworkCommon getVerifyCode:@"" type:@"" success:^(id  _Nonnull responseObject) {
+    [YGNetworkCommon getVerifyCode:YGUserInfo.defaultInstance.phone type:@"3" success:^(id  _Nonnull responseObject) {
         [YGLoadingTools endLoading];
         [YGAlertToast showHUDMessage:responseObject[@"message"]];
         [weakSelf startTimer];
@@ -84,14 +93,5 @@
     _sendCodeButotn.enabled = NO;
     [_timer fire];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

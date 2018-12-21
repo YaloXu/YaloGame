@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *cardNo;
 
+@property (nonatomic, copy) NSDictionary *cardInfo;
+
 @end
 
 NS_ASSUME_NONNULL_END
