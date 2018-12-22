@@ -12,6 +12,7 @@
 #import "YGBandRechargeViewController.h"
 #import "YGAlertViewController.h"
 #import "YGBindCardViewController.h"
+#import "YGOrderViewController.h"
 
 @interface YGChargeViewController () {
     
@@ -183,6 +184,9 @@
 }
 
 - (void)record {
+    YGOrderViewController *controller = [YGOrderViewController new];
+    controller.transactionType = _selectedIndex + 1;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)chargeMoney:(UIButton *)button {

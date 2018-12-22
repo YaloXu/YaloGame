@@ -13,6 +13,7 @@
 #import "UITableViewCell+Arrow.h"
 #import "UIImageView+WebCache.h"
 #import "YGDateTools.h"
+#import "YGOrderViewController.h"
 
 @protocol YGUserHeaderDelegate <NSObject>
 
@@ -125,6 +126,11 @@
     return _imagePickerController;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -170,12 +176,13 @@
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         cell.customArrow = YES;
     }
+    YGUserInfo *userInfo = YGUserInfo.defaultInstance;
     if (indexPath.row == 0) {
         cell.textLabel.text = @"昵称";
-        cell.detailTextLabel.text = @"a123123123";
+        cell.detailTextLabel.text = YGUtils.validString(userInfo.nickName) ? userInfo.nickName : @"未设置";
     } else if (indexPath.row == 1) {
         cell.textLabel.text = @"个性签名";
-        cell.detailTextLabel.text = @"未设置";
+        cell.detailTextLabel.text = YGUtils.validString(userInfo.gxqm) ? userInfo.gxqm : @"未设置";
     }
     
     return cell;
@@ -264,7 +271,7 @@
 }
 
 - (void)record {
-    
+    [self.navigationController pushViewController:[YGOrderViewController new] animated:YES];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

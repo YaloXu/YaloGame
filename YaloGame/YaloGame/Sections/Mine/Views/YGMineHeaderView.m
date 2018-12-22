@@ -106,7 +106,7 @@
     _signlabel.text = @"暂无签名";
     _avaImageView.backgroundColor = [UIColor redColor];
     _bgImageView.backgroundColor = [UIColor yellowColor];
-    [_editButton addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpOutside];
+    [_editButton addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
     view.backgroundColor = [UIColor whiteColor];
     view.layer.cornerRadius = 5;
     view.layer.masksToBounds = YES;
@@ -122,5 +122,6 @@
     _moneyLaebl.text = YGUserInfo.defaultInstance.money;
     [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] placeholderImage:[UIImage imageNamed:@"user_ava"]];
     _IDLabel.text = YGUserInfo.defaultInstance.nickName;
+    _signlabel.text = YGUtils.validString(YGUserInfo.defaultInstance.gxqm) ? YGUserInfo.defaultInstance.gxqm : @"暂无签名";
 }
 @end

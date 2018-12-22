@@ -22,6 +22,11 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(complete)];
     [self adjustFont];
+    if (self.modifyStyle == ModifyStyle_NickName) {
+        self.inputTF.placeholder = @"请输入新的昵称";
+    } else {
+        self.inputTF.placeholder = @"请输入新的个性签名";
+    }
 }
 
 - (void)cancel {
@@ -29,7 +34,6 @@
 }
 
 - (void)complete {
-//    [self.navigationController popViewControllerAnimated:YES];
     if (!YGUtils.validString(self.inputTF.text)) {
         [YGAlertToast showHUDMessage:@"输入不合法"];
         return;
