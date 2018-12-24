@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGBankInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YGRolloutView : UIView
+
+@property (nonatomic, strong) YGBankInfo *bankInfo;
+
+@property (nonatomic, copy) void (^(rolloutHandler))(NSString *pwd, NSString *money);
+
+@property (nonatomic, copy) void (^(changeCardInfoHandler))(void);
 
 @end
 

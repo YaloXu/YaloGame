@@ -13,6 +13,10 @@
 #import "YGAlertViewController.h"
 #import "YGBindCardViewController.h"
 #import "YGOrderViewController.h"
+#import "YGBankInfo.h"
+#import "YYModel.h"
+#import "YGRolloutView.h"
+#import "YGBankViewController.h"
 
 @interface YGChargeViewController () {
     
@@ -24,9 +28,32 @@
 
 @property (nonatomic, strong) UIView *rechargeView, *refreshView;
 
+@property (nonatomic, copy) NSArray <YGBankInfo *>*bankList;
+
+@property (nonatomic, strong) YGRolloutView *rolloutView;
+
 @end
 
 @implementation YGChargeViewController
+
+- (YGRolloutView *)rolloutView {
+    if (!_rolloutView) {
+       _rolloutView = [[NSBundle mainBundle] loadNibNamed:@"YGRolloutView" owner:nil options:nil].firstObject;
+        _rolloutView.bankInfo = _bankList.firstObject;
+        kWeakSelf;
+        [_rolloutView setRolloutHandler:^(NSString *pwd, NSString *money){
+            
+        }];
+        [_rolloutView setChangeCardInfoHandler:^{
+            YGBankViewController *controller = [YGBankViewController new];
+            [controller setDidSelectedBankHandler:^(YGBankInfo *bankInfo){
+                weakSelf.rolloutView.bankInfo = bankInfo;
+            }];
+            [weakSelf.navigationController pushViewController:controller animated:YES];
+        }];
+    }
+    return _rolloutView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,14 +62,38 @@
     self.navigationItem.title = self.selectedIndex == 0 ? @"交易" : @"提现";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"交易记录" style:UIBarButtonItemStylePlain target:self action:@selector(record)];
     [self.navigationItem.rightBarButtonItem setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
-//    [self addDefaultView];
     [self segView];
+    [YGLoadingTools beginLoading];
+    kWeakSelf;
+    [YGNetworkCommon getBankCardsWithPage:0 total:10 success:^(id responseObject) {
+        [YGLoadingTools endLoading];
+        weakSelf.bankList = [NSArray yy_modelArrayWithClass:YGBankInfo.class json:responseObject[@"data"]];
+    } failed:^(NSDictionary *errorInfo) {
+        [YGLoadingTools endLoading];
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
     if (self.selectedIndex == 0) {
          [self setUp];
-    } else {
-        [self addDefaultView];
     }
-    
+}
+
+- (void)addRolloutView {
+    [self.view addSubview:self.rolloutView];
+    [self.rolloutView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.equalTo(self.view);
+        make.top.equalTo(self.view).with.offset(44);
+    }];
+}
+
+- (void)setBankList:(NSArray<YGBankInfo *> *)bankList {
+    _bankList = bankList;
+    if (self.selectedIndex == 1) {
+        if (_bankList.count > 0) {
+            [self addRolloutView];
+        } else {
+        [self addDefaultView];
+        }
+    }
 }
 
 - (void)setUp {
@@ -202,6 +253,7 @@
         [self.view layoutIfNeeded];
     }];
     self.rollView.hidden = YES;
+    self.rolloutView.hidden = YES;
     self.rechargeView.hidden = NO;
     self.refreshView.hidden = NO;
     if (!self.rechargeView) {
@@ -213,9 +265,14 @@
     _rechargeButton.selected = NO;
     _rolloutButton.selected = YES;
     if (!self.rollView) {
+        if (self.bankList.count > 0) {
+            [self addRolloutView];
+        } else {
         [self addDefaultView];
+        }
     }
     self.rollView.hidden = NO;
+    self.rolloutView.hidden = NO;
     self.rechargeView.hidden = YES;
     self.refreshView.hidden = YES;
     [_line mas_remakeConstraints:^(MASConstraintMaker *make) {

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGBankInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YGBankTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) YGBankInfo *bankInfo;
 
 @end
 

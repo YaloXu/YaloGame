@@ -26,27 +26,36 @@
 @implementation YGRolloutView
 
 - (IBAction)rolloutClick:(id)sender {
+    BLOCK(self.rolloutHandler,self.pwdTF.text, self.moneyTF.text);
 }
 
+- (void)setBankInfo:(YGBankInfo *)bankInfo {
+    _bankInfo = bankInfo;
+    self.cardInfo.text =[NSString stringWithFormat:@"%@(%@)",_bankInfo.des,[_bankInfo.bankNum substringFromIndex:_bankInfo.bankNum.length - 4]];
+}
+
+- (void)changeCardInfo {
+    BLOCK(self.changeCardInfoHandler);
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.backgroundColor = DefaultBackGroundColor;
+    [self.cardInfo addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeCardInfo)]];
     [self setOnline];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
     CALayer *layer = [CALayer layer];
-    [self.layer addSublayer:layer];
+    [self.moneyTF.layer addSublayer:layer];
     layer.backgroundColor = DefaultBackGroundColor.CGColor;
-    layer.frame = CGRectMake(CGRectGetMinX(self.moneyTF.frame), CGRectGetMaxY(self.moneyTF.frame) - 1, CGRectGetWidth(self.moneyTF.frame), 1);
+    layer.frame = CGRectMake(0, CGRectGetHeight(self.moneyTF.frame)-0.5, CGRectGetWidth(self.moneyTF.frame), 0.5);
     
     CALayer *layer1 = [CALayer layer];
-    [self.layer addSublayer:layer1];
+    [self.pwdTF.layer addSublayer:layer1];
     layer1.backgroundColor = DefaultBackGroundColor.CGColor;
-    layer1.frame = CGRectMake(CGRectGetMinX(self.pwdTF.frame), CGRectGetMaxY(self.pwdTF.frame) - 1, CGRectGetWidth(self.pwdTF.frame), 1);
-    
-    
+    layer1.frame = CGRectMake(0, CGRectGetHeight(self.pwdTF.frame) - 0.5, CGRectGetWidth(self.pwdTF.frame), 0.5);
 }
 
 - (void)setOnline {

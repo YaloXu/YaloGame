@@ -9,6 +9,8 @@
 #import "YGBankViewController.h"
 #import "YGBankTableViewCell.h"
 #import "YGBindCardViewController.h"
+#import "YGBankInfo.h"
+#import "YYModel.h"
 
 @interface YGBankAddCardView : UIView {
     
@@ -74,6 +76,8 @@
 
 @property (nonatomic, strong) YGBankAddCardView *cardView;
 
+@property (nonatomic, copy) NSArray <YGBankInfo *> *bankCards;
+
 @end
 
 @implementation YGBankViewController
@@ -83,6 +87,7 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"银行卡";
     [self loadData];
+    self.view.backgroundColor = DefaultBackGroundColor;
     self.tableView.backgroundColor = DefaultBackGroundColor;
     YGBankAddCardView *addView = [[YGBankAddCardView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:addView];
@@ -107,8 +112,11 @@
 
 - (void)loadData {
     [YGLoadingTools beginLoading];
+    kWeakSelf;
     [YGNetworkCommon getBankCardsWithPage:0 total:10 success:^(id  _Nonnull responseObject) {
         [YGLoadingTools endLoading];
+        weakSelf.bankCards = [NSArray yy_modelArrayWithClass:YGBankInfo.class json:responseObject[@"data"]];
+        [weakSelf.tableView reloadData];
     } failed:^(NSDictionary * _Nonnull errorInfo) {
         [YGLoadingTools endLoading];
         [YGAlertToast showHUDMessage:errorInfo[@"message"]];
@@ -117,11 +125,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YGBankTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.bankInfo = self.bankCards[indexPath.section];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return _bankCards.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -134,6 +147,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 16;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BLOCK(self.didSelectedBankHandler,self.bankCards[indexPath.section]);
 }
 
 - (void)addBankCard {

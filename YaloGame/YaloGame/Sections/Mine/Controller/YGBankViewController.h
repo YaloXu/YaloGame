@@ -7,6 +7,7 @@
 //
 
 #import "YGBaseViewController.h"
+#import "YGBankInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,8 @@ typedef NS_ENUM(NSInteger, YGBankManagerType) {
 @interface YGBankViewController : YGBaseViewController
 
 @property (nonatomic, assign) YGBankManagerType managerType;
+
+@property (nonatomic, copy) void (^(didSelectedBankHandler))(YGBankInfo *bankInfo);
 
 @end
 

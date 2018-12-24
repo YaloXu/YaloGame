@@ -81,7 +81,7 @@
     }];
     
     [self.loginView setForgetPwdHandler:^{
-        
+        [YGAlertToast showHUDMessage:@"请联系客服"];
     }];
 }
 

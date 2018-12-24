@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)validatePhoneNumber;
 
+- (BOOL)validatePwd;
+
 @end
 
 NS_ASSUME_NONNULL_END
