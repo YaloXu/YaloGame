@@ -121,7 +121,8 @@
 - (void)refreshData {
     _moneyLaebl.text = YGUserInfo.defaultInstance.money;
     [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] placeholderImage:[UIImage imageNamed:@"user_ava"]];
-    _IDLabel.text = YGUserInfo.defaultInstance.nickName;
+    YGUserInfo *useInfo = YGUserInfo.defaultInstance;
+    _IDLabel.text = YGUtils.validString(useInfo.nickName) ? useInfo.nickName : @"没有返回数据";
     _signlabel.text = YGUtils.validString(YGUserInfo.defaultInstance.gxqm) ? YGUserInfo.defaultInstance.gxqm : @"暂无签名";
 }
 @end

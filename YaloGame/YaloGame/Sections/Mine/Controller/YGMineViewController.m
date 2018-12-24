@@ -59,7 +59,7 @@
     [self.view addSubview:self.tableView];
     self.customTextColor = [UIColor whiteColor];
     self.customNavColor = [UIColor clearColor];
-    [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"phone" options:NSKeyValueObservingOptionNew context:nil];
+    [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"token" options:NSKeyValueObservingOptionNew context:nil];
     self.view.backgroundColor = DefaultBackGroundColor;
     [self setFooterView];
     

@@ -10,6 +10,7 @@
 #import "YGLoginView.h"
 #import "YGLoginViewController.h"
 #import "NSString+Regular.h"
+#import "YGCacheManager.h"
 
 @interface YGRegisterViewController ()
 
@@ -75,8 +76,22 @@
         }
         [YGLoadingTools beginLoading];
         [YGNetworkCommon registerUser:userName password:pwd confirmPwd:confirmPwd code:code inviteCode:inviteCode success:^(id  _Nonnull responseObject) {
-            [YGLoadingTools endLoading];
-            [YGAlertToast showHUDMessage:responseObject[@"message"]];
+            [YGNetworkCommon login:userName password:confirmPwd code:@"" type:1 success:^(id responseObject) {
+                [YGUserInfo.defaultInstance parseToken:responseObject];
+                [YGNetworkCommon userInfo:^(id  _Nonnull responseObject) {
+                    [YGUserInfo.defaultInstance parseUserInfo:responseObject];
+                    [YGLoadingTools endLoading];
+                    [YGCacheManager.sharedInstance saveUserInfo];
+                    [YGAlertToast showHUDMessage:@"登录成功"];
+                    [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+            } failed:^(NSDictionary *errorInfo) {
+                [YGLoadingTools endLoading];
+                [YGAlertToast showHUDMessage:@"登录失败"];
+            }];
+            } failed:^(NSDictionary *errorInfo) {
+                [YGLoadingTools endLoading];
+                [YGAlertToast showHUDMessage:@"登录失败"];
+            }];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
             [YGLoadingTools endLoading];
             [YGAlertToast showHUDMessage:errorInfo[@"message"]];
