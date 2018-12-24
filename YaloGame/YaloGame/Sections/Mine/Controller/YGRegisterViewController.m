@@ -62,6 +62,10 @@
             [YGAlertToast showHUDMessage:@"请输入确认密码"];
             return;
         }
+        if (![pwd validatePwd]) {
+            [YGAlertToast showHUDMessage:@"密码不合法"];
+            return;
+        }
         if (![pwd isEqualToString:confirmPwd]) {
             [YGAlertToast showHUDMessage:@"两次密码输入不一致，请重新输入"];
             return;

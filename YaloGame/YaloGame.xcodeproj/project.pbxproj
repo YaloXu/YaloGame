@@ -24,6 +24,7 @@
 		0221BB6421BA63E2008B2F14 /* YGCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6321BA63E2008B2F14 /* YGCacheManager.m */; };
 		0221BB6721BCE2B0008B2F14 /* YGRolloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */; };
 		0221BB6921BCE2C4008B2F14 /* YGRolloutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */; };
+		0228975C21D0739D00317660 /* YGBankInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0228975B21D0739D00317660 /* YGBankInfo.m */; };
 		022AD24921CCC8CF00ED158E /* checkbankcard.json in Resources */ = {isa = PBXBuildFile; fileRef = 022AD24821CCC8CF00ED158E /* checkbankcard.json */; };
 		022C651F21BE371700CBF12C /* YGEncryptTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 022C651E21BE371700CBF12C /* YGEncryptTool.m */; };
 		022C652221BE3F3A00CBF12C /* BRCity.json in Resources */ = {isa = PBXBuildFile; fileRef = 022C652121BE3F3A00CBF12C /* BRCity.json */; };
@@ -294,6 +295,8 @@
 		0221BB6521BCE2B0008B2F14 /* YGRolloutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGRolloutView.h; sourceTree = "<group>"; };
 		0221BB6621BCE2B0008B2F14 /* YGRolloutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGRolloutView.m; sourceTree = "<group>"; };
 		0221BB6821BCE2C4008B2F14 /* YGRolloutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YGRolloutView.xib; sourceTree = "<group>"; };
+		0228975A21D0739D00317660 /* YGBankInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGBankInfo.h; sourceTree = "<group>"; };
+		0228975B21D0739D00317660 /* YGBankInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGBankInfo.m; sourceTree = "<group>"; };
 		022AD24821CCC8CF00ED158E /* checkbankcard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = checkbankcard.json; sourceTree = "<group>"; };
 		022C651D21BE371700CBF12C /* YGEncryptTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGEncryptTool.h; sourceTree = "<group>"; };
 		022C651E21BE371700CBF12C /* YGEncryptTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGEncryptTool.m; sourceTree = "<group>"; };
@@ -1027,6 +1030,8 @@
 				022C652E21BE5B1A00CBF12C /* YGProvince.m */,
 				025F24F421A93C73001FDBB1 /* YGTransactionModel.h */,
 				025F24F521A93C73001FDBB1 /* YGTransactionModel.m */,
+				0228975A21D0739D00317660 /* YGBankInfo.h */,
+				0228975B21D0739D00317660 /* YGBankInfo.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1662,6 +1667,7 @@
 				022C653021BE5B1A00CBF12C /* YGProvince.m in Sources */,
 				02CD775D21A2DAA7009A9892 /* YGMessageSegView.m in Sources */,
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
+				0228975C21D0739D00317660 /* YGBankInfo.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
 				2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */,
 				025F24CE21A92110001FDBB1 /* YGAlertViewController.m in Sources */,

@@ -20,4 +20,11 @@
     return [pre evaluateWithObject:self];
 }
 
+- (BOOL)validatePwd {
+    if (!YGUtils.validString(self)) {
+        return NO;
+    }
+    return self.length >= 6;
+}
+
 @end

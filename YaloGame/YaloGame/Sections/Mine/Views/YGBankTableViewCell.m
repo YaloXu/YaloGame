@@ -20,10 +20,17 @@
 
 @implementation YGBankTableViewCell
 
+- (void)setBankInfo:(YGBankInfo *)bankInfo {
+    _bankInfo = bankInfo;
+    _bankNameLabel.text = _bankInfo.des;
+    _bankNumLabel.text = [_bankInfo.bankNum substringFromIndex:_bankInfo.bankNum.length - 4];
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
     
 }
 - (IBAction)close:(id)sender {
