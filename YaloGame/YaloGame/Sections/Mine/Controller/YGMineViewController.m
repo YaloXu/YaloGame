@@ -18,6 +18,7 @@
 #import "YGShareViewController.h"
 #import "YGLoginViewController.h"
 #import "YGRegisterViewController.h"
+#import "YGUserInfoViewController.h"
 
 @interface YGMineViewController () <YGMineFooterDelegate> {
     
@@ -34,13 +35,18 @@
     return YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (_headerView) {
+        [_headerView refreshData];
+    }
+}
+
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.backgroundView.backgroundColor = DefaultBackGroundColor;
         _tableView.backgroundColor = DefaultBackGroundColor;
-//        _tableView.dataSource = self;
-//        _tableView.delegate = self;
     }
     return _tableView;
 }
@@ -53,7 +59,7 @@
     [self.view addSubview:self.tableView];
     self.customTextColor = [UIColor whiteColor];
     self.customNavColor = [UIColor clearColor];
-    [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"token" options:NSKeyValueObservingOptionNew context:nil];
+    [YGUserInfo.defaultInstance addObserver:self forKeyPath:@"phone" options:NSKeyValueObservingOptionNew context:nil];
     self.view.backgroundColor = DefaultBackGroundColor;
     [self setFooterView];
     
@@ -63,6 +69,10 @@
 }
 
 - (void)collectionViewDidSelected:(NSIndexPath *)indexPath {
+    if (!YGUserInfo.defaultInstance.login) {
+        [self.navigationController pushViewController:[YGLoginViewController new] animated:YES];
+        return;
+    }
     UIViewController *controller = nil;
     switch (indexPath.item) {
         case 0: {
@@ -128,6 +138,10 @@
         _headerView = [[YGMineHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 274)];
         self.tableView.tableHeaderView = _headerView;
         [_headerView refreshData];
+        kWeakSelf;
+        [_headerView setEditHandler:^{
+            [weakSelf.navigationController pushViewController:[YGUserInfoViewController new] animated:YES];
+        }];
     } else {
         self.tableView.tableHeaderView = nil;
     }

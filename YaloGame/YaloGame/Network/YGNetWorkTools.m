@@ -35,7 +35,7 @@ static inline NSSet *acceptableContentTypes() {
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
         _manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-        _manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
+    _manager.requestSerializer.stringEncoding = NSUTF8StringEncoding;
         _manager.requestSerializer.HTTPShouldUsePipelining = YES;
         _manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         _manager.requestSerializer.timeoutInterval = 30;
@@ -89,23 +89,20 @@ static inline NSSet *acceptableContentTypes() {
     }];
 }
 
-- (void)upload:(NSString *)url sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
+- (void)upload:(NSString *)url fileName:(NSString *)fileName sessionConfig:(SessionBlock)block parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
     BLOCK(block,self.manager);
-    [self upload:url parameters:parameters data:data success:success failed:failed];
+    [self upload:url fileName:fileName parameters:parameters data:data success:success failed:failed];
 }
 
-- (void)upload:(NSString *)url parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
+- (void)upload:(NSString *)url fileName:(NSString *)fileName parameters:(NSDictionary *)parameters data:(NSData *)data success:(SuccessBlock)success failed:(FailedBlock)failed {
     [self.manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:data
-                                    name:@"image"
-                                fileName:@""
-                                mimeType:@"image/jpeg"];
+        [formData appendPartWithFileData:data name:@"file" fileName:fileName mimeType:@"image/jpeg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        [self parseResponse:responseObject success:success failed:failed];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+        [self parseError:error failed:failed];
     }];
 }
 
@@ -129,13 +126,16 @@ static inline NSSet *acceptableContentTypes() {
 
 - (void)parseResponse:(id)response success:(SuccessBlock)success failed:(FailedBlock)failed{
     id oj = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves | NSJSONReadingAllowFragments error:nil];
-    if ([oj[@"code"] integerValue] != 200) {
-        BLOCK(failed,oj);
-        return;
-    }
     if ([oj[@"code"] integerValue] == 401) {
         YGUserInfo.defaultInstance.autoLogin = YES;
         [YGUserInfo.defaultInstance clearData];
+        BLOCK(failed,oj);
+        return;
+    }
+    if ([((NSDictionary *)oj).allKeys containsObject:@"token"]) {
+        YGUserInfo.defaultInstance.token = oj[@"token"];
+    }
+    if ([oj[@"code"] integerValue] != 200) {
         BLOCK(failed,oj);
         return;
     }
@@ -144,9 +144,6 @@ static inline NSSet *acceptableContentTypes() {
          BLOCK(success,oj[@"ret_data"]);
     } else {
          BLOCK(success,oj);
-    }
-    if ([((NSDictionary *)oj).allKeys containsObject:@"token"]) {
-        YGUserInfo.defaultInstance.token = oj[@"token"];
     }
 }
 @end

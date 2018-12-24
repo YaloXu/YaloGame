@@ -11,6 +11,9 @@
 #import "YGAuthTool.h"
 #import "YGModifyViewController.h"
 #import "UITableViewCell+Arrow.h"
+#import "UIImageView+WebCache.h"
+#import "YGDateTools.h"
+#import "YGOrderViewController.h"
 
 @protocol YGUserHeaderDelegate <NSObject>
 
@@ -81,9 +84,13 @@
 }
 
 - (void)setDatas {
-    self.avaImageView.backgroundColor = [UIColor yellowColor];
-    self.IDLabel.text = @"ID:a1212121212";
-    self.dateLabel.text = @"2018-11-19";
+    if (YGUtils.validString(YGUserInfo.defaultInstance.avatar_url)) {
+        [_avaImageView sd_setImageWithURL:[NSURL URLWithString:YGUserInfo.defaultInstance.avatar_url] placeholderImage:[UIImage imageNamed:@"user_ava"]];
+    } else {
+        _avaImageView.image = [UIImage imageNamed:@"user_ava"];
+    }
+    self.IDLabel.text = [NSString stringWithFormat:@"ID:%@",YGUserInfo.defaultInstance.nickName];
+    self.dateLabel.text = [YGDateTools formatDateTimeInterval:YGUserInfo.defaultInstance.regtime formatString:@"YYYY-MM-dd"];;
 }
 
 - (void)tap {
@@ -117,6 +124,11 @@
         _imagePickerController.allowsEditing = YES;
     }
     return _imagePickerController;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
@@ -164,12 +176,13 @@
         cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         cell.customArrow = YES;
     }
+    YGUserInfo *userInfo = YGUserInfo.defaultInstance;
     if (indexPath.row == 0) {
         cell.textLabel.text = @"昵称";
-        cell.detailTextLabel.text = @"a123123123";
+        cell.detailTextLabel.text = YGUtils.validString(userInfo.nickName) ? userInfo.nickName : @"未设置";
     } else if (indexPath.row == 1) {
         cell.textLabel.text = @"个性签名";
-        cell.detailTextLabel.text = @"未设置";
+        cell.detailTextLabel.text = YGUtils.validString(userInfo.gxqm) ? userInfo.gxqm : @"未设置";
     }
     
     return cell;
@@ -240,12 +253,25 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
-    _headerView.avaImageView.image = selectedImage;
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    kWeakSelf;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [YGLoadingTools beginLoading];
+        [YGNetworkCommon uploadImage:UIImagePNGRepresentation(selectedImage) fileName:@"aaaa.jpg" success:^(id responseObject) {
+            weakSelf.headerView.avaImageView.image = selectedImage;
+            NSString *url = responseObject[@"url"];
+            YGUserInfo.defaultInstance.avatar_url = url;
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
+            
+        } failed:^(NSDictionary *errorInfo) {
+            [YGLoadingTools endLoading];
+            [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+        }];
+    }];
 }
 
 - (void)record {
-    
+    [self.navigationController pushViewController:[YGOrderViewController new] animated:YES];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

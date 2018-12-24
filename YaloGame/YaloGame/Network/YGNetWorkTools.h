@@ -50,6 +50,15 @@ sessionConfig:(SessionBlock)block
       failed:(FailedBlock)failed;
 
 - (void)upload:(NSString *)url
+      fileName:(NSString *)fileName
+    parameters:(NSDictionary *)parameters
+          data:(NSData *)data
+       success:(SuccessBlock)success
+        failed:(FailedBlock)failed;
+
+- (void)upload:(NSString *)url
+      fileName:(NSString *)fileName 
+ sessionConfig:(SessionBlock)block
     parameters:(NSDictionary *)parameters
           data:(NSData *)data
        success:(SuccessBlock)success

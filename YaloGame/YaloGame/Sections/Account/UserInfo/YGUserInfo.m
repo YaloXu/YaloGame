@@ -82,17 +82,21 @@
 }
 
 - (void)parseUserInfo:(NSDictionary *)dict {
-    self.avatar_url = dict[@"avatar_url"];
-    self.email = dict[@"email"];
-    self.freeze = dict[@"freeze"];
+    self.avatar_url = dict[@"avatar"] ? : @"";
+    self.email = dict[@"email"]? : @"";
+    self.freeze = dict[@"freeze"]? : @"";
     self.isAuth = (dict[@"is_auth"] && ![dict[@"is_auth"] isKindOfClass:[NSNull class]]) ? [dict[@"is_auth"]  boolValue] : NO;
     self.isMobile = (dict[@"ismobile"] && ![dict[@"ismobile"] isKindOfClass:[NSNull class]]) ? [dict[@"ismobile"] boolValue] : NO;
     self.money = dict[@"money"];
-    self.payPwd = dict[@"paypassword"];
-    self.paySalt = dict[@"paysalt"];
-    self.phone = dict[@"phone"];
-    self.userName = dict[@"username"];
+    self.payPwd = dict[@"paypassword"]? : @"";
+    self.paySalt = dict[@"paysalt"]? : @"";
+    self.phone = dict[@"phone"]? : @"";
+    self.userName = dict[@"username"]? : @"";
     self.autoLogin = NO;
+    self.regtime = [dict[@"regtime"] longLongValue];
+    self.name = dict[@"name"] ? : @"";
+    self.nickName = dict[@"nickname"] ? : @"";
+    self.gxqm = dict[@"gxqm"] ? : @"";
 }
 
 - (BOOL)login {
@@ -105,6 +109,10 @@
     self.token = nil;
     self.isMobile = NO;
     self.phone = nil;
+    self.name = nil;
+    self.userName = nil;
+    self.gxqm = nil;
+    self.regtime = 0;
 }
 
 
@@ -113,7 +121,7 @@
              @"token":self.token,
              @"uid":@(self.uid),
              @"username":self.userName,
-             @"avatar_url":self.avatar_url,
+             @"avatar":self.avatar_url,
              @"phone":self.phone,
              @"paypassword":self.payPwd,
              @"paysalt":self.paySalt,
@@ -121,7 +129,11 @@
              @"freeze":self.freeze,
              @"email":self.email,
              @"is_auth":@(self.isAuth),
-             @"ismobile":@(self.isMobile)
+             @"ismobile":@(self.isMobile),
+             @"regtime":@(self.regtime),
+             @"name":self.name,
+             @"nickname":self.nickName,
+             @"gxqm":self.gxqm
              };
 }
 

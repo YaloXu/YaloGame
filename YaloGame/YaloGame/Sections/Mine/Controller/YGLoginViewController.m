@@ -69,9 +69,11 @@
     }];
     [self.loginView setSendCodeHandler:^(NSString *phone){
         [YGLoadingTools beginLoading];
+        [weakSelf.loginView sending];
         [YGNetworkCommon getVerifyCode:phone type:@"0" success:^(id  _Nonnull responseObject) {
             [YGLoadingTools endLoading];
             [YGAlertToast showHUDMessage:responseObject[@"message"]];
+            [weakSelf.loginView startTimer];
         } failed:^(NSDictionary * _Nonnull errorInfo) {
             [YGLoadingTools endLoading];
             [YGAlertToast showHUDMessage:errorInfo[@"message"]];

@@ -8,6 +8,7 @@
 
 #import "YGBankViewController.h"
 #import "YGBankTableViewCell.h"
+#import "YGBindCardViewController.h"
 
 @interface YGBankAddCardView : UIView {
     
@@ -136,6 +137,7 @@
 }
 
 - (void)addBankCard {
+    [self.navigationController pushViewController:[YGBindCardViewController new] animated:YES];
 }
 
 - (void)setManagerType:(YGBankManagerType)managerType {
@@ -161,8 +163,6 @@
         self.managerType = YGBankManagerType_Add;
         [self.cardView updateView:NO];
     }
-    
-    
 }
 
 

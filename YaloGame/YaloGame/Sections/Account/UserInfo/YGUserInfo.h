@@ -35,8 +35,9 @@
  uid = 19;
  username = 15138483773;
  */
-
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *userName;
+@property (nonatomic, copy) NSString *nickName;
 @property (nonatomic, copy) NSString *phone;
 @property (nonatomic, copy) NSString *payPwd;
 @property (nonatomic, copy) NSString *money;
@@ -47,6 +48,8 @@
 @property (nonatomic, assign) BOOL isMobile;
 @property (nonatomic, assign) BOOL isAuth;
 
+@property (nonatomic, assign) NSTimeInterval regtime;
+@property (nonatomic, copy) NSString *gxqm;
 @property (nonatomic, copy) NSString *token;
 
 @property (nonatomic, assign)NSInteger uid;

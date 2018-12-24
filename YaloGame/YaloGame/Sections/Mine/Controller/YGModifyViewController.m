@@ -22,6 +22,11 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"完成" style:UIBarButtonItemStylePlain target:self action:@selector(complete)];
     [self adjustFont];
+    if (self.modifyStyle == ModifyStyle_NickName) {
+        self.inputTF.placeholder = @"请输入新的昵称";
+    } else {
+        self.inputTF.placeholder = @"请输入新的个性签名";
+    }
 }
 
 - (void)cancel {
@@ -29,7 +34,6 @@
 }
 
 - (void)complete {
-//    [self.navigationController popViewControllerAnimated:YES];
     if (!YGUtils.validString(self.inputTF.text)) {
         [YGAlertToast showHUDMessage:@"输入不合法"];
         return;
@@ -38,7 +42,8 @@
     if (self.modifyStyle == ModifyStyle_NickName) {
         [YGNetworkCommon updateNickName:self.inputTF.text success:^(id responseObject) {
             [YGLoadingTools endLoading];
-            YGUserInfo.defaultInstance.userName = self.inputTF.text;
+            YGUserInfo.defaultInstance.nickName = self.inputTF.text;
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
             [self.navigationController popViewControllerAnimated:YES];
         } failed:^(NSDictionary *errorInfo) {
             [YGLoadingTools endLoading];
@@ -47,7 +52,8 @@
     } else {
         [YGNetworkCommon updateSign:self.inputTF.text success:^(id responseObject) {
             [YGLoadingTools endLoading];
-            YGUserInfo.defaultInstance.userName = self.inputTF.text;
+            YGUserInfo.defaultInstance.gxqm = self.inputTF.text;
+            [YGAlertToast showHUDMessage:responseObject[@"message"]];
             [self.navigationController popViewControllerAnimated:YES];
         } failed:^(NSDictionary *errorInfo) {
             [YGLoadingTools endLoading];
