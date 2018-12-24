@@ -29,6 +29,7 @@
     [super viewDidLoad];
     [self setUI];
     self.view.backgroundColor = [UIColor whiteColor];
+   
     self.dataSource = [NSMutableArray arrayWithObjects:@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09",@"good_list01",@"good_list02",@"good_list03",@"good_list04",@"good_list05",@"good_list06",@"good_list07",@"good_list08",@"good_list09", nil];
 }
 -(void)setUI{

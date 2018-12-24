@@ -257,6 +257,14 @@
 		2EDDE5DA219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D5219ED2CA0009DDC1 /* 《名门电竞》APP需求文档.pdf */; };
 		2EDDE5DB219ED2CA0009DDC1 /* 电竞icon.zip in Resources */ = {isa = PBXBuildFile; fileRef = 2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */; };
 		2EF75A3821BA5DD200AFB380 /* YGConvertFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A3721BA5DD200AFB380 /* YGConvertFooter.m */; };
+		2EF75A5621C3B63F00AFB380 /* YGGoodsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A5521C3B63F00AFB380 /* YGGoodsListModel.m */; };
+		2EF75A8321CA48C500AFB380 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7721CA48C400AFB380 /* SDCycleScrollView.m */; };
+		2EF75A8421CA48C500AFB380 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7821CA48C400AFB380 /* UIView+SDExtension.m */; };
+		2EF75A8521CA48C500AFB380 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7921CA48C400AFB380 /* SDCollectionViewCell.m */; };
+		2EF75A8621CA48C500AFB380 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7C21CA48C400AFB380 /* TADotView.m */; };
+		2EF75A8721CA48C500AFB380 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7D21CA48C400AFB380 /* TAPageControl.m */; };
+		2EF75A8821CA48C500AFB380 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7E21CA48C400AFB380 /* TAAnimatedDotView.m */; };
+		2EF75A8921CA48C500AFB380 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75A7F21CA48C400AFB380 /* TAAbstractDotView.m */; };
 		493D7C1868E436525CE6F085 /* Pods_YaloGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */; };
 /* End PBXBuildFile section */
 
@@ -603,6 +611,22 @@
 		2EDDE5D6219ED2CA0009DDC1 /* 电竞icon.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "电竞icon.zip"; sourceTree = "<group>"; };
 		2EF75A3621BA5DD200AFB380 /* YGConvertFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGConvertFooter.h; sourceTree = "<group>"; };
 		2EF75A3721BA5DD200AFB380 /* YGConvertFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGConvertFooter.m; sourceTree = "<group>"; };
+		2EF75A5421C3B63F00AFB380 /* YGGoodsListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGGoodsListModel.h; sourceTree = "<group>"; };
+		2EF75A5521C3B63F00AFB380 /* YGGoodsListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGGoodsListModel.m; sourceTree = "<group>"; };
+		2EF75A7421CA48C400AFB380 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
+		2EF75A7521CA48C400AFB380 /* SDCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCycleScrollView.h; sourceTree = "<group>"; };
+		2EF75A7621CA48C400AFB380 /* SDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDCollectionViewCell.h; sourceTree = "<group>"; };
+		2EF75A7721CA48C400AFB380 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
+		2EF75A7821CA48C400AFB380 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		2EF75A7921CA48C400AFB380 /* SDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCollectionViewCell.m; sourceTree = "<group>"; };
+		2EF75A7B21CA48C400AFB380 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		2EF75A7C21CA48C400AFB380 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		2EF75A7D21CA48C400AFB380 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		2EF75A7E21CA48C400AFB380 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		2EF75A7F21CA48C400AFB380 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		2EF75A8021CA48C400AFB380 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		2EF75A8121CA48C400AFB380 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		2EF75A8221CA48C400AFB380 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
 		369D04C75DB347A41E04FFEC /* Pods-YaloGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.release.xcconfig"; sourceTree = "<group>"; };
 		86BE56C2497561B0FD853AA3 /* Pods-YaloGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YaloGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame.debug.xcconfig"; sourceTree = "<group>"; };
 		EF86CA6935AED6F166B62CC6 /* Pods_YaloGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YaloGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -731,6 +755,7 @@
 		021F325F219C23D30041A11A /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				2EF75A5321C3B5DD00AFB380 /* Models */,
 				0221BB5D21BA6069008B2F14 /* UserInfo */,
 				2E9EA73921A2F889002EF478 /* Views */,
 				021F3295219C29D30041A11A /* Controller */,
@@ -1046,6 +1071,7 @@
 		2E305ECC21A4033300FCF123 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				2EF75A7321CA48C400AFB380 /* SDCycleScrollView */,
 				2E35485321AC79A700C1BA66 /* FSTextView.h */,
 				2E35485421AC79A700C1BA66 /* FSTextView.m */,
 				2E305FB221AC0A1600FCF123 /* YGPopver */,
@@ -1289,6 +1315,44 @@
 			);
 			name = "文档";
 			path = "YaloGame/文档";
+			sourceTree = "<group>";
+		};
+		2EF75A5321C3B5DD00AFB380 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2EF75A5421C3B63F00AFB380 /* YGGoodsListModel.h */,
+				2EF75A5521C3B63F00AFB380 /* YGGoodsListModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2EF75A7321CA48C400AFB380 /* SDCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				2EF75A7421CA48C400AFB380 /* UIView+SDExtension.h */,
+				2EF75A7521CA48C400AFB380 /* SDCycleScrollView.h */,
+				2EF75A7621CA48C400AFB380 /* SDCollectionViewCell.h */,
+				2EF75A7721CA48C400AFB380 /* SDCycleScrollView.m */,
+				2EF75A7821CA48C400AFB380 /* UIView+SDExtension.m */,
+				2EF75A7921CA48C400AFB380 /* SDCollectionViewCell.m */,
+				2EF75A7A21CA48C400AFB380 /* PageControl */,
+			);
+			path = SDCycleScrollView;
+			sourceTree = "<group>";
+		};
+		2EF75A7A21CA48C400AFB380 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				2EF75A7B21CA48C400AFB380 /* TAAbstractDotView.h */,
+				2EF75A7C21CA48C400AFB380 /* TADotView.m */,
+				2EF75A7D21CA48C400AFB380 /* TAPageControl.m */,
+				2EF75A7E21CA48C400AFB380 /* TAAnimatedDotView.m */,
+				2EF75A7F21CA48C400AFB380 /* TAAbstractDotView.m */,
+				2EF75A8021CA48C400AFB380 /* TADotView.h */,
+				2EF75A8121CA48C400AFB380 /* TAAnimatedDotView.h */,
+				2EF75A8221CA48C400AFB380 /* TAPageControl.h */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		36B9CA3A44E5FC61BC5B0111 /* Pods */ = {
@@ -1565,7 +1629,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/DMProgressHUD/DMProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/FDFullscreenPopGesture/FDFullscreenPopGesture.framework",
@@ -1573,7 +1637,6 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
@@ -1589,14 +1652,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YaloGame/Pods-YaloGame-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1613,6 +1675,8 @@
 				2E305FD721ACEB5C00FCF123 /* YGStringUtils.m in Sources */,
 				02F2A4EF21A287AC00454F8D /* UITableViewCell+Arrow.m in Sources */,
 				022C651F21BE371700CBF12C /* YGEncryptTool.m in Sources */,
+				2EF75A8621CA48C500AFB380 /* TADotView.m in Sources */,
+				2EF75A8421CA48C500AFB380 /* UIView+SDExtension.m in Sources */,
 				025F24D121A9221A001FDBB1 /* YGQRView.m in Sources */,
 				2E35485821AC934900C1BA66 /* YGAlertSelectedViewController.m in Sources */,
 				021F328E219C29C20041A11A /* YGMessageViewController.m in Sources */,
@@ -1629,6 +1693,7 @@
 				021F3293219C29CA0041A11A /* YGMineViewController.m in Sources */,
 				2EBAE33821B67E9E0087DA38 /* YGNewsModel.m in Sources */,
 				021F3284219C299D0041A11A /* YGHomeViewController.m in Sources */,
+				2EF75A8921CA48C500AFB380 /* TAAbstractDotView.m in Sources */,
 				0221BB6421BA63E2008B2F14 /* YGCacheManager.m in Sources */,
 				02AC5AC621A118990092BB46 /* YGPwdViewController.m in Sources */,
 				021F327F219C298F0041A11A /* YGBaseViewController.m in Sources */,
@@ -1654,12 +1719,15 @@
 				021F3289219C29BA0041A11A /* YGDiscoveryViewController.m in Sources */,
 				02CC5A3421A1B2B600BFBCD6 /* YGOrderViewController.m in Sources */,
 				2E9EA73C21A2F904002EF478 /* GoodsCollectionViewCell.m in Sources */,
+				2EF75A5621C3B63F00AFB380 /* YGGoodsListModel.m in Sources */,
+				2EF75A8321CA48C500AFB380 /* SDCycleScrollView.m in Sources */,
 				025F24CE21A92110001FDBB1 /* YGAlertViewController.m in Sources */,
 				02AC5AE321A189590092BB46 /* YGChargeViewController.m in Sources */,
 				02AC5AA121A0601C0092BB46 /* YGUserInfoViewController.m in Sources */,
 				028553F221A990B900E7DDBC /* YGLoginViewController.m in Sources */,
 				2EBAE33F21B67FDE0087DA38 /* YTGBasicEncode.m in Sources */,
 				02CD776621A2E323009A9892 /* YGMessageTableViewCell.m in Sources */,
+				2EF75A8821CA48C500AFB380 /* TAAnimatedDotView.m in Sources */,
 				021F3253219C1E940041A11A /* main.m in Sources */,
 				022C652D21BE5B0E00CBF12C /* YGAreaPickerView.m in Sources */,
 				02AC5AA621A062910092BB46 /* YGSettingViewController.m in Sources */,
@@ -1667,6 +1735,7 @@
 				2EDDE5CD219EBA160009DDC1 /* UIImage+Color.m in Sources */,
 				2E305ED221A4033300FCF123 /* UUMarqueeView.m in Sources */,
 				028553F521A990D300E7DDBC /* YGRegisterViewController.m in Sources */,
+				2EF75A8721CA48C500AFB380 /* TAPageControl.m in Sources */,
 				02AC5ADA21A1690F0092BB46 /* YGBankViewController.m in Sources */,
 				0285540C21A9983800E7DDBC /* YGLoginView.m in Sources */,
 				02CD775B21A2DAA7009A9892 /* YGMessageDefaultView.m in Sources */,
@@ -1690,6 +1759,7 @@
 				02AC5A8E219FB1200092BB46 /* YGBindCardViewController.m in Sources */,
 				025F24C221A7D55A001FDBB1 /* YGNetWorkTools.m in Sources */,
 				2E305F5521A53CF900FCF123 /* YGTabBar.m in Sources */,
+				2EF75A8521CA48C500AFB380 /* SDCollectionViewCell.m in Sources */,
 				2EF75A3821BA5DD200AFB380 /* YGConvertFooter.m in Sources */,
 				021F3266219C24490041A11A /* YGTabBarController.m in Sources */,
 				2EDDE5D0219EBAB50009DDC1 /* YGBaseNavgationViewController.m in Sources */,

@@ -173,6 +173,6 @@
 + (void)bindPhone:(NSString *)phone success:(SuccessBlock)success failed:(FailedBlock)failed;
 
 + (void)updateLoginWithOldPwd:(NSString *)oldPwd newPwd:(NSString *)newPwd sureNewPwd:(NSString *)sureNewPwd success:(SuccessBlock)success failed:(FailedBlock)failed;
-
++ (void)getHomeBannerListSuccess:(SuccessBlock)success failed:(FailedBlock)failed;
 @end
 

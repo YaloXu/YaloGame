@@ -13,7 +13,7 @@
 #import "UUMarqueeView.h"
 #import "YGPopViewController.h"
 #import "YGAlertSelectedViewController.h"
-
+#import "YGNewsModel.h"
 @interface YGHomeViewController ()<UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate,UUMarqueeViewDelegate>
 @property (nonatomic ,strong) UITableView * mainTableView;
 @property (nonatomic ,strong) UIView  *HeaderView;
@@ -21,6 +21,8 @@
 @property (nonatomic, strong) UUMarqueeView *activityView;
 @property (nonatomic, strong) NSArray *activities;
 @property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSArray *bannerList;
+
 
 @end
 
@@ -29,8 +31,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
-    self.dataSource = [NSMutableArray arrayWithObjects:@"home_list01",@"home_list02",@"home_list03",@"home_list04",@"home_list05", nil];
-    // Do any additional setup after loading the view.
+    [self requestBannerData];
+}
+-(void)requestBannerData{
+    [YGNetworkCommon getHomeBannerListSuccess:^(id responseObject) {
+        YGDataModel *model = [YGDataModel setDictionaryForModel:responseObject];
+        self.bannerList = [YGNewsModel setArrayForModel:model.le_data];
+        self.scrollView.imageURLStringsGroup = self.bannerList;
+    } failed:^(NSDictionary *errorInfo) {
+        [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+    }];
 }
 -(void)setUI{
     self.headTitle = @"悠拟电竞";
@@ -120,7 +130,8 @@
 #pragma mark ======== SDCycleScrollViewDelegate ========
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
     YGWebViewController *controller = [YGWebViewController new];
-    [controller setValue:@"https://www.baidu.com" forKey:@"loadUrl"];
+    YGNewsModel *model = [self.bannerList objectAtIndex:index];
+    [controller setValue:model.le_externalurl forKey:@"loadUrl"];
     [self.navigationController pushViewController:controller animated:YES];
 }
 #pragma mark --
@@ -192,16 +203,12 @@
 -(UIView *)HeaderView{
     if (!_HeaderView) {
         _HeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 70+kScreenWidth/2.5)];
-//        [_HeaderView addShadowToView:_HeaderView withColor:UIColorFromRGBValue(0xE8DEB2)];
-//        _HeaderView.backgroundColor =UIColorFromRGBValue(0xFFFBE9);
-        
     }
     return _HeaderView;
 }
 - (SDCycleScrollView *)scrollView {
     if (!_scrollView) {
         _scrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth/2.5) delegate:self placeholderImage:[UIImage imageNamed:@""]];
-        _scrollView.localizationImageNamesGroup = @[[UIImage imageNamed:@"home_banner"],[UIImage imageNamed:@"home_banner"],[UIImage imageNamed:@"home_banner"]];
         _scrollView.currentPageDotColor = UIColorFromRGBValue(0xE9A400);
         _scrollView.pageDotColor = UIColorFromRGBValue(0xFFFFFF);
         _scrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;

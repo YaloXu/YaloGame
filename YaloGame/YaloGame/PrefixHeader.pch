@@ -25,4 +25,7 @@
 #import "YGStringUtils.h"
 #import "YTGBasicModels.h"
 #import "YTGBasicEncode.h"
+#import "YGDataModel.h"
+#import "UIImageView+WebCache.h"
+
 #endif /* PrefixHeader_pch */

@@ -111,5 +111,7 @@ parameters:@{@"type":@(type),@"page":@(page),@"total":@(total)} success:success 
         [self setRequestHeaderInfo:manager];
     } parameters:p success:success failed:failed];
 }
-
++(void)getHomeBannerListSuccess:(SuccessBlock)success failed:(FailedBlock)failed{
+    [[YGNetWorkTools sharedTools] get:[NSString stringWithFormat:@"http://dev.d3d.cc/mmjj/?c=rest&m=v1&api=banner"] parameters:nil success:success failed:failed];
+}
 @end
