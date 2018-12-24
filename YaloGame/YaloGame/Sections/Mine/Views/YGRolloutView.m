@@ -41,6 +41,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.backgroundColor = DefaultBackGroundColor;
+    self.cardInfo.userInteractionEnabled = YES;
     [self.cardInfo addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeCardInfo)]];
     [self setOnline];
 }
