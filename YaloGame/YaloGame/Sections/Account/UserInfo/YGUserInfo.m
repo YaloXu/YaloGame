@@ -20,6 +20,13 @@
     return userInfo;
 }
 
+- (NSString *)gxqm {
+    if (!_gxqm || [_gxqm isKindOfClass:[NSNull class]]) {
+        _gxqm = @"";
+    }
+    return _gxqm;
+}
+
 - (NSString *)userName {
     if (!_userName || [_userName isKindOfClass:[NSNull class]]) {
         _userName = @"";

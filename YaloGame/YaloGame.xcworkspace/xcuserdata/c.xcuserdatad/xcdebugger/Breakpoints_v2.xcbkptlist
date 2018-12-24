@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YaloGame/Sections/Mine/Controller/YGRegisterViewController.m"
-            timestampString = "567313747.374651"
+            timestampString = "567338104.68706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YaloGame/Sections/Mine/Controller/YGRegisterViewController.m"
-            timestampString = "567313747.374712"
+            timestampString = "567338104.6876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YaloGame/Sections/Mine/Controller/YGLoginViewController.m"
-            timestampString = "567313747.374897"
+            timestampString = "567338104.688109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YaloGame/Sections/Mine/Controller/YGOrderViewController.m"
-            timestampString = "567313747.374995"
+            timestampString = "567338104.688571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -138,7 +138,7 @@
                   moduleName = "YaloGame"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/c/Desktop/work/YaloGame/YaloGame/YaloGame/Sections/Mine/Controller/YGSafeViewController.m"
-                  timestampString = "567313747.697632"
+                  timestampString = "567338105.199321"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
@@ -153,7 +153,7 @@
                   moduleName = "YaloGame"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/c/Desktop/work/YaloGame/YaloGame/YaloGame/Sections/Mine/Controller/YGSafeViewController.m"
-                  timestampString = "567313747.701023"
+                  timestampString = "567338105.201489"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "80"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YaloGame/Sections/Mine/Controller/YGUserInfoViewController.m"
-            timestampString = "567313747.375271"
+            timestampString = "567338104.689273"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YaloGame/Sections/Mine/Controller/YGUserInfoViewController.m"
-            timestampString = "567313747.375321"
+            timestampString = "567338104.6895469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "268"
@@ -308,19 +308,13 @@
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YaloGame/AppDelegate/AppDelegate.m"
-            timestampString = "567186656.33894"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-applicationWillTerminate:"
-            landmarkType = "7">
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
