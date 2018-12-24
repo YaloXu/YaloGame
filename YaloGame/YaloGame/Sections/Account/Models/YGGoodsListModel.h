@@ -22,14 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *le_author;
 
 @property (nonatomic, copy) NSString *le_status;
-@property (nonatomic, copy) NSString *le_url;
-@property (nonatomic, copy) NSString *le_tableid;
-@property (nonatomic, copy) NSString *le_inputip;
 @property (nonatomic, copy) NSString *le_inputtime;
 @property (nonatomic, copy) NSString *le_updatetime;
 @property (nonatomic, copy) NSString *le_displayorder;
 @property (nonatomic, copy) NSString *le_comments;
 @property (nonatomic, copy) NSString *le_favorites;
+@property (nonatomic, copy) NSString *le_externalurl;
+@property (nonatomic, copy) NSString *le_content;
+@property (nonatomic, copy) NSString *le_pricet;
+@property (nonatomic, copy) NSString *le_goldprice;
+
 @end
 /*
  "id": "46",
