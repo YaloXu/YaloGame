@@ -268,6 +268,7 @@
     _nameTF.keyboardType = UIKeyboardTypeNumberPad;
     switch (_viewType) {
         case YGViewType_Pwd_Login: {
+            self.pwdTF.secureTextEntry = YES;
             self.nameTF.placeholder = @"请输入您的账号 ";
             self.pwdTF.placeholder = @"请输入密码";
             [self.nameTF mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -391,6 +392,7 @@
             break;
         case YGViewType_Phone_login: {
             self.pwdTF.keyboardType = UIKeyboardTypeNumberPad;
+            self.pwdTF.secureTextEntry = NO;
             self.nameTF.placeholder = @"请输入您的手机号码";
             self.pwdTF.placeholder = @"请输入短信验证码";
             [self areaPhone];

@@ -128,6 +128,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.headerView setDatas];
     [self.tableView reloadData];
 }
 
