@@ -133,8 +133,9 @@
         } else {
             strongSelf->loadM = YES;
         }
-        [self endRefresh];
+        [strongSelf endRefresh];
         [YGAlertToast showHUDMessage:errorInfo[@"message"]];
+        [strongSelf.mainCollectionView reloadData];
     }];
 }
 
