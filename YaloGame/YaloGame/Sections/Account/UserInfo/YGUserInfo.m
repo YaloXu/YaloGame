@@ -8,6 +8,7 @@
 
 #import "YGUserInfo.h"
 #import "YYModel.h"
+#import "YGCacheManager.h"
 
 @implementation YGUserInfo
 
@@ -120,8 +121,8 @@
     self.userName = nil;
     self.gxqm = nil;
     self.regtime = 0;
+    [YGCacheManager.sharedInstance clearUserInfo];
 }
-
 
 - (NSDictionary *)userInfo {
     return @{

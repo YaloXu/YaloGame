@@ -39,6 +39,10 @@
     [self.cache setObject:YGUserInfo.defaultInstance.userInfo forKey:@"YGUserInfo"];
 }
 
+- (void)clearUserInfo {
+    [self.cache removeObjectForKey:@"YGUserInfo"];
+}
+
 - (void)loadUserInfo {
    NSDictionary *dict = (NSDictionary *)[self.cache objectForKey:@"YGUserInfo"];
     [YGUserInfo.defaultInstance parseToken:dict];

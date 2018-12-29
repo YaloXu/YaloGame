@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)saveUserInfo;
 
+- (void)clearUserInfo;
+
 - (void)loadUserInfo;
 
 @end

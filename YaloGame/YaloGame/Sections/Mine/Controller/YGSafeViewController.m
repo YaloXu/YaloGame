@@ -45,7 +45,7 @@
     if (indexPath.row == 0) {
         cell.detailTextLabel.text = @"";
     } else if (indexPath.row == 2) {
-        cell.detailTextLabel.text = @"*******8976";
+        cell.detailTextLabel.text = [YGUserInfo.defaultInstance.phone stringByReplacingCharactersInRange:NSMakeRange(0, YGUserInfo.defaultInstance.phone.length - 4) withString:@"*******"];
     } else {
         cell.detailTextLabel.text = @"";
     }
